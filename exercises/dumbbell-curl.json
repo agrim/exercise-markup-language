@@ -1,0 +1,50 @@
+{
+  "eml": "1.0",
+  "id": "dumbbell-curl",
+  "title": "Dumbbell Curl",
+  "instructions": "Curl a separate dumbbell in each hand while keeping the upper arms near the torso.",
+  "start": {
+    "pose": "upper-standing-grip-both",
+    "root": [0, -0.025, -0.008],
+    "joints": {
+      "bothUpperArm": [-6.23, -1.5, -8.62],
+      "bothForearm": [7.56, 1.17, -0.16],
+      "bothThigh": [-12.74, 0.84, 5.74],
+      "bothShin": [26.27, 0.31, -1.89],
+      "bothFoot": [-13.43, -1.6, -3.55]
+    }
+  },
+  "equipment": [
+    {
+      "id": "left-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.068, 0.019, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.068, 0.019, 0.997], "rotation": [0, 0, 0]}
+  ],
+  "phases": [
+    {
+      "id": "curl",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "upper-elbow-flexion", "amount": {"param": "excursion"}}]
+    },
+    {"id": "extend", "seconds": {"param": "phase-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["biceps"], "secondary": ["forearms"]},
+  "camera": [32, 9],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15},
+    "excursion": {"default": 1, "min": 0.25, "max": 1}
+  }
+}

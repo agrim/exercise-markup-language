@@ -1,0 +1,1206 @@
+{
+  "sourceCommit": "0f4333381ceeb5cc0c11240c7761691ae26be8a8",
+  "catalogSha256": "4b12389b23658612a285187496045ddfd56a78740c21efb67753b92eb8486e1c",
+  "exercises": {
+    "squat": {
+      "title": "Squat",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "bench-press": {
+      "title": "Bench Press",
+      "primary": [
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "triceps",
+        "anteriorDeltoids"
+      ]
+    },
+    "deadlift": {
+      "title": "Deadlift",
+      "primary": [
+        "glutes",
+        "hamstrings"
+      ],
+      "secondary": [
+        "spinalErectors",
+        "abdominals",
+        "obliques",
+        "forearms"
+      ]
+    },
+    "row": {
+      "title": "Row",
+      "primary": [
+        "lats",
+        "trapezius",
+        "rhomboids"
+      ],
+      "secondary": [
+        "biceps",
+        "posteriorDeltoids"
+      ]
+    },
+    "push-up": {
+      "title": "Push-Up",
+      "primary": [
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "triceps",
+        "anteriorDeltoids",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "kettlebell-swing": {
+      "title": "Kettlebell Swing",
+      "primary": [
+        "glutes",
+        "hamstrings"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques",
+        "forearms"
+      ]
+    },
+    "lunge": {
+      "title": "Lunge",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "plank": {
+      "title": "Plank",
+      "primary": [
+        "abdominals",
+        "obliques"
+      ],
+      "secondary": [
+        "anteriorDeltoids",
+        "glutes"
+      ]
+    },
+    "front-squat": {
+      "title": "Front Squat",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques",
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids"
+      ]
+    },
+    "goblet-squat": {
+      "title": "Goblet Squat",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "bodyweight-squat": {
+      "title": "Bodyweight Squat",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "smith-machine-squat": {
+      "title": "Smith Machine Squat",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "hack-squat": {
+      "title": "Hack Squat",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": []
+    },
+    "leg-press": {
+      "title": "Leg Press",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings"
+      ]
+    },
+    "split-squat": {
+      "title": "Split Squat",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "bulgarian-split-squat": {
+      "title": "Bulgarian Split Squat",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "reverse-lunge": {
+      "title": "Reverse Lunge",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "walking-lunge": {
+      "title": "Walking Lunge",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "lateral-lunge": {
+      "title": "Lateral Lunge",
+      "primary": [
+        "glutes",
+        "quadriceps",
+        "adductors"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "step-up": {
+      "title": "Step-Up",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "romanian-deadlift": {
+      "title": "Romanian Deadlift",
+      "primary": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondary": [
+        "spinalErectors",
+        "abdominals",
+        "obliques",
+        "forearms"
+      ]
+    },
+    "dumbbell-romanian-deadlift": {
+      "title": "Dumbbell Romanian Deadlift",
+      "primary": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondary": [
+        "spinalErectors",
+        "abdominals",
+        "obliques",
+        "forearms"
+      ]
+    },
+    "single-leg-romanian-deadlift": {
+      "title": "Single-Leg Romanian Deadlift",
+      "primary": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques",
+        "footStabilizers"
+      ]
+    },
+    "sumo-deadlift": {
+      "title": "Sumo Deadlift",
+      "primary": [
+        "glutes",
+        "quadriceps",
+        "adductors"
+      ],
+      "secondary": [
+        "hamstrings",
+        "spinalErectors",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "trap-bar-deadlift": {
+      "title": "Trap Bar Deadlift",
+      "primary": [
+        "quadriceps",
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "spinalErectors",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "hip-thrust": {
+      "title": "Hip Thrust",
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "glute-bridge": {
+      "title": "Glute Bridge",
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "single-leg-glute-bridge": {
+      "title": "Single-Leg Glute Bridge",
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "cable-pull-through": {
+      "title": "Cable Pull-Through",
+      "primary": [
+        "glutes",
+        "hamstrings"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "leg-extension": {
+      "title": "Leg Extension",
+      "primary": [
+        "quadriceps"
+      ],
+      "secondary": []
+    },
+    "seated-leg-curl": {
+      "title": "Seated Leg Curl",
+      "primary": [
+        "hamstrings"
+      ],
+      "secondary": [
+        "gastrocnemius",
+        "soleus"
+      ]
+    },
+    "lying-leg-curl": {
+      "title": "Lying Leg Curl",
+      "primary": [
+        "hamstrings"
+      ],
+      "secondary": [
+        "gastrocnemius",
+        "soleus"
+      ]
+    },
+    "standing-calf-raise": {
+      "title": "Standing Calf Raise",
+      "primary": [
+        "gastrocnemius",
+        "soleus"
+      ],
+      "secondary": []
+    },
+    "seated-calf-raise": {
+      "title": "Seated Calf Raise",
+      "primary": [
+        "gastrocnemius",
+        "soleus"
+      ],
+      "secondary": []
+    },
+    "hip-abduction": {
+      "title": "Hip Abduction",
+      "primary": [
+        "hipAbductors"
+      ],
+      "secondary": []
+    },
+    "hip-adduction": {
+      "title": "Hip Adduction",
+      "primary": [
+        "adductors"
+      ],
+      "secondary": []
+    },
+    "wall-sit": {
+      "title": "Wall Sit",
+      "primary": [
+        "quadriceps"
+      ],
+      "secondary": [
+        "glutes",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "dumbbell-bench-press": {
+      "title": "Dumbbell Bench Press",
+      "primary": [
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "triceps",
+        "anteriorDeltoids"
+      ]
+    },
+    "incline-bench-press": {
+      "title": "Incline Bench Press",
+      "primary": [
+        "upperPectorals"
+      ],
+      "secondary": [
+        "triceps",
+        "anteriorDeltoids"
+      ]
+    },
+    "incline-dumbbell-press": {
+      "title": "Incline Dumbbell Press",
+      "primary": [
+        "upperPectorals"
+      ],
+      "secondary": [
+        "triceps",
+        "anteriorDeltoids"
+      ]
+    },
+    "decline-bench-press": {
+      "title": "Decline Bench Press",
+      "primary": [
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "triceps",
+        "anteriorDeltoids"
+      ]
+    },
+    "dumbbell-floor-press": {
+      "title": "Dumbbell Floor Press",
+      "primary": [
+        "pectorals",
+        "upperPectorals",
+        "triceps"
+      ],
+      "secondary": [
+        "anteriorDeltoids"
+      ]
+    },
+    "machine-chest-press": {
+      "title": "Machine Chest Press",
+      "primary": [
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "triceps",
+        "anteriorDeltoids"
+      ]
+    },
+    "cable-chest-fly": {
+      "title": "Cable Chest Fly",
+      "primary": [
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "anteriorDeltoids"
+      ]
+    },
+    "dumbbell-chest-fly": {
+      "title": "Dumbbell Chest Fly",
+      "primary": [
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "anteriorDeltoids"
+      ]
+    },
+    "pec-deck": {
+      "title": "Pec Deck",
+      "primary": [
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "anteriorDeltoids"
+      ]
+    },
+    "incline-push-up": {
+      "title": "Incline Push-Up",
+      "primary": [
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "triceps",
+        "anteriorDeltoids",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "knee-push-up": {
+      "title": "Knee Push-Up",
+      "primary": [
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "triceps",
+        "anteriorDeltoids",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "close-grip-bench-press": {
+      "title": "Close-Grip Bench Press",
+      "primary": [
+        "triceps",
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "anteriorDeltoids"
+      ]
+    },
+    "pull-up": {
+      "title": "Pull-Up",
+      "primary": [
+        "lats",
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids"
+      ],
+      "secondary": [
+        "biceps",
+        "forearms",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "chin-up": {
+      "title": "Chin-Up",
+      "primary": [
+        "lats",
+        "biceps"
+      ],
+      "secondary": [
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids",
+        "forearms",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "assisted-pull-up": {
+      "title": "Assisted Pull-Up",
+      "primary": [
+        "lats",
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids"
+      ],
+      "secondary": [
+        "biceps",
+        "forearms"
+      ]
+    },
+    "lat-pulldown": {
+      "title": "Lat Pulldown",
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids"
+      ]
+    },
+    "neutral-grip-lat-pulldown": {
+      "title": "Neutral-Grip Lat Pulldown",
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids"
+      ]
+    },
+    "seated-cable-row": {
+      "title": "Seated Cable Row",
+      "primary": [
+        "lats",
+        "trapezius",
+        "rhomboids"
+      ],
+      "secondary": [
+        "biceps",
+        "posteriorDeltoids"
+      ]
+    },
+    "chest-supported-dumbbell-row": {
+      "title": "Chest-Supported Dumbbell Row",
+      "primary": [
+        "lats",
+        "trapezius",
+        "rhomboids"
+      ],
+      "secondary": [
+        "biceps",
+        "posteriorDeltoids"
+      ]
+    },
+    "single-arm-dumbbell-row": {
+      "title": "Single-Arm Dumbbell Row",
+      "primary": [
+        "lats",
+        "trapezius",
+        "rhomboids"
+      ],
+      "secondary": [
+        "biceps",
+        "posteriorDeltoids",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "machine-row": {
+      "title": "Machine Row",
+      "primary": [
+        "lats",
+        "trapezius",
+        "rhomboids"
+      ],
+      "secondary": [
+        "biceps",
+        "posteriorDeltoids"
+      ]
+    },
+    "reverse-pec-deck": {
+      "title": "Reverse Pec Deck",
+      "primary": [
+        "posteriorDeltoids"
+      ],
+      "secondary": [
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids"
+      ]
+    },
+    "face-pull": {
+      "title": "Face Pull",
+      "primary": [
+        "posteriorDeltoids",
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids"
+      ],
+      "secondary": [
+        "rotatorCuff"
+      ]
+    },
+    "straight-arm-pulldown": {
+      "title": "Straight-Arm Pulldown",
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques",
+        "triceps"
+      ]
+    },
+    "inverted-row": {
+      "title": "Inverted Row",
+      "primary": [
+        "lats",
+        "trapezius",
+        "rhomboids"
+      ],
+      "secondary": [
+        "biceps",
+        "posteriorDeltoids",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "overhead-press": {
+      "title": "Overhead Press",
+      "primary": [
+        "anteriorDeltoids",
+        "lateralDeltoids"
+      ],
+      "secondary": [
+        "triceps",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "dumbbell-shoulder-press": {
+      "title": "Dumbbell Shoulder Press",
+      "primary": [
+        "anteriorDeltoids",
+        "lateralDeltoids"
+      ],
+      "secondary": [
+        "triceps"
+      ]
+    },
+    "arnold-press": {
+      "title": "Arnold Press",
+      "primary": [
+        "anteriorDeltoids",
+        "lateralDeltoids"
+      ],
+      "secondary": [
+        "triceps"
+      ]
+    },
+    "machine-shoulder-press": {
+      "title": "Machine Shoulder Press",
+      "primary": [
+        "anteriorDeltoids",
+        "lateralDeltoids"
+      ],
+      "secondary": [
+        "triceps"
+      ]
+    },
+    "dumbbell-lateral-raise": {
+      "title": "Dumbbell Lateral Raise",
+      "primary": [
+        "lateralDeltoids"
+      ],
+      "secondary": [
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids"
+      ]
+    },
+    "cable-lateral-raise": {
+      "title": "Cable Lateral Raise",
+      "primary": [
+        "lateralDeltoids"
+      ],
+      "secondary": []
+    },
+    "dumbbell-front-raise": {
+      "title": "Dumbbell Front Raise",
+      "primary": [
+        "anteriorDeltoids"
+      ],
+      "secondary": [
+        "upperPectorals"
+      ]
+    },
+    "bent-over-rear-delt-fly": {
+      "title": "Bent-Over Rear Delt Fly",
+      "primary": [
+        "posteriorDeltoids"
+      ],
+      "secondary": [
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids"
+      ]
+    },
+    "dumbbell-shrug": {
+      "title": "Dumbbell Shrug",
+      "primary": [
+        "upperTrapezius"
+      ],
+      "secondary": [
+        "forearms"
+      ]
+    },
+    "barbell-curl": {
+      "title": "Barbell Curl",
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ]
+    },
+    "dumbbell-curl": {
+      "title": "Dumbbell Curl",
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ]
+    },
+    "hammer-curl": {
+      "title": "Hammer Curl",
+      "primary": [
+        "biceps",
+        "brachialis"
+      ],
+      "secondary": [
+        "forearms"
+      ]
+    },
+    "incline-dumbbell-curl": {
+      "title": "Incline Dumbbell Curl",
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ]
+    },
+    "preacher-curl": {
+      "title": "Preacher Curl",
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ]
+    },
+    "cable-curl": {
+      "title": "Cable Curl",
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ]
+    },
+    "concentration-curl": {
+      "title": "Concentration Curl",
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ]
+    },
+    "rope-triceps-pushdown": {
+      "title": "Rope Triceps Pushdown",
+      "primary": [
+        "triceps"
+      ],
+      "secondary": []
+    },
+    "bar-triceps-pushdown": {
+      "title": "Bar Triceps Pushdown",
+      "primary": [
+        "triceps"
+      ],
+      "secondary": []
+    },
+    "overhead-dumbbell-triceps-extension": {
+      "title": "Overhead Dumbbell Triceps Extension",
+      "primary": [
+        "triceps"
+      ],
+      "secondary": []
+    },
+    "lying-dumbbell-triceps-extension": {
+      "title": "Lying Dumbbell Triceps Extension",
+      "primary": [
+        "triceps"
+      ],
+      "secondary": []
+    },
+    "assisted-dip": {
+      "title": "Assisted Dip",
+      "primary": [
+        "triceps",
+        "pectorals",
+        "upperPectorals"
+      ],
+      "secondary": [
+        "anteriorDeltoids"
+      ]
+    },
+    "side-plank": {
+      "title": "Side Plank",
+      "primary": [
+        "obliques",
+        "abdominals"
+      ],
+      "secondary": [
+        "anteriorDeltoids",
+        "lateralDeltoids",
+        "glutes"
+      ]
+    },
+    "dead-bug": {
+      "title": "Dead Bug",
+      "primary": [
+        "abdominals",
+        "obliques"
+      ],
+      "secondary": [
+        "hipFlexors"
+      ]
+    },
+    "bird-dog": {
+      "title": "Bird Dog",
+      "primary": [
+        "abdominals",
+        "obliques",
+        "spinalErectors"
+      ],
+      "secondary": [
+        "glutes",
+        "anteriorDeltoids",
+        "lateralDeltoids"
+      ]
+    },
+    "crunch": {
+      "title": "Crunch",
+      "primary": [
+        "abdominals"
+      ],
+      "secondary": []
+    },
+    "reverse-crunch": {
+      "title": "Reverse Crunch",
+      "primary": [
+        "abdominals"
+      ],
+      "secondary": [
+        "hipFlexors"
+      ]
+    },
+    "hanging-knee-raise": {
+      "title": "Hanging Knee Raise",
+      "primary": [
+        "abdominals",
+        "hipFlexors"
+      ],
+      "secondary": [
+        "forearms",
+        "anteriorDeltoids",
+        "lateralDeltoids"
+      ]
+    },
+    "pallof-press": {
+      "title": "Pallof Press",
+      "primary": [
+        "abdominals",
+        "obliques"
+      ],
+      "secondary": []
+    },
+    "cable-crunch": {
+      "title": "Cable Crunch",
+      "primary": [
+        "abdominals"
+      ],
+      "secondary": []
+    },
+    "cable-woodchop": {
+      "title": "Cable Woodchop",
+      "primary": [
+        "obliques",
+        "abdominals"
+      ],
+      "secondary": [
+        "anteriorDeltoids",
+        "lateralDeltoids",
+        "glutes"
+      ]
+    },
+    "russian-twist": {
+      "title": "Russian Twist",
+      "primary": [
+        "obliques",
+        "abdominals"
+      ],
+      "secondary": []
+    },
+    "hollow-body-hold": {
+      "title": "Hollow Body Hold",
+      "primary": [
+        "abdominals"
+      ],
+      "secondary": [
+        "hipFlexors"
+      ]
+    },
+    "ab-wheel-rollout": {
+      "title": "Ab Wheel Rollout",
+      "primary": [
+        "abdominals",
+        "obliques"
+      ],
+      "secondary": [
+        "lats",
+        "anteriorDeltoids",
+        "lateralDeltoids"
+      ]
+    },
+    "farmer-carry": {
+      "title": "Farmer Carry",
+      "primary": [
+        "forearms",
+        "abdominals",
+        "obliques"
+      ],
+      "secondary": [
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids",
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ]
+    },
+    "suitcase-carry": {
+      "title": "Suitcase Carry",
+      "primary": [
+        "abdominals",
+        "obliques",
+        "forearms"
+      ],
+      "secondary": [
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids",
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ]
+    },
+    "goblet-carry": {
+      "title": "Goblet Carry",
+      "primary": [
+        "abdominals",
+        "obliques",
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids"
+      ],
+      "secondary": [
+        "biceps",
+        "triceps",
+        "forearms",
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ]
+    },
+    "kettlebell-deadlift": {
+      "title": "Kettlebell Deadlift",
+      "primary": [
+        "glutes",
+        "hamstrings"
+      ],
+      "secondary": [
+        "quadriceps",
+        "abdominals",
+        "obliques",
+        "forearms"
+      ]
+    },
+    "kettlebell-clean": {
+      "title": "Kettlebell Clean",
+      "primary": [
+        "glutes",
+        "hamstrings"
+      ],
+      "secondary": [
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids",
+        "abdominals",
+        "obliques",
+        "forearms"
+      ]
+    },
+    "kettlebell-overhead-press": {
+      "title": "Kettlebell Overhead Press",
+      "primary": [
+        "anteriorDeltoids",
+        "lateralDeltoids"
+      ],
+      "secondary": [
+        "triceps",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "dumbbell-thruster": {
+      "title": "Dumbbell Thruster",
+      "primary": [
+        "quadriceps",
+        "glutes",
+        "anteriorDeltoids",
+        "lateralDeltoids"
+      ],
+      "secondary": [
+        "triceps",
+        "abdominals",
+        "obliques"
+      ]
+    },
+    "burpee": {
+      "title": "Burpee",
+      "primary": [
+        "quadriceps",
+        "glutes",
+        "hamstrings",
+        "pectorals",
+        "upperPectorals",
+        "abdominals",
+        "obliques"
+      ],
+      "secondary": [
+        "anteriorDeltoids",
+        "triceps"
+      ]
+    },
+    "mountain-climber": {
+      "title": "Mountain Climber",
+      "primary": [
+        "abdominals",
+        "obliques",
+        "hipFlexors"
+      ],
+      "secondary": [
+        "anteriorDeltoids",
+        "lateralDeltoids",
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ]
+    },
+    "bear-crawl": {
+      "title": "Bear Crawl",
+      "primary": [
+        "abdominals",
+        "obliques",
+        "anteriorDeltoids",
+        "quadriceps"
+      ],
+      "secondary": [
+        "glutes"
+      ]
+    },
+    "battle-rope-waves": {
+      "title": "Battle Rope Waves",
+      "primary": [
+        "anteriorDeltoids",
+        "lateralDeltoids",
+        "biceps",
+        "triceps",
+        "forearms"
+      ],
+      "secondary": [
+        "abdominals",
+        "obliques",
+        "quadriceps",
+        "glutes",
+        "hamstrings"
+      ]
+    },
+    "band-pull-apart": {
+      "title": "Band Pull-Apart",
+      "primary": [
+        "posteriorDeltoids",
+        "trapezius",
+        "upperTrapezius",
+        "rhomboids"
+      ],
+      "secondary": []
+    },
+    "band-row": {
+      "title": "Band Row",
+      "primary": [
+        "lats",
+        "trapezius",
+        "rhomboids"
+      ],
+      "secondary": [
+        "biceps",
+        "posteriorDeltoids"
+      ]
+    }
+  }
+}

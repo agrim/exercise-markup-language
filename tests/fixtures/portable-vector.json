@@ -1,0 +1,19 @@
+{
+  "description": "An independent reader can reproduce the local quaternion at one second without a catalog or bundled motion.",
+  "document": {
+    "eml":"1.0","id":"vector-elbow","title":"Authored elbow pose",
+    "definitions":{"motions":{"curl":{"joints":{"leftForearm":{"x":-90}}}}},
+    "start":{"pose":"standing"},
+    "phases":[{"id":"lift","seconds":1,"actions":[{"use":"curl"}]},{"id":"return","seconds":1,"actions":[]}],
+    "repeat":{"mode":"loop","count":2},
+    "muscles":{"primary":["biceps"],"secondary":[]}
+  },
+  "expected": [
+    {"time":0,"joint":"leftForearm","rotation":[0,0,0,1]},
+    {"time":0.5,"joint":"leftForearm","rotation":[-0.3826834324,0,0,0.9238795325]},
+    {"time":1,"joint":"leftForearm","rotation":[-0.7071067812,0,0,0.7071067812]},
+    {"time":1,"joint":"rightForearm","rotation":[0,0,0,1]},
+    {"time":2,"joint":"leftForearm","rotation":[0,0,0,1]}
+  ],
+  "tolerance":0.000001
+}

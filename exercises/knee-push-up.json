@@ -1,0 +1,54 @@
+{
+  "eml": "1.0",
+  "id": "knee-push-up",
+  "title": "Knee Push-Up",
+  "instructions": "Keep both knees and palms supported. Lower the chest between the hands and press up.",
+  "start": {
+    "pose": "upper-kneeling-plank",
+    "joints": {
+      "leftUpperArm": [-23.79, -3.81, 4.92],
+      "leftForearm": [-18.82, -7.56, -12.03],
+      "leftHand": [-54.51, -18.1, -173.38],
+      "rightUpperArm": [-23.64, 3.77, -4.99],
+      "rightForearm": [-19.12, 7.69, 12.13],
+      "rightHand": [-55.12, 18.19, 173.18]
+    }
+  },
+  "equipment": [],
+  "contacts": [
+    {"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]},
+    {"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]}
+  ],
+  "supports": [{"body": "bothShin", "surface": "floor"}],
+  "phases": [
+    {
+      "id": "lower",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "upper-supported-push", "amount": 1}],
+      "detail": {
+        "joints": {
+          "pelvis": [74.0, 0, 0],
+          "leftUpperArm": [5.5, -0.36, 19.56],
+          "leftForearm": [-56.09, -32.83, -26.76],
+          "leftHand": [-53.71, -19.28, -155.97],
+          "bothShin": [26.0, 0, 0],
+          "bothFoot": [66.0, 0, 0],
+          "rightUpperArm": [5.58, 0.37, -19.61],
+          "rightForearm": [-56.19, 32.9, 26.78],
+          "rightHand": [-54.18, 19.32, 155.85]
+        },
+        "root": [0, -0.70779, 0.20467]
+      }
+    },
+    {"id": "press", "seconds": {"param": "phase-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {
+    "primary": ["pectorals", "upperPectorals"],
+    "secondary": ["triceps", "anteriorDeltoids", "abdominals", "obliques"]
+  },
+  "camera": [64, 17],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

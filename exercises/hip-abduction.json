@@ -1,0 +1,82 @@
+{
+  "eml": "1.0",
+  "id": "hip-abduction",
+  "title": "Hip Abduction",
+  "instructions": "Sit upright with pads on the outsides of the thighs. Open the knees against the pads, then bring them in.",
+  "start": {
+    "pose": "lower-seat"
+  },
+  "equipment": [
+    {
+      "id": "machine",
+      "kind": "hip-abduction-machine",
+      "position": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "left-pad",
+      "kind": "thigh-pad",
+      "follow": {
+        "joint": "leftShin",
+        "offset": [
+          0.046,
+          -0.03,
+          0
+        ]
+      }
+    },
+    {
+      "id": "right-pad",
+      "kind": "thigh-pad",
+      "follow": {
+        "joint": "rightShin",
+        "offset": [
+          -0.046,
+          -0.03,
+          0
+        ]
+      }
+    }
+  ],
+  "contacts": [],
+  "phases": [
+    {
+      "id": "open",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-open-hips",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "hipAbductors"
+    ],
+    "secondary": []
+  },
+  "camera": [
+    45,
+    12
+  ],
+  "supports": [
+    {
+      "body": "pelvis",
+      "surface": "machine"
+    }
+  ]
+}

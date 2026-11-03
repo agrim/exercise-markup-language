@@ -1,0 +1,249 @@
+{
+  "eml": "1.0",
+  "id": "kettlebell-deadlift",
+  "title": "Kettlebell Deadlift",
+  "instructions": "Stand astride the bell, grasp the handle with both hands, extend the hips and knees, and lower it to its starting point.",
+  "start": {
+    "pose": "lower-floor-pull",
+    "root": [
+      0,
+      -0.40248,
+      -0.17
+    ],
+    "joints": {
+      "bothUpperArm": [
+        -54,
+        0,
+        -12
+      ],
+      "bothForearm": [
+        -4,
+        0,
+        0
+      ]
+    }
+  },
+  "equipment": [
+    {
+      "id": "load",
+      "kind": "kettlebell",
+      "position": [
+        0,
+        0.136,
+        0.125
+      ],
+      "sockets": {
+        "leftGrip": [
+          0.06,
+          0.09,
+          0
+        ],
+        "rightGrip": [
+          -0.06,
+          0.09,
+          0
+        ]
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.175,
+          0,
+          0.183
+        ]
+      },
+      "pole": [
+        0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        12,
+        0
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.175,
+          0,
+          0.183
+        ]
+      },
+      "pole": [
+        -0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        -12,
+        0
+      ]
+    },
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "load",
+        "socket": "leftGrip"
+      },
+      "pole": [
+        0.7,
+        -0.6,
+        0.3
+      ]
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "load",
+        "socket": "rightGrip"
+      },
+      "pole": [
+        -0.7,
+        -0.6,
+        0.3
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "clear-knees",
+      "seconds": 0.83,
+      "actions": [
+        {
+          "use": "lower-stand-from-floor",
+          "amount": 0.5
+        }
+      ],
+      "detail": {
+        "root": [
+          0,
+          -0.2052,
+          -0.071
+        ]
+      },
+      "items": {
+        "load": {
+          "position": [
+            0,
+            0.47137,
+            0.113
+          ],
+          "controlPosition": [
+            0,
+            0.32666,
+            0.119
+          ]
+        }
+      }
+    },
+    {
+      "id": "lockout",
+      "seconds": 0.87,
+      "actions": [
+        {
+          "use": "lower-stand-from-floor",
+          "amount": 1
+        }
+      ],
+      "detail": {
+        "root": [
+          0,
+          -0.008,
+          0.028
+        ]
+      },
+      "items": {
+        "load": {
+          "position": [
+            0,
+            0.72039,
+            0.107
+          ],
+          "controlPosition": [
+            0,
+            0.61518,
+            0.11
+          ]
+        }
+      }
+    },
+    {
+      "id": "pass-knees",
+      "seconds": 0.87,
+      "actions": [
+        {
+          "use": "lower-stand-from-floor",
+          "amount": 0.5
+        }
+      ],
+      "detail": {
+        "root": [
+          0,
+          -0.2052,
+          -0.071
+        ]
+      },
+      "items": {
+        "load": {
+          "position": [
+            0,
+            0.47137,
+            0.113
+          ],
+          "controlPosition": [
+            0,
+            0.61518,
+            0.11
+          ]
+        }
+      }
+    },
+    {
+      "id": "lower",
+      "seconds": 0.83,
+      "actions": [],
+      "items": {
+        "load": {
+          "position": [
+            0,
+            0.136,
+            0.125
+          ],
+          "controlPosition": [
+            0,
+            0.32666,
+            0.119
+          ]
+        }
+      }
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondary": [
+      "quadriceps",
+      "abdominals",
+      "obliques",
+      "forearms"
+    ]
+  },
+  "camera": [
+    139,
+    13
+  ]
+}

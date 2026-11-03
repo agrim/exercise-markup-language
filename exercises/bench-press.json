@@ -1,0 +1,52 @@
+{
+  "eml": "1.0",
+  "id": "bench-press",
+  "title": "Bench Press",
+  "instructions": "Lie on the bench with both feet grounded. Press the bar from chest level and lower it along the same path.",
+  "start": {
+    "pose": "upper-flat-bench-grip-both",
+    "joints": {
+      "bothUpperArm": [43.67, -6.08, 35.13],
+      "bothForearm": [-123.57, 5.34, 18.15],
+      "leftHand": [-143.57, -44.78, 173.64],
+      "rightHand": [-144.41, 44.08, -174.25]
+    }
+  },
+  "equipment": [
+    {"id": "bench", "kind": "bench", "position": [0, 0, -0.32]},
+    {"id": "rack", "kind": "rack", "position": [0, 0, -0.4]},
+    {
+      "id": "weight",
+      "kind": "barbell",
+      "position": [-0.00037, 0.68533, -0.37288],
+      "sockets": {"leftGrip": [0.27886, 2e-05, -0.00034], "rightGrip": [-0.27886, -2e-05, 0.00034]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.088, 0.749, 0.657], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.088, 0.749, 0.657], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "weight", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "weight", "socket": "rightGrip"}}
+  ],
+  "supports": [{"body": "chest", "surface": "bench"}],
+  "phases": [
+    {
+      "id": "press",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "horizontal-press", "amount": 1}],
+      "items": {"weight": {"position": [-0.00037, 1.11934, -0.49288]}}
+    },
+    {
+      "id": "lower",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [],
+      "items": {"weight": {"position": [-0.00037, 0.68533, -0.37288]}}
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["pectorals", "upperPectorals"], "secondary": ["triceps", "anteriorDeltoids"]},
+  "camera": [119, 32],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

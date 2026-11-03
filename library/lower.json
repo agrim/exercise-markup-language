@@ -1,0 +1,2341 @@
+{
+  "poses": {
+    "lower-ready": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.025,
+        0
+      ],
+      "joints": {
+        "bothThigh": [
+          -6,
+          0,
+          0
+        ],
+        "bothShin": [
+          12,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -6,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -5,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-back-rack": {
+      "extends": "lower-ready",
+      "joints": {
+        "bothUpperArm": [
+          22,
+          0,
+          68
+        ],
+        "bothForearm": [
+          -98,
+          0,
+          0
+        ],
+        "bothHand": [
+          12,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-front-rack": {
+      "extends": "lower-ready",
+      "joints": {
+        "bothUpperArm": [
+          -73,
+          0,
+          14
+        ],
+        "bothForearm": [
+          -105,
+          0,
+          0
+        ]
+      }
+    },
+    "goblet-hold": {
+      "extends": "lower-ready",
+      "joints": {
+        "bothUpperArm": [
+          -23,
+          0,
+          15
+        ],
+        "bothForearm": [
+          -112,
+          0,
+          0
+        ],
+        "bothHand": [
+          8,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-farm": {
+      "extends": "lower-ready",
+      "joints": {
+        "bothUpperArm": [
+          0,
+          0,
+          2
+        ],
+        "bothForearm": [
+          -5,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-rack-left": {
+      "extends": "lower-ready",
+      "joints": {
+        "leftUpperArm": [
+          -25,
+          0,
+          16
+        ],
+        "leftForearm": [
+          -112,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-floor-pull": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.39,
+        -0.14
+      ],
+      "joints": {
+        "pelvis": [
+          52,
+          0,
+          0
+        ],
+        "spine": [
+          3,
+          0,
+          0
+        ],
+        "neck": [
+          -37,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -104,
+          0,
+          0
+        ],
+        "bothShin": [
+          100,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -48,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -53,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -6,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-wide-floor-pull": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.38,
+        -0.105
+      ],
+      "joints": {
+        "pelvis": [
+          42,
+          0,
+          0
+        ],
+        "spine": [
+          4,
+          0,
+          0
+        ],
+        "neck": [
+          -30,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -99,
+          10,
+          9
+        ],
+        "bothShin": [
+          102,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -45,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -45,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -6,
+          0,
+          0
+        ]
+      }
+    },
+    "split-stance": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.14,
+        0
+      ],
+      "joints": {
+        "pelvis": [
+          5,
+          0,
+          0
+        ],
+        "neck": [
+          -5,
+          0,
+          0
+        ],
+        "leftThigh": [
+          -32,
+          0,
+          0
+        ],
+        "leftShin": [
+          36,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -10,
+          0,
+          0
+        ],
+        "rightThigh": [
+          22,
+          0,
+          0
+        ],
+        "rightShin": [
+          25,
+          0,
+          0
+        ],
+        "rightFoot": [
+          3,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-step": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.09,
+        0
+      ],
+      "joints": {
+        "leftThigh": [
+          -62,
+          0,
+          0
+        ],
+        "leftShin": [
+          65,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -5,
+          0,
+          0
+        ],
+        "rightThigh": [
+          -3,
+          0,
+          0
+        ],
+        "rightShin": [
+          5,
+          0,
+          0
+        ]
+      }
+    },
+    "high-plank": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.48895,
+        0.09999
+      ],
+      "joints": {
+        "pelvis": [
+          71.8,
+          0,
+          0
+        ],
+        "neck": [
+          -6,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -71,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -15,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -5,
+          0,
+          0
+        ],
+        "bothToe": [
+          -63,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-bridge": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.737,
+        0
+      ],
+      "joints": {
+        "pelvis": [
+          -88,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -44,
+          0,
+          0
+        ],
+        "bothShin": [
+          96,
+          0,
+          0
+        ],
+        "bothFoot": [
+          37,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          1,
+          0,
+          0
+        ],
+        "bothForearm": [
+          8,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-single-bridge": {
+      "extends": "lower-bridge",
+      "joints": {
+        "rightThigh": [
+          -57,
+          0,
+          0
+        ],
+        "rightShin": [
+          7,
+          0,
+          0
+        ],
+        "rightFoot": [
+          113,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-thrust": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.66,
+        0.017
+      ],
+      "joints": {
+        "pelvis": [
+          -48,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -47,
+          0,
+          0
+        ],
+        "bothShin": [
+          90,
+          0,
+          0
+        ],
+        "bothFoot": [
+          5,
+          0,
+          0
+        ],
+        "neck": [
+          -26,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -12,
+          0,
+          20
+        ],
+        "bothForearm": [
+          -32,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-seat": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.345,
+        0
+      ],
+      "joints": {
+        "pelvis": [
+          -8,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -79,
+          0,
+          4
+        ],
+        "bothShin": [
+          91,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -4,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          12,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -36,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-seat-long": {
+      "extends": "lower-seat",
+      "joints": {
+        "bothShin": [
+          23,
+          0,
+          0
+        ],
+        "bothFoot": [
+          57,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-seat-wide": {
+      "extends": "lower-seat",
+      "joints": {
+        "bothThigh": [
+          -79,
+          38,
+          5
+        ]
+      }
+    },
+    "prone-on-bench": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.326,
+        0
+      ],
+      "joints": {
+        "pelvis": [
+          90,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -115,
+          0,
+          29
+        ],
+        "bothForearm": [
+          -58,
+          0,
+          0
+        ],
+        "neck": [
+          -11,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-sled-seat": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.397,
+        -0.015
+      ],
+      "joints": {
+        "pelvis": [
+          -43,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -44,
+          0,
+          4
+        ],
+        "bothShin": [
+          64,
+          0,
+          0
+        ],
+        "bothFoot": [
+          57,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          42,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -49,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-hack": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.13,
+        -0.16
+      ],
+      "joints": {
+        "pelvis": [
+          -27,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -5,
+          0,
+          0
+        ],
+        "bothShin": [
+          58,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -41,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -65,
+          0,
+          19
+        ],
+        "bothForearm": [
+          -96,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-wall-seat": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.35,
+        -0.04
+      ],
+      "joints": {
+        "bothThigh": [
+          -84,
+          0,
+          0
+        ],
+        "bothShin": [
+          87,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -3,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -22,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -24,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-arms-front": {
+      "extends": "lower-ready",
+      "joints": {
+        "bothUpperArm": [
+          -80,
+          4,
+          9
+        ],
+        "bothForearm": [
+          -9,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-wave-ready": {
+      "extends": "lower-ready",
+      "root": [
+        0,
+        -0.115,
+        -0.045
+      ],
+      "joints": {
+        "pelvis": [
+          15,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -35,
+          0,
+          0
+        ],
+        "bothShin": [
+          46,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -25,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -47,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -35,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-bear": {
+      "extends": "standing",
+      "root": [
+        0,
+        -0.409,
+        -0.11
+      ],
+      "joints": {
+        "pelvis": [
+          84,
+          0,
+          0
+        ],
+        "neck": [
+          -20,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -68,
+          0,
+          0
+        ],
+        "bothShin": [
+          91,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -45,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -83,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -10,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-two-hand-hang": {
+      "extends": "lower-ready",
+      "joints": {
+        "bothUpperArm": [
+          0,
+          0,
+          -18
+        ],
+        "bothForearm": [
+          -15,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "motions": {
+    "squat-down": {
+      "root": [
+        0,
+        -0.3,
+        -0.14
+      ],
+      "joints": {
+        "pelvis": [
+          24,
+          0,
+          0
+        ],
+        "spine": [
+          4,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -88,
+          0,
+          0
+        ],
+        "bothShin": [
+          98,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -34,
+          0,
+          0
+        ],
+        "neck": [
+          -19,
+          0,
+          0
+        ]
+      }
+    },
+    "squat-upright": {
+      "root": [
+        0,
+        -0.3,
+        -0.11
+      ],
+      "joints": {
+        "pelvis": [
+          14,
+          0,
+          0
+        ],
+        "spine": [
+          3,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -84,
+          0,
+          0
+        ],
+        "bothShin": [
+          94,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -24,
+          0,
+          0
+        ],
+        "neck": [
+          -12,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-counterbalance": {
+      "joints": {
+        "bothUpperArm": [
+          -71,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -8,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-overhead-drive": {
+      "joints": {
+        "bothUpperArm": [
+          -111,
+          0,
+          8
+        ],
+        "bothForearm": [
+          100,
+          0,
+          0
+        ],
+        "bothClavicle": [
+          0,
+          0,
+          10
+        ]
+      }
+    },
+    "lower-single-overhead-drive": {
+      "joints": {
+        "leftUpperArm": [
+          -103,
+          0,
+          12
+        ],
+        "leftForearm": [
+          105,
+          0,
+          0
+        ],
+        "leftClavicle": [
+          0,
+          0,
+          10
+        ]
+      }
+    },
+    "lower-stand-from-floor": {
+      "root": [
+        0,
+        0.36,
+        0.14
+      ],
+      "joints": {
+        "pelvis": [
+          -49,
+          0,
+          0
+        ],
+        "spine": [
+          -3,
+          0,
+          0
+        ],
+        "neck": [
+          35,
+          0,
+          0
+        ],
+        "bothThigh": [
+          92,
+          0,
+          0
+        ],
+        "bothShin": [
+          -80,
+          0,
+          0
+        ],
+        "bothFoot": [
+          37,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          47,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-stand-from-wide": {
+      "root": [
+        0,
+        0.35,
+        0.105
+      ],
+      "joints": {
+        "pelvis": [
+          -39,
+          0,
+          0
+        ],
+        "spine": [
+          -4,
+          0,
+          0
+        ],
+        "neck": [
+          28,
+          0,
+          0
+        ],
+        "bothThigh": [
+          88,
+          0,
+          0
+        ],
+        "bothShin": [
+          -82,
+          0,
+          0
+        ],
+        "bothFoot": [
+          34,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          39,
+          0,
+          0
+        ]
+      }
+    },
+    "hip-hinge": {
+      "root": [
+        0,
+        -0.042,
+        -0.22
+      ],
+      "joints": {
+        "pelvis": [
+          56,
+          0,
+          0
+        ],
+        "spine": [
+          3,
+          0,
+          0
+        ],
+        "neck": [
+          -34,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -76,
+          0,
+          0
+        ],
+        "bothShin": [
+          25,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -5,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -57,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-balance-hinge": {
+      "root": [
+        0.035,
+        -0.045,
+        -0.18
+      ],
+      "joints": {
+        "pelvis": [
+          53,
+          0,
+          0
+        ],
+        "spine": [
+          3,
+          0,
+          0
+        ],
+        "neck": [
+          -36,
+          0,
+          0
+        ],
+        "leftThigh": [
+          -74,
+          0,
+          0
+        ],
+        "leftShin": [
+          24,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -3,
+          0,
+          0
+        ],
+        "rightThigh": [
+          24,
+          0,
+          0
+        ],
+        "rightShin": [
+          -2,
+          0,
+          0
+        ],
+        "rightFoot": [
+          7,
+          0,
+          0
+        ],
+        "leftUpperArm": [
+          -31,
+          0,
+          0
+        ],
+        "rightUpperArm": [
+          -54,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-swing-back": {
+      "root": [
+        0,
+        -0.18,
+        -0.17
+      ],
+      "joints": {
+        "pelvis": [
+          52,
+          0,
+          0
+        ],
+        "neck": [
+          -38,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -74,
+          0,
+          0
+        ],
+        "bothShin": [
+          43,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -21,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -31,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-swing-forward": {
+      "joints": {
+        "bothUpperArm": [
+          -78,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -5,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-left-clean": {
+      "joints": {
+        "leftUpperArm": [
+          -22,
+          0,
+          15
+        ],
+        "leftForearm": [
+          -111,
+          0,
+          0
+        ],
+        "leftHand": [
+          12,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-split-lower": {
+      "root": [
+        0.025,
+        -0.19,
+        -0.025
+      ],
+      "joints": {
+        "pelvis": [
+          8,
+          0,
+          0
+        ],
+        "leftThigh": [
+          -38,
+          0,
+          0
+        ],
+        "leftShin": [
+          54,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -21,
+          0,
+          0
+        ],
+        "rightThigh": [
+          10,
+          0,
+          0
+        ],
+        "rightShin": [
+          62,
+          0,
+          0
+        ],
+        "rightFoot": [
+          -38,
+          0,
+          0
+        ],
+        "neck": [
+          -6,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-forward-flight": {
+      "root": [
+        0,
+        -0.08,
+        0.06
+      ],
+      "joints": {
+        "leftThigh": [
+          -54,
+          0,
+          0
+        ],
+        "leftShin": [
+          77,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -25,
+          0,
+          0
+        ],
+        "rightThigh": [
+          9,
+          0,
+          0
+        ],
+        "rightShin": [
+          3,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-forward-plant": {
+      "root": [
+        0,
+        -0.12,
+        0.11
+      ],
+      "joints": {
+        "leftThigh": [
+          -39,
+          0,
+          0
+        ],
+        "leftShin": [
+          43,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -8,
+          0,
+          0
+        ],
+        "rightThigh": [
+          14,
+          0,
+          0
+        ],
+        "rightShin": [
+          15,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-forward-depth": {
+      "root": [
+        0.03,
+        -0.31,
+        0.15
+      ],
+      "joints": {
+        "pelvis": [
+          12,
+          0,
+          0
+        ],
+        "leftThigh": [
+          -86,
+          0,
+          0
+        ],
+        "leftShin": [
+          98,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -24,
+          0,
+          0
+        ],
+        "rightThigh": [
+          10,
+          0,
+          0
+        ],
+        "rightShin": [
+          94,
+          0,
+          0
+        ],
+        "rightFoot": [
+          -49,
+          0,
+          0
+        ],
+        "neck": [
+          -9,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-reverse-flight": {
+      "root": [
+        0.012,
+        -0.09,
+        -0.046
+      ],
+      "joints": {
+        "rightThigh": [
+          19,
+          0,
+          0
+        ],
+        "rightShin": [
+          51,
+          0,
+          0
+        ],
+        "rightFoot": [
+          -19,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-reverse-plant": {
+      "root": [
+        0.013,
+        -0.135,
+        -0.105
+      ],
+      "joints": {
+        "rightThigh": [
+          20,
+          0,
+          0
+        ],
+        "rightShin": [
+          28,
+          0,
+          0
+        ],
+        "rightFoot": [
+          9,
+          0,
+          0
+        ],
+        "leftThigh": [
+          -35,
+          0,
+          0
+        ],
+        "leftShin": [
+          47,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-reverse-depth": {
+      "root": [
+        0.04,
+        -0.3,
+        -0.152
+      ],
+      "joints": {
+        "pelvis": [
+          10,
+          0,
+          0
+        ],
+        "leftThigh": [
+          -74,
+          0,
+          0
+        ],
+        "leftShin": [
+          85,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -19,
+          0,
+          0
+        ],
+        "rightThigh": [
+          9,
+          0,
+          0
+        ],
+        "rightShin": [
+          88,
+          0,
+          0
+        ],
+        "rightFoot": [
+          -48,
+          0,
+          0
+        ],
+        "neck": [
+          -8,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-side-flight": {
+      "root": [
+        0.07,
+        -0.1,
+        0
+      ],
+      "joints": {
+        "leftThigh": [
+          -23,
+          0,
+          26
+        ],
+        "leftShin": [
+          41,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -12,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-side-plant": {
+      "root": [
+        0.11,
+        -0.13,
+        -0.02
+      ],
+      "joints": {
+        "leftThigh": [
+          -22,
+          0,
+          25
+        ],
+        "leftShin": [
+          37,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -12,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-side-depth": {
+      "root": [
+        0.24,
+        -0.27,
+        -0.09
+      ],
+      "joints": {
+        "pelvis": [
+          22,
+          0,
+          0
+        ],
+        "neck": [
+          -16,
+          0,
+          0
+        ],
+        "leftThigh": [
+          -71,
+          0,
+          23
+        ],
+        "leftShin": [
+          82,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -31,
+          0,
+          0
+        ],
+        "rightThigh": [
+          -15,
+          0,
+          -15
+        ],
+        "rightShin": [
+          12,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-stride-left": {
+      "root": [
+        -0.018,
+        -0.075,
+        0
+      ],
+      "joints": {
+        "leftThigh": [
+          -37,
+          0,
+          0
+        ],
+        "leftShin": [
+          59,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -19,
+          0,
+          0
+        ],
+        "rightThigh": [
+          10,
+          0,
+          0
+        ],
+        "rightShin": [
+          4,
+          0,
+          0
+        ],
+        "leftUpperArm": [
+          9,
+          0,
+          0
+        ],
+        "rightUpperArm": [
+          -12,
+          0,
+          0
+        ],
+        "pelvis": [
+          1,
+          4,
+          0
+        ],
+        "chest": [
+          1,
+          -7,
+          0
+        ]
+      }
+    },
+    "lower-lunge-left": {
+      "root": [
+        0.025,
+        -0.29,
+        0
+      ],
+      "joints": {
+        "leftThigh": [
+          -67,
+          0,
+          0
+        ],
+        "leftShin": [
+          88,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -24,
+          0,
+          0
+        ],
+        "rightThigh": [
+          18,
+          0,
+          0
+        ],
+        "rightShin": [
+          84,
+          0,
+          0
+        ],
+        "rightFoot": [
+          -37,
+          0,
+          0
+        ],
+        "pelvis": [
+          13,
+          0,
+          0
+        ],
+        "neck": [
+          -11,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-stride-right": {
+      "root": [
+        0.018,
+        -0.075,
+        0
+      ],
+      "joints": {
+        "rightThigh": [
+          -37,
+          0,
+          0
+        ],
+        "rightShin": [
+          59,
+          0,
+          0
+        ],
+        "rightFoot": [
+          -19,
+          0,
+          0
+        ],
+        "leftThigh": [
+          10,
+          0,
+          0
+        ],
+        "leftShin": [
+          4,
+          0,
+          0
+        ],
+        "rightUpperArm": [
+          9,
+          0,
+          0
+        ],
+        "leftUpperArm": [
+          -12,
+          0,
+          0
+        ],
+        "pelvis": [
+          1,
+          -4,
+          0
+        ],
+        "chest": [
+          1,
+          7,
+          0
+        ]
+      }
+    },
+    "lower-lunge-right": {
+      "root": [
+        -0.025,
+        -0.29,
+        0
+      ],
+      "joints": {
+        "rightThigh": [
+          -67,
+          0,
+          0
+        ],
+        "rightShin": [
+          88,
+          0,
+          0
+        ],
+        "rightFoot": [
+          -24,
+          0,
+          0
+        ],
+        "leftThigh": [
+          18,
+          0,
+          0
+        ],
+        "leftShin": [
+          84,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -37,
+          0,
+          0
+        ],
+        "pelvis": [
+          13,
+          0,
+          0
+        ],
+        "neck": [
+          -11,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-step-drive": {
+      "root": [
+        0.06,
+        0.25,
+        0.12
+      ],
+      "joints": {
+        "leftThigh": [
+          46,
+          0,
+          0
+        ],
+        "leftShin": [
+          -46,
+          0,
+          0
+        ],
+        "leftFoot": [
+          2,
+          0,
+          0
+        ],
+        "rightThigh": [
+          -31,
+          0,
+          0
+        ],
+        "rightShin": [
+          52,
+          0,
+          0
+        ],
+        "rightFoot": [
+          -16,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-pushup-lower": {
+      "root": [
+        0,
+        -0.16412,
+        0.0354
+      ],
+      "joints": {
+        "pelvis": [
+          12.200000000000003,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          47,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -76,
+          0,
+          0
+        ],
+        "neck": [
+          -7,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-bridge-raise": {
+      "root": [
+        0,
+        0.2,
+        -0.042
+      ],
+      "joints": {
+        "pelvis": [
+          -23,
+          0,
+          0
+        ],
+        "neck": [
+          22,
+          0,
+          0
+        ],
+        "bothThigh": [
+          23,
+          0,
+          0
+        ],
+        "bothShin": [
+          -8,
+          0,
+          0
+        ],
+        "bothFoot": [
+          8,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-single-bridge-raise": {
+      "root": [
+        0,
+        0.2,
+        -0.042
+      ],
+      "joints": {
+        "pelvis": [
+          -23,
+          0,
+          0
+        ],
+        "neck": [
+          22,
+          0,
+          0
+        ],
+        "leftThigh": [
+          23,
+          0,
+          0
+        ],
+        "leftShin": [
+          -8,
+          0,
+          0
+        ],
+        "leftFoot": [
+          8,
+          0,
+          0
+        ],
+        "rightThigh": [
+          23,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-thrust-raise": {
+      "root": [
+        0,
+        0.31,
+        0.145
+      ],
+      "joints": {
+        "pelvis": [
+          -37,
+          0,
+          0
+        ],
+        "neck": [
+          32,
+          0,
+          0
+        ],
+        "bothThigh": [
+          34,
+          0,
+          0
+        ],
+        "bothShin": [
+          -18,
+          0,
+          0
+        ],
+        "bothFoot": [
+          21,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-extend-knees": {
+      "joints": {
+        "bothShin": [
+          -68,
+          0,
+          0
+        ],
+        "bothFoot": [
+          55,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-curl-seated": {
+      "joints": {
+        "bothShin": [
+          78,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -70,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-curl-prone": {
+      "joints": {
+        "bothShin": [
+          87,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -14,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-open-hips": {
+      "joints": {
+        "bothThigh": [
+          0,
+          35,
+          0
+        ]
+      }
+    },
+    "lower-close-hips": {
+      "joints": {
+        "bothThigh": [
+          0,
+          -35,
+          0
+        ]
+      }
+    },
+    "lower-sled-lower": {
+      "joints": {
+        "bothThigh": [
+          -30,
+          0,
+          0
+        ],
+        "bothShin": [
+          45,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -15,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-hack-lower": {
+      "root": [
+        0,
+        -0.235,
+        0.14
+      ],
+      "joints": {
+        "bothThigh": [
+          -53,
+          0,
+          0
+        ],
+        "bothShin": [
+          81,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -27,
+          0,
+          0
+        ]
+      }
+    },
+    "rise-on-toes": {
+      "root": [
+        0,
+        0.047,
+        0.029
+      ],
+      "joints": {
+        "bothFoot": [
+          29,
+          0,
+          0
+        ],
+        "bothToe": [
+          -28,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-ankle-rise-seated": {
+      "joints": {
+        "bothThigh": [
+          -6,
+          0,
+          0
+        ],
+        "bothShin": [
+          9,
+          0,
+          0
+        ],
+        "bothFoot": [
+          33,
+          0,
+          0
+        ],
+        "bothToe": [
+          -28,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-horizontal-open": {
+      "joints": {
+        "bothUpperArm": [
+          0,
+          63,
+          12
+        ],
+        "bothClavicle": [
+          0,
+          5,
+          0
+        ],
+        "bothForearm": [
+          4,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-band-pull": {
+      "joints": {
+        "bothUpperArm": [
+          84,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -79,
+          0,
+          0
+        ],
+        "bothClavicle": [
+          0,
+          8,
+          0
+        ]
+      }
+    },
+    "lower-wave-left": {
+      "joints": {
+        "leftUpperArm": [
+          -21,
+          0,
+          0
+        ],
+        "leftForearm": [
+          -12,
+          0,
+          0
+        ],
+        "rightUpperArm": [
+          24,
+          0,
+          0
+        ],
+        "rightForearm": [
+          8,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-wave-right": {
+      "joints": {
+        "leftUpperArm": [
+          24,
+          0,
+          0
+        ],
+        "leftForearm": [
+          8,
+          0,
+          0
+        ],
+        "rightUpperArm": [
+          -21,
+          0,
+          0
+        ],
+        "rightForearm": [
+          -12,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-climber-left": {
+      "joints": {
+        "leftThigh": [
+          -78,
+          0,
+          0
+        ],
+        "leftShin": [
+          90,
+          0,
+          0
+        ],
+        "leftFoot": [
+          -18,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-crawl-left": {
+      "root": [
+        -0.035,
+        -0.03,
+        0.018
+      ],
+      "joints": {
+        "leftThigh": [
+          -28,
+          0,
+          0
+        ],
+        "leftShin": [
+          29,
+          0,
+          0
+        ],
+        "rightUpperArm": [
+          -18,
+          0,
+          0
+        ],
+        "rightForearm": [
+          -19,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-climber-right": {
+      "joints": {
+        "rightThigh": [
+          -78,
+          0,
+          0
+        ],
+        "rightShin": [
+          90,
+          0,
+          0
+        ],
+        "rightFoot": [
+          -18,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-crawl-right": {
+      "root": [
+        0.035,
+        -0.03,
+        0.018
+      ],
+      "joints": {
+        "rightThigh": [
+          -28,
+          0,
+          0
+        ],
+        "rightShin": [
+          29,
+          0,
+          0
+        ],
+        "leftUpperArm": [
+          -18,
+          0,
+          0
+        ],
+        "leftForearm": [
+          -19,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-burpee-crouch": {
+      "root": [
+        0,
+        -0.51,
+        -0.065
+      ],
+      "joints": {
+        "pelvis": [
+          66,
+          0,
+          0
+        ],
+        "spine": [
+          8,
+          0,
+          0
+        ],
+        "neck": [
+          -28,
+          0,
+          0
+        ],
+        "bothThigh": [
+          -143,
+          0,
+          0
+        ],
+        "bothShin": [
+          129,
+          0,
+          0
+        ],
+        "bothFoot": [
+          -52,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -67,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -12,
+          0,
+          0
+        ]
+      }
+    },
+    "lower-burpee-plank": {
+      "root": [
+        0,
+        -0.50324,
+        -0.08301
+      ],
+      "joints": {
+        "pelvis": [
+          73,
+          0,
+          0
+        ],
+        "neck": [
+          -6,
+          0,
+          0
+        ],
+        "bothThigh": [
+          6,
+          0,
+          0
+        ],
+        "bothShin": [
+          -12,
+          0,
+          0
+        ],
+        "bothFoot": [
+          1,
+          0,
+          0
+        ],
+        "bothUpperArm": [
+          -71,
+          0,
+          0
+        ],
+        "bothForearm": [
+          -10,
+          0,
+          0
+        ]
+      }
+    }
+  }
+}

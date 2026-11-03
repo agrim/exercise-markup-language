@@ -1,0 +1,119 @@
+{
+  "eml": "1.0",
+  "id": "bird-dog",
+  "title": "Bird Dog",
+  "instructions": "From hands and knees, reach one arm forward and the opposite leg backward. Replant before switching sides.",
+  "start": {
+    "pose": "quadruped",
+    "joints": {
+      "leftUpperArm": [-59.47, -6.6, 11.17],
+      "leftForearm": [-51.04, -7.8, 2.28],
+      "leftHand": [-97.92, -25.33, -163.48],
+      "rightUpperArm": [-59.4, 6.59, -11.17],
+      "rightForearm": [-51.24, 7.82, -2.31],
+      "rightHand": [-98.51, 25.31, 163.34]
+    }
+  },
+  "equipment": [],
+  "contacts": [
+    {"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]},
+    {"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]}
+  ],
+  "supports": [{"body": "bothShin", "surface": "floor"}],
+  "phases": [
+    {
+      "id": "reach-left-midrange",
+      "seconds": 0.4,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-contralateral-reach-quadruped-left-midrange", "amount": 1}],
+      "contacts": [
+        {"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]},
+        {"effector": "leftPalm", "target": {"point": [0.178, 0.1549, 0.60021]}, "engage": "reach"}
+      ],
+      "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}]
+    },
+    {
+      "id": "reach-left",
+      "seconds": 0.4,
+      "actions": [{"use": "upper-contralateral-reach-quadruped-left", "amount": 1}],
+      "contacts": [
+        {"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]},
+        {"effector": "leftPalm", "target": {"point": [0.178, 0.45435, 0.73431]}, "engage": "reach"}
+      ],
+      "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}],
+      "ease": "ease-out"
+    },
+    {
+      "id": "replant-left-midrange",
+      "seconds": 0.4,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-contralateral-reach-quadruped-left-midrange", "amount": 1}],
+      "contacts": [
+        {"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]},
+        {"effector": "leftPalm", "target": {"point": [0.178, 0.1549, 0.60021]}, "engage": "reach"}
+      ],
+      "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}]
+    },
+    {
+      "id": "replant-left",
+      "seconds": 0.4,
+      "actions": [],
+      "contacts": [
+        {"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]},
+        {"effector": "leftPalm", "target": {"point": [0.178, 0.03, 0.2968]}, "engage": "reach"}
+      ],
+      "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}],
+      "ease": "ease-out"
+    },
+    {
+      "id": "reach-right-midrange",
+      "seconds": 0.4,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-contralateral-reach-quadruped-right-midrange", "amount": 1}],
+      "contacts": [
+        {"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]},
+        {"effector": "rightPalm", "target": {"point": [-0.178, 0.15487, 0.59984]}, "engage": "reach"}
+      ],
+      "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}]
+    },
+    {
+      "id": "reach-right",
+      "seconds": 0.4,
+      "actions": [{"use": "upper-contralateral-reach-quadruped-right", "amount": 1}],
+      "contacts": [
+        {"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]},
+        {"effector": "rightPalm", "target": {"point": [-0.178, 0.45406, 0.7337]}, "engage": "reach"}
+      ],
+      "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}],
+      "ease": "ease-out"
+    },
+    {
+      "id": "replant-right-midrange",
+      "seconds": 0.4,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-contralateral-reach-quadruped-right-midrange", "amount": 1}],
+      "contacts": [
+        {"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]},
+        {"effector": "rightPalm", "target": {"point": [-0.178, 0.15487, 0.59984]}, "engage": "reach"}
+      ],
+      "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}]
+    },
+    {
+      "id": "replant-right",
+      "seconds": 0.4,
+      "actions": [],
+      "contacts": [
+        {"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]},
+        {"effector": "rightPalm", "target": {"point": [-0.178, 0.03, 0.2968]}, "engage": "reach"}
+      ],
+      "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}],
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {
+    "primary": ["abdominals", "obliques", "spinalErectors"],
+    "secondary": ["glutes", "anteriorDeltoids", "lateralDeltoids"]
+  },
+  "camera": [64, 17]
+}

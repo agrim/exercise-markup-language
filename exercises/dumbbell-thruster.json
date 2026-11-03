@@ -1,0 +1,119 @@
+{
+  "eml": "1.0",
+  "id": "dumbbell-thruster",
+  "title": "Dumbbell Thruster",
+  "instructions": "Rack one dumbbell at each shoulder. Descend, drive up through both feet, continue into the overhead press, then lower the bells to the shoulders.",
+  "start": {
+    "pose": "lower-front-rack",
+    "stance": {
+      "width": 0.35,
+      "toeOut": 10
+    }
+  },
+  "equipment": [
+    {
+      "id": "left-bell",
+      "kind": "dumbbell",
+      "follow": {
+        "joint": "leftHand",
+        "offset": [
+          0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    },
+    {
+      "id": "right-bell",
+      "kind": "dumbbell",
+      "follow": {
+        "joint": "rightHand",
+        "offset": [
+          -0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": "floor",
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": "floor",
+      "pole": [
+        -0.1,
+        0,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "squat",
+      "seconds": 1.1,
+      "actions": [
+        {
+          "use": "squat-upright",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "drive",
+      "seconds": 0.62,
+      "actions": [
+        {
+          "use": "lower-overhead-drive",
+          "amount": 0.35
+        }
+      ]
+    },
+    {
+      "id": "press",
+      "seconds": 0.58,
+      "actions": [
+        {
+          "use": "lower-overhead-drive",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "rack",
+      "seconds": 1.5,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps",
+      "glutes",
+      "anteriorDeltoids",
+      "lateralDeltoids"
+    ],
+    "secondary": [
+      "triceps",
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "camera": [
+    44,
+    10
+  ]
+}

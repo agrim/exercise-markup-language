@@ -1,0 +1,68 @@
+{
+  "eml": "1.0",
+  "id": "face-pull",
+  "title": "Face Pull",
+  "instructions": "Draw the ends of the rope toward either side of the face, keeping the upper arms elevated.",
+  "start": {
+    "pose": "upper-standing-grip-both",
+    "joints": {"bothUpperArm": [-78.5, 2.79, 26.69], "bothForearm": [-1.89, -5.52, -24.7], "bothHand": [-49.67, 33.78, 73.82]}
+  },
+  "equipment": [
+    {"id": "station", "kind": "cable-machine", "position": [0, 0, 0.92], "sockets": {"anchor": [0, 1.46, 0]}},
+    {"id": "rope", "kind": "rope-attachment", "position": [0, 1.47813, 0.53231]},
+    {
+      "id": "left-end",
+      "kind": "cable-handle",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-end",
+      "kind": "cable-handle",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.068, 0.024, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.068, 0.024, 0.997], "rotation": [0, 0, 0]}
+  ],
+  "connections": [
+    {"kind": "cable", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "rope", "socket": "anchor"}},
+    {"kind": "rope", "from": {"item": "rope", "socket": "anchor"}, "to": {"item": "left-end", "socket": "center"}},
+    {"kind": "rope", "from": {"item": "rope", "socket": "anchor"}, "to": {"item": "right-end", "socket": "center"}}
+  ],
+  "phases": [
+    {
+      "id": "pull-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-face-pull-midrange", "amount": 1}],
+      "items": {"rope": {"position": [0, 1.52313, 0.34064]}}
+    },
+    {
+      "id": "pull",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-face-pull", "amount": 1}],
+      "items": {"rope": {"position": [0, 1.56813, 0.14898]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "return-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-face-pull-midrange", "amount": 1}],
+      "items": {"rope": {"position": [0, 1.52313, 0.34064]}}
+    },
+    {
+      "id": "return",
+      "seconds": 0.8,
+      "actions": [],
+      "items": {"rope": {"position": [0, 1.47813, 0.53231]}},
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["posteriorDeltoids", "trapezius", "upperTrapezius", "rhomboids"], "secondary": ["rotatorCuff"]},
+  "camera": [140, 9]
+}

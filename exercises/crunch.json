@@ -1,0 +1,35 @@
+{
+  "eml": "1.0",
+  "id": "crunch",
+  "title": "Crunch",
+  "instructions": "Lift the shoulders by flexing the trunk while the feet remain planted, then lower the upper back.",
+  "start": {
+    "pose": "upper-floor-supine-grip-both",
+    "root": [0, -0.76713, 0.003],
+    "joints": {
+      "neck": [7.0, 0, 0],
+      "bothUpperArm": [11.11, 2.88, -5.24],
+      "bothForearm": [-53.2, -64.82, -64.73],
+      "bothHand": [123.42, 73.17, 97.29],
+      "bothThigh": [-40.82, 1.18, 1.8],
+      "bothShin": [98.54, -1.52, 0.68],
+      "bothFoot": [32.29, -3.05, -1.37]
+    }
+  },
+  "equipment": [],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.002, 0.999, 0.049], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.002, 0.999, 0.049], "rotation": [0, 0, 0]}
+  ],
+  "supports": [{"body": "pelvis", "surface": "floor"}],
+  "phases": [
+    {"id": "flex", "seconds": {"param": "phase-seconds"}, "actions": [{"use": "flex-trunk", "amount": 1}]},
+    {"id": "return", "seconds": {"param": "phase-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["abdominals"], "secondary": []},
+  "camera": [63, 17],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

@@ -1,0 +1,788 @@
+{
+  "poses": {
+    "upper-two-hand-grasp": {
+      "extends": "standing",
+      "joints": {
+        "leftThumbBase": [-5.13, -11.65, -16.22],
+        "leftThumb1": [-8.47, -16.03, -27.72],
+        "leftThumb2": [-5.8, -20.86, -25.33],
+        "leftIndex1": [-48.59, -6.98, 5.0],
+        "leftIndex2": [-63.41, -10.86, 10.13],
+        "bothIndex3": [-29.48, -5.7, 2.79],
+        "leftMiddle1": [-48.8, -4.86, 3.49],
+        "leftMiddle2": [-63.89, -4.75, 4.47],
+        "leftMiddle3": [-29.9, -2.46, 1.21],
+        "leftRing1": [-48.97, -1.92, 1.38],
+        "leftRing2": [-63.99, -1.39, 1.31],
+        "leftRing3": [-29.92, -2.26, 1.12],
+        "leftLittle1": [-48.88, 3.88, -2.79],
+        "leftLittle2": [-63.89, 4.76, -4.48],
+        "leftLittle3": [-29.81, 3.45, -1.7],
+        "rightThumbBase": [-5.53, 10.8, 16.66],
+        "rightThumb1": [-8.12, 16.7, 27.45],
+        "rightThumb2": [-5.96, 20.6, 25.49],
+        "rightIndex1": [-48.53, 7.5, -5.37],
+        "rightIndex2": [-63.36, 11.28, -10.52],
+        "rightMiddle1": [-48.78, 5.19, -3.73],
+        "rightMiddle2": [-63.93, 3.75, -3.53],
+        "rightMiddle3": [-29.7, 4.3, -2.11],
+        "rightRing1": [-48.97, 1.87, -1.35],
+        "rightRing2": [-63.97, 2.5, -2.35],
+        "rightRing3": [-29.99, 0.81, -0.4],
+        "rightLittle1": [-48.92, -3.17, 2.29],
+        "rightLittle2": [-63.62, -8.67, 8.12],
+        "rightLittle3": [-29.97, -1.29, 0.64]
+      }
+    },
+    "upper-flat-bench": {
+      "extends": "standing",
+      "root": [0, -0.33113, 0.003],
+      "joints": {
+        "pelvis": [-90.0, 0, 0],
+        "bothThigh": [15.68, -1.1, 7.16],
+        "bothShin": [53.18, -4.14, 7.48],
+        "bothFoot": [21.47, -9.79, -11.44]
+      }
+    },
+    "upper-incline-bench": {
+      "extends": "standing",
+      "root": [0, -0.33113, 0.003],
+      "joints": {
+        "pelvis": [-58.0, 0, 0],
+        "bothThigh": [-14.74, 1.18, 7.3],
+        "bothShin": [52.18, -3.2, 5.79],
+        "bothFoot": [21.08, -7.97, -11.19]
+      }
+    },
+    "upper-decline-bench": {
+      "extends": "standing",
+      "root": [0, -0.33113, 0.003],
+      "joints": {
+        "pelvis": [-107.0, 0, 0],
+        "bothThigh": [31.71, -2.27, 6.93],
+        "bothShin": [54.2, -4.76, 8.49],
+        "bothFoot": [21.29, -10.86, -11.61]
+      }
+    },
+    "supine": {
+      "extends": "standing",
+      "root": [0, -0.76113, 0.003],
+      "joints": {
+        "pelvis": [-90.0, 0, 0],
+        "bothThigh": [-9.91, -2.45, -26.32],
+        "bothShin": [19.7, -19.74, 86.84],
+        "bothFoot": [73.27, -9.84, -61.1]
+      }
+    },
+    "seated": {
+      "extends": "standing",
+      "root": [0, -0.34113, 0.018],
+      "joints": {"bothThigh": [-75.01, 4.84, 4.9], "bothShin": [86.65, -1.15, 0.58], "bothFoot": [-11.21, -6.23, -5.02]}
+    },
+    "upper-staggered-stand": {
+      "extends": "standing",
+      "root": [0, -0.06, -0.0192],
+      "joints": {
+        "pelvis": [8.0, 0, 0],
+        "leftThigh": [-36.71, 2.23, 6.34],
+        "leftShin": [32.14, 0.52, -2.18],
+        "leftFoot": [-3.29, -0.99, -4.37],
+        "rightThigh": [-9.55, -2.0, -6.85],
+        "rightShin": [33.23, -0.39, 2.03],
+        "rightFoot": [-31.41, 3.79, 3.57]
+      }
+    },
+    "upper-inclined-plank": {
+      "extends": "standing",
+      "root": [0, -0.23428, -0.30244],
+      "joints": {"pelvis": [50.6, 0, 0], "bothFoot": [11.4, 0, 0], "bothToe": [-62.0, 0, 0]}
+    },
+    "upper-kneeling-plank": {
+      "extends": "standing",
+      "root": [0, -0.6205, 0.16753],
+      "joints": {"pelvis": [61.0, 0, 0], "bothShin": [39.0, 0, 0], "bothFoot": [66.0, 0, 0]}
+    },
+    "upper-hang": {"extends": "standing", "root": [0, 0.16, 0], "joints": {"bothShin": [15.0, 0, 0]}},
+    "upper-assisted-hang": {"extends": "standing", "root": [0, 0.16, 0], "joints": {"bothShin": [67.0, 0, 0]}},
+    "upper-hip-hinge": {
+      "extends": "standing",
+      "root": [0, -0.12, -0.0384],
+      "joints": {
+        "pelvis": [57.0, 0, 0],
+        "bothThigh": [-87.6, 6.76, 5.62],
+        "bothShin": [63.51, 3.38, -5.97],
+        "bothFoot": [-32.82, -0.03, -2.21]
+      }
+    },
+    "upper-chest-support": {
+      "extends": "standing",
+      "root": [0, -0.18, -0.0576],
+      "joints": {
+        "pelvis": [55.0, 0, 0],
+        "bothThigh": [-93.72, 7.71, 5.8],
+        "bothShin": [77.55, 4.63, -6.28],
+        "bothFoot": [-38.73, -0.65, -1.84]
+      }
+    },
+    "upper-standing": {
+      "extends": "standing",
+      "root": [0, -0.035, -0.0112],
+      "joints": {"bothThigh": [-15.46, 1.03, 5.89], "bothShin": [31.72, 0.44, -2.1], "bothFoot": [-16.14, -1.91, -3.35]}
+    },
+    "upper-soft-hinge": {
+      "extends": "standing",
+      "root": [0, -0.035, -0.0112],
+      "joints": {
+        "pelvis": [15.0, 0, 0],
+        "bothThigh": [-30.19, 1.97, 5.77],
+        "bothShin": [32.06, 0.55, -2.46],
+        "bothFoot": [-16.73, -1.31, -3.33]
+      }
+    },
+    "upper-inverted-hang": {
+      "extends": "standing",
+      "root": [0, -0.63637, 0.20732],
+      "joints": {"pelvis": [-79.0, 0, 0], "bothFoot": [26.0, 0, 0]}
+    },
+    "upper-reclined-seat": {
+      "extends": "standing",
+      "root": [0, -0.34113, 0.018],
+      "joints": {
+        "chest": [-18.0, 0, 0],
+        "bothThigh": [-75.01, 4.84, 4.9],
+        "bothShin": [86.65, -1.15, 0.58],
+        "bothFoot": [-11.21, -6.23, -5.02]
+      }
+    },
+    "upper-seated-forward": {
+      "extends": "standing",
+      "root": [0, -0.34113, 0.018],
+      "joints": {
+        "pelvis": [62.0, 0, 0],
+        "neck": [-20.0, 0, 0],
+        "bothThigh": [-135.23, 15.77, 1.11],
+        "bothShin": [78.94, -6.79, 1.29],
+        "bothFoot": [-4.7, -7.73, -20.72]
+      }
+    },
+    "upper-assisted-dip-support": {
+      "extends": "standing",
+      "root": [0, 0.301, -0.008],
+      "joints": {
+        "pelvis": [10.0, 0, 0],
+        "bothThigh": [-22.54, 1.45, 5.67],
+        "bothShin": [98.57, 0.84, -5.8],
+        "bothFoot": [-13.8, -1.22, -3.53]
+      }
+    },
+    "upper-forearm-support": {
+      "extends": "standing",
+      "root": [0, -0.62577, 0.14611],
+      "joints": {
+        "pelvis": [81.97, 0, 0],
+        "bothUpperArm": [-83.4, -12.46, 8.32],
+        "bothForearm": [-79.75, -6.01, 9.78],
+        "leftHand": [-155.41, -5.67, -154.52],
+        "bothFoot": [-16.97, 0, 0],
+        "bothToe": [-65.0, 0, 0],
+        "rightHand": [-155.83, 5.59, 154.5]
+      }
+    },
+    "upper-side-forearm-support": {
+      "extends": "standing",
+      "root": [0.001, -0.51315, 0.10824],
+      "joints": {
+        "pelvis": [90.0, -12.56, -90.0],
+        "leftUpperArm": [-1.25, -1.22, 66.26],
+        "leftForearm": [103.69, 7.45, 12.58],
+        "leftHand": [4.29, 1.02, -4.06],
+        "rightUpperArm": [-37.21, 7.2, -1.12],
+        "rightForearm": [77.44, -23.31, 19.12],
+        "rightHand": [-16.4, 62.05, -49.87],
+        "rightThigh": [-31.74, 2.43, 9.51],
+        "rightShin": [45.79, -7.31, 17.43],
+        "rightFoot": [-12.33, -12.01, -26.19]
+      }
+    },
+    "upper-hollow-support": {
+      "extends": "standing",
+      "root": [0, -0.79013, 0.003],
+      "joints": {
+        "pelvis": [-68.0, 0, 0],
+        "neck": [7.0, 0, 0],
+        "bothUpperArm": [47.36, -61.3, 125.36],
+        "bothForearm": [13.97, 2.19, 0.32],
+        "bothThigh": [-40.0, 0, 0],
+        "bothShin": [6.0, 0, 0],
+        "bothFoot": [10.0, 0, 0]
+      }
+    },
+    "upper-supine-tabletop": {
+      "extends": "standing",
+      "root": [0, -0.76713, 0.003],
+      "joints": {"pelvis": [-90.0, 0, 0], "neck": [7.0, 0, 0], "bothThigh": [-84.0, 0, 0], "bothShin": [86.0, 0, 0]}
+    },
+    "quadruped": {
+      "extends": "standing",
+      "root": [0, -0.39379, -0.28999],
+      "joints": {"pelvis": [88.0, 0, 0], "bothThigh": [-88.0, 0, 0], "bothShin": [91.0, 0, 0], "bothFoot": [74.0, 0, 0]}
+    },
+    "upper-supine-tucked": {
+      "extends": "standing",
+      "root": [0, -0.76713, 0.003],
+      "joints": {"pelvis": [-90.0, 0, 0], "neck": [7.0, 0, 0], "bothThigh": [-66.0, 0, 0], "bothShin": [79.0, 0, 0]}
+    },
+    "kneeling": {
+      "extends": "standing",
+      "root": [0, -0.41694, -0.20138],
+      "joints": {"pelvis": [20.0, 0, 0], "bothThigh": [-10.0, 0, 0], "bothShin": [81.0, 0, 0], "bothFoot": [74.0, 0, 0]}
+    },
+    "upper-v-seat": {
+      "extends": "standing",
+      "root": [0, -0.81013, 0.003],
+      "joints": {
+        "pelvis": [-27.0, 0, 0],
+        "neck": [7.0, 0, 0],
+        "bothThigh": [-98.25, 2.09, 0.48],
+        "bothShin": [78.43, -0.39, -0.14],
+        "bothFoot": [46.85, -1.59, -1.52]
+      }
+    },
+    "upper-rollout-kneel": {
+      "extends": "standing",
+      "root": [0, -0.43077, -0.44532],
+      "joints": {"pelvis": [68.0, 0, 0], "bothThigh": [-89.0, 0, 0], "bothShin": [112.0, 0, 0], "bothFoot": [74.0, 0, 0]}
+    },
+    "upper-flat-bench-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.33113, 0.003],
+      "joints": {
+        "pelvis": [-90.0, 0, 0],
+        "bothThigh": [15.68, -1.1, 7.16],
+        "bothShin": [53.18, -4.14, 7.48],
+        "bothFoot": [21.47, -9.79, -11.44]
+      }
+    },
+    "upper-hip-hinge-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.12, -0.0384],
+      "joints": {
+        "pelvis": [57.0, 0, 0],
+        "bothThigh": [-87.6, 6.76, 5.62],
+        "bothShin": [63.51, 3.38, -5.97],
+        "bothFoot": [-32.82, -0.03, -2.21]
+      }
+    },
+    "upper-incline-bench-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.33113, 0.003],
+      "joints": {
+        "pelvis": [-58.0, 0, 0],
+        "bothThigh": [-14.74, 1.18, 7.3],
+        "bothShin": [52.18, -3.2, 5.79],
+        "bothFoot": [21.08, -7.97, -11.19]
+      }
+    },
+    "upper-decline-bench-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.33113, 0.003],
+      "joints": {
+        "pelvis": [-107.0, 0, 0],
+        "bothThigh": [31.71, -2.27, 6.93],
+        "bothShin": [54.2, -4.76, 8.49],
+        "bothFoot": [21.29, -10.86, -11.61]
+      }
+    },
+    "upper-floor-supine-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.76113, 0.003],
+      "joints": {
+        "pelvis": [-90.0, 0, 0],
+        "bothThigh": [-9.91, -2.45, -26.32],
+        "bothShin": [19.7, -19.74, 86.84],
+        "bothFoot": [73.27, -9.84, -61.1]
+      }
+    },
+    "upper-seated-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.34113, 0.018],
+      "joints": {"bothThigh": [-75.01, 4.84, 4.9], "bothShin": [86.65, -1.15, 0.58], "bothFoot": [-11.21, -6.23, -5.02]}
+    },
+    "upper-staggered-stand-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.06, -0.0192],
+      "joints": {
+        "pelvis": [8.0, 0, 0],
+        "leftThigh": [-36.71, 2.23, 6.34],
+        "leftShin": [32.14, 0.52, -2.18],
+        "leftFoot": [-3.29, -0.99, -4.37],
+        "rightThigh": [-9.55, -2.0, -6.85],
+        "rightShin": [33.23, -0.39, 2.03],
+        "rightFoot": [-31.41, 3.79, 3.57]
+      }
+    },
+    "upper-hang-grip-both": {"extends": "upper-two-hand-grasp", "root": [0, 0.16, 0], "joints": {"bothShin": [15.0, 0, 0]}},
+    "upper-assisted-hang-grip-both": {"extends": "upper-two-hand-grasp", "root": [0, 0.16, 0], "joints": {"bothShin": [67.0, 0, 0]}},
+    "upper-chest-support-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.18, -0.0576],
+      "joints": {
+        "pelvis": [55.0, 0, 0],
+        "bothThigh": [-93.72, 7.71, 5.8],
+        "bothShin": [77.55, 4.63, -6.28],
+        "bothFoot": [-38.73, -0.65, -1.84]
+      }
+    },
+    "upper-hip-hinge-grip-left": {
+      "extends": "upper-left-hand-grasp",
+      "root": [0, -0.12, -0.0384],
+      "joints": {
+        "pelvis": [57.0, 0, 0],
+        "bothThigh": [-87.6, 6.76, 5.62],
+        "bothShin": [63.51, 3.38, -5.97],
+        "bothFoot": [-32.82, -0.03, -2.21]
+      }
+    },
+    "upper-standing-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.035, -0.0112],
+      "joints": {"bothThigh": [-15.46, 1.03, 5.89], "bothShin": [31.72, 0.44, -2.1], "bothFoot": [-16.14, -1.91, -3.35]}
+    },
+    "upper-soft-hinge-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.035, -0.0112],
+      "joints": {
+        "pelvis": [15.0, 0, 0],
+        "bothThigh": [-30.19, 1.97, 5.77],
+        "bothShin": [32.06, 0.55, -2.46],
+        "bothFoot": [-16.73, -1.31, -3.33]
+      }
+    },
+    "upper-inverted-hang-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.63637, 0.20732],
+      "joints": {"pelvis": [-79.0, 0, 0], "bothFoot": [26.0, 0, 0]}
+    },
+    "upper-reclined-seat-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.34113, 0.018],
+      "joints": {
+        "chest": [-18.0, 0, 0],
+        "bothThigh": [-75.01, 4.84, 4.9],
+        "bothShin": [86.65, -1.15, 0.58],
+        "bothFoot": [-11.21, -6.23, -5.02]
+      }
+    },
+    "upper-seated-forward-grip-left": {
+      "extends": "upper-left-hand-grasp",
+      "root": [0, -0.34113, 0.018],
+      "joints": {
+        "pelvis": [62.0, 0, 0],
+        "neck": [-20.0, 0, 0],
+        "bothThigh": [-135.23, 15.77, 1.11],
+        "bothShin": [78.94, -6.79, 1.29],
+        "bothFoot": [-4.7, -7.73, -20.72]
+      }
+    },
+    "upper-assisted-dip-support-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, 0.301, -0.008],
+      "joints": {
+        "pelvis": [10.0, 0, 0],
+        "bothThigh": [-22.54, 1.45, 5.67],
+        "bothShin": [98.57, 0.84, -5.8],
+        "bothFoot": [-13.8, -1.22, -3.53]
+      }
+    },
+    "upper-tall-kneel-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.41694, -0.20138],
+      "joints": {"pelvis": [20.0, 0, 0], "bothThigh": [-10.0, 0, 0], "bothShin": [81.0, 0, 0], "bothFoot": [74.0, 0, 0]}
+    },
+    "upper-v-seat-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.81013, 0.003],
+      "joints": {
+        "pelvis": [-27.0, 0, 0],
+        "neck": [7.0, 0, 0],
+        "bothThigh": [-98.25, 2.09, 0.48],
+        "bothShin": [78.43, -0.39, -0.14],
+        "bothFoot": [46.85, -1.59, -1.52]
+      }
+    },
+    "upper-rollout-kneel-grip-both": {
+      "extends": "upper-two-hand-grasp",
+      "root": [0, -0.43077, -0.44532],
+      "joints": {"pelvis": [68.0, 0, 0], "bothThigh": [-89.0, 0, 0], "bothShin": [112.0, 0, 0], "bothFoot": [74.0, 0, 0]}
+    },
+    "upper-left-hand-grasp": {
+      "extends": "standing",
+      "joints": {
+        "leftThumbBase": [-5.13, -11.65, -16.22],
+        "leftThumb1": [-8.47, -16.03, -27.72],
+        "leftThumb2": [-5.8, -20.86, -25.33],
+        "leftIndex1": [-48.59, -6.98, 5.0],
+        "leftIndex2": [-63.41, -10.86, 10.13],
+        "leftIndex3": [-29.48, -5.7, 2.79],
+        "leftMiddle1": [-48.8, -4.86, 3.49],
+        "leftMiddle2": [-63.89, -4.75, 4.47],
+        "leftMiddle3": [-29.9, -2.46, 1.21],
+        "leftRing1": [-48.97, -1.92, 1.38],
+        "leftRing2": [-63.99, -1.39, 1.31],
+        "leftRing3": [-29.92, -2.26, 1.12],
+        "leftLittle1": [-48.88, 3.88, -2.79],
+        "leftLittle2": [-63.89, 4.76, -4.48],
+        "leftLittle3": [-29.81, 3.45, -1.7]
+      }
+    }
+  },
+  "motions": {
+    "horizontal-press": {
+      "joints": {
+        "bothUpperArm": [-120.08, 11.4, -4.9],
+        "bothForearm": [120.63, -6.58, -21.82],
+        "leftHand": [-3.41, 23.71, -10.46],
+        "rightHand": [-3.13, -23.73, 10.64]
+      }
+    },
+    "upper-horizontal-adduction": {"joints": {"bothUpperArm": [-77.79, -8.52, -59.87], "bothForearm": [11.88, 0.04, -14.29]}},
+    "upper-supported-push": {
+      "joints": {
+        "pelvis": [19.4, 0, 0],
+        "leftUpperArm": [77.51, -1.44, 27.7],
+        "leftForearm": [-89.37, -46.77, 2.86],
+        "leftHand": [20.05, 6.17, 25.36],
+        "bothFoot": [-19.4, 0, 0],
+        "rightUpperArm": [77.48, 1.51, -27.75],
+        "rightForearm": [-89.18, 46.79, -2.87],
+        "rightHand": [20.31, -6.18, -25.29]
+      },
+      "root": [0, -0.23107, 0.13219]
+    },
+    "upper-vertical-body-pull": {
+      "joints": {
+        "leftUpperArm": [39.98, -37.09, -64.99],
+        "leftForearm": [-114.37, 26.19, 17.76],
+        "leftHand": [104.84, -29.96, -37.5],
+        "rightUpperArm": [40.08, 37.05, 65.2],
+        "rightForearm": [-114.4, -26.5, -17.92],
+        "rightHand": [104.71, 29.89, 37.42]
+      },
+      "root": [0, 0.44592, -0.005]
+    },
+    "row-to-torso": {
+      "joints": {
+        "bothUpperArm": [101.66, 16.17, 13.2],
+        "bothForearm": [-108.21, -25.33, 4.59],
+        "leftHand": [-4.87, 3.07, 5.37],
+        "rightHand": [-4.86, -3.08, -5.31]
+      }
+    },
+    "upper-vertical-pulldown": {
+      "joints": {
+        "bothUpperArm": [20.83, -12.01, -102.63],
+        "bothForearm": [-102.91, 2.37, 4.23],
+        "leftHand": [85.73, -113.55, -24.57],
+        "rightHand": [84.84, 112.69, 23.28]
+      }
+    },
+    "upper-horizontal-abduction": {
+      "joints": {
+        "bothUpperArm": [84.88, 2.49, 58.8],
+        "bothForearm": [-6.48, 0.07, 8.91],
+        "leftHand": [52.66, 57.5, -38.07],
+        "rightHand": [54.03, -57.11, 39.6]
+      }
+    },
+    "upper-face-pull": {
+      "joints": {
+        "bothUpperArm": [91.73, -11.98, 51.8],
+        "bothForearm": [-123.77, 36.11, 50.81],
+        "bothHand": [97.19, -23.95, 24.06]
+      }
+    },
+    "upper-straight-arm-pull": {
+      "joints": {
+        "bothUpperArm": [72.87, -61.75, -69.84],
+        "bothForearm": [16.3, 3.45, -3.72],
+        "leftHand": [-33.8, -68.17, -1.37],
+        "rightHand": [-32.22, 68.35, -0.1]
+      }
+    },
+    "upper-plank-row": {
+      "joints": {
+        "pelvis": [21.0, 0, 0],
+        "bothUpperArm": [119.17, -18.15, 41.06],
+        "bothForearm": [23.2, 7.24, 149.6],
+        "bothHand": [53.71, 173.04, -14.16],
+        "bothFoot": [-9.0, 0, 0]
+      },
+      "root": [0, 0.26803, 0.10519]
+    },
+    "overhead-press": {
+      "joints": {
+        "bothClavicle": [0, 0, 16.0],
+        "bothUpperArm": [-5.13, -7.53, 75.96],
+        "bothForearm": [137.83, 13.51, 4.66],
+        "leftHand": [-47.02, -147.44, -40.57],
+        "rightHand": [-46.51, 147.1, 41.53]
+      }
+    },
+    "upper-lateral-elevation": {"joints": {"bothUpperArm": [-7.49, 2.58, 76.62], "bothForearm": [0.23, 0.41, 2.23]}},
+    "upper-anterior-elevation": {"joints": {"bothUpperArm": [-75.51, -3.98, 20.16], "bothForearm": [7.32, 1.04, -0.18]}},
+    "upper-scapular-elevation": {"joints": {"bothClavicle": [0, 0, 17.0], "bothUpperArm": [-0.01, 0.05, -17.0]}},
+    "upper-elbow-flexion": {"joints": {"bothForearm": [-122.1, -8.35, 13.3], "bothHand": [0.1, 0.24, -0.05]}},
+    "upper-elbow-extension": {"joints": {"bothForearm": [82.85, 10.08, 2.11]}},
+    "upper-overhead-elbow-flexion": {
+      "joints": {
+        "bothUpperArm": [137.67, -130.86, -38.0],
+        "bothForearm": [30.74, 22.74, -127.72],
+        "bothHand": [-34.23, 147.67, 67.02]
+      }
+    },
+    "upper-dip": {
+      "joints": {
+        "bothUpperArm": [52.27, 2.21, 12.89],
+        "leftForearm": [-95.75, -7.19, 11.12],
+        "leftHand": [-17.4, -44.23, 10.51],
+        "rightForearm": [-95.84, 7.09, -11.16],
+        "rightHand": [-13.81, 44.15, -6.53]
+      },
+      "root": [0, -0.24, 0]
+    },
+    "upper-contralateral-reach-supine-left": {
+      "joints": {"leftThigh": [69.0, 0, 0], "leftShin": [-82.0, 0, 0], "rightUpperArm": [57.73, -66.31, -135.43]}
+    },
+    "upper-contralateral-reach-supine-right": {
+      "joints": {"leftUpperArm": [57.73, 66.31, 135.43], "rightThigh": [69.0, 0, 0], "rightShin": [-82.0, 0, 0]}
+    },
+    "upper-contralateral-reach-quadruped-left": {
+      "joints": {
+        "leftUpperArm": [26.33, 41.66, 110.84],
+        "leftForearm": [41.93, 22.2, 56.55],
+        "leftHand": [-43.95, -102.98, -57.08],
+        "rightThigh": [82.0, 0, 0],
+        "rightShin": [-88.0, 0, 0]
+      }
+    },
+    "upper-contralateral-reach-quadruped-right": {
+      "joints": {
+        "leftThigh": [82.0, 0, 0],
+        "leftShin": [-88.0, 0, 0],
+        "rightUpperArm": [26.31, -41.56, -110.8],
+        "rightForearm": [42.12, -22.27, -56.71],
+        "rightHand": [-43.73, 103.0, 57.39]
+      }
+    },
+    "flex-trunk": {
+      "joints": {
+        "spine": [16.0, 0, 0],
+        "chest": [16.0, 0, 0],
+        "bothUpperArm": [-7.28, -2.22, 6.78],
+        "bothForearm": [19.66, 4.55, -17.21],
+        "bothHand": [-88.56, -10.18, -96.27]
+      }
+    },
+    "upper-hanging-knee-lift": {"joints": {"bothThigh": [-80.0, 0, 0], "bothShin": [88.0, 0, 0]}},
+    "upper-anti-rotation-press": {
+      "joints": {
+        "bothUpperArm": [-49.67, -11.38, -2.67],
+        "bothForearm": [-22.96, 41.38, 91.51],
+        "bothHand": [28.77, 31.5, -64.69]
+      }
+    },
+    "upper-trunk-rotation": {
+      "joints": {
+        "pelvis": [8.0, -25.48, 0],
+        "chest": [1.88, -23.42, 1.42],
+        "leftUpperArm": [25.56, -12.82, -62.87],
+        "leftForearm": [99.21, -15.48, -48.78],
+        "leftHand": [-129.97, -59.31, 51.48],
+        "leftThigh": [-1.03, 6.09, 9.55],
+        "leftShin": [0.64, 13.52, -11.48],
+        "leftFoot": [-4.93, 14.19, 0.57],
+        "rightUpperArm": [4.49, -20.55, -86.21],
+        "rightForearm": [9.93, -6.58, 1.73],
+        "rightHand": [7.06, -31.44, 108.97],
+        "rightThigh": [-15.23, 3.89, 9.88],
+        "rightShin": [0.73, 13.27, -10.86],
+        "rightFoot": [4.17, 13.39, 0.29]
+      }
+    },
+    "upper-trunk-rotation-seated-left": {
+      "joints": {
+        "chest": [0, 24.0, 0],
+        "leftUpperArm": [-14.78, -0.98, 4.73],
+        "leftForearm": [5.81, 6.71, -1.91],
+        "leftHand": [-4.88, 9.52, -21.18],
+        "rightUpperArm": [16.04, -2.74, 8.27],
+        "rightForearm": [-7.53, 4.16, -6.37],
+        "rightHand": [-0.75, 16.62, -12.57]
+      }
+    },
+    "upper-trunk-rotation-seated-right": {
+      "joints": {
+        "chest": [0, -24.0, 0],
+        "leftUpperArm": [16.04, 2.74, -8.27],
+        "leftForearm": [-7.53, -4.16, 6.37],
+        "leftHand": [-0.75, -16.62, 12.57],
+        "rightUpperArm": [-14.78, 0.98, -4.73],
+        "rightForearm": [5.81, -6.71, 1.91],
+        "rightHand": [-4.88, -9.52, 21.18]
+      }
+    },
+    "upper-kneeling-rollout": {
+      "joints": {
+        "pelvis": [19.0, 0, 0],
+        "leftUpperArm": [-50.25, 36.82, 22.45],
+        "leftForearm": [-0.29, 1.4, 5.58],
+        "leftHand": [-5.52, -25.42, 0.38],
+        "bothThigh": [56.0, 0, 0],
+        "bothShin": [-75.0, 0, 0],
+        "rightUpperArm": [-50.18, -36.96, -22.42],
+        "rightForearm": [-0.33, -1.36, -5.51],
+        "rightHand": [-5.55, 25.5, -0.37]
+      },
+      "root": [0, -0.14067, 0.51134]
+    },
+    "upper-horizontal-press-midrange": {
+      "joints": {
+        "bothUpperArm": [-59.16, 7.88, 8.39],
+        "bothForearm": [30.33, -12.18, -7.25],
+        "leftHand": [-35.04, -4.55, 13.89],
+        "rightHand": [-34.57, 4.43, -13.22]
+      }
+    },
+    "upper-horizontal-adduction-midrange": {
+      "joints": {
+        "bothUpperArm": [-46.66, 14.78, -20.73],
+        "bothForearm": [2.74, -1.53, -9.08],
+        "leftHand": [7.37, 25.9, 42.06],
+        "rightHand": [7.79, -25.79, -41.97]
+      }
+    },
+    "upper-supported-push-midrange": {
+      "joints": {
+        "pelvis": [9.7, 0, 0],
+        "leftUpperArm": [38.84, 4.23, 8.43],
+        "leftForearm": [-66.08, -18.07, 7.53],
+        "leftHand": [-17.51, 0.62, 18.52],
+        "bothFoot": [-9.7, 0, 0],
+        "rightUpperArm": [38.8, -4.2, -8.41],
+        "rightForearm": [-65.99, 17.98, -7.62],
+        "rightHand": [-17.42, -0.68, -18.44]
+      },
+      "root": [0, -0.10993, 0.0759]
+    },
+    "upper-vertical-pulldown-midrange": {
+      "joints": {
+        "bothUpperArm": [10.62, -12.47, -61.66],
+        "bothForearm": [-51.95, 40.58, 58.28],
+        "leftHand": [49.22, -39.24, -44.89],
+        "rightHand": [50.37, 38.86, 46.16]
+      }
+    },
+    "upper-shoulder-extension-row-midrange": {
+      "joints": {"bothUpperArm": [83.37, 6.81, -5.11], "bothForearm": [-116.94, -18.71, 14.85], "bothHand": [32.28, -6.44, 13.53]}
+    },
+    "upper-horizontal-abduction-midrange": {
+      "joints": {
+        "bothUpperArm": [37.48, 18.72, 38.47],
+        "bothForearm": [-4.74, -0.47, 3.69],
+        "leftHand": [37.37, 27.87, -28.79],
+        "rightHand": [38.58, -27.51, 30.03]
+      }
+    },
+    "upper-face-pull-midrange": {
+      "joints": {"bothUpperArm": [42.9, 11.02, 42.13], "bothForearm": [-82.95, -29.82, 12.72], "bothHand": [52.59, -22.63, 33.06]}
+    },
+    "upper-straight-arm-pull-midrange": {
+      "joints": {
+        "bothUpperArm": [11.5, -58.49, -49.2],
+        "bothForearm": [12.99, 2.56, -4.84],
+        "leftHand": [-28.36, -54.84, -3.43],
+        "rightHand": [-26.83, 55.01, 2.04]
+      }
+    },
+    "upper-plank-row-midrange": {
+      "joints": {
+        "pelvis": [10.5, 0, 0],
+        "bothUpperArm": [46.7, 8.46, 30.58],
+        "bothForearm": [-93.03, 13.19, 25.85],
+        "bothHand": [60.82, 45.26, 24.11],
+        "bothFoot": [-4.5, 0, 0]
+      },
+      "root": [0, 0.13885, 0.04028]
+    },
+    "upper-overhead-press-midrange": {
+      "joints": {
+        "bothClavicle": [0, 0, 8.0],
+        "bothUpperArm": [-1.81, -3.67, 34.26],
+        "bothForearm": [84.89, 57.04, 67.92],
+        "leftHand": [18.65, -108.49, -90.51],
+        "rightHand": [19.69, 108.73, 92.3]
+      }
+    },
+    "upper-elbow-flexion-midrange": {"joints": {"bothForearm": [-60.59, -8.13, 4.09], "bothHand": [0.03, 0.09, -0.02]}},
+    "upper-elbow-extension-midrange": {"joints": {"bothForearm": [41.71, 2.21, -7.17], "bothHand": [-0.44, -1.14, 0.23]}},
+    "upper-overhead-elbow-flexion-midrange": {
+      "joints": {"bothUpperArm": [43.15, -45.23, 28.92], "bothForearm": [47.6, -14.68, 53.01], "bothHand": [-71.2, -52.04, 5.23]}
+    },
+    "upper-contralateral-reach-supine-left-midrange": {
+      "joints": {"leftThigh": [34.5, 0, 0], "leftShin": [-41.0, 0, 0], "rightUpperArm": [-36.77, -18.42, -14.92]}
+    },
+    "upper-contralateral-reach-supine-right-midrange": {
+      "joints": {"leftUpperArm": [-36.77, 18.42, 14.92], "rightThigh": [34.5, 0, 0], "rightShin": [-41.0, 0, 0]}
+    },
+    "upper-contralateral-reach-quadruped-left-midrange": {
+      "joints": {
+        "leftUpperArm": [-37.14, 14.32, 18.95],
+        "leftForearm": [0.4, 8.15, 11.22],
+        "leftHand": [-51.18, -11.98, 9.83],
+        "rightThigh": [41.0, 0, 0],
+        "rightShin": [-44.0, 0, 0]
+      }
+    },
+    "upper-contralateral-reach-quadruped-right-midrange": {
+      "joints": {
+        "leftThigh": [41.0, 0, 0],
+        "leftShin": [-44.0, 0, 0],
+        "rightUpperArm": [-37.14, -14.31, -18.96],
+        "rightForearm": [0.41, -8.19, -11.24],
+        "rightHand": [-51.18, 11.91, -9.79]
+      }
+    },
+    "upper-trunk-rotation-midrange": {
+      "joints": {
+        "pelvis": [4.0, -12.74, 0],
+        "chest": [1.0, -11.76, -0.12],
+        "leftUpperArm": [27.45, -6.59, -24.73],
+        "leftForearm": [39.61, -67.99, -66.83],
+        "leftHand": [-61.45, -87.7, 46.05],
+        "leftThigh": [-1.3, 3.02, 5.13],
+        "leftShin": [1.41, 6.7, -5.76],
+        "leftFoot": [-2.61, 7.19, 0.51],
+        "rightUpperArm": [5.06, -16.75, -60.59],
+        "rightForearm": [-7.38, 23.26, 21.94],
+        "rightHand": [42.77, -9.22, 55.04],
+        "rightThigh": [-8.25, 1.28, 4.9],
+        "rightShin": [1.33, 6.62, -5.46],
+        "rightFoot": [1.98, 6.66, -0.02]
+      }
+    },
+    "upper-kneeling-rollout-midrange": {
+      "joints": {
+        "pelvis": [9.5, 0, 0],
+        "leftUpperArm": [-19.69, 4.77, 7.59],
+        "leftForearm": [-0.17, 0.21, 0.92],
+        "leftHand": [11.06, -5.15, -0.88],
+        "bothThigh": [28.0, 0, 0],
+        "bothShin": [-37.5, 0, 0],
+        "rightUpperArm": [-19.61, -4.8, -7.58],
+        "rightForearm": [-0.33, -0.17, -0.89],
+        "rightHand": [10.97, 5.14, 0.84]
+      },
+      "root": [0, 0.01663, 0.28033]
+    }
+  }
+}

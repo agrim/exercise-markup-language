@@ -1,0 +1,66 @@
+{
+  "eml": "1.0",
+  "id": "barbell-curl",
+  "title": "Barbell Curl",
+  "instructions": "With both hands supinated on one bar, flex the elbows and lower the bar without swinging the torso.",
+  "start": {
+    "pose": "upper-standing-grip-both",
+    "root": [0, -0.025, -0.008],
+    "joints": {
+      "bothUpperArm": [-6.23, -1.5, -8.62],
+      "bothForearm": [7.56, 1.17, -0.16],
+      "leftHand": [0.14, -2.62, 20.45],
+      "bothThigh": [-12.74, 0.84, 5.74],
+      "bothShin": [26.27, 0.31, -1.89],
+      "bothFoot": [-13.43, -1.6, -3.55],
+      "rightHand": [0.12, 3.52, -20.48]
+    }
+  },
+  "equipment": [
+    {
+      "id": "weight",
+      "kind": "barbell",
+      "position": [0.00037, 0.78194, 0.10311],
+      "sockets": {"leftGrip": [0.19289, 7e-05, -7e-05], "rightGrip": [-0.19289, -7e-05, 7e-05]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.068, 0.019, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.068, 0.019, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "weight", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "weight", "socket": "rightGrip"}}
+  ],
+  "phases": [
+    {
+      "id": "curl-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-elbow-flexion-midrange", "amount": 1}],
+      "items": {"weight": {"position": [0.00037, 1.0204, 0.33277]}}
+    },
+    {
+      "id": "curl",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-elbow-flexion", "amount": 1}],
+      "items": {"weight": {"position": [0.00037, 1.33687, 0.23558]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "extend-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-elbow-flexion-midrange", "amount": 1}],
+      "items": {"weight": {"position": [0.00037, 1.0204, 0.33277]}}
+    },
+    {
+      "id": "extend",
+      "seconds": 0.8,
+      "actions": [],
+      "items": {"weight": {"position": [0.00037, 0.78194, 0.10311]}},
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["biceps"], "secondary": ["forearms"]},
+  "camera": [32, 9]
+}

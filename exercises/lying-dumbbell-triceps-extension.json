@@ -1,0 +1,52 @@
+{
+  "eml": "1.0",
+  "id": "lying-dumbbell-triceps-extension",
+  "title": "Lying Dumbbell Triceps Extension",
+  "instructions": "Lie on the bench with a dumbbell in each hand. Keep upper arms raised while bending and extending the elbows.",
+  "start": {
+    "pose": "upper-flat-bench-grip-both",
+    "joints": {"bothUpperArm": [-96.35, -7.16, 16.15], "bothForearm": [8.74, 1.41, 0.42]}
+  },
+  "equipment": [
+    {"id": "bench", "kind": "bench", "position": [0, 0, -0.32]},
+    {
+      "id": "left-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.088, 0.749, 0.657], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.088, 0.749, 0.657], "rotation": [0, 0, 0]}
+  ],
+  "supports": [{"body": "chest", "surface": "bench"}],
+  "phases": [
+    {
+      "id": "lower",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "upper-overhead-elbow-flexion", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-96.35, -7.16, 16.15],
+          "bothForearm": [-76.14, 6.02, 20.01],
+          "leftHand": [0, 0, 0],
+          "rightHand": [0, 0, 0]
+        }
+      }
+    },
+    {"id": "extend", "seconds": {"param": "phase-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["triceps"], "secondary": []},
+  "camera": [32, 9],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

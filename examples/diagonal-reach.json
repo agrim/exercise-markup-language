@@ -1,0 +1,21 @@
+{
+  "eml": "1.0",
+  "id": "diagonal-reach",
+  "title": "Diagonal reach and look",
+  "instructions": "Stand with feet apart. Reach the right hand across the chest toward the left and look toward it. Return.",
+  "definitions": {
+    "poses": {"ready": {"extends": "standing", "joints": {"rightForearm": {"x": -22}}}},
+    "motions": {"look-and-turn": {"actions": [{"use": "turn-head", "amount": 0.4}], "joints": {"chest": {"y": 8}}}}
+  },
+  "start": {"pose": "ready", "stance": {"width": {"of":"shoulder-width","factor":1.0}, "toeOut":"slight-out"}},
+  "phases": [
+    {"id": "reach", "seconds": 1.4, "actions": [{"use": "look-and-turn"}],
+     "contacts": [{"effector": "leftHeel", "target": "start"},{"effector":"rightHeel","target":"start"},
+                  {"effector":"rightPalm","target":{"point":[0.11,1.24,0.25]},"engage":"reach"}]},
+    {"id":"return","seconds":1.4,"actions":[],
+     "contacts":[{"effector":"leftHeel","target":"start"},{"effector":"rightHeel","target":"start"},
+                 {"effector":"rightPalm","target":"start","engage":"reach"}]}
+  ],
+  "repeat":{"mode":"loop","count":3},
+  "muscles":{"primary":["anteriorDeltoids"],"secondary":["obliques"]}
+}

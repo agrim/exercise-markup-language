@@ -1,0 +1,56 @@
+{
+  "eml": "1.0",
+  "id": "pallof-press",
+  "title": "Pallof Press",
+  "instructions": "Stand side-on to the cable. Press the handle forward from the chest and return it while maintaining trunk orientation.",
+  "start": {
+    "pose": "upper-standing-grip-both",
+    "root": [0, -0.04, -0.0128],
+    "joints": {
+      "bothUpperArm": [-4.4, -0.86, 0.91],
+      "bothForearm": [-7.83, -59.42, -116.48],
+      "bothHand": [6.02, -35.13, 100.88],
+      "bothThigh": [-15.45, 2.1, 9.28],
+      "bothShin": [31.48, 0.11, -1.56],
+      "bothFoot": [-15.62, -3.83, -6.96]
+    }
+  },
+  "equipment": [
+    {"id": "station", "kind": "cable-machine", "position": [0.98, 0, 0.12], "sockets": {"anchor": [0, 1.22, 0]}},
+    {
+      "id": "grip",
+      "kind": "cable-handle",
+      "position": [0, 1.23313, 0.1472],
+      "sockets": {"leftGrip": [0.027, 0, 0], "rightGrip": [-0.027, 0, 0]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.066, 0.03, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.066, 0.03, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
+  ],
+  "connections": [
+    {"kind": "cable", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "grip", "socket": "center"}}
+  ],
+  "phases": [
+    {
+      "id": "press",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "upper-anti-rotation-press", "amount": 1}],
+      "items": {"grip": {"position": [0, 1.23313, 0.4972]}}
+    },
+    {
+      "id": "return",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [],
+      "items": {"grip": {"position": [0, 1.23313, 0.1472]}}
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["abdominals", "obliques"], "secondary": []},
+  "camera": [63, 17],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

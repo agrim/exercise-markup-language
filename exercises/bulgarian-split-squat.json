@@ -1,0 +1,98 @@
+{
+  "eml": "1.0",
+  "id": "bulgarian-split-squat",
+  "title": "Bulgarian Split Squat",
+  "instructions": "Place the right foot on the bench behind you, keep the left foot planted in front, and lower the rear knee before standing.",
+  "start": {
+    "pose": "split-stance"
+  },
+  "equipment": [
+    {
+      "id": "bench",
+      "kind": "bench",
+      "position": [
+        -0.13,
+        0,
+        -0.4
+      ],
+      "rotation": [
+        0,
+        90,
+        0
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.13,
+          0.003,
+          0.29
+        ]
+      },
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.13,
+          0.44,
+          -0.38
+        ]
+      },
+      "pole": [
+        -0.1,
+        0,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "lower",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-split-lower",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "stand",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondary": [
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "camera": [
+    -74,
+    11
+  ],
+  "supports": [
+    {
+      "body": "rightFoot",
+      "surface": "bench"
+    }
+  ]
+}

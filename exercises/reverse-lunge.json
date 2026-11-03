@@ -1,0 +1,435 @@
+{
+  "eml": "1.0",
+  "id": "reverse-lunge",
+  "title": "Reverse Lunge",
+  "instructions": "Keep the left foot in place, take the right foot back, lower the rear knee, then step the right foot forward.",
+  "start": {
+    "pose": "lower-ready",
+    "stance": {
+      "width": 0.26,
+      "toeOut": 4
+    }
+  },
+  "equipment": [],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.145,
+          0.003,
+          0.1
+        ]
+      },
+      "pole": [
+        0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        5,
+        0
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.145,
+          0.003,
+          0.1
+        ]
+      },
+      "pole": [
+        -0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        -5,
+        0
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "set",
+      "seconds": 0.13,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-out",
+      "seconds": 0.45,
+      "actions": [
+        {
+          "use": "lower-reverse-flight",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.087,
+              -0.11
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    },
+    {
+      "id": "plant",
+      "seconds": 0.37,
+      "actions": [
+        {
+          "use": "lower-reverse-plant",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              -0.32
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    },
+    {
+      "id": "lower",
+      "seconds": 0.85,
+      "actions": [
+        {
+          "use": "lower-reverse-depth",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              -0.32
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rise",
+      "seconds": 0.8,
+      "actions": [
+        {
+          "use": "lower-reverse-plant",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              -0.32
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recover",
+      "seconds": 0.53,
+      "actions": [
+        {
+          "use": "lower-reverse-flight",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.087,
+              -0.11
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    },
+    {
+      "id": "stand",
+      "seconds": 0.4,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "camera": [
+    59,
+    10
+  ]
+}

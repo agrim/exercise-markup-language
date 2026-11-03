@@ -1,0 +1,56 @@
+{
+  "eml": "1.0",
+  "id": "dumbbell-floor-press",
+  "title": "Dumbbell Floor Press",
+  "instructions": "Support the back on the floor and start with the upper arms near floor level. Press both dumbbells upward.",
+  "start": {
+    "pose": "upper-floor-supine-grip-both",
+    "joints": {
+      "bothUpperArm": [-7.1, 0.11, 40.55],
+      "bothForearm": [-93.35, -13.57, 6.53],
+      "leftHand": [-167.52, -40.85, -171.8],
+      "rightHand": [-168.05, 40.04, 171.65]
+    }
+  },
+  "equipment": [
+    {
+      "id": "left-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.918, 0.328, 0.222], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.918, 0.328, 0.222], "rotation": [0, 0, 0]}
+  ],
+  "supports": [{"body": "pelvis", "surface": "floor"}],
+  "phases": [
+    {
+      "id": "press",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "horizontal-press", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-76.42, 5.32, 30.23],
+          "bothForearm": [-2.94, -1.25, -3.67],
+          "leftHand": [-146.97, -21.07, -196.81],
+          "rightHand": [-147.54, 20.35, 196.39]
+        }
+      }
+    },
+    {"id": "lower", "seconds": {"param": "phase-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["pectorals", "upperPectorals", "triceps"], "secondary": ["anteriorDeltoids"]},
+  "camera": [119, 32],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "eml": "1.0",
+  "id": "reverse-crunch",
+  "title": "Reverse Crunch",
+  "instructions": "Maintain the bent knees and roll the pelvis toward the ribs, then unroll to the start.",
+  "start": {
+    "pose": "upper-supine-tucked",
+    "joints": {"bothUpperArm": [3.94, 0.29, 8.08], "bothForearm": [15.24, 1.92, -9.91]}
+  },
+  "equipment": [],
+  "supports": [{"body": "chest", "surface": "floor"}],
+  "phases": [
+    {
+      "id": "flex",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "flex-trunk", "amount": 1}],
+      "detail": {
+        "joints": {
+          "pelvis": [-117.0, 0, 0],
+          "spine": [13.5, 0, 0],
+          "chest": [13.5, 0, 0],
+          "bothUpperArm": [3.94, 0.29, 8.08],
+          "bothForearm": [15.24, 1.92, -9.91],
+          "bothThigh": [-65.0, 0, 0],
+          "bothShin": [85.0, 0, 0],
+          "leftHand": [0, 0, 0],
+          "rightHand": [0, 0, 0]
+        },
+        "root": [0, -0.68316, -0.01789]
+      }
+    },
+    {"id": "return", "seconds": {"param": "phase-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["abdominals"], "secondary": ["hipFlexors"]},
+  "camera": [63, 17],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

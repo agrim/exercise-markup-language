@@ -1,0 +1,108 @@
+{
+  "eml": "1.0",
+  "id": "band-pull-apart",
+  "title": "Band Pull-Apart",
+  "instructions": "Start with the band stretched between the hands at shoulder height. Move both arms apart, then bring them forward.",
+  "start": {
+    "pose": "lower-arms-front",
+    "stance": {
+      "width": 0.32,
+      "toeOut": 5
+    }
+  },
+  "equipment": [
+    {
+      "id": "left-end",
+      "kind": "resistance-band",
+      "follow": {
+        "joint": "leftHand",
+        "offset": [
+          0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    },
+    {
+      "id": "right-end",
+      "kind": "resistance-band",
+      "follow": {
+        "joint": "rightHand",
+        "offset": [
+          -0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": "floor",
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": "floor",
+      "pole": [
+        -0.1,
+        0,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "open",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-horizontal-open",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "posteriorDeltoids",
+      "trapezius",
+      "upperTrapezius",
+      "rhomboids"
+    ],
+    "secondary": []
+  },
+  "camera": [
+    139,
+    13
+  ],
+  "connections": [
+    {
+      "kind": "band",
+      "from": {
+        "item": "left-end",
+        "socket": "center"
+      },
+      "to": {
+        "item": "right-end",
+        "socket": "center"
+      }
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "eml": "1.0",
+  "id": "leg-press",
+  "title": "Leg Press",
+  "instructions": "Sit against the inclined backrest with both feet on the sled. Let the sled approach as the knees bend, then press it away along the guide.",
+  "start": {
+    "pose": "lower-sled-seat"
+  },
+  "equipment": [
+    {
+      "id": "machine",
+      "kind": "leg-press-machine",
+      "position": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "sled",
+      "kind": "footplate",
+      "position": [
+        0,
+        0.85,
+        0.65
+      ],
+      "rotation": [
+        32,
+        0,
+        0
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "item": "sled",
+        "socket": "leftFoot"
+      },
+      "pole": [
+        0.15,
+        1,
+        0.1
+      ],
+      "rotation": [
+        32,
+        0,
+        0
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "item": "sled",
+        "socket": "rightFoot"
+      },
+      "pole": [
+        -0.15,
+        1,
+        0.1
+      ],
+      "rotation": [
+        32,
+        0,
+        0
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "lower-sled",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-sled-lower",
+          "amount": 1
+        }
+      ],
+      "items": {
+        "sled": {
+          "position": [
+            0,
+            0.63,
+            0.43
+          ]
+        }
+      }
+    },
+    {
+      "id": "press",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ]
+  },
+  "camera": [
+    45,
+    12
+  ],
+  "supports": [
+    {
+      "body": "pelvis",
+      "surface": "machine"
+    }
+  ]
+}

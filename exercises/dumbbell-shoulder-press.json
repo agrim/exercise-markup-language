@@ -1,0 +1,80 @@
+{
+  "eml": "1.0",
+  "id": "dumbbell-shoulder-press",
+  "title": "Dumbbell Shoulder Press",
+  "instructions": "From the seat, press the two independent dumbbells overhead from shoulder height.",
+  "start": {
+    "pose": "upper-seated-grip-both",
+    "joints": {
+      "bothUpperArm": [10.08, -5.04, 60.29],
+      "bothForearm": [-130.7, -10.23, 13.98],
+      "leftHand": [-133.97, -58.14, -104.74],
+      "rightHand": [-134.47, 58.08, 104.65]
+    }
+  },
+  "equipment": [
+    {"id": "seat", "kind": "upright-bench", "position": [0, 0, 0]},
+    {"id": "left-load", "kind": "dumbbell", "rotation": [15.14, 9.18, 159.36], "position": [0.25857, 1.0876, 0.18029]},
+    {
+      "id": "right-load",
+      "kind": "dumbbell",
+      "rotation": [-52.84, 9.9, 20.49],
+      "position": [-0.25855, 1.08739, 0.18092]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "left-load", "socket": "center"}, "pole": [0.76, -0.15, -0.48]},
+    {"effector": "rightGrip", "target": {"item": "right-load", "socket": "center"}, "pole": [-0.76, -0.15, -0.48]}
+  ],
+  "supports": [{"body": "pelvis", "surface": "seat"}],
+  "phases": [
+    {
+      "id": "press-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-overhead-press-midrange", "amount": 1}],
+      "detail": {"joints": {"leftHand": [-102.09, -169.3, -213.53], "rightHand": [-102.5, 169.27, 213.61]}},
+      "items": {
+        "left-load": {"position": [0.24607, 1.37571, 0.16279], "rotation": [15.14, 9.18, 159.36]},
+        "right-load": {"position": [-0.24605, 1.37551, 0.16342], "rotation": [-52.84, 9.9, 20.49]}
+      }
+    },
+    {
+      "id": "press",
+      "seconds": 0.8,
+      "actions": [{"use": "overhead-press", "amount": 1}],
+      "detail": {"joints": {"leftHand": [-171.99, -192.87, -183.52], "rightHand": [-172.41, 192.79, 183.52]}},
+      "ease": "ease-out",
+      "items": {
+        "left-load": {"position": [0.23357, 1.6852, 0.04529], "rotation": [15.14, 9.18, 159.36]},
+        "right-load": {"position": [-0.23355, 1.685, 0.04592], "rotation": [-52.84, 9.9, 20.49]}
+      }
+    },
+    {
+      "id": "lower-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-overhead-press-midrange", "amount": 1}],
+      "detail": {"joints": {"leftHand": [-102.09, -169.3, -213.53], "rightHand": [-102.5, 169.27, 213.61]}},
+      "items": {
+        "left-load": {"position": [0.24607, 1.37571, 0.16279], "rotation": [15.14, 9.18, 159.36]},
+        "right-load": {"position": [-0.24605, 1.37551, 0.16342], "rotation": [-52.84, 9.9, 20.49]}
+      }
+    },
+    {
+      "id": "lower",
+      "seconds": 0.8,
+      "actions": [],
+      "ease": "ease-out",
+      "items": {
+        "left-load": {"position": [0.25857, 1.0876, 0.18029], "rotation": [15.14, 9.18, 159.36]},
+        "right-load": {"position": [-0.25855, 1.08739, 0.18092], "rotation": [-52.84, 9.9, 20.49]}
+      }
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["anteriorDeltoids", "lateralDeltoids"], "secondary": ["triceps"]},
+  "camera": [32, 9]
+}

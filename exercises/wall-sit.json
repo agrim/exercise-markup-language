@@ -1,0 +1,87 @@
+{
+  "eml": "1.0",
+  "id": "wall-sit",
+  "title": "Wall Sit",
+  "instructions": "Rest the back against the wall, plant the feet ahead of the pelvis, and hold the seated position.",
+  "start": {
+    "pose": "lower-wall-seat"
+  },
+  "equipment": [
+    {
+      "id": "wall",
+      "kind": "wall",
+      "position": [
+        0,
+        0,
+        -0.15
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.13,
+          0.003,
+          0.44
+        ]
+      },
+      "pole": [
+        0.12,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.13,
+          0.003,
+          0.44
+        ]
+      },
+      "pole": [
+        -0.12,
+        0,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "hold",
+      "seconds": 5,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "hold",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps"
+    ],
+    "secondary": [
+      "glutes",
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "camera": [
+    45,
+    12
+  ],
+  "supports": [
+    {
+      "body": "chest",
+      "surface": "wall"
+    },
+    {
+      "body": "pelvis",
+      "surface": "wall"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exercise-markup-language"
+version = "1.0.0"
+description = "Portable exercise instructions, anatomy profile and reference compiler"
+requires-python = ">=3.11"
+dependencies = ["jsonschema>=4.18,<5"]
+readme = "README.md"
+
+[project.urls]
+Repository = "https://github.com/agrim/exercise-markup-language"
+
+[project.scripts]
+eml = "eml.__main__:main"
+
+[tool.setuptools]
+packages = ["eml"]
+
+[tool.setuptools.data-files]
+"share/exercise-markup-language" = ["interface.json", "LICENSE"]
+"share/exercise-markup-language/schema" = ["schema/*.json"]
+"share/exercise-markup-language/library" = ["library/*.json"]
+"share/exercise-markup-language/exercises" = ["exercises/*.json"]
+"share/exercise-markup-language/examples" = ["examples/*.json"]
+"share/exercise-markup-language/anatomy" = ["anatomy/model.json", "anatomy/vertices.bin", "anatomy/indices.bin", "anatomy/ATTRIBUTION.md"]
+"share/exercise-markup-language/docs" = ["docs/specification.md", "docs/authoring.md"]
+"share/exercise-markup-language/tests/fixtures" = ["tests/fixtures/portable-vector.json"]

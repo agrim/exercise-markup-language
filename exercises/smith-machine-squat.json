@@ -1,0 +1,121 @@
+{
+  "eml": "1.0",
+  "id": "smith-machine-squat",
+  "title": "Smith Machine Squat",
+  "instructions": "Keep the bar on the vertical guides, with the feet slightly forward. Bend both knees, then drive the carriage back up.",
+  "start": {
+    "pose": "lower-back-rack",
+    "stance": {
+      "width": 0.35,
+      "toeOut": 12
+    }
+  },
+  "equipment": [
+    {
+      "id": "guides",
+      "kind": "smith-machine",
+      "position": [
+        0,
+        0,
+        -0.065
+      ]
+    },
+    {
+      "id": "bar",
+      "kind": "barbell",
+      "position": [
+        0,
+        1.38,
+        -0.065
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": "floor",
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": "floor",
+      "pole": [
+        -0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "bar",
+        "socket": "leftGrip"
+      },
+      "pole": [
+        0.7,
+        -0.6,
+        -0.7
+      ]
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "bar",
+        "socket": "rightGrip"
+      },
+      "pole": [
+        -0.7,
+        -0.6,
+        -0.7
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "descend",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "squat-down",
+          "amount": 1
+        }
+      ],
+      "items": {
+        "bar": {
+          "position": [
+            0,
+            1.04,
+            -0.065
+          ]
+        }
+      }
+    },
+    {
+      "id": "stand",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondary": [
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "camera": [
+    44,
+    10
+  ]
+}

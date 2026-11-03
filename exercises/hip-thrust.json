@@ -1,0 +1,146 @@
+{
+  "eml": "1.0",
+  "id": "hip-thrust",
+  "title": "Hip Thrust",
+  "instructions": "Rest the upper back across the bench and steady the padded bar over the pelvis. Drive through both feet to extend the hips.",
+  "start": {
+    "pose": "lower-thrust"
+  },
+  "equipment": [
+    {
+      "id": "bench",
+      "kind": "bench",
+      "position": [
+        0,
+        0,
+        -0.33
+      ],
+      "rotation": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "load",
+      "kind": "barbell",
+      "follow": {
+        "joint": "pelvis",
+        "offset": [
+          0,
+          0.037,
+          0.08
+        ]
+      }
+    },
+    {
+      "id": "pad",
+      "kind": "bar-pad",
+      "follow": {
+        "joint": "pelvis",
+        "offset": [
+          0,
+          0.037,
+          0.08
+        ]
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.143,
+          0.003,
+          0.555
+        ]
+      },
+      "pole": [
+        0.1,
+        1,
+        0.25
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.143,
+          0.003,
+          0.555
+        ]
+      },
+      "pole": [
+        -0.1,
+        1,
+        0.25
+      ]
+    },
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "load",
+        "socket": "leftGrip"
+      },
+      "pole": [
+        0.7,
+        -0.6,
+        0.3
+      ]
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "load",
+        "socket": "rightGrip"
+      },
+      "pole": [
+        -0.7,
+        -0.6,
+        0.3
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "lift",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-thrust-raise",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "lower",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "camera": [
+    55,
+    15
+  ],
+  "supports": [
+    {
+      "body": "chest",
+      "surface": "bench"
+    }
+  ]
+}

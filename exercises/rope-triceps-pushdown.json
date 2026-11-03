@@ -1,0 +1,62 @@
+{
+  "eml": "1.0",
+  "id": "rope-triceps-pushdown",
+  "title": "Rope Triceps Pushdown",
+  "instructions": "Extend the elbows below the high cable. Separate the rope ends slightly as the arms straighten.",
+  "start": {
+    "pose": "upper-standing-grip-both",
+    "root": [0, -0.025, -0.008],
+    "joints": {
+      "bothUpperArm": [-9.17, -2.15, -5.85],
+      "bothForearm": [-75.19, -7.8, 7.52],
+      "bothThigh": [-12.74, 0.84, 5.74],
+      "bothShin": [26.27, 0.31, -1.89],
+      "bothFoot": [-13.43, -1.6, -3.55]
+    }
+  },
+  "equipment": [
+    {"id": "station", "kind": "cable-machine", "position": [0, 0, 0.57], "sockets": {"anchor": [0, 2.07, 0]}},
+    {"id": "rope", "kind": "rope-attachment", "position": [0, 1.24304, 0.42771]},
+    {
+      "id": "left-end",
+      "kind": "cable-handle",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-end",
+      "kind": "cable-handle",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.068, 0.019, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.068, 0.019, 0.997], "rotation": [0, 0, 0]}
+  ],
+  "connections": [
+    {"kind": "cable", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "rope", "socket": "anchor"}},
+    {"kind": "rope", "from": {"item": "rope", "socket": "anchor"}, "to": {"item": "left-end", "socket": "center"}},
+    {"kind": "rope", "from": {"item": "rope", "socket": "anchor"}, "to": {"item": "right-end", "socket": "center"}}
+  ],
+  "phases": [
+    {
+      "id": "press-down",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "upper-elbow-extension", "amount": 1}],
+      "items": {"rope": {"position": [0, 0.87298, 0.20673]}}
+    },
+    {
+      "id": "return",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [],
+      "items": {"rope": {"position": [0, 1.24304, 0.42771]}}
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["triceps"], "secondary": []},
+  "camera": [115, 9],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

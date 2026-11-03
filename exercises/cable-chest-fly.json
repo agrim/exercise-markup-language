@@ -1,0 +1,79 @@
+{
+  "eml": "1.0",
+  "id": "cable-chest-fly",
+  "title": "Cable Chest Fly",
+  "instructions": "Stand between two pulleys. Bring the cable grips forward and together in an arc while holding the staggered stance.",
+  "start": {
+    "pose": "upper-staggered-stand-grip-both",
+    "joints": {
+      "bothUpperArm": [-11.42, 4.07, 79.26],
+      "bothForearm": [-5.48, -0.26, 2.62],
+      "leftHand": [-10.25, 15.25, -69.17],
+      "rightHand": [-10.94, -14.53, 68.94]
+    }
+  },
+  "equipment": [
+    {"id": "left-pulley", "kind": "cable-machine", "position": [0.87, 0, -0.35], "sockets": {"anchor": [0, 1.5, 0]}},
+    {"id": "right-pulley", "kind": "cable-machine", "position": [-0.87, 0, -0.35], "sockets": {"anchor": [0, 1.5, 0]}},
+    {
+      "id": "left-load",
+      "kind": "cable-handle",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-load",
+      "kind": "cable-handle",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.049, 0.249, 0.967], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.093, -0.225, 0.97], "rotation": [0, 0, 0]}
+  ],
+  "connections": [
+    {
+      "kind": "cable",
+      "from": {"item": "left-pulley", "socket": "anchor"},
+      "to": {"item": "left-load", "socket": "center"}
+    },
+    {
+      "kind": "cable",
+      "from": {"item": "right-pulley", "socket": "anchor"},
+      "to": {"item": "right-load", "socket": "center"}
+    }
+  ],
+  "phases": [
+    {
+      "id": "close-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-horizontal-adduction-midrange", "amount": 1}]
+    },
+    {
+      "id": "close",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-horizontal-adduction", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-96.45, -1.77, 21.23],
+          "bothForearm": [5.84, -0.91, -13.71],
+          "leftHand": [10.43, 18.67, 27.52],
+          "rightHand": [10.41, -17.77, -27.38]
+        }
+      },
+      "ease": "ease-out"
+    },
+    {
+      "id": "open-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-horizontal-adduction-midrange", "amount": 1}]
+    },
+    {"id": "open", "seconds": 0.8, "actions": [], "ease": "ease-out"}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["pectorals", "upperPectorals"], "secondary": ["anteriorDeltoids"]},
+  "camera": [32, 17]
+}

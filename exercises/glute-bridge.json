@@ -1,0 +1,83 @@
+{
+  "eml": "1.0",
+  "id": "glute-bridge",
+  "title": "Glute Bridge",
+  "instructions": "Lie on the back, bend both knees and plant the feet. Raise the pelvis while the shoulders stay down.",
+  "start": {
+    "pose": "lower-bridge"
+  },
+  "equipment": [],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.143,
+          0.003,
+          0.54
+        ]
+      },
+      "pole": [
+        0.1,
+        1,
+        0.25
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.143,
+          0.003,
+          0.54
+        ]
+      },
+      "pole": [
+        -0.1,
+        1,
+        0.25
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "lift",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-bridge-raise",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "lower",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "camera": [
+    55,
+    15
+  ],
+  "supports": [
+    {
+      "body": "chest",
+      "surface": "floor"
+    }
+  ]
+}

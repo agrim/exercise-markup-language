@@ -1,0 +1,70 @@
+{
+  "eml": "1.0",
+  "id": "dumbbell-chest-fly",
+  "title": "Dumbbell Chest Fly",
+  "instructions": "With elbows softly bent, arc two dumbbells above the chest and reopen the arms.",
+  "start": {
+    "pose": "upper-flat-bench-grip-both",
+    "joints": {"bothUpperArm": [-11.49, 3.98, 78.0], "bothForearm": [-5.3, -0.77, 0.31]}
+  },
+  "equipment": [
+    {"id": "bench", "kind": "bench", "position": [0, 0, -0.32]},
+    {
+      "id": "left-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.088, 0.749, 0.657], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.088, 0.749, 0.657], "rotation": [0, 0, 0]}
+  ],
+  "supports": [{"body": "chest", "surface": "bench"}],
+  "phases": [
+    {
+      "id": "close-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-horizontal-adduction-midrange", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-56.42, 15.86, 54.24],
+          "bothForearm": [-1.57, -1.87, -8.09],
+          "leftHand": [0, 0, 0],
+          "rightHand": [0, 0, 0]
+        }
+      }
+    },
+    {
+      "id": "close",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-horizontal-adduction", "amount": 1}],
+      "ease": "ease-out"
+    },
+    {
+      "id": "open-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-horizontal-adduction-midrange", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-56.42, 15.86, 54.24],
+          "bothForearm": [-1.57, -1.87, -8.09],
+          "leftHand": [0, 0, 0],
+          "rightHand": [0, 0, 0]
+        }
+      }
+    },
+    {"id": "open", "seconds": 0.8, "actions": [], "ease": "ease-out"}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["pectorals", "upperPectorals"], "secondary": ["anteriorDeltoids"]},
+  "camera": [119, 32]
+}

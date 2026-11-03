@@ -1,0 +1,98 @@
+{
+  "eml": "1.0",
+  "id": "kettlebell-overhead-press",
+  "title": "Kettlebell Overhead Press",
+  "instructions": "Begin with one bell racked at the left shoulder. Press overhead while keeping the trunk steady, then return the bell to the rack.",
+  "start": {
+    "pose": "lower-rack-left",
+    "stance": {
+      "width": 0.3,
+      "toeOut": 8
+    }
+  },
+  "equipment": [
+    {
+      "id": "bell",
+      "kind": "kettlebell",
+      "follow": {
+        "joint": "leftHand",
+        "offset": [
+          0.01,
+          -0.162,
+          0.05
+        ],
+        "grip": true
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": "floor",
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": "floor",
+      "pole": [
+        -0.1,
+        0,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "press",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-single-overhead-drive",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "rack",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "anteriorDeltoids",
+      "lateralDeltoids"
+    ],
+    "secondary": [
+      "triceps",
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "sideFocus": {
+    "groups": [
+      "lateralDeltoids",
+      "anteriorDeltoids",
+      "triceps"
+    ],
+    "intervals": [
+      {
+        "start": 0,
+        "end": 1,
+        "side": "left"
+      }
+    ]
+  },
+  "camera": [
+    28,
+    8
+  ]
+}

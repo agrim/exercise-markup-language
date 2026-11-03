@@ -1,0 +1,489 @@
+{
+  "eml": "1.0",
+  "id": "goblet-carry",
+  "title": "Goblet Carry",
+  "instructions": "Carry the bell against the chest with both hands. Alternate the supporting foot through an in-place gait cycle.",
+  "start": {
+    "pose": "goblet-hold",
+    "stance": {
+      "width": 0.26,
+      "toeOut": 5
+    }
+  },
+  "equipment": [
+    {
+      "id": "bell",
+      "kind": "kettlebell",
+      "follow": {
+        "joint": "chest",
+        "offset": [
+          0,
+          0.13,
+          0.17
+        ]
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.145,
+          0.003,
+          0.1
+        ]
+      },
+      "pole": [
+        0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        5,
+        0
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.145,
+          0.003,
+          0.1
+        ]
+      },
+      "pole": [
+        -0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        -5,
+        0
+      ]
+    },
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "bell",
+        "socket": "leftGrip"
+      },
+      "pole": [
+        0.7,
+        -0.6,
+        0.3
+      ]
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "bell",
+        "socket": "rightGrip"
+      },
+      "pole": [
+        -0.7,
+        -0.6,
+        0.3
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "set",
+      "seconds": 0.13,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        },
+        {
+          "effector": "leftGrip",
+          "target": {
+            "item": "bell",
+            "socket": "leftGrip"
+          },
+          "pole": [
+            0.7,
+            -0.6,
+            0.3
+          ]
+        },
+        {
+          "effector": "rightGrip",
+          "target": {
+            "item": "bell",
+            "socket": "rightGrip"
+          },
+          "pole": [
+            -0.7,
+            -0.6,
+            0.3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "swing-left",
+      "seconds": 0.51,
+      "actions": [
+        {
+          "use": "lower-stride-left",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.11,
+              0.25
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        },
+        {
+          "effector": "leftGrip",
+          "target": {
+            "item": "bell",
+            "socket": "leftGrip"
+          },
+          "pole": [
+            0.7,
+            -0.6,
+            0.3
+          ]
+        },
+        {
+          "effector": "rightGrip",
+          "target": {
+            "item": "bell",
+            "socket": "rightGrip"
+          },
+          "pole": [
+            -0.7,
+            -0.6,
+            0.3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stance-left",
+      "seconds": 0.515,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        },
+        {
+          "effector": "leftGrip",
+          "target": {
+            "item": "bell",
+            "socket": "leftGrip"
+          },
+          "pole": [
+            0.7,
+            -0.6,
+            0.3
+          ]
+        },
+        {
+          "effector": "rightGrip",
+          "target": {
+            "item": "bell",
+            "socket": "rightGrip"
+          },
+          "pole": [
+            -0.7,
+            -0.6,
+            0.3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "swing-right",
+      "seconds": 0.51,
+      "actions": [
+        {
+          "use": "lower-stride-right",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.11,
+              0.25
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "leftGrip",
+          "target": {
+            "item": "bell",
+            "socket": "leftGrip"
+          },
+          "pole": [
+            0.7,
+            -0.6,
+            0.3
+          ]
+        },
+        {
+          "effector": "rightGrip",
+          "target": {
+            "item": "bell",
+            "socket": "rightGrip"
+          },
+          "pole": [
+            -0.7,
+            -0.6,
+            0.3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stance-right",
+      "seconds": 0.515,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "leftGrip",
+          "target": {
+            "item": "bell",
+            "socket": "leftGrip"
+          },
+          "pole": [
+            0.7,
+            -0.6,
+            0.3
+          ]
+        },
+        {
+          "effector": "rightGrip",
+          "target": {
+            "item": "bell",
+            "socket": "rightGrip"
+          },
+          "pole": [
+            -0.7,
+            -0.6,
+            0.3
+          ]
+        }
+      ]
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "abdominals",
+      "obliques",
+      "trapezius",
+      "upperTrapezius",
+      "rhomboids"
+    ],
+    "secondary": [
+      "biceps",
+      "triceps",
+      "forearms",
+      "quadriceps",
+      "glutes",
+      "hamstrings"
+    ]
+  },
+  "camera": [
+    30,
+    8
+  ]
+}

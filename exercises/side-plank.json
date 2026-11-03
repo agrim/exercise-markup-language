@@ -1,0 +1,24 @@
+{
+  "eml": "1.0",
+  "id": "side-plank",
+  "title": "Side Plank",
+  "instructions": "Support the left forearm and the lateral edge of the lower foot. Hold the pelvis elevated and the trunk aligned.",
+  "start": {"pose": "upper-side-forearm-support"},
+  "equipment": [],
+  "supports": [{"body": "leftForearm", "surface": "floor"}, {"body": "leftFoot", "surface": "floor"}],
+  "phases": [
+    {"id": "hold", "seconds": {"param": "hold-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "hold", "count": 1},
+  "muscles": {"primary": ["obliques", "abdominals"], "secondary": ["anteriorDeltoids", "lateralDeltoids", "glutes"]},
+  "camera": [-41, 17],
+  "sideFocus": {
+    "groups": ["obliques", "anteriorDeltoids", "lateralDeltoids"],
+    "intervals": [
+      {"start": 0, "end": 1, "side": "left"}
+    ]
+  },
+  "parameters": {
+    "hold-seconds": {"default": 5, "min": 0.2, "max": 120}
+  }
+}

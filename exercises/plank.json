@@ -1,0 +1,22 @@
+{
+  "eml": "1.0",
+  "id": "plank",
+  "title": "Plank",
+  "instructions": "Support the forearms and forefeet on the floor. Keep the trunk extended throughout the timed hold.",
+  "start": {"pose": "upper-forearm-support"},
+  "equipment": [],
+  "contacts": [
+    {"effector": "leftBall", "target": "start", "pole": [-0.33, -0.934, 0.136], "rotation": [65.0, 0, 0]},
+    {"effector": "rightBall", "target": "start", "pole": [0.33, -0.934, 0.136], "rotation": [65.0, 0, 0]}
+  ],
+  "supports": [{"body": "bothForearm", "surface": "floor"}],
+  "phases": [
+    {"id": "hold", "seconds": {"param": "hold-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "hold", "count": 1},
+  "muscles": {"primary": ["abdominals", "obliques"], "secondary": ["anteriorDeltoids", "glutes"]},
+  "camera": [64, 17],
+  "parameters": {
+    "hold-seconds": {"default": 5, "min": 0.2, "max": 120}
+  }
+}

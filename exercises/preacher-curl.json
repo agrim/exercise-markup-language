@@ -1,0 +1,69 @@
+{
+  "eml": "1.0",
+  "id": "preacher-curl",
+  "title": "Preacher Curl",
+  "instructions": "Support both upper arms on the preacher pad. Curl the EZ bar toward the shoulders and lower.",
+  "start": {
+    "pose": "upper-seated-grip-both",
+    "joints": {
+      "bothUpperArm": [-33.32, -8.29, -5.53],
+      "bothForearm": [13.36, 2.09, 0.23],
+      "leftHand": [1.32, 0.43, 19.83],
+      "rightHand": [1.29, 0.47, -19.84]
+    }
+  },
+  "equipment": [
+    {"id": "seat", "kind": "preacher-bench", "position": [0, 0, 0]},
+    {
+      "id": "weight",
+      "kind": "ez-bar",
+      "position": [0.00037, 0.56221, 0.36296],
+      "sockets": {"leftGrip": [0.19107, 4e-05, -9e-05], "rightGrip": [-0.19107, -4e-05, 9e-05]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "weight", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "weight", "socket": "rightGrip"}}
+  ],
+  "supports": [{"body": "pelvis", "surface": "seat"}, {"body": "bothUpperArm", "surface": "seat"}],
+  "phases": [
+    {
+      "id": "curl-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-elbow-flexion-midrange", "amount": 1}],
+      "detail": {"joints": {"bothForearm": [-47.2, -4.57, 5.93]}},
+      "items": {"weight": {"position": [0.00037, 0.86892, 0.48857]}}
+    },
+    {
+      "id": "curl",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-elbow-flexion", "amount": 1}],
+      "detail": {
+        "joints": {"bothForearm": [-108.27, -3.49, 14.24], "leftHand": [0.85, -0.81, 20.08], "rightHand": [0.82, 1.7, -20.09]}
+      },
+      "items": {"weight": {"position": [0.00037, 1.12738, 0.28105]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "extend-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-elbow-flexion-midrange", "amount": 1}],
+      "detail": {"joints": {"bothForearm": [-47.2, -4.57, 5.93]}},
+      "items": {"weight": {"position": [0.00037, 0.86892, 0.48857]}}
+    },
+    {
+      "id": "extend",
+      "seconds": 0.8,
+      "actions": [],
+      "items": {"weight": {"position": [0.00037, 0.56221, 0.36296]}},
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["biceps"], "secondary": ["forearms"]},
+  "camera": [32, 9]
+}

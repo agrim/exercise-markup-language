@@ -1,0 +1,141 @@
+{
+  "eml": "1.0",
+  "id": "front-squat",
+  "title": "Front Squat",
+  "instructions": "Rack the bar across the front shoulders and keep the elbows forward while lowering and standing.",
+  "start": {
+    "pose": "lower-front-rack",
+    "stance": {
+      "width": {
+        "param": "stance-width-m"
+      },
+      "toeOut": {
+        "param": "toe-out-deg"
+      }
+    }
+  },
+  "equipment": [
+    {
+      "id": "bar",
+      "kind": "barbell",
+      "follow": {
+        "joint": "chest",
+        "offset": [
+          0,
+          0.275,
+          0.072
+        ]
+      }
+    },
+    {
+      "id": "rack",
+      "kind": "squat-rack",
+      "position": [
+        0,
+        0,
+        -0.48
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": "floor",
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": "floor",
+      "pole": [
+        -0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "bar",
+        "socket": "leftGrip"
+      },
+      "pole": [
+        0.7,
+        -0.6,
+        0.3
+      ]
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "bar",
+        "socket": "rightGrip"
+      },
+      "pole": [
+        -0.7,
+        -0.6,
+        0.3
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "descend",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "squat-upright",
+          "amount": {
+            "param": "depth"
+          }
+        }
+      ]
+    },
+    {
+      "id": "stand",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondary": [
+      "abdominals",
+      "obliques",
+      "trapezius",
+      "upperTrapezius",
+      "rhomboids"
+    ]
+  },
+  "camera": [
+    44,
+    10
+  ],
+  "parameters": {
+    "stance-width-m": {
+      "min": 0.21,
+      "max": 0.49,
+      "default": 0.35
+    },
+    "toe-out-deg": {
+      "min": 0,
+      "max": 23,
+      "default": 12
+    },
+    "depth": {
+      "min": 0.55,
+      "max": 1.12,
+      "default": 1
+    }
+  }
+}

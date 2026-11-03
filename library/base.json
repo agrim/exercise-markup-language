@@ -1,0 +1,8 @@
+{
+  "poses": {"standing": {}},
+  "motions": {
+    "bend-elbows": {"joints": {"bothForearm": [-90, 0, 0]}},
+    "turn-head": {"joints": {"head": [0, 45, 0]}},
+    "raise-arms-forward": {"joints": {"bothUpperArm": [-90, 0, 0]}}
+  }
+}

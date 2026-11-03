@@ -1,0 +1,60 @@
+{
+  "eml": "1.0",
+  "id": "incline-bench-press",
+  "title": "Incline Bench Press",
+  "instructions": "Brace against the inclined pad and press the bar vertically over the upper chest.",
+  "start": {
+    "pose": "upper-incline-bench-grip-both",
+    "joints": {
+      "bothUpperArm": [19.84, -1.8, 28.49],
+      "bothForearm": [-117.01, 26.45, 26.77],
+      "leftHand": [-139.25, -53.56, 168.7],
+      "rightHand": [-140.32, 52.9, -169.5]
+    }
+  },
+  "equipment": [
+    {"id": "bench", "kind": "incline-bench", "position": [0, 0, 0]},
+    {"id": "rack", "kind": "rack", "position": [0, 0, -0.4]},
+    {
+      "id": "weight",
+      "kind": "barbell",
+      "position": [-0.00037, 0.96149, -0.29197],
+      "sockets": {"leftGrip": [0.27886, 2e-05, -0.00034], "rightGrip": [-0.27886, -2e-05, 0.00034]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.084, 0.741, 0.667], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.084, 0.741, 0.667], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "weight", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "weight", "socket": "rightGrip"}}
+  ],
+  "supports": [{"body": "chest", "surface": "bench"}],
+  "phases": [
+    {
+      "id": "press",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "horizontal-press", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-93.19, 23.04, 45.8],
+          "bothForearm": [-4.28, -0.26, 1.92],
+          "leftHand": [-135.09, -38.58, 153.48],
+          "rightHand": [-135.93, 37.96, -154.16]
+        }
+      },
+      "items": {"weight": {"position": [-0.00037, 1.3955, -0.41197]}}
+    },
+    {
+      "id": "lower",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [],
+      "items": {"weight": {"position": [-0.00037, 0.96149, -0.29197]}}
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["upperPectorals"], "secondary": ["triceps", "anteriorDeltoids"]},
+  "camera": [119, 32],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

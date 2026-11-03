@@ -1,0 +1,1165 @@
+{
+  "eml": "1.0",
+  "id": "burpee",
+  "title": "Burpee",
+  "instructions": "Crouch to place the hands on the floor, send both feet back, perform a push-up, tuck the feet forward, then stand.",
+  "start": {
+    "pose": "lower-ready",
+    "stance": {
+      "width": 0.24,
+      "toeOut": 3
+    },
+    "joints": {
+      "bothToe": [
+        -24,
+        0,
+        0
+      ]
+    }
+  },
+  "equipment": [],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.145,
+          0.003,
+          0.1
+        ]
+      },
+      "pole": [
+        0.1,
+        1.5,
+        1
+      ],
+      "rotation": [
+        24,
+        0,
+        0
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.145,
+          0.003,
+          0.1
+        ]
+      },
+      "pole": [
+        -0.1,
+        1.5,
+        1
+      ],
+      "rotation": [
+        24,
+        0,
+        0
+      ]
+    },
+    {
+      "effector": "leftPalm",
+      "target": {
+        "point": [
+          0.24,
+          0.86,
+          0.04
+        ]
+      },
+      "pole": [
+        0.3,
+        0,
+        -0.6
+      ],
+      "rotation": [
+        -66,
+        -9,
+        -172
+      ]
+    },
+    {
+      "effector": "rightPalm",
+      "target": {
+        "point": [
+          -0.24,
+          0.86,
+          0.04
+        ]
+      },
+      "pole": [
+        -0.3,
+        0,
+        -0.6
+      ],
+      "rotation": [
+        -66,
+        9,
+        172
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "set",
+      "seconds": 0.13,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.24,
+              0.86,
+              0.04
+            ]
+          },
+          "pole": [
+            0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.24,
+              0.86,
+              0.04
+            ]
+          },
+          "pole": [
+            -0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fold",
+      "seconds": 0.5,
+      "actions": [
+        {
+          "use": "lower-burpee-crouch",
+          "amount": 0.52
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.212,
+              0.555,
+              0.315
+            ]
+          },
+          "pole": [
+            0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.212,
+              0.555,
+              0.315
+            ]
+          },
+          "pole": [
+            -0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ],
+          "engage": "reach"
+        }
+      ]
+    },
+    {
+      "id": "plant-palms",
+      "seconds": 0.45,
+      "actions": [
+        {
+          "use": "lower-burpee-crouch",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            -0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ],
+          "engage": "reach"
+        }
+      ]
+    },
+    {
+      "id": "float-back",
+      "seconds": 0.405,
+      "actions": [
+        {
+          "use": "lower-burpee-crouch",
+          "amount": 0.5
+        },
+        {
+          "use": "lower-burpee-plank",
+          "amount": 0.5
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.125,
+              0.14,
+              -0.24
+            ]
+          },
+          "pole": [
+            0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.125,
+              0.14,
+              -0.24
+            ]
+          },
+          "pole": [
+            -0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            -0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ]
+    },
+    {
+      "id": "land-back",
+      "seconds": 0.405,
+      "actions": [
+        {
+          "use": "lower-burpee-plank",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.109,
+              0.003,
+              -0.777
+            ]
+          },
+          "pole": [
+            0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.109,
+              0.003,
+              -0.777
+            ]
+          },
+          "pole": [
+            -0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            -0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lower-chest",
+      "seconds": 0.65,
+      "actions": [
+        {
+          "use": "lower-burpee-plank",
+          "amount": 1
+        },
+        {
+          "use": "lower-pushup-lower",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.109,
+              0.003,
+              -0.777
+            ]
+          },
+          "pole": [
+            0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.109,
+              0.003,
+              -0.777
+            ]
+          },
+          "pole": [
+            -0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            -0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ],
+      "detail": {
+        "root": [
+          0,
+          -0.67659,
+          -0.05263
+        ]
+      }
+    },
+    {
+      "id": "press-up",
+      "seconds": 0.65,
+      "actions": [
+        {
+          "use": "lower-burpee-plank",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.109,
+              0.003,
+              -0.777
+            ]
+          },
+          "pole": [
+            0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.109,
+              0.003,
+              -0.777
+            ]
+          },
+          "pole": [
+            -0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            -0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ]
+    },
+    {
+      "id": "float-forward",
+      "seconds": 0.455,
+      "actions": [
+        {
+          "use": "lower-burpee-crouch",
+          "amount": 0.5
+        },
+        {
+          "use": "lower-burpee-plank",
+          "amount": 0.5
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.125,
+              0.14,
+              -0.24
+            ]
+          },
+          "pole": [
+            0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.125,
+              0.14,
+              -0.24
+            ]
+          },
+          "pole": [
+            -0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            -0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ]
+    },
+    {
+      "id": "land-forward",
+      "seconds": 0.455,
+      "actions": [
+        {
+          "use": "lower-burpee-crouch",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.46
+            ]
+          },
+          "pole": [
+            -0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unfold",
+      "seconds": 0.715,
+      "actions": [
+        {
+          "use": "lower-burpee-crouch",
+          "amount": 0.52
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.212,
+              0.555,
+              0.315
+            ]
+          },
+          "pole": [
+            0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.212,
+              0.555,
+              0.315
+            ]
+          },
+          "pole": [
+            -0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ],
+          "engage": "reach"
+        }
+      ]
+    },
+    {
+      "id": "stand",
+      "seconds": 0.715,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            1.5,
+            1
+          ],
+          "rotation": [
+            24,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.24,
+              0.86,
+              0.04
+            ]
+          },
+          "pole": [
+            0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.24,
+              0.86,
+              0.04
+            ]
+          },
+          "pole": [
+            -0.3,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ],
+          "engage": "reach"
+        }
+      ]
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps",
+      "glutes",
+      "hamstrings",
+      "pectorals",
+      "upperPectorals",
+      "abdominals",
+      "obliques"
+    ],
+    "secondary": [
+      "anteriorDeltoids",
+      "triceps"
+    ]
+  },
+  "camera": [
+    62,
+    14
+  ]
+}

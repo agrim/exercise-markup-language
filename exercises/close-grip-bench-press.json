@@ -1,0 +1,60 @@
+{
+  "eml": "1.0",
+  "id": "close-grip-bench-press",
+  "title": "Close-Grip Bench Press",
+  "instructions": "Hold one bar with a narrower grip. Extend the elbows while keeping the hands on their assigned grip points.",
+  "start": {
+    "pose": "upper-flat-bench-grip-both",
+    "joints": {
+      "bothUpperArm": [16.54, -4.5, 45.06],
+      "bothForearm": [-129.09, -65.85, -3.15],
+      "leftHand": [-161.8, -0.34, -126.29],
+      "rightHand": [-162.22, -0.45, 126.09]
+    }
+  },
+  "equipment": [
+    {"id": "bench", "kind": "bench", "position": [0, 0, -0.32]},
+    {"id": "rack", "kind": "rack", "position": [0, 0, -0.4]},
+    {
+      "id": "weight",
+      "kind": "barbell",
+      "position": [-0.00037, 0.68533, -0.37288],
+      "sockets": {"leftGrip": [0.15886, 2e-05, -0.00034], "rightGrip": [-0.15886, -2e-05, 0.00034]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.088, 0.749, 0.657], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.088, 0.749, 0.657], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "weight", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "weight", "socket": "rightGrip"}}
+  ],
+  "supports": [{"body": "chest", "surface": "bench"}],
+  "phases": [
+    {
+      "id": "press",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "horizontal-press", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-84.49, -4.75, 17.51],
+          "bothForearm": [-1.23, -1.51, -6.67],
+          "leftHand": [-156.31, -11.85, -179.69],
+          "rightHand": [-156.79, 11.08, 179.41]
+        }
+      },
+      "items": {"weight": {"position": [-0.00037, 1.13834, -0.49288]}}
+    },
+    {
+      "id": "lower",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [],
+      "items": {"weight": {"position": [-0.00037, 0.68533, -0.37288]}}
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["triceps", "pectorals", "upperPectorals"], "secondary": ["anteriorDeltoids"]},
+  "camera": [119, 32],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

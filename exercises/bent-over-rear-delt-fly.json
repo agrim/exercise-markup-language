@@ -1,0 +1,81 @@
+{
+  "eml": "1.0",
+  "id": "bent-over-rear-delt-fly",
+  "title": "Bent-Over Rear Delt Fly",
+  "instructions": "Keep the hips hinged. Sweep each dumbbell outward while keeping the elbows softly bent.",
+  "start": {
+    "pose": "upper-hip-hinge-grip-both",
+    "joints": {
+      "pelvis": [58.0, 0, 0],
+      "bothUpperArm": [-58.22, -8.47, 7.34],
+      "bothForearm": [1.01, 0.72, 3.24],
+      "bothThigh": [-88.62, 6.86, 5.6]
+    }
+  },
+  "equipment": [
+    {
+      "id": "left-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.066, 0.043, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.066, 0.043, 0.997], "rotation": [0, 0, 0]}
+  ],
+  "phases": [
+    {
+      "id": "open-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-horizontal-abduction-midrange", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-36.35, 5.45, 42.18],
+          "bothForearm": [3.12, 1.8, 8.52],
+          "leftHand": [0, 0, 0],
+          "rightHand": [0, 0, 0]
+        }
+      }
+    },
+    {
+      "id": "open",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-horizontal-abduction", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-0.56, -1.56, 68.45],
+          "bothForearm": [8.08, 2.58, 12.19],
+          "leftHand": [0, 0, 0],
+          "rightHand": [0, 0, 0]
+        }
+      },
+      "ease": "ease-out"
+    },
+    {
+      "id": "return-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-horizontal-abduction-midrange", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-36.35, 5.45, 42.18],
+          "bothForearm": [3.12, 1.8, 8.52],
+          "leftHand": [0, 0, 0],
+          "rightHand": [0, 0, 0]
+        }
+      }
+    },
+    {"id": "return", "seconds": 0.8, "actions": [], "ease": "ease-out"}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["posteriorDeltoids"], "secondary": ["trapezius", "upperTrapezius", "rhomboids"]},
+  "camera": [32, 9]
+}

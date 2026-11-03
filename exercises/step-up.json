@@ -1,0 +1,310 @@
+{
+  "eml": "1.0",
+  "id": "step-up",
+  "title": "Step-Up",
+  "instructions": "Place the left foot on the step and keep it planted. Extend the left hip and knee, bring the right foot up, then lower the right foot first.",
+  "start": {
+    "pose": "lower-step"
+  },
+  "equipment": [
+    {
+      "id": "platform",
+      "kind": "step",
+      "position": [
+        0,
+        0.17,
+        0.3
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.14,
+          0.282,
+          0.27
+        ]
+      },
+      "pole": [
+        0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        5,
+        0
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.14,
+          0.003,
+          0.067
+        ]
+      },
+      "pole": [
+        -0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        -5,
+        0
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "set",
+      "seconds": 0.13,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.14,
+              0.282,
+              0.27
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.14,
+              0.003,
+              0.067
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rise",
+      "seconds": 1.05,
+      "actions": [
+        {
+          "use": "lower-step-drive",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.14,
+              0.282,
+              0.27
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.14,
+              0.329,
+              0.2
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ],
+      "detail": {
+        "root": [
+          0.06,
+          0.235,
+          0.12
+        ]
+      }
+    },
+    {
+      "id": "bring-up",
+      "seconds": 0.46,
+      "actions": [
+        {
+          "use": "lower-step-drive",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.14,
+              0.282,
+              0.27
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.14,
+              0.282,
+              0.27
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ],
+      "detail": {
+        "root": [
+          0.06,
+          0.26,
+          0.12
+        ]
+      }
+    },
+    {
+      "id": "step-down",
+      "seconds": 1.89,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.14,
+              0.282,
+              0.27
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.14,
+              0.003,
+              0.067
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondary": [
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "sideFocus": {
+    "groups": [
+      "quadriceps",
+      "glutes"
+    ],
+    "intervals": [
+      {
+        "start": 0,
+        "end": 1,
+        "side": "left"
+      }
+    ]
+  },
+  "camera": [
+    59,
+    10
+  ]
+}

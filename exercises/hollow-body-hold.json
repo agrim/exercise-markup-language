@@ -1,0 +1,18 @@
+{
+  "eml": "1.0",
+  "id": "hollow-body-hold",
+  "title": "Hollow Body Hold",
+  "instructions": "Support the back on the floor. Hold the legs and arms clear of the floor while maintaining the hollow shape.",
+  "start": {"pose": "upper-hollow-support"},
+  "equipment": [],
+  "supports": [{"body": "pelvis", "surface": "floor"}],
+  "phases": [
+    {"id": "hold", "seconds": {"param": "hold-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "hold", "count": 1},
+  "muscles": {"primary": ["abdominals"], "secondary": ["hipFlexors"]},
+  "camera": [63, 17],
+  "parameters": {
+    "hold-seconds": {"default": 5, "min": 0.2, "max": 120}
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "eml": "1.0",
+  "id": "single-arm-dumbbell-row",
+  "title": "Single-Arm Dumbbell Row",
+  "instructions": "Keep the right palm on the bench. Row the dumbbell with the left arm and return it to the hanging position.",
+  "start": {
+    "pose": "upper-hip-hinge-grip-left",
+    "root": [0, -0.22, -0.0704],
+    "joints": {
+      "leftUpperArm": [-49.76, -11.11, -1.68],
+      "leftForearm": [-5.1, -0.76, 0.25],
+      "leftHand": [32.5, 7.58, 3.29],
+      "bothThigh": [-100.75, 8.71, 5.79],
+      "bothShin": [85.88, 5.69, -6.63],
+      "bothFoot": [-42.05, -0.73, -1.68],
+      "rightUpperArm": [-36.33, 1.54, -19.14],
+      "rightForearm": [-42.41, 10.94, 5.37],
+      "rightHand": [-96.46, 34.12, 169.44]
+    }
+  },
+  "equipment": [
+    {"id": "bench", "kind": "bench", "position": [-0.26, 0, 0.24], "sockets": {"support": [0, 0.451, 0.24]}},
+    {
+      "id": "left-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.059, 0.104, 0.993], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.059, 0.104, 0.993], "rotation": [0, 0, 0]},
+    {
+      "effector": "rightPalm",
+      "target": {"item": "bench", "socket": "support"},
+      "pole": [-0.531, 0.022, -0.847],
+      "rotation": [-73.64, 10.29, -177.0]
+    }
+  ],
+  "phases": [
+    {
+      "id": "row-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-shoulder-extension-row-midrange", "amount": 1}],
+      "detail": {
+        "joints": {
+          "leftUpperArm": [3.3, 0.67, -0.31],
+          "leftForearm": [-85.62, -17.28, 2.08],
+          "leftHand": [59.68, 7.59, 11.41],
+          "rightUpperArm": [-36.33, 1.54, -19.14],
+          "rightForearm": [-42.41, 10.94, 5.37],
+          "rightHand": [-96.46, 34.12, 169.44]
+        }
+      }
+    },
+    {
+      "id": "row",
+      "seconds": 0.8,
+      "actions": [{"use": "row-to-torso", "amount": 1}],
+      "detail": {
+        "joints": {
+          "leftHand": [37.18, 4.2, 9.35],
+          "rightUpperArm": [-36.33, 1.54, -19.14],
+          "rightForearm": [-42.41, 10.94, 5.37],
+          "rightHand": [-96.46, 34.12, 169.44]
+        }
+      },
+      "ease": "ease-out"
+    },
+    {
+      "id": "extend-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-shoulder-extension-row-midrange", "amount": 1}],
+      "detail": {
+        "joints": {
+          "leftUpperArm": [3.3, 0.67, -0.31],
+          "leftForearm": [-85.62, -17.28, 2.08],
+          "leftHand": [59.68, 7.59, 11.41],
+          "rightUpperArm": [-36.33, 1.54, -19.14],
+          "rightForearm": [-42.41, 10.94, 5.37],
+          "rightHand": [-96.46, 34.12, 169.44]
+        }
+      }
+    },
+    {"id": "extend", "seconds": 0.8, "actions": [], "ease": "ease-out"}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {
+    "primary": ["lats", "trapezius", "rhomboids"],
+    "secondary": ["biceps", "posteriorDeltoids", "abdominals", "obliques"]
+  },
+  "camera": [80, 9],
+  "sideFocus": {
+    "groups": ["lats", "biceps", "posteriorDeltoids", "trapezius", "rhomboids"],
+    "intervals": [
+      {"start": 0, "end": 1, "side": "left"}
+    ]
+  }
+}

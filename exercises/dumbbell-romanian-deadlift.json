@@ -1,0 +1,98 @@
+{
+  "eml": "1.0",
+  "id": "dumbbell-romanian-deadlift",
+  "title": "Dumbbell Romanian Deadlift",
+  "instructions": "Keep the knees softly bent and the load close to the thighs. Send the hips backwards, then stand without curling the arms.",
+  "start": {
+    "pose": "lower-farm",
+    "stance": {
+      "width": 0.24,
+      "toeOut": 6
+    }
+  },
+  "equipment": [
+    {
+      "id": "left-load",
+      "kind": "dumbbell",
+      "follow": {
+        "joint": "leftHand",
+        "offset": [
+          0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    },
+    {
+      "id": "right-load",
+      "kind": "dumbbell",
+      "follow": {
+        "joint": "rightHand",
+        "offset": [
+          -0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": "floor",
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": "floor",
+      "pole": [
+        -0.1,
+        0,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "hinge",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "hip-hinge",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "extend",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary": [
+      "spinalErectors",
+      "abdominals",
+      "obliques",
+      "forearms"
+    ]
+  },
+  "camera": [
+    139,
+    13
+  ]
+}

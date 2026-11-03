@@ -1,0 +1,46 @@
+{
+  "eml": "1.0",
+  "id": "inverted-row",
+  "title": "Inverted Row",
+  "instructions": "Grip the low bar from underneath and support the heels. Draw the chest toward the bar as the body pivots about the heels.",
+  "start": {
+    "pose": "upper-inverted-hang-grip-both",
+    "joints": {"bothUpperArm": [-85.91, 2.42, 25.74], "bothForearm": [-4.21, -1.37, -3.11], "bothHand": [24.38, 5.48, -1.78]}
+  },
+  "equipment": [
+    {
+      "id": "grip",
+      "kind": "secure-low-bar",
+      "position": [0, 0.93241, -0.27],
+      "sockets": {"leftGrip": [0.24, 0, 0], "rightGrip": [-0.24, 0, 0]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": {"point": [0.064, 0.02363, 1.020428]}, "pole": [-0.33, 0.927, 0.176], "rotation": [-53.0, 0, 0]},
+    {"effector": "rightHeel", "target": {"point": [-0.064, 0.02363, 1.020428]}, "pole": [0.33, 0.927, 0.176], "rotation": [-53.0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
+  ],
+  "phases": [
+    {
+      "id": "pull-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-plank-row-midrange", "amount": 1}]
+    },
+    {"id": "pull", "seconds": 0.8, "actions": [{"use": "upper-plank-row", "amount": 1}], "ease": "ease-out"},
+    {
+      "id": "lower-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-plank-row-midrange", "amount": 1}]
+    },
+    {"id": "lower", "seconds": 0.8, "actions": [], "ease": "ease-out"}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {
+    "primary": ["lats", "trapezius", "rhomboids"],
+    "secondary": ["biceps", "posteriorDeltoids", "abdominals", "obliques"]
+  },
+  "camera": [64, 9]
+}

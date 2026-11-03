@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agrim/exercise-markup-language/main/schema/equipment-v1.schema.json",
+  "type": "object",
+  "propertyNames": {
+    "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+  },
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "category": {
+        "enum": [
+          "attachment",
+          "free-weight",
+          "station",
+          "support"
+        ]
+      },
+      "dimensions": {
+        "type": "array",
+        "items": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 50
+        },
+        "minItems": 3,
+        "maxItems": 3
+      },
+      "description": {
+        "type": "string"
+      },
+      "origin": {
+        "type": "string"
+      },
+      "shape": {
+        "enum": [
+          "box",
+          "rod",
+          "ball",
+          "barbell",
+          "dumbbell",
+          "kettlebell"
+        ]
+      },
+      "sockets": {
+        "type": "object",
+        "propertyNames": {
+          "pattern": "^[a-z][A-Za-z0-9]*$"
+        },
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": -50,
+            "maximum": 50
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "visual": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 64,
+        "items": {
+          "type": "object",
+          "properties": {
+            "shape": {
+              "enum": [
+                "box",
+                "rod",
+                "ball",
+                "barbell",
+                "dumbbell",
+                "kettlebell"
+              ]
+            },
+            "position": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": -50,
+                "maximum": 50
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "rotation": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": -360,
+                "maximum": 360
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "dimensions": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 50
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "material": {
+              "enum": [
+                "pad",
+                "steel"
+              ]
+            }
+          },
+          "required": [
+            "shape",
+            "position",
+            "rotation",
+            "dimensions",
+            "material"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "category",
+      "dimensions",
+      "description",
+      "shape",
+      "sockets",
+      "visual"
+    ],
+    "additionalProperties": false
+  }
+}

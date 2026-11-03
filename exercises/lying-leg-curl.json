@@ -1,0 +1,77 @@
+{
+  "eml": "1.0",
+  "id": "lying-leg-curl",
+  "title": "Lying Leg Curl",
+  "instructions": "Lie face down with the pad behind the ankles. Bend the knees to bring the heels toward the hips and then extend.",
+  "start": {
+    "pose": "prone-on-bench"
+  },
+  "equipment": [
+    {
+      "id": "machine",
+      "kind": "lying-leg-curl-machine",
+      "position": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "roller",
+      "kind": "ankle-roller",
+      "follow": {
+        "joint": "leftFoot",
+        "offset": [
+          -0.095,
+          0.046,
+          -0.037
+        ]
+      }
+    }
+  ],
+  "contacts": [],
+  "phases": [
+    {
+      "id": "curl",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-curl-prone",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "hamstrings"
+    ],
+    "secondary": [
+      "gastrocnemius",
+      "soleus"
+    ]
+  },
+  "camera": [
+    45,
+    12
+  ],
+  "supports": [
+    {
+      "body": "pelvis",
+      "surface": "machine"
+    },
+    {
+      "body": "chest",
+      "surface": "machine"
+    }
+  ]
+}

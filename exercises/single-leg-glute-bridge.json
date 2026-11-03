@@ -1,0 +1,81 @@
+{
+  "eml": "1.0",
+  "id": "single-leg-glute-bridge",
+  "title": "Single-Leg Glute Bridge",
+  "instructions": "Keep the left foot planted and the right leg raised as the pelvis lifts and lowers.",
+  "start": {
+    "pose": "lower-single-bridge"
+  },
+  "equipment": [],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.143,
+          0.003,
+          0.54
+        ]
+      },
+      "pole": [
+        0.1,
+        1,
+        0.25
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "lift",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-single-bridge-raise",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "lower",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "sideFocus": {
+    "groups": [
+      "glutes",
+      "hamstrings"
+    ],
+    "intervals": [
+      {
+        "start": 0,
+        "end": 1,
+        "side": "left"
+      }
+    ]
+  },
+  "camera": [
+    55,
+    15
+  ],
+  "supports": [
+    {
+      "body": "chest",
+      "surface": "floor"
+    }
+  ]
+}

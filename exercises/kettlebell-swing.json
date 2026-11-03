@@ -1,0 +1,142 @@
+{
+  "eml": "1.0",
+  "id": "kettlebell-swing",
+  "title": "Kettlebell Swing",
+  "instructions": "Hike the bell between the thighs, extend the hips, and let both arms guide the bell to chest height before it falls.",
+  "start": {
+    "pose": "lower-two-hand-hang",
+    "stance": {
+      "width": 0.38,
+      "toeOut": 9
+    }
+  },
+  "equipment": [
+    {
+      "id": "bell",
+      "kind": "kettlebell",
+      "position": [
+        0,
+        0.8,
+        0.12
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": "floor",
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": "floor",
+      "pole": [
+        -0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "bell",
+        "socket": "leftGrip"
+      },
+      "pole": [
+        0.7,
+        -0.6,
+        -0.7
+      ]
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "bell",
+        "socket": "rightGrip"
+      },
+      "pole": [
+        -0.7,
+        -0.6,
+        -0.7
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "backswing",
+      "seconds": 0.72,
+      "actions": [
+        {
+          "use": "lower-swing-back",
+          "amount": 1
+        }
+      ],
+      "items": {
+        "bell": {
+          "position": [
+            0,
+            0.52,
+            -0.083
+          ],
+          "rotation": [
+            20,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "hip-drive",
+      "seconds": 0.52,
+      "actions": [
+        {
+          "use": "lower-swing-forward",
+          "amount": 1
+        }
+      ],
+      "items": {
+        "bell": {
+          "position": [
+            0,
+            1.21,
+            0.49
+          ],
+          "rotation": [
+            -65,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "drop",
+      "seconds": 0.61,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondary": [
+      "abdominals",
+      "obliques",
+      "forearms"
+    ]
+  },
+  "camera": [
+    -82,
+    12
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "eml": "1.0",
+  "id": "machine-row",
+  "title": "Machine Row",
+  "instructions": "Sit with the chest supported. Pull both lever handles toward the lower ribs and return under control.",
+  "start": {
+    "pose": "upper-seated-grip-both",
+    "joints": {
+      "bothUpperArm": [-84.4, -7.18, 14.69],
+      "bothForearm": [-2.8, -1.71, -6.0],
+      "leftHand": [-156.23, 83.79, 167.05],
+      "rightHand": [-154.23, -84.52, -169.65]
+    }
+  },
+  "equipment": [
+    {"id": "station", "kind": "row-machine", "position": [0, 0, 0.52], "sockets": {"anchor": [0, 1.13, 0]}},
+    {
+      "id": "left-load",
+      "kind": "machine-handle",
+      "rotation": [-40.81, 0, -90.0],
+      "position": [0.14117, 1.03049, 0.61599]
+    },
+    {
+      "id": "right-load",
+      "kind": "machine-handle",
+      "rotation": [3.17, 0.01, -90.0],
+      "position": [-0.14202, 1.03123, 0.61636]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "left-load", "socket": "center"}, "pole": [0.22, -0.22, -1.0]},
+    {"effector": "rightGrip", "target": {"item": "right-load", "socket": "center"}, "pole": [-0.22, -0.22, -1.0]}
+  ],
+  "connections": [
+    {"kind": "link", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "left-load", "socket": "center"}},
+    {
+      "kind": "link",
+      "from": {"item": "station", "socket": "anchor"},
+      "to": {"item": "right-load", "socket": "center"}
+    }
+  ],
+  "supports": [{"body": "pelvis", "surface": "station"}],
+  "phases": [
+    {
+      "id": "row-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-shoulder-extension-row-midrange", "amount": 1}],
+      "detail": {"joints": {"leftHand": [-226.44, 55.9, 106.73], "rightHand": [-227.95, -56.38, -105.62]}},
+      "items": {
+        "left-load": {"position": [0.15867, 0.91799, 0.28461], "rotation": [-40.81, 0, -90.0]},
+        "right-load": {"position": [-0.15952, 0.91873, 0.28499], "rotation": [3.17, 0.01, -90.0]}
+      }
+    },
+    {
+      "id": "row",
+      "seconds": 0.8,
+      "actions": [{"use": "row-to-torso", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [82.08, 0.5, 21.19],
+          "bothForearm": [-98.04, -37.48, -7.04],
+          "leftHand": [-210.02, 158.74, 119.87],
+          "rightHand": [-210.44, -159.38, -120.36]
+        }
+      },
+      "ease": "ease-out",
+      "items": {
+        "left-load": {"position": [0.17617, 0.80549, -0.04676], "rotation": [-40.81, 0, -90.0]},
+        "right-load": {"position": [-0.17702, 0.80623, -0.04639], "rotation": [3.17, 0.01, -90.0]}
+      }
+    },
+    {
+      "id": "extend-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-shoulder-extension-row-midrange", "amount": 1}],
+      "detail": {"joints": {"leftHand": [-226.44, 55.9, 106.73], "rightHand": [-227.95, -56.38, -105.62]}},
+      "items": {
+        "left-load": {"position": [0.15867, 0.91799, 0.28461], "rotation": [-40.81, 0, -90.0]},
+        "right-load": {"position": [-0.15952, 0.91873, 0.28499], "rotation": [3.17, 0.01, -90.0]}
+      }
+    },
+    {
+      "id": "extend",
+      "seconds": 0.8,
+      "actions": [],
+      "ease": "ease-out",
+      "items": {
+        "left-load": {"position": [0.14117, 1.03049, 0.61599], "rotation": [-40.81, 0, -90.0]},
+        "right-load": {"position": [-0.14202, 1.03123, 0.61636], "rotation": [3.17, 0.01, -90.0]}
+      }
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["lats", "trapezius", "rhomboids"], "secondary": ["biceps", "posteriorDeltoids"]},
+  "camera": [140, 9]
+}

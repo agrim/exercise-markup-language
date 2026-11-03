@@ -1,0 +1,124 @@
+{
+  "eml": "1.0",
+  "id": "cable-pull-through",
+  "title": "Cable Pull-Through",
+  "instructions": "Face away from the low pulley and hold the rope between the legs. Hinge to move the rope backwards, then extend the hips.",
+  "start": {
+    "pose": "lower-two-hand-hang",
+    "stance": {
+      "width": 0.37,
+      "toeOut": 9
+    }
+  },
+  "equipment": [
+    {
+      "id": "tower",
+      "kind": "cable-machine",
+      "position": [
+        0,
+        0,
+        -1.0
+      ],
+      "sockets": {
+        "anchor": [
+          0,
+          0.14,
+          0
+        ]
+      }
+    },
+    {
+      "id": "rope",
+      "kind": "rope-attachment",
+      "follow": {
+        "joint": "leftHand",
+        "offset": [
+          -0.11,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": "floor",
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": "floor",
+      "pole": [
+        -0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "rope",
+        "socket": "rightGrip"
+      },
+      "pole": [
+        -0.4,
+        -0.2,
+        -1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "hinge",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "hip-hinge",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "extend",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondary": [
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "camera": [
+    75,
+    12
+  ],
+  "connections": [
+    {
+      "kind": "cable",
+      "from": {
+        "item": "tower",
+        "socket": "anchor"
+      },
+      "to": {
+        "item": "rope",
+        "socket": "center"
+      }
+    }
+  ]
+}

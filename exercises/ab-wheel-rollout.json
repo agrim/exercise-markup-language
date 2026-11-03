@@ -1,0 +1,64 @@
+{
+  "eml": "1.0",
+  "id": "ab-wheel-rollout",
+  "title": "Ab Wheel Rollout",
+  "instructions": "Keep the knees planted. Roll the wheel forward while extending through the hips and shoulders, then return.",
+  "start": {
+    "pose": "upper-rollout-kneel-grip-both",
+    "joints": {
+      "leftUpperArm": [-93.31, -15.06, 7.95],
+      "leftForearm": [-8.03, -1.52, -0.88],
+      "leftHand": [-170.53, -8.09, -151.95],
+      "rightUpperArm": [-93.54, 15.07, -8.0],
+      "rightForearm": [-7.71, 1.45, 0.84],
+      "rightHand": [-170.86, 8.05, 152.0]
+    }
+  },
+  "equipment": [
+    {
+      "id": "grip",
+      "kind": "ab-wheel",
+      "position": [0, 0.117, 0.32469],
+      "sockets": {"leftGrip": [0.104, 0, 0], "rightGrip": [-0.104, 0, 0]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
+  ],
+  "rootAnchor": {"joint": "leftShin", "target": {"point": [0.075, 0.0368, -0.27]}},
+  "supports": [{"body": "bothShin", "surface": "floor"}],
+  "phases": [
+    {
+      "id": "roll-out-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-kneeling-rollout-midrange", "amount": 1}],
+      "items": {"grip": {"position": [0, 0.117, 0.73242]}}
+    },
+    {
+      "id": "roll-out",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-kneeling-rollout", "amount": 1}],
+      "items": {"grip": {"position": [0, 0.117, 1.13984]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "return-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-kneeling-rollout-midrange", "amount": 1}],
+      "items": {"grip": {"position": [0, 0.117, 0.73242]}}
+    },
+    {
+      "id": "return",
+      "seconds": 0.8,
+      "actions": [],
+      "items": {"grip": {"position": [0, 0.117, 0.32469]}},
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["abdominals", "obliques"], "secondary": ["lats", "anteriorDeltoids", "lateralDeltoids"]},
+  "camera": [64, 17]
+}

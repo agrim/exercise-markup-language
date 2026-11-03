@@ -1,0 +1,84 @@
+{
+  "eml": "1.0",
+  "id": "pec-deck",
+  "title": "Pec Deck",
+  "instructions": "Sit against the pad and bring the two machine levers toward the midline, preserving the slight elbow bend.",
+  "start": {
+    "pose": "upper-seated-grip-both",
+    "joints": {
+      "bothUpperArm": [-11.49, 3.98, 78.0],
+      "bothForearm": [-5.3, -0.77, 0.31],
+      "leftHand": [-2.55, -9.18, 21.93],
+      "rightHand": [-2.58, 10.08, -22.0]
+    }
+  },
+  "equipment": [
+    {"id": "station", "kind": "pec-deck-machine", "position": [0, 0, -0.18], "sockets": {"anchor": [0, 1.13, 0]}},
+    {
+      "id": "left-load",
+      "kind": "machine-handle",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-load",
+      "kind": "machine-handle",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]}
+  ],
+  "connections": [
+    {"kind": "link", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "left-load", "socket": "center"}},
+    {
+      "kind": "link",
+      "from": {"item": "station", "socket": "anchor"},
+      "to": {"item": "right-load", "socket": "center"}
+    }
+  ],
+  "supports": [{"body": "pelvis", "surface": "station"}],
+  "phases": [
+    {
+      "id": "close-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-horizontal-adduction-midrange", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-56.42, 15.86, 54.24],
+          "bothForearm": [-1.57, -1.87, -8.09],
+          "leftHand": [-17.89, -36.58, 31.52],
+          "rightHand": [-18.12, 37.43, -31.91]
+        }
+      }
+    },
+    {
+      "id": "close",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-horizontal-adduction", "amount": 1}],
+      "detail": {"joints": {"leftHand": [-55.3, -62.11, 60.7], "rightHand": [-56.77, 62.58, -62.35]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "open-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-horizontal-adduction-midrange", "amount": 1}],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [-56.42, 15.86, 54.24],
+          "bothForearm": [-1.57, -1.87, -8.09],
+          "leftHand": [-17.89, -36.58, 31.52],
+          "rightHand": [-18.12, 37.43, -31.91]
+        }
+      }
+    },
+    {"id": "open", "seconds": 0.8, "actions": [], "ease": "ease-out"}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["pectorals", "upperPectorals"], "secondary": ["anteriorDeltoids"]},
+  "camera": [32, 17]
+}

@@ -1,0 +1,68 @@
+{
+  "eml": "1.0",
+  "id": "cable-crunch",
+  "title": "Cable Crunch",
+  "instructions": "Kneel beneath the high pulley holding the rope near the head. Flex the trunk toward the thighs and reverse.",
+  "start": {
+    "pose": "upper-tall-kneel-grip-both",
+    "joints": {
+      "bothUpperArm": [-67.53, -9.71, 7.95],
+      "bothForearm": [-143.45, -41.77, 10.81],
+      "bothHand": [37.68, -56.76, 33.11]
+    }
+  },
+  "equipment": [
+    {"id": "station", "kind": "cable-machine", "position": [0, 0, 0.52], "sockets": {"anchor": [0, 1.88, 0]}},
+    {"id": "rope", "kind": "rope-attachment", "position": [0, 1.13903, 0.15499]},
+    {
+      "id": "left-end",
+      "kind": "cable-handle",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-end",
+      "kind": "cable-handle",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "connections": [
+    {"kind": "cable", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "rope", "socket": "anchor"}},
+    {"kind": "rope", "from": {"item": "rope", "socket": "anchor"}, "to": {"item": "left-end", "socket": "center"}},
+    {"kind": "rope", "from": {"item": "rope", "socket": "anchor"}, "to": {"item": "right-end", "socket": "center"}}
+  ],
+  "supports": [{"body": "bothShin", "surface": "floor"}],
+  "phases": [
+    {
+      "id": "flex",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "flex-trunk", "amount": 1}],
+      "detail": {
+        "joints": {
+          "pelvis": [43.0, 0, 0],
+          "spine": [13.0, 0, 0],
+          "chest": [19.0, 0, 0],
+          "bothUpperArm": [-86.57, 9.5, 33.58],
+          "bothForearm": [-117.11, -6.3, 13.75],
+          "bothHand": [-10.05, -17.06, 56.01],
+          "bothThigh": [-33.0, 0, 0]
+        },
+        "root": [0, -0.41299, -0.20784]
+      },
+      "items": {"rope": {"position": [0, 0.78154, 0.51893]}}
+    },
+    {
+      "id": "return",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [],
+      "items": {"rope": {"position": [0, 1.13903, 0.15499]}}
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["abdominals"], "secondary": []},
+  "camera": [63, 17],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

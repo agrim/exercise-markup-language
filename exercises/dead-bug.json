@@ -1,0 +1,89 @@
+{
+  "eml": "1.0",
+  "id": "dead-bug",
+  "title": "Dead Bug",
+  "instructions": "Alternate extending one leg and the opposite arm, returning through tabletop before switching sides.",
+  "start": {
+    "pose": "upper-supine-tabletop",
+    "joints": {"bothUpperArm": [-91.5, -11.18, 11.48], "bothForearm": [11.57, 1.99, 2.38]}
+  },
+  "equipment": [],
+  "supports": [{"body": "pelvis", "surface": "floor"}],
+  "phases": [
+    {
+      "id": "extend-left-leg-midrange",
+      "seconds": 0.4,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-contralateral-reach-supine-left-midrange", "amount": 1}],
+      "contacts": [
+        {"effector": "rightPalm", "target": {"point": [-0.15022, 0.52932, -0.92154]}, "engage": "reach"}
+      ]
+    },
+    {
+      "id": "extend-left-leg",
+      "seconds": 0.4,
+      "actions": [{"use": "upper-contralateral-reach-supine-left", "amount": 1}],
+      "ease": "ease-out",
+      "contacts": [
+        {"effector": "rightPalm", "target": {"point": [-0.13597, 0.19995, -1.09547]}, "engage": "reach"}
+      ]
+    },
+    {
+      "id": "return-left-midrange",
+      "seconds": 0.4,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-contralateral-reach-supine-left-midrange", "amount": 1}],
+      "contacts": [
+        {"effector": "rightPalm", "target": {"point": [-0.15022, 0.52932, -0.92154]}, "engage": "reach"}
+      ]
+    },
+    {
+      "id": "return-left",
+      "seconds": 0.4,
+      "actions": [],
+      "ease": "ease-out",
+      "contacts": [
+        {"effector": "rightPalm", "target": "start", "engage": "reach"}
+      ]
+    },
+    {
+      "id": "extend-right-leg-midrange",
+      "seconds": 0.4,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-contralateral-reach-supine-right-midrange", "amount": 1}],
+      "contacts": [
+        {"effector": "leftPalm", "target": {"point": [0.15022, 0.52932, -0.92154]}, "engage": "reach"}
+      ]
+    },
+    {
+      "id": "extend-right-leg",
+      "seconds": 0.4,
+      "actions": [{"use": "upper-contralateral-reach-supine-right", "amount": 1}],
+      "ease": "ease-out",
+      "contacts": [
+        {"effector": "leftPalm", "target": {"point": [0.13597, 0.19995, -1.09547]}, "engage": "reach"}
+      ]
+    },
+    {
+      "id": "return-right-midrange",
+      "seconds": 0.4,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-contralateral-reach-supine-right-midrange", "amount": 1}],
+      "contacts": [
+        {"effector": "leftPalm", "target": {"point": [0.15022, 0.52932, -0.92154]}, "engage": "reach"}
+      ]
+    },
+    {
+      "id": "return-right",
+      "seconds": 0.4,
+      "actions": [],
+      "ease": "ease-out",
+      "contacts": [
+        {"effector": "leftPalm", "target": "start", "engage": "reach"}
+      ]
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["abdominals", "obliques"], "secondary": ["hipFlexors"]},
+  "camera": [63, 17]
+}

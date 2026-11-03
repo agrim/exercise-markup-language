@@ -1,0 +1,77 @@
+{
+  "eml": "1.0",
+  "id": "cable-woodchop",
+  "title": "Cable Woodchop",
+  "instructions": "Bring the cable handle diagonally from high on the left to low on the right. Rotate the torso and return.",
+  "start": {
+    "pose": "upper-standing-grip-both",
+    "root": [0, -0.085, -0.0272],
+    "joints": {
+      "pelvis": [0, 14.56, 0],
+      "chest": [0, 13.44, 0],
+      "leftUpperArm": [-45.05, 4.52, 35.5],
+      "leftForearm": [-107.12, 5.98, 18.84],
+      "leftHand": [99.2, 67.61, 15.87],
+      "leftThigh": [-27.77, 0.38, 3.54],
+      "leftShin": [47.9, -7.75, 4.8],
+      "leftFoot": [-21.24, -13.6, -6.93],
+      "rightUpperArm": [-24.54, 21.34, 65.31],
+      "rightForearm": [-29.62, 32.22, 50.54],
+      "rightHand": [-23.64, 39.17, -138.15],
+      "rightThigh": [-19.79, -5.42, -14.96],
+      "rightShin": [47.97, -7.5, 8.0],
+      "rightFoot": [-26.48, -2.2, 6.38]
+    }
+  },
+  "equipment": [
+    {"id": "station", "kind": "cable-machine", "position": [0.98, 0, 0.12], "sockets": {"anchor": [0, 2.0, 0]}},
+    {
+      "id": "grip",
+      "kind": "cable-handle",
+      "position": [0.27555, 1.39813, 0.17084],
+      "sockets": {"leftGrip": [0.027, 0, 0], "rightGrip": [-0.027, 0, 0]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.058, 0.078, 0.995], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.066, 0.024, 0.998], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
+  ],
+  "connections": [
+    {"kind": "cable", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "grip", "socket": "center"}}
+  ],
+  "phases": [
+    {
+      "id": "chop-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-trunk-rotation-midrange", "amount": 1}],
+      "items": {"grip": {"position": [0.04767, 1.16093, 0.26143]}}
+    },
+    {
+      "id": "chop",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-trunk-rotation", "amount": 1}],
+      "items": {"grip": {"position": [-0.20689, 0.92051, 0.24923]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "return-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-trunk-rotation-midrange", "amount": 1}],
+      "items": {"grip": {"position": [0.04767, 1.16093, 0.26143]}}
+    },
+    {
+      "id": "return",
+      "seconds": 0.8,
+      "actions": [],
+      "items": {"grip": {"position": [0.27555, 1.39813, 0.17084]}},
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["obliques", "abdominals"], "secondary": ["anteriorDeltoids", "lateralDeltoids", "glutes"]},
+  "camera": [63, 17]
+}

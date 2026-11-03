@@ -1,0 +1,73 @@
+{
+  "eml": "1.0",
+  "id": "seated-leg-curl",
+  "title": "Seated Leg Curl",
+  "instructions": "Set the roller behind the lower legs. Keep the thighs against the seat as both knees flex and then straighten.",
+  "start": {
+    "pose": "lower-seat-long"
+  },
+  "equipment": [
+    {
+      "id": "machine",
+      "kind": "seated-leg-curl-machine",
+      "position": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "roller",
+      "kind": "ankle-roller",
+      "follow": {
+        "joint": "leftFoot",
+        "offset": [
+          -0.095,
+          0.046,
+          -0.037
+        ]
+      }
+    }
+  ],
+  "contacts": [],
+  "phases": [
+    {
+      "id": "curl",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-curl-seated",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "hamstrings"
+    ],
+    "secondary": [
+      "gastrocnemius",
+      "soleus"
+    ]
+  },
+  "camera": [
+    64,
+    10
+  ],
+  "supports": [
+    {
+      "body": "pelvis",
+      "surface": "machine"
+    }
+  ]
+}

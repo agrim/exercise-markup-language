@@ -1,0 +1,455 @@
+{
+  "eml": "1.0",
+  "id": "walking-lunge",
+  "title": "Walking Lunge",
+  "instructions": "In the in-place demonstration frame, alternate left and right lead steps. Lower the rear knee after each landing, then rise and bring the trailing leg through.",
+  "start": {
+    "pose": "lower-ready",
+    "stance": {
+      "width": 0.26,
+      "toeOut": 5
+    }
+  },
+  "equipment": [],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.145,
+          0.003,
+          0.1
+        ]
+      },
+      "pole": [
+        0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        5,
+        0
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.145,
+          0.003,
+          0.1
+        ]
+      },
+      "pole": [
+        -0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        -5,
+        0
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "set",
+      "seconds": 0.13,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-left",
+      "seconds": 0.73,
+      "actions": [
+        {
+          "use": "lower-stride-left",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.087,
+              0.21
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lower-left",
+      "seconds": 1.14,
+      "actions": [
+        {
+          "use": "lower-lunge-left",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.37
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              -0.17
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    },
+    {
+      "id": "pass-left",
+      "seconds": 1.03,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    },
+    {
+      "id": "step-right",
+      "seconds": 0.73,
+      "actions": [
+        {
+          "use": "lower-stride-right",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.087,
+              0.21
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    },
+    {
+      "id": "lower-right",
+      "seconds": 1.14,
+      "actions": [
+        {
+          "use": "lower-lunge-right",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              -0.17
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.37
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    },
+    {
+      "id": "pass-right",
+      "seconds": 1.03,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "sideFocus": {
+    "groups": [
+      "glutes",
+      "quadriceps",
+      "hamstrings"
+    ],
+    "intervals": [
+      {
+        "start": 0,
+        "end": 0.5,
+        "side": "left"
+      },
+      {
+        "start": 0.5,
+        "end": 1,
+        "side": "right"
+      }
+    ]
+  },
+  "camera": [
+    59,
+    10
+  ]
+}

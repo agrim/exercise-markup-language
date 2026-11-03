@@ -1,0 +1,89 @@
+{
+  "eml": "1.0",
+  "id": "standing-calf-raise",
+  "title": "Standing Calf Raise",
+  "instructions": "Stand with the balls of the feet on the raised ledge. Lift the heels under the shoulder pads, then lower them.",
+  "start": {
+    "pose": "lower-ready",
+    "root": [
+      0,
+      0.044,
+      0
+    ]
+  },
+  "equipment": [
+    {
+      "id": "machine",
+      "kind": "calf-raise-machine",
+      "position": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.13,
+          0.08,
+          0.11
+        ]
+      },
+      "pole": [
+        0.12,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.13,
+          0.08,
+          0.11
+        ]
+      },
+      "pole": [
+        -0.12,
+        0,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "raise-heels",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "rise-on-toes",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "lower-heels",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "gastrocnemius",
+      "soleus"
+    ],
+    "secondary": []
+  },
+  "camera": [
+    146,
+    8
+  ]
+}

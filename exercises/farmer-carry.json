@@ -1,0 +1,357 @@
+{
+  "eml": "1.0",
+  "id": "farmer-carry",
+  "title": "Farmer Carry",
+  "instructions": "Carry one weight at each side. Alternate the supporting foot through an in-place gait cycle.",
+  "start": {
+    "pose": "lower-farm",
+    "stance": {
+      "width": 0.26,
+      "toeOut": 5
+    }
+  },
+  "equipment": [
+    {
+      "id": "left-load",
+      "kind": "dumbbell",
+      "follow": {
+        "joint": "leftHand",
+        "offset": [
+          0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    },
+    {
+      "id": "right-load",
+      "kind": "dumbbell",
+      "follow": {
+        "joint": "rightHand",
+        "offset": [
+          -0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.145,
+          0.003,
+          0.1
+        ]
+      },
+      "pole": [
+        0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        5,
+        0
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.145,
+          0.003,
+          0.1
+        ]
+      },
+      "pole": [
+        -0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        -5,
+        0
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "set",
+      "seconds": 0.13,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "swing-left",
+      "seconds": 0.51,
+      "actions": [
+        {
+          "use": "lower-stride-left",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.11,
+              0.25
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stance-left",
+      "seconds": 0.515,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "swing-right",
+      "seconds": 0.51,
+      "actions": [
+        {
+          "use": "lower-stride-right",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.11,
+              0.25
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    },
+    {
+      "id": "stance-right",
+      "seconds": 0.515,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.145,
+              0.003,
+              0.1
+            ]
+          },
+          "pole": [
+            -0.1,
+            0,
+            1
+          ],
+          "rotation": [
+            0,
+            -5,
+            0
+          ],
+          "engage": "reach"
+        }
+      ]
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "forearms",
+      "abdominals",
+      "obliques"
+    ],
+    "secondary": [
+      "trapezius",
+      "upperTrapezius",
+      "rhomboids",
+      "quadriceps",
+      "glutes",
+      "hamstrings"
+    ]
+  },
+  "camera": [
+    30,
+    8
+  ]
+}

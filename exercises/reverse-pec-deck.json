@@ -1,0 +1,72 @@
+{
+  "eml": "1.0",
+  "id": "reverse-pec-deck",
+  "title": "Reverse Pec Deck",
+  "instructions": "Face the chest pad and sweep both upper arms out to the sides with elbows softly bent.",
+  "start": {
+    "pose": "upper-seated-grip-both",
+    "joints": {
+      "bothUpperArm": [-88.37, -2.73, 20.02],
+      "bothForearm": [8.39, 0.58, -6.84],
+      "leftHand": [-53.02, -61.38, 58.79],
+      "rightHand": [-54.41, 61.89, -60.36]
+    }
+  },
+  "equipment": [
+    {
+      "id": "station",
+      "kind": "reverse-pec-deck-machine",
+      "position": [0, 0, 0.52],
+      "sockets": {"anchor": [0, 1.13, 0]}
+    },
+    {
+      "id": "left-load",
+      "kind": "machine-handle",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-load",
+      "kind": "machine-handle",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]}
+  ],
+  "connections": [
+    {"kind": "link", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "left-load", "socket": "center"}},
+    {
+      "kind": "link",
+      "from": {"item": "station", "socket": "anchor"},
+      "to": {"item": "right-load", "socket": "center"}
+    }
+  ],
+  "supports": [{"body": "pelvis", "surface": "station"}],
+  "phases": [
+    {
+      "id": "open-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-horizontal-abduction-midrange", "amount": 1}]
+    },
+    {
+      "id": "open",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-horizontal-abduction", "amount": 1}],
+      "ease": "ease-out"
+    },
+    {
+      "id": "return-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-horizontal-abduction-midrange", "amount": 1}]
+    },
+    {"id": "return", "seconds": 0.8, "actions": [], "ease": "ease-out"}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["posteriorDeltoids"], "secondary": ["trapezius", "upperTrapezius", "rhomboids"]},
+  "camera": [140, 9]
+}

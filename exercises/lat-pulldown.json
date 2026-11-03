@@ -1,0 +1,67 @@
+{
+  "eml": "1.0",
+  "id": "lat-pulldown",
+  "title": "Lat Pulldown",
+  "instructions": "Keep the thighs under the pads. Draw the wide bar toward the upper chest and let it travel upward again.",
+  "start": {
+    "pose": "upper-seated-grip-both",
+    "joints": {
+      "bothUpperArm": [-8.92, 9.45, 140.24],
+      "bothForearm": [1.17, 2.6, 14.22],
+      "leftHand": [12.14, -20.61, 36.27],
+      "rightHand": [11.76, 21.42, -36.14]
+    }
+  },
+  "equipment": [
+    {"id": "station", "kind": "lat-pulldown-machine", "position": [0, 0, 0.32], "sockets": {"anchor": [0, 2.3, 0]}},
+    {
+      "id": "grip",
+      "kind": "straight-bar",
+      "position": [-0.00037, 1.60858, 0.12712],
+      "sockets": {"leftGrip": [0.31886, 2e-05, -0.00034], "rightGrip": [-0.31886, -2e-05, 0.00034]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}, "pole": [0.6, -0.55, -0.45]},
+    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}, "pole": [-0.6, -0.55, -0.45]}
+  ],
+  "connections": [
+    {"kind": "cable", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "grip", "socket": "center"}}
+  ],
+  "supports": [{"body": "pelvis", "surface": "station"}],
+  "phases": [
+    {
+      "id": "pull-down-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-vertical-pulldown-midrange", "amount": 1}],
+      "items": {"grip": {"position": [-0.00037, 1.31145, 0.17712]}}
+    },
+    {
+      "id": "pull-down",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-vertical-pulldown", "amount": 1}],
+      "items": {"grip": {"position": [-0.00037, 1.01433, 0.22712]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "raise-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-vertical-pulldown-midrange", "amount": 1}],
+      "items": {"grip": {"position": [-0.00037, 1.31145, 0.17712]}}
+    },
+    {
+      "id": "raise",
+      "seconds": 0.8,
+      "actions": [],
+      "items": {"grip": {"position": [-0.00037, 1.60858, 0.12712]}},
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["lats"], "secondary": ["biceps", "trapezius", "upperTrapezius", "rhomboids"]},
+  "camera": [140, 9]
+}

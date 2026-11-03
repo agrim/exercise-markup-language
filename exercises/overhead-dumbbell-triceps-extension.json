@@ -1,0 +1,63 @@
+{
+  "eml": "1.0",
+  "id": "overhead-dumbbell-triceps-extension",
+  "title": "Overhead Dumbbell Triceps Extension",
+  "instructions": "Hold one dumbbell overhead with both hands. Lower it behind the head by bending the elbows, then extend.",
+  "start": {
+    "pose": "upper-seated-grip-both",
+    "joints": {
+      "bothUpperArm": [-54.88, 66.08, 128.87],
+      "bothForearm": [1.12, 3.22, 17.86],
+      "bothHand": [-125.84, -69.51, -161.67]
+    }
+  },
+  "equipment": [
+    {"id": "seat", "kind": "upright-bench", "position": [0, 0, 0]},
+    {
+      "id": "weight",
+      "kind": "dumbbell",
+      "position": [0, 1.62828, -0.007],
+      "sockets": {"leftGrip": [0.045, 0, 0], "rightGrip": [-0.045, 0, 0]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "weight", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "weight", "socket": "rightGrip"}}
+  ],
+  "supports": [{"body": "pelvis", "surface": "seat"}],
+  "phases": [
+    {
+      "id": "lower-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-overhead-elbow-flexion-midrange", "amount": 1}],
+      "items": {"weight": {"position": [0, 1.47014, -0.1995]}}
+    },
+    {
+      "id": "lower",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-overhead-elbow-flexion", "amount": 1}],
+      "items": {"weight": {"position": [0, 1.232, -0.252]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "extend-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-overhead-elbow-flexion-midrange", "amount": 1}],
+      "items": {"weight": {"position": [0, 1.47014, -0.1995]}}
+    },
+    {
+      "id": "extend",
+      "seconds": 0.8,
+      "actions": [],
+      "items": {"weight": {"position": [0, 1.62828, -0.007]}},
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["triceps"], "secondary": []},
+  "camera": [32, 9]
+}

@@ -1,0 +1,95 @@
+{
+  "eml": "1.0",
+  "id": "seated-calf-raise",
+  "title": "Seated Calf Raise",
+  "instructions": "Sit with the knees under the pads and forefeet on the ledge. Lift and lower the heels while keeping the knees bent.",
+  "start": {
+    "pose": "lower-seat",
+    "root": [
+      0,
+      -0.34,
+      0
+    ]
+  },
+  "equipment": [
+    {
+      "id": "machine",
+      "kind": "seated-calf-raise-machine",
+      "position": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.13,
+          0.08,
+          0.45
+        ]
+      },
+      "pole": [
+        0.12,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.13,
+          0.08,
+          0.45
+        ]
+      },
+      "pole": [
+        -0.12,
+        0,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "raise-heels",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-ankle-rise-seated",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "lower-heels",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "gastrocnemius",
+      "soleus"
+    ],
+    "secondary": []
+  },
+  "camera": [
+    63,
+    12
+  ],
+  "supports": [
+    {
+      "body": "pelvis",
+      "surface": "machine"
+    }
+  ]
+}

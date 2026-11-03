@@ -1,0 +1,9 @@
+{
+  "eml":"1.0","id":"traveling-reach","title":"Forward travel cycle",
+  "instructions":"A minimal root-motion example for a moving platform. The dummy travels forward across cycles.",
+  "start":{"pose":"standing"},
+  "definitions":{"motions":{"glide":{"root":[0,0,0.25]}}},
+  "phases":[{"id":"travel","seconds":1,"actions":[{"use":"glide"}]}],
+  "repeat":{"mode":"loop","count":4,"travel":[0,0,0.25]},
+  "muscles":{"primary":[],"secondary":[]}
+}

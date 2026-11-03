@@ -1,0 +1,572 @@
+{
+  "eml": "1.0",
+  "id": "mountain-climber",
+  "title": "Mountain Climber",
+  "instructions": "From high plank keep both palms planted. Bring one knee beneath the trunk, extend the leg back, then alternate sides.",
+  "start": {
+    "pose": "high-plank",
+    "joints": {
+      "bothToe": [
+        -63,
+        0,
+        0
+      ]
+    }
+  },
+  "equipment": [],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.109,
+          0.003,
+          -0.66
+        ]
+      },
+      "pole": [
+        0.1,
+        1,
+        1
+      ],
+      "rotation": [
+        63,
+        0,
+        0
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.109,
+          0.003,
+          -0.66
+        ]
+      },
+      "pole": [
+        -0.1,
+        1,
+        1
+      ],
+      "rotation": [
+        63,
+        0,
+        0
+      ]
+    },
+    {
+      "effector": "leftPalm",
+      "target": {
+        "point": [
+          0.206,
+          0.023,
+          0.63
+        ]
+      },
+      "pole": [
+        0.22,
+        0,
+        -0.6
+      ],
+      "rotation": [
+        -66,
+        -9,
+        -172
+      ]
+    },
+    {
+      "effector": "rightPalm",
+      "target": {
+        "point": [
+          -0.206,
+          0.023,
+          0.63
+        ]
+      },
+      "pole": [
+        -0.22,
+        0,
+        -0.6
+      ],
+      "rotation": [
+        -66,
+        9,
+        172
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "set",
+      "seconds": 0.13,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.109,
+              0.003,
+              -0.66
+            ]
+          },
+          "pole": [
+            0.1,
+            1,
+            1
+          ],
+          "rotation": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.109,
+              0.003,
+              -0.66
+            ]
+          },
+          "pole": [
+            -0.1,
+            1,
+            1
+          ],
+          "rotation": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.63
+            ]
+          },
+          "pole": [
+            0.22,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.63
+            ]
+          },
+          "pole": [
+            -0.22,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ]
+    },
+    {
+      "id": "advance-left",
+      "seconds": 0.45,
+      "actions": [
+        {
+          "use": "lower-climber-left",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.15,
+              0.15,
+              -0.16
+            ]
+          },
+          "pole": [
+            0.1,
+            1,
+            1
+          ],
+          "rotation": [
+            63,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.109,
+              0.003,
+              -0.66
+            ]
+          },
+          "pole": [
+            -0.1,
+            1,
+            1
+          ],
+          "rotation": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.63
+            ]
+          },
+          "pole": [
+            0.22,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.63
+            ]
+          },
+          "pole": [
+            -0.22,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ]
+    },
+    {
+      "id": "replace-left",
+      "seconds": 0.45,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.109,
+              0.003,
+              -0.66
+            ]
+          },
+          "pole": [
+            0.1,
+            1,
+            1
+          ],
+          "rotation": [
+            63,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.109,
+              0.003,
+              -0.66
+            ]
+          },
+          "pole": [
+            -0.1,
+            1,
+            1
+          ],
+          "rotation": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.63
+            ]
+          },
+          "pole": [
+            0.22,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.63
+            ]
+          },
+          "pole": [
+            -0.22,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ]
+    },
+    {
+      "id": "advance-right",
+      "seconds": 0.45,
+      "actions": [
+        {
+          "use": "lower-climber-right",
+          "amount": 1
+        }
+      ],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.109,
+              0.003,
+              -0.66
+            ]
+          },
+          "pole": [
+            0.1,
+            1,
+            1
+          ],
+          "rotation": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.15,
+              0.15,
+              -0.16
+            ]
+          },
+          "pole": [
+            -0.1,
+            1,
+            1
+          ],
+          "rotation": [
+            63,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.63
+            ]
+          },
+          "pole": [
+            0.22,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.63
+            ]
+          },
+          "pole": [
+            -0.22,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ]
+    },
+    {
+      "id": "replace-right",
+      "seconds": 0.45,
+      "actions": [],
+      "contacts": [
+        {
+          "effector": "leftBall",
+          "target": {
+            "point": [
+              0.109,
+              0.003,
+              -0.66
+            ]
+          },
+          "pole": [
+            0.1,
+            1,
+            1
+          ],
+          "rotation": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "effector": "rightBall",
+          "target": {
+            "point": [
+              -0.109,
+              0.003,
+              -0.66
+            ]
+          },
+          "pole": [
+            -0.1,
+            1,
+            1
+          ],
+          "rotation": [
+            63,
+            0,
+            0
+          ],
+          "engage": "reach"
+        },
+        {
+          "effector": "leftPalm",
+          "target": {
+            "point": [
+              0.206,
+              0.023,
+              0.63
+            ]
+          },
+          "pole": [
+            0.22,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            -9,
+            -172
+          ]
+        },
+        {
+          "effector": "rightPalm",
+          "target": {
+            "point": [
+              -0.206,
+              0.023,
+              0.63
+            ]
+          },
+          "pole": [
+            -0.22,
+            0,
+            -0.6
+          ],
+          "rotation": [
+            -66,
+            9,
+            172
+          ]
+        }
+      ]
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "abdominals",
+      "obliques",
+      "hipFlexors"
+    ],
+    "secondary": [
+      "anteriorDeltoids",
+      "lateralDeltoids",
+      "quadriceps",
+      "glutes",
+      "hamstrings"
+    ]
+  },
+  "camera": [
+    62,
+    14
+  ]
+}

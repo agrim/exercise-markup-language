@@ -1,0 +1,36 @@
+{
+  "eml": "1.0",
+  "id": "russian-twist",
+  "title": "Russian Twist",
+  "instructions": "Keep both feet supported with the torso leaned back. Rotate around the long axis to one side, then the other.",
+  "start": {
+    "pose": "upper-v-seat-grip-both",
+    "joints": {"bothUpperArm": [-8.42, -1.25, 8.43], "bothForearm": [-16.45, -51.88, -96.12], "bothHand": [20.2, 33.32, -14.04]}
+  },
+  "equipment": [],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0, 1.0, 0], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0, 1.0, 0], "rotation": [0, 0, 0]}
+  ],
+  "supports": [{"body": "pelvis", "surface": "floor"}],
+  "phases": [
+    {
+      "id": "turn-left",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "upper-trunk-rotation-seated-left", "amount": 1}]
+    },
+    {"id": "center-left", "seconds": {"param": "phase-seconds"}, "actions": []},
+    {
+      "id": "turn-right",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "upper-trunk-rotation-seated-right", "amount": 1}]
+    },
+    {"id": "center-right", "seconds": {"param": "phase-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["obliques", "abdominals"], "secondary": []},
+  "camera": [63, 17],
+  "parameters": {
+    "phase-seconds": {"default": 0.8, "min": 0.15, "max": 15}
+  }
+}

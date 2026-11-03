@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agrim/exercise-markup-language/main/schema/library-v1.schema.json",
+  "type": "object",
+  "properties": {
+    "poses": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+      },
+      "additionalProperties": {
+        "$ref": "exercise-v1.schema.json#/$defs/poseDefinition"
+      }
+    },
+    "motions": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+      },
+      "additionalProperties": {
+        "$ref": "exercise-v1.schema.json#/$defs/motionDefinition"
+      }
+    }
+  },
+  "required": [
+    "poses",
+    "motions"
+  ],
+  "additionalProperties": false
+}

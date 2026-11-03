@@ -1,0 +1,50 @@
+{
+  "eml": "1.0",
+  "id": "dumbbell-shrug",
+  "title": "Dumbbell Shrug",
+  "instructions": "Elevate the shoulders with the arms long; lower the shoulders to return the dumbbells.",
+  "start": {
+    "pose": "upper-standing-grip-both",
+    "root": [0, -0.026, -0.00832],
+    "joints": {
+      "bothUpperArm": [-2.56, -0.49, -3.77],
+      "bothForearm": [7.11, 0.81, -2.54],
+      "bothThigh": [-13.03, 0.86, 5.75],
+      "bothShin": [26.86, 0.33, -1.91],
+      "bothFoot": [-13.73, -1.63, -3.53]
+    }
+  },
+  "equipment": [
+    {
+      "id": "left-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.068, 0.02, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.068, 0.02, 0.997], "rotation": [0, 0, 0]}
+  ],
+  "phases": [
+    {
+      "id": "elevate",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "upper-scapular-elevation", "amount": {"param": "excursion"}}]
+    },
+    {"id": "lower", "seconds": {"param": "phase-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["upperTrapezius"], "secondary": ["forearms"]},
+  "camera": [32, 9],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15},
+    "excursion": {"default": 1, "min": 0.25, "max": 1}
+  }
+}

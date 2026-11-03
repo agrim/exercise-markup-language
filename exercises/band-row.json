@@ -1,0 +1,130 @@
+{
+  "eml": "1.0",
+  "id": "band-row",
+  "title": "Band Row",
+  "instructions": "Face the anchored band. Pull the elbows back toward the sides from arms forward, then reach forward again.",
+  "start": {
+    "pose": "lower-arms-front",
+    "stance": {
+      "width": 0.32,
+      "toeOut": 5
+    }
+  },
+  "equipment": [
+    {
+      "id": "left-end",
+      "kind": "resistance-band",
+      "follow": {
+        "joint": "leftHand",
+        "offset": [
+          0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    },
+    {
+      "id": "right-end",
+      "kind": "resistance-band",
+      "follow": {
+        "joint": "rightHand",
+        "offset": [
+          -0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    },
+    {
+      "id": "anchor",
+      "kind": "secure-band-anchor",
+      "position": [
+        0,
+        1.16,
+        1.35
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": "floor",
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": "floor",
+      "pole": [
+        -0.1,
+        0,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "row",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-band-pull",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "lats",
+      "trapezius",
+      "rhomboids"
+    ],
+    "secondary": [
+      "biceps",
+      "posteriorDeltoids"
+    ]
+  },
+  "camera": [
+    139,
+    13
+  ],
+  "connections": [
+    {
+      "kind": "band",
+      "from": {
+        "item": "left-end",
+        "socket": "center"
+      },
+      "to": {
+        "item": "anchor",
+        "socket": "anchor"
+      }
+    },
+    {
+      "kind": "band",
+      "from": {
+        "item": "right-end",
+        "socket": "center"
+      },
+      "to": {
+        "item": "anchor",
+        "socket": "anchor"
+      }
+    }
+  ]
+}

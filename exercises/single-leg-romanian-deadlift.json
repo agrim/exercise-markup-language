@@ -1,0 +1,101 @@
+{
+  "eml": "1.0",
+  "id": "single-leg-romanian-deadlift",
+  "title": "Single-Leg Romanian Deadlift",
+  "instructions": "Balance over the left foot and hold the dumbbell in the right hand. Tip the pelvis forward as the right leg extends behind, then return upright.",
+  "start": {
+    "pose": "lower-farm",
+    "joints": {
+      "rightThigh": [
+        7,
+        0,
+        0
+      ],
+      "rightShin": [
+        39,
+        0,
+        0
+      ]
+    },
+    "root": [
+      0.028,
+      -0.018,
+      0
+    ]
+  },
+  "equipment": [
+    {
+      "id": "right-load",
+      "kind": "dumbbell",
+      "follow": {
+        "joint": "rightHand",
+        "offset": [
+          -0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": "floor",
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "hinge",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-balance-hinge",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "extend",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary": [
+      "abdominals",
+      "obliques",
+      "footStabilizers"
+    ]
+  },
+  "sideFocus": {
+    "groups": [
+      "glutes",
+      "hamstrings"
+    ],
+    "intervals": [
+      {
+        "start": 0,
+        "end": 1,
+        "side": "left"
+      }
+    ]
+  },
+  "camera": [
+    124,
+    9
+  ]
+}

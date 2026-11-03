@@ -1,0 +1,25 @@
+{
+  "name": "Exercise Markup Language",
+  "version": "1.0",
+  "encoding": "UTF-8 JSON",
+  "schema": "schema/exercise-v1.schema.json",
+  "semantics": "docs/specification.md",
+  "producerGuide": "docs/authoring.md",
+  "catalog": "exercises/",
+  "example": "examples/paused-goblet-look-left.json",
+  "vocabulary": {
+    "definitions": [
+      "library/base.json",
+      "library/lower.json",
+      "library/upper.json"
+    ],
+    "equipment": "library/equipment.json",
+    "rig": "anatomy/model.json"
+  },
+  "discoveryCommand": "python -m eml interface",
+  "validationCommand": "python -m eml validate <recipe.json>",
+  "runtime": "eml.Program",
+  "equipmentSchema": "schema/equipment-v1.schema.json",
+  "librarySchema": "schema/library-v1.schema.json",
+  "conformanceVector": "tests/fixtures/portable-vector.json"
+}

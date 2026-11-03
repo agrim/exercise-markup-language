@@ -1,0 +1,66 @@
+{
+  "eml": "1.0",
+  "id": "straight-arm-pulldown",
+  "title": "Straight-Arm Pulldown",
+  "instructions": "Bring the bar from a high pulley toward the thighs with long arms and a quiet torso.",
+  "start": {
+    "pose": "upper-soft-hinge-grip-both",
+    "joints": {
+      "bothUpperArm": [-104.48, 55.09, 68.73],
+      "bothForearm": [0.98, -1.06, -6.88],
+      "leftHand": [36.8, 71.6, 26.4],
+      "rightHand": [35.24, -70.87, -24.91]
+    }
+  },
+  "equipment": [
+    {"id": "station", "kind": "cable-machine", "position": [0, 0, 0.81], "sockets": {"anchor": [0, 1.95, 0]}},
+    {
+      "id": "grip",
+      "kind": "straight-bar",
+      "position": [0.00037, 1.80138, 0.50757],
+      "sockets": {"leftGrip": [0.18913, -0.00014, 5e-05], "rightGrip": [-0.18913, 0.00014, -5e-05]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.068, 0.017, 0.998], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.068, 0.017, 0.998], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
+  ],
+  "connections": [
+    {"kind": "cable", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "grip", "socket": "center"}}
+  ],
+  "phases": [
+    {
+      "id": "pull-down-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-straight-arm-pull-midrange", "amount": 1}],
+      "items": {"grip": {"position": [0.00037, 1.22011, 0.70931], "controlPosition": [0.000364, 1.56602, 0.749866]}}
+    },
+    {
+      "id": "pull-down",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-straight-arm-pull", "amount": 1}],
+      "items": {"grip": {"position": [0.00037, 0.7651, 0.28541], "controlPosition": [0.000364, 0.885342, 0.612767]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "raise-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-straight-arm-pull-midrange", "amount": 1}],
+      "items": {"grip": {"position": [0.00037, 1.22011, 0.70931], "controlPosition": [0.000364, 0.885342, 0.612767]}}
+    },
+    {
+      "id": "raise",
+      "seconds": 0.8,
+      "actions": [],
+      "items": {"grip": {"position": [0.00037, 1.80138, 0.50757], "controlPosition": [0.000364, 1.56602, 0.749866]}},
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["lats"], "secondary": ["abdominals", "obliques", "triceps"]},
+  "camera": [140, 9]
+}

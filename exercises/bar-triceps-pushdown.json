@@ -1,0 +1,73 @@
+{
+  "eml": "1.0",
+  "id": "bar-triceps-pushdown",
+  "title": "Bar Triceps Pushdown",
+  "instructions": "Hold the short horizontal bar at a high cable. Extend the elbows to guide the bar downward and return.",
+  "start": {
+    "pose": "upper-standing-grip-both",
+    "root": [0, -0.025, -0.008],
+    "joints": {
+      "bothUpperArm": [-9.17, -2.15, -5.85],
+      "bothForearm": [-75.19, -7.8, 7.52],
+      "leftHand": [1.26, 0.29, 19.85],
+      "bothThigh": [-12.74, 0.84, 5.74],
+      "bothShin": [26.27, 0.31, -1.89],
+      "bothFoot": [-13.43, -1.6, -3.55],
+      "rightHand": [1.24, 0.61, -19.87]
+    }
+  },
+  "equipment": [
+    {"id": "station", "kind": "cable-machine", "position": [0, 0, 0.57], "sockets": {"anchor": [0, 2.07, 0]}},
+    {
+      "id": "grip",
+      "kind": "bar-attachment",
+      "position": [0.00037, 1.16334, 0.34967],
+      "sockets": {"leftGrip": [0.2054, -6e-05, -7e-05], "rightGrip": [-0.2054, 6e-05, 7e-05]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.068, 0.019, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.068, 0.019, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
+  ],
+  "connections": [
+    {"kind": "cable", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "grip", "socket": "center"}}
+  ],
+  "phases": [
+    {
+      "id": "press-down-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-elbow-extension-midrange", "amount": 1}],
+      "items": {"grip": {"position": [0.00037, 0.93539, 0.31234]}}
+    },
+    {
+      "id": "press-down",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-elbow-extension", "amount": 1}],
+      "detail": {
+        "joints": {"bothForearm": [7.56, 0.87, -2.73], "leftHand": [0.48, -1.76, 20.27], "rightHand": [0.45, 2.66, -20.3]}
+      },
+      "items": {"grip": {"position": [0.00037, 0.78925, 0.13348]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "return-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-elbow-extension-midrange", "amount": 1}],
+      "items": {"grip": {"position": [0.00037, 0.93539, 0.31234]}}
+    },
+    {
+      "id": "return",
+      "seconds": 0.8,
+      "actions": [],
+      "items": {"grip": {"position": [0.00037, 1.16334, 0.34967]}},
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["triceps"], "secondary": []},
+  "camera": [115, 9]
+}

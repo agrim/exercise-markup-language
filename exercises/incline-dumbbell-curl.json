@@ -1,0 +1,45 @@
+{
+  "eml": "1.0",
+  "id": "incline-dumbbell-curl",
+  "title": "Incline Dumbbell Curl",
+  "instructions": "Keep the back against the incline and the upper arms slightly behind the torso. Curl both dumbbells.",
+  "start": {
+    "pose": "upper-reclined-seat-grip-both",
+    "joints": {"bothUpperArm": [30.87, 7.99, -5.33], "bothForearm": [-5.82, -1.25, -1.35]}
+  },
+  "equipment": [
+    {"id": "bench", "kind": "incline-bench", "position": [0, 0, 0]},
+    {
+      "id": "left-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]},
+      "rotation": [-0.31, 3.1, -11.58]
+    },
+    {
+      "id": "right-load",
+      "kind": "dumbbell",
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]},
+      "rotation": [-37.75, 3.99, -168.38]
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]}
+  ],
+  "supports": [{"body": "chest", "surface": "bench"}, {"body": "pelvis", "surface": "bench"}],
+  "phases": [
+    {
+      "id": "curl",
+      "seconds": {"param": "phase-seconds"},
+      "actions": [{"use": "upper-elbow-flexion", "amount": 1}],
+      "detail": {"joints": {"bothForearm": [-128.77, -12.52, 13.1]}}
+    },
+    {"id": "extend", "seconds": {"param": "phase-seconds"}, "actions": []}
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["biceps"], "secondary": ["forearms"]},
+  "camera": [32, 9],
+  "parameters": {
+    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+  }
+}

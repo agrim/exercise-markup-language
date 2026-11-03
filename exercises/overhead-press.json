@@ -1,0 +1,67 @@
+{
+  "eml": "1.0",
+  "id": "overhead-press",
+  "title": "Overhead Press",
+  "instructions": "Start the bar at shoulder height. Press overhead and let the shoulders elevate as the elbows extend.",
+  "start": {
+    "pose": "upper-standing-grip-both",
+    "root": [0, -0.026, -0.00832],
+    "joints": {
+      "bothUpperArm": [10.08, -5.04, 60.29],
+      "bothForearm": [-130.7, -10.23, 13.98],
+      "leftHand": [-120.81, -38.36, -121.28],
+      "bothThigh": [-13.03, 0.86, 5.75],
+      "bothShin": [26.86, 0.33, -1.91],
+      "bothFoot": [-13.73, -1.63, -3.53],
+      "rightHand": [-121.75, 37.89, 120.44]
+    }
+  },
+  "equipment": [
+    {"id": "rack", "kind": "rack", "position": [0, 0, -0.4]},
+    {
+      "id": "weight",
+      "kind": "barbell",
+      "position": [-0.00037, 1.39946, 0.1558],
+      "sockets": {"leftGrip": [0.23386, 2e-05, -0.00034], "rightGrip": [-0.23386, -2e-05, 0.00034]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.068, 0.02, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.068, 0.02, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "weight", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "weight", "socket": "rightGrip"}}
+  ],
+  "phases": [
+    {
+      "id": "press-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-overhead-press-midrange", "amount": 1}],
+      "items": {"weight": {"position": [-0.00037, 1.68758, 0.1383]}}
+    },
+    {
+      "id": "press",
+      "seconds": 0.8,
+      "actions": [{"use": "overhead-press", "amount": 1}],
+      "items": {"weight": {"position": [-0.00037, 1.99706, 0.0208]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "lower-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-overhead-press-midrange", "amount": 1}],
+      "items": {"weight": {"position": [-0.00037, 1.68758, 0.1383]}}
+    },
+    {
+      "id": "lower",
+      "seconds": 0.8,
+      "actions": [],
+      "items": {"weight": {"position": [-0.00037, 1.39946, 0.1558]}},
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["anteriorDeltoids", "lateralDeltoids"], "secondary": ["triceps", "abdominals", "obliques"]},
+  "camera": [32, 9]
+}

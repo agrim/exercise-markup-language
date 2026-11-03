@@ -1,0 +1,70 @@
+{
+  "eml": "1.0",
+  "id": "cable-curl",
+  "title": "Cable Curl",
+  "instructions": "Hold the bar attached to the low cable. Curl it toward the shoulders while keeping the elbows near the trunk.",
+  "start": {
+    "pose": "upper-standing-grip-both",
+    "root": [0, -0.025, -0.008],
+    "joints": {
+      "bothUpperArm": [-6.23, -1.5, -8.62],
+      "bothForearm": [7.56, 1.17, -0.16],
+      "leftHand": [0.14, -2.62, 20.45],
+      "bothThigh": [-12.74, 0.84, 5.74],
+      "bothShin": [26.27, 0.31, -1.89],
+      "bothFoot": [-13.43, -1.6, -3.55],
+      "rightHand": [0.12, 3.52, -20.48]
+    }
+  },
+  "equipment": [
+    {"id": "station", "kind": "cable-machine", "position": [0, 0, 0.57], "sockets": {"anchor": [0, 0.1, 0]}},
+    {
+      "id": "grip",
+      "kind": "bar-attachment",
+      "position": [0.00037, 0.78194, 0.10311],
+      "sockets": {"leftGrip": [0.19289, 7e-05, -7e-05], "rightGrip": [-0.19289, -7e-05, 7e-05]}
+    }
+  ],
+  "contacts": [
+    {"effector": "leftHeel", "target": "start", "pole": [0.068, 0.019, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "rightHeel", "target": "start", "pole": [-0.068, 0.019, 0.997], "rotation": [0, 0, 0]},
+    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
+  ],
+  "connections": [
+    {"kind": "cable", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "grip", "socket": "center"}}
+  ],
+  "phases": [
+    {
+      "id": "curl-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-elbow-flexion-midrange", "amount": 1}],
+      "items": {"grip": {"position": [0.00037, 1.0204, 0.33277]}}
+    },
+    {
+      "id": "curl",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-elbow-flexion", "amount": 1}],
+      "items": {"grip": {"position": [0.00037, 1.33687, 0.23558]}},
+      "ease": "ease-out"
+    },
+    {
+      "id": "extend-midrange",
+      "seconds": 0.8,
+      "ease": "ease-in",
+      "actions": [{"use": "upper-elbow-flexion-midrange", "amount": 1}],
+      "items": {"grip": {"position": [0.00037, 1.0204, 0.33277]}}
+    },
+    {
+      "id": "extend",
+      "seconds": 0.8,
+      "actions": [],
+      "items": {"grip": {"position": [0.00037, 0.78194, 0.10311]}},
+      "ease": "ease-out"
+    }
+  ],
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["biceps"], "secondary": ["forearms"]},
+  "camera": [32, 9]
+}

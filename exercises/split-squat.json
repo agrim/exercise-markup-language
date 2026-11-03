@@ -1,0 +1,94 @@
+{
+  "eml": "1.0",
+  "id": "split-squat",
+  "title": "Split Squat",
+  "instructions": "Keep the feet in a fixed split stance. Lower vertically between them, then extend the front knee and hip.",
+  "start": {
+    "pose": "split-stance",
+    "joints": {
+      "rightToe": [
+        -42,
+        0,
+        0
+      ]
+    }
+  },
+  "equipment": [],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": {
+        "point": [
+          0.13,
+          0.003,
+          0.29
+        ]
+      },
+      "pole": [
+        0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": {
+        "point": [
+          -0.13,
+          0.003,
+          -0.28
+        ]
+      },
+      "pole": [
+        -0.1,
+        0,
+        1
+      ],
+      "rotation": [
+        42,
+        0,
+        0
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "lower",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-split-lower",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "stand",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondary": [
+      "abdominals",
+      "obliques"
+    ]
+  },
+  "camera": [
+    59,
+    10
+  ]
+}

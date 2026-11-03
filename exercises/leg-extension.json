@@ -1,0 +1,70 @@
+{
+  "eml": "1.0",
+  "id": "leg-extension",
+  "title": "Leg Extension",
+  "instructions": "Sit against the back pad with the roller in front of the shins. Straighten both knees, then return to the bent position.",
+  "start": {
+    "pose": "lower-seat"
+  },
+  "equipment": [
+    {
+      "id": "machine",
+      "kind": "leg-extension-machine",
+      "position": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "roller",
+      "kind": "ankle-roller",
+      "follow": {
+        "joint": "leftFoot",
+        "offset": [
+          -0.095,
+          0.046,
+          0.035
+        ]
+      }
+    }
+  ],
+  "contacts": [],
+  "phases": [
+    {
+      "id": "extend",
+      "seconds": 1.7,
+      "actions": [
+        {
+          "use": "lower-extend-knees",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "seconds": 1.7,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "quadriceps"
+    ],
+    "secondary": []
+  },
+  "camera": [
+    64,
+    10
+  ],
+  "supports": [
+    {
+      "body": "pelvis",
+      "surface": "machine"
+    }
+  ]
+}

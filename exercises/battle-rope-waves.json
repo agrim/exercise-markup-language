@@ -1,0 +1,145 @@
+{
+  "eml": "1.0",
+  "id": "battle-rope-waves",
+  "title": "Battle Rope Waves",
+  "instructions": "Hold one rope end in each hand and alternate raising the left and right arms with softly bent knees. Both ropes run to one fixed anchor.",
+  "start": {
+    "pose": "lower-wave-ready",
+    "stance": {
+      "width": 0.32,
+      "toeOut": 5
+    }
+  },
+  "equipment": [
+    {
+      "id": "left-end",
+      "kind": "battle-ropes",
+      "follow": {
+        "joint": "leftHand",
+        "offset": [
+          0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    },
+    {
+      "id": "right-end",
+      "kind": "battle-ropes",
+      "follow": {
+        "joint": "rightHand",
+        "offset": [
+          -0.01,
+          -0.072,
+          0.05
+        ],
+        "grip": true
+      }
+    },
+    {
+      "id": "anchor",
+      "kind": "secure-rope-anchor",
+      "position": [
+        0,
+        0.1,
+        1.4
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "effector": "leftBall",
+      "target": "floor",
+      "pole": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightBall",
+      "target": "floor",
+      "pole": [
+        -0.1,
+        0,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "left-lift",
+      "seconds": 0.28,
+      "actions": [
+        {
+          "use": "lower-wave-left",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "right-lift",
+      "seconds": 0.56,
+      "actions": [
+        {
+          "use": "lower-wave-right",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "middle",
+      "seconds": 0.28,
+      "actions": []
+    }
+  ],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "anteriorDeltoids",
+      "lateralDeltoids",
+      "biceps",
+      "triceps",
+      "forearms"
+    ],
+    "secondary": [
+      "abdominals",
+      "obliques",
+      "quadriceps",
+      "glutes",
+      "hamstrings"
+    ]
+  },
+  "camera": [
+    48,
+    20
+  ],
+  "connections": [
+    {
+      "kind": "rope",
+      "from": {
+        "item": "left-end",
+        "socket": "center"
+      },
+      "to": {
+        "item": "anchor",
+        "socket": "anchor"
+      }
+    },
+    {
+      "kind": "rope",
+      "from": {
+        "item": "right-end",
+        "socket": "center"
+      },
+      "to": {
+        "item": "anchor",
+        "socket": "anchor"
+      }
+    }
+  ]
+}
