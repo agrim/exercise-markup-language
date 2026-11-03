@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT))
 from eml import Program, load
 
 
-def build_surface(model):
+def read_vertices():
     vertex = np.dtype(
         [
             ("pos", "<f4", 3),
@@ -25,7 +25,11 @@ def build_surface(model):
             ("packed", "<u4"),
         ]
     )
-    verts = np.fromfile(ROOT / "anatomy/vertices.bin", vertex)
+    return np.fromfile(ROOT / "anatomy/vertices.bin", vertex)
+
+
+def build_surface(model):
+    verts = read_vertices()
     j = verts["joints"].astype(int)
     w = verts["weights"].astype(float) / 255
     rest = np.array([x["position"] for x in model["joints"]])
@@ -41,9 +45,47 @@ def build_surface(model):
     return m
 
 
+class WristSurface:
+    """Match the published skin profile in the Metal and WebGL vertex shaders."""
+
+    def __init__(self, model):
+        verts = read_vertices()
+        self.parts = []
+        names = [j["name"] for j in model["joints"]]
+        for tag, name in enumerate(model.get("wristPivots", []), 1):
+            joint = model["joints"][names.index(name)]
+            ids = np.flatnonzero(((verts["packed"] >> 8) & 255) == tag)
+            a = ((verts["packed"][ids] >> 16) & 255).astype(float)
+            b = (verts["packed"][ids] >> 24).astype(float)
+            self.parts.append(
+                (
+                    ids,
+                    name,
+                    joint["parent"],
+                    verts["pos"][ids] - joint["position"],
+                    (a + b) / 255,
+                    b / (a + b),
+                )
+            )
+
+    def correct_height(self, heights, frame, rotations):
+        for ids, name, parent, offsets, weight, t in self.parts:
+            q = np.array(frame["rotations"][name])
+            if q[3] < 0:
+                q = -q
+            mixed = t[:, None] * q
+            mixed[:, 3] += 1 - t
+            spherical = Rotation.from_quat(mixed).apply(offsets)
+            chord = offsets + t[:, None] * (
+                Rotation.from_quat(q).apply(offsets) - offsets
+            )
+            heights[ids] += weight * ((spherical - chord) @ rotations[parent, 1])
+
+
 def audit(num=5):
     model = load(ROOT / "anatomy/model.json")
     surface = build_surface(model)
+    wrist = WristSurface(model)
     joints = model["joints"]
     out = {}
     for path in sorted((ROOT / "exercises").glob("*.json")):
@@ -60,7 +102,9 @@ def audit(num=5):
                         rotations[n] = rotations[j["parent"]] @ rotations[n]
                 y = np.array([f["positions"][j["name"]][1] for j in joints])
                 columns = np.column_stack((rotations[:, 1, :], y)).ravel()
-                extrema.append(float((surface @ columns).min()))
+                heights = surface @ columns
+                wrist.correct_height(heights, f, rotations)
+                extrema.append(float(heights.min()))
         out[p.doc["id"]] = [round(min(extrema), 4), round(max(extrema), 4)]
     return {"samplesPerPhase": num, "units": "metres", "lowestVertexRanges": out}
 

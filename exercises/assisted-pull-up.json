@@ -1,44 +1,180 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "assisted-pull-up",
   "title": "Assisted Pull-Up",
   "instructions": "Rest bent knees on the assistance pad. Keep both hands on the overhead bar as the body rises and returns.",
   "start": {
     "pose": "upper-assisted-hang-grip-both",
+    "root": [0, 0.164, 0],
     "joints": {
-      "leftUpperArm": [-18.45, 24.54, 139.15],
-      "leftForearm": [-1.16, 1.73, 9.99],
-      "leftHand": [21.64, -28.97, 15.15],
-      "rightUpperArm": [-18.36, -24.44, -139.25],
-      "rightForearm": [-1.07, -1.74, -9.99],
-      "rightHand": [21.14, 28.89, -15.13]
+      "bothUpperArm": [
+        -54.68,
+        65.9,
+        105.57
+      ],
+      "bothForearm": [
+        -9.96,
+        -82.91,
+        28.19
+      ],
+      "bothHand": [
+        0,
+        0,
+        0
+      ],
+      "bothShin": [
+        90,
+        0,
+        0
+      ]
     }
   },
   "equipment": [
     {
       "id": "station",
       "kind": "assisted-pull-up-machine",
-      "position": [0, 0, 0.15],
-      "sockets": {"anchor": [0, 1.13, 0], "leftGrip": [0.31, 2.11605, 0], "rightGrip": [-0.31, 2.11605, 0]}
+      "position": [
+        0,
+        0,
+        0.15
+      ],
+      "sockets": {
+        "anchor": [
+          0,
+          1.13,
+          0
+        ],
+        "leftGrip": [
+          0.31,
+          2.11605,
+          0
+        ],
+        "rightGrip": [
+          -0.31,
+          2.11605,
+          0
+        ]
+      }
+    },
+    {
+      "id": "platform",
+      "kind": "assistance-knee-pad",
+      "position": [
+        0,
+        0.5793,
+        -0.02
+      ]
     }
   ],
   "contacts": [
-    {"effector": "leftGrip", "target": {"item": "station", "socket": "leftGrip"}, "pole": [1.0, 0, -0.45]},
-    {"effector": "rightGrip", "target": {"item": "station", "socket": "rightGrip"}, "pole": [-1.0, 0, -0.45]}
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "station",
+        "socket": "leftGrip"
+      }
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "station",
+        "socket": "rightGrip"
+      }
+    }
   ],
-  "supports": [{"body": "bothShin", "surface": "station"}],
+  "supports": [
+    {
+      "body": "bothShin",
+      "surface": "platform"
+    }
+  ],
   "phases": [
     {
       "id": "pull-up",
-      "seconds": {"param": "phase-seconds"},
-      "actions": [{"use": "upper-vertical-body-pull", "amount": 1}]
+      "seconds": {
+        "param": "phase-seconds"
+      },
+      "actions": [
+        {
+          "use": "upper-vertical-body-pull",
+          "amount": 1
+        }
+      ],
+      "items": {
+        "platform": {
+          "position": [
+            0,
+            1.0252,
+            -0.02
+          ]
+        }
+      }
     },
-    {"id": "lower", "seconds": {"param": "phase-seconds"}, "actions": []}
+    {
+      "id": "lower",
+      "seconds": {
+        "param": "phase-seconds"
+      },
+      "actions": []
+    }
   ],
-  "repeat": {"mode": "loop", "count": 1},
-  "muscles": {"primary": ["lats", "trapezius", "upperTrapezius", "rhomboids"], "secondary": ["biceps", "forearms"]},
-  "camera": [140, 9],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "lats",
+      "trapezius",
+      "upperTrapezius",
+      "rhomboids"
+    ],
+    "secondary": [
+      "biceps",
+      "forearms"
+    ]
+  },
+  "camera": [
+    140,
+    9
+  ],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
-  }
+    "phase-seconds": {
+      "default": 1.6,
+      "min": 0.36,
+      "max": 15
+    }
+  },
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftShin",
+      "offset": [
+        0.0088,
+        -0.0262,
+        0.0368
+      ],
+      "surface": {
+        "item": "platform",
+        "part": 0
+      },
+      "min": -0.004,
+      "max": 0.006
+    },
+    {
+      "kind": "support",
+      "landmark": "rightShin",
+      "offset": [
+        -0.0088,
+        -0.0262,
+        0.0368
+      ],
+      "surface": {
+        "item": "platform",
+        "part": 0
+      },
+      "min": -0.004,
+      "max": 0.006
+    }
+  ]
 }

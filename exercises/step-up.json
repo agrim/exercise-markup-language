@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "step-up",
   "title": "Step-Up",
   "instructions": "Place the left foot on the step and keep it planted. Extend the left hip and knee, bring the right foot up, then lower the right foot first.",
   "start": {
-    "pose": "lower-step"
+    "pose": "lower-step", "root": [0, -0.09, 0]
   },
   "equipment": [
     {

@@ -36,7 +36,8 @@ class StandardTests(unittest.TestCase):
             refs = refs.with_resource(spec["$id"], Resource.from_contents(spec))
         for path in (ROOT / "library").glob("*.json"):
             name = "equipment" if path.stem == "equipment" else "library"
-            spec = load(ROOT / "schema" / f"{name}-v1.schema.json")
+            version = "v1" if name == "equipment" else "v1.1"
+            spec = load(ROOT / "schema" / f"{name}-{version}.schema.json")
             Draft202012Validator(spec, registry=refs).validate(load(path))
         p = Program(minimal())
         for pose in p.poses:

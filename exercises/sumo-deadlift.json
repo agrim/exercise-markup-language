@@ -1,5 +1,5 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "sumo-deadlift",
   "title": "Sumo Deadlift",
   "instructions": "Take a wide turned-out stance with the hands inside the knees. Drive through both feet and finish upright.",
@@ -7,19 +7,24 @@
     "pose": "lower-wide-floor-pull",
     "root": [
       0,
-      -0.44263,
-      -0.21
+      -0.43209,
+      -0.296
     ],
     "joints": {
       "bothUpperArm": [
         -48,
-        0,
+        45,
         -6
       ],
       "bothForearm": [
         -4,
-        0,
+        88,
         0
+      ],
+      "bothThigh": [
+        -99,
+        19,
+        -35
       ]
     }
   },
@@ -30,7 +35,7 @@
       "position": [
         0,
         0.21,
-        0.2
+        0.178
       ],
       "sockets": {
         "leftGrip": [
@@ -51,19 +56,19 @@
       "effector": "leftBall",
       "target": {
         "point": [
-          0.27,
+          0.35,
           0,
-          0.183
+          0.17
         ]
       },
       "pole": [
-        0.85,
+        0.65,
         0,
-        0.44
+        0.84
       ],
       "rotation": [
         0,
-        26,
+        29,
         0
       ]
     },
@@ -71,19 +76,19 @@
       "effector": "rightBall",
       "target": {
         "point": [
-          -0.27,
+          -0.35,
           0,
-          0.183
+          0.17
         ]
       },
       "pole": [
-        -0.85,
+        -0.65,
         0,
-        0.44
+        0.84
       ],
       "rotation": [
         0,
-        -26,
+        -29,
         0
       ]
     },
@@ -94,9 +99,14 @@
         "socket": "leftGrip"
       },
       "pole": [
-        0.7,
-        -0.6,
-        0.3
+        0.25,
+        -0.1,
+        -1
+      ],
+      "rotation": [
+        32,
+        168,
+        2
       ]
     },
     {
@@ -106,9 +116,14 @@
         "socket": "rightGrip"
       },
       "pole": [
-        -0.7,
-        -0.6,
-        0.3
+        -0.25,
+        -0.1,
+        -1
+      ],
+      "rotation": [
+        32,
+        -168,
+        -2
       ]
     }
   ],
@@ -126,7 +141,7 @@
         "root": [
           0,
           -0.2338,
-          -0.154
+          -0.27
         ],
         "joints": {
           "pelvis": [
@@ -140,13 +155,13 @@
         "load": {
           "position": [
             0,
-            0.47338,
-            0.188
+            0.48287,
+            0.175
           ],
           "controlPosition": [
             0,
-            0.34463,
-            0.194
+            0.34802,
+            0.1765
           ]
         }
       }
@@ -163,21 +178,21 @@
       "detail": {
         "root": [
           0,
-          -0.025,
-          0.028
+          -0.043,
+          0.0
         ]
       },
       "items": {
         "load": {
           "position": [
             0,
-            0.78749,
-            0.107
+            0.75675,
+            0.138
           ],
           "controlPosition": [
             0,
-            0.66707,
-            0.1475
+            0.6529,
+            0.1565
           ]
         }
       }
@@ -195,7 +210,7 @@
         "root": [
           0,
           -0.2338,
-          -0.154
+          -0.27
         ],
         "joints": {
           "pelvis": [
@@ -209,13 +224,13 @@
         "load": {
           "position": [
             0,
-            0.47338,
-            0.188
+            0.48287,
+            0.175
           ],
           "controlPosition": [
             0,
-            0.66707,
-            0.1475
+            0.6529,
+            0.1565
           ]
         }
       }
@@ -229,12 +244,12 @@
           "position": [
             0,
             0.21,
-            0.2
+            0.178
           ],
           "controlPosition": [
             0,
-            0.34463,
-            0.194
+            0.34802,
+            0.1765
           ]
         }
       }
@@ -260,5 +275,106 @@
   "camera": [
     139,
     13
+  ],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftHeel",
+      "surface": "floor",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "kind": "clearance",
+      "item": "load",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "leftThigh",
+      "bodyTo": "leftShin",
+      "bodyRadius": 0.06
+    },
+    {
+      "kind": "clearance",
+      "item": "load",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "leftShin",
+      "bodyTo": "leftFoot",
+      "bodyRadius": 0.044
+    },
+    {
+      "kind": "support",
+      "landmark": "rightHeel",
+      "surface": "floor",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "kind": "clearance",
+      "item": "load",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "rightThigh",
+      "bodyTo": "rightShin",
+      "bodyRadius": 0.06
+    },
+    {
+      "kind": "clearance",
+      "item": "load",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "rightShin",
+      "bodyTo": "rightFoot",
+      "bodyRadius": 0.044
+    },
+    {
+      "kind": "hinge",
+      "joint": "bothForearm",
+      "child": "bothHand",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "min": -15,
+      "max": 12,
+      "maxSwing": 12
+    }
   ]
 }

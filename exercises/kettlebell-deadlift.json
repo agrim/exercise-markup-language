@@ -1,5 +1,5 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "kettlebell-deadlift",
   "title": "Kettlebell Deadlift",
   "instructions": "Stand astride the bell, grasp the handle with both hands, extend the hips and knees, and lower it to its starting point.",
@@ -7,18 +7,18 @@
     "pose": "lower-floor-pull",
     "root": [
       0,
-      -0.40248,
-      -0.17
+      -0.343,
+      -0.2
     ],
     "joints": {
       "bothUpperArm": [
         -54,
-        0,
+        45,
         -12
       ],
       "bothForearm": [
         -4,
-        0,
+        88,
         0
       ]
     }
@@ -29,8 +29,8 @@
       "kind": "kettlebell",
       "position": [
         0,
-        0.136,
-        0.125
+        0.14675,
+        0.145
       ],
       "sockets": {
         "leftGrip": [
@@ -51,19 +51,19 @@
       "effector": "leftBall",
       "target": {
         "point": [
-          0.175,
+          0.275,
           0,
-          0.183
+          0.175
         ]
       },
       "pole": [
-        0.1,
+        0.4,
         0,
-        1
+        0.92
       ],
       "rotation": [
         0,
-        12,
+        16,
         0
       ]
     },
@@ -71,19 +71,19 @@
       "effector": "rightBall",
       "target": {
         "point": [
-          -0.175,
+          -0.275,
           0,
-          0.183
+          0.175
         ]
       },
       "pole": [
-        -0.1,
+        -0.4,
         0,
-        1
+        0.92
       ],
       "rotation": [
         0,
-        -12,
+        -16,
         0
       ]
     },
@@ -94,9 +94,14 @@
         "socket": "leftGrip"
       },
       "pole": [
-        0.7,
-        -0.6,
-        0.3
+        0.25,
+        -0.1,
+        -1
+      ],
+      "rotation": [
+        24,
+        159,
+        0
       ]
     },
     {
@@ -106,9 +111,14 @@
         "socket": "rightGrip"
       },
       "pole": [
-        -0.7,
-        -0.6,
-        0.3
+        -0.25,
+        -0.1,
+        -1
+      ],
+      "rotation": [
+        24,
+        -159,
+        0
       ]
     }
   ],
@@ -126,20 +136,20 @@
         "root": [
           0,
           -0.2052,
-          -0.071
+          -0.12
         ]
       },
       "items": {
         "load": {
           "position": [
             0,
-            0.47137,
-            0.113
+            0.43774,
+            0.148
           ],
           "controlPosition": [
             0,
-            0.32666,
-            0.119
+            0.30774,
+            0.1465
           ]
         }
       }
@@ -156,21 +166,21 @@
       "detail": {
         "root": [
           0,
-          -0.008,
-          0.028
+          -0.02,
+          -0.006
         ]
       },
       "items": {
         "load": {
           "position": [
             0,
-            0.72039,
-            0.107
+            0.71493,
+            0.17
           ],
           "controlPosition": [
             0,
-            0.61518,
-            0.11
+            0.591,
+            0.159
           ]
         }
       }
@@ -188,20 +198,20 @@
         "root": [
           0,
           -0.2052,
-          -0.071
+          -0.12
         ]
       },
       "items": {
         "load": {
           "position": [
             0,
-            0.47137,
-            0.113
+            0.43774,
+            0.148
           ],
           "controlPosition": [
             0,
-            0.61518,
-            0.11
+            0.591,
+            0.159
           ]
         }
       }
@@ -214,13 +224,13 @@
         "load": {
           "position": [
             0,
-            0.136,
-            0.125
+            0.14675,
+            0.145
           ],
           "controlPosition": [
             0,
-            0.32666,
-            0.119
+            0.30774,
+            0.1465
           ]
         }
       }
@@ -245,5 +255,34 @@
   "camera": [
     139,
     13
+  ],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftHeel",
+      "surface": "floor",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "kind": "support",
+      "landmark": "rightHeel",
+      "surface": "floor",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "kind": "hinge",
+      "joint": "bothForearm",
+      "child": "bothHand",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "min": -15,
+      "max": 12,
+      "maxSwing": 12
+    }
   ]
 }

@@ -1,14 +1,15 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "smith-machine-squat",
   "title": "Smith Machine Squat",
   "instructions": "Keep the bar on the vertical guides, with the feet slightly forward. Bend both knees, then drive the carriage back up.",
   "start": {
-    "pose": "lower-back-rack",
+    "pose": "lower-back-rack", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.35,
       "toeOut": 12
-    }
+    },
+    "joints": {"bothThigh": {"y": 12}, "bothUpperArm": [65.82, 76.48, 66.87], "bothForearm": [-104.66, -61.14, -70.24], "bothHand": [0, 0, 0]}
   },
   "equipment": [
     {
@@ -17,7 +18,7 @@
       "position": [
         0,
         0,
-        -0.065
+        -0.119
       ]
     },
     {
@@ -25,53 +26,34 @@
       "kind": "barbell",
       "position": [
         0,
-        1.38,
-        -0.065
-      ]
+        1.39413,
+        -0.119
+      ],
+      "sockets": {"leftGrip": [0.34, 0, 0], "rightGrip": [-0.34, 0, 0]}
     }
   ],
   "contacts": [
     {
       "effector": "leftBall",
-      "target": "floor",
-      "pole": [
-        0.1,
-        0,
-        1
-      ]
+      "target": "floor"
     },
     {
       "effector": "rightBall",
-      "target": "floor",
-      "pole": [
-        -0.1,
-        0,
-        1
-      ]
+      "target": "floor"
     },
     {
       "effector": "leftGrip",
       "target": {
         "item": "bar",
         "socket": "leftGrip"
-      },
-      "pole": [
-        0.7,
-        -0.6,
-        -0.7
-      ]
+      }
     },
     {
       "effector": "rightGrip",
       "target": {
         "item": "bar",
         "socket": "rightGrip"
-      },
-      "pole": [
-        -0.7,
-        -0.6,
-        -0.7
-      ]
+      }
     }
   ],
   "phases": [
@@ -82,16 +64,21 @@
         {
           "use": "squat-down",
           "amount": 1
-        }
+        },
+        {"use": "lower-track-squat-stance", "amount": 0.35}
       ],
       "items": {
         "bar": {
           "position": [
             0,
-            1.04,
-            -0.065
+            1.08707,
+            -0.119
           ]
         }
+      },
+      "detail": {
+        "root": [0.0, -0.325, -0.26467],
+        "joints": {"bothUpperArm": [-51.52, 81.17, -36.98], "bothForearm": [-110.43, -58.54, -62.64], "bothHand": [0, 0, 0]}
       }
     },
     {

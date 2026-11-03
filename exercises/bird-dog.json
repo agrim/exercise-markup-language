@@ -1,5 +1,5 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "bird-dog",
   "title": "Bird Dog",
   "instructions": "From hands and knees, reach one arm forward and the opposite leg backward. Replant before switching sides.",
@@ -30,7 +30,14 @@
         {"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]},
         {"effector": "leftPalm", "target": {"point": [0.178, 0.1549, 0.60021]}, "engage": "reach"}
       ],
-      "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}]
+      "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}],
+      "detail": {
+        "joints": {
+          "leftUpperArm": [-96.61, 7.720000000000001, 30.119999999999997],
+          "leftForearm": [-50.64, 0.35000000000000053, 13.5],
+          "leftHand": [-149.1, -37.31, -153.64999999999998]
+        }
+      }
     },
     {
       "id": "reach-left",
@@ -41,7 +48,14 @@
         {"effector": "leftPalm", "target": {"point": [0.178, 0.45435, 0.73431]}, "engage": "reach"}
       ],
       "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}],
-      "ease": "ease-out"
+      "ease": "ease-out",
+      "detail": {
+        "joints": {
+          "leftUpperArm": [-33.14, 35.059999999999995, 122.01],
+          "leftForearm": [-9.11, 14.399999999999999, 58.83],
+          "leftHand": [-141.87, -128.31, -220.56]
+        }
+      }
     },
     {
       "id": "replant-left-midrange",
@@ -52,7 +66,14 @@
         {"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]},
         {"effector": "leftPalm", "target": {"point": [0.178, 0.1549, 0.60021]}, "engage": "reach"}
       ],
-      "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}]
+      "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}],
+      "detail": {
+        "joints": {
+          "leftUpperArm": [-96.61, 7.720000000000001, 30.119999999999997],
+          "leftForearm": [-50.64, 0.35000000000000053, 13.5],
+          "leftHand": [-149.1, -37.31, -153.64999999999998]
+        }
+      }
     },
     {
       "id": "replant-left",
@@ -74,7 +95,14 @@
         {"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]},
         {"effector": "rightPalm", "target": {"point": [-0.178, 0.15487, 0.59984]}, "engage": "reach"}
       ],
-      "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}]
+      "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}],
+      "detail": {
+        "joints": {
+          "rightUpperArm": [-96.53999999999999, -7.720000000000001, -30.130000000000003],
+          "rightForearm": [-50.830000000000005, -0.3699999999999992, -13.55],
+          "rightHand": [-149.69, 37.22, 153.55]
+        }
+      }
     },
     {
       "id": "reach-right",
@@ -85,7 +113,14 @@
         {"effector": "rightPalm", "target": {"point": [-0.178, 0.45406, 0.7337]}, "engage": "reach"}
       ],
       "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}],
-      "ease": "ease-out"
+      "ease": "ease-out",
+      "detail": {
+        "joints": {
+          "rightUpperArm": [-33.09, -34.97, -121.97],
+          "rightForearm": [-9.120000000000005, -14.45, -59.02],
+          "rightHand": [-142.24, 128.31, 220.73000000000002]
+        }
+      }
     },
     {
       "id": "replant-right-midrange",
@@ -96,7 +131,14 @@
         {"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]},
         {"effector": "rightPalm", "target": {"point": [-0.178, 0.15487, 0.59984]}, "engage": "reach"}
       ],
-      "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}]
+      "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}],
+      "detail": {
+        "joints": {
+          "rightUpperArm": [-96.53999999999999, -7.720000000000001, -30.130000000000003],
+          "rightForearm": [-50.830000000000005, -0.3699999999999992, -13.55],
+          "rightHand": [-149.69, 37.22, 153.55]
+        }
+      }
     },
     {
       "id": "replant-right",

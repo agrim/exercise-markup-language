@@ -1,5 +1,5 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "deadlift",
   "title": "Deadlift",
   "instructions": "Begin over the bar with both hands gripping it just outside the legs. Stand up with the load close to the shins and return it to the floor.",
@@ -7,18 +7,18 @@
     "pose": "lower-floor-pull",
     "root": [
       0,
-      -0.37845,
-      -0.27
+      -0.36391,
+      -0.305
     ],
     "joints": {
       "bothUpperArm": [
         -54,
-        0,
+        45,
         2
       ],
       "bothForearm": [
         -4,
-        0,
+        88,
         0
       ]
     }
@@ -30,7 +30,7 @@
       "position": [
         0,
         0.21,
-        0.233
+        0.177
       ],
       "sockets": {
         "leftGrip": [
@@ -51,19 +51,19 @@
       "effector": "leftBall",
       "target": {
         "point": [
-          0.12,
+          0.145,
           0,
-          0.183
+          0.161
         ]
       },
       "pole": [
-        0.1,
+        0.14,
         0,
         1
       ],
       "rotation": [
         0,
-        8,
+        10,
         0
       ]
     },
@@ -71,19 +71,19 @@
       "effector": "rightBall",
       "target": {
         "point": [
-          -0.12,
+          -0.145,
           0,
-          0.183
+          0.161
         ]
       },
       "pole": [
-        -0.1,
+        -0.14,
         0,
         1
       ],
       "rotation": [
         0,
-        -8,
+        -10,
         0
       ]
     },
@@ -94,9 +94,14 @@
         "socket": "leftGrip"
       },
       "pole": [
-        0.7,
-        -0.6,
-        0.3
+        0.25,
+        -0.1,
+        -1
+      ],
+      "rotation": [
+        35,
+        172,
+        2
       ]
     },
     {
@@ -106,9 +111,14 @@
         "socket": "rightGrip"
       },
       "pole": [
-        -0.7,
-        -0.6,
-        0.3
+        -0.25,
+        -0.1,
+        -1
+      ],
+      "rotation": [
+        35,
+        -172,
+        -2
       ]
     }
   ],
@@ -126,7 +136,7 @@
         "root": [
           0,
           -0.1932,
-          -0.196
+          -0.301
         ],
         "joints": {
           "pelvis": [
@@ -140,13 +150,13 @@
         "load": {
           "position": [
             0,
-            0.48408,
-            0.221
+            0.4931,
+            0.177
           ],
           "controlPosition": [
             0,
-            0.35154,
-            0.227
+            0.3522,
+            0.177
           ]
         }
       }
@@ -164,20 +174,20 @@
         "root": [
           0,
           -0.008,
-          0.028
+          0.007
         ]
       },
       "items": {
         "load": {
           "position": [
             0,
-            0.80515,
-            0.128
+            0.79113,
+            0.126
           ],
           "controlPosition": [
             0,
-            0.69306,
-            0.1745
+            0.68682,
+            0.1515
           ]
         }
       }
@@ -195,7 +205,7 @@
         "root": [
           0,
           -0.1932,
-          -0.196
+          -0.301
         ],
         "joints": {
           "pelvis": [
@@ -209,13 +219,13 @@
         "load": {
           "position": [
             0,
-            0.48408,
-            0.221
+            0.4931,
+            0.177
           ],
           "controlPosition": [
             0,
-            0.69306,
-            0.1745
+            0.68682,
+            0.1515
           ]
         }
       }
@@ -229,12 +239,12 @@
           "position": [
             0,
             0.21,
-            0.233
+            0.177
           ],
           "controlPosition": [
             0,
-            0.35154,
-            0.227
+            0.3522,
+            0.177
           ]
         }
       }
@@ -259,5 +269,106 @@
   "camera": [
     139,
     13
+  ],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftHeel",
+      "surface": "floor",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "kind": "clearance",
+      "item": "load",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "leftThigh",
+      "bodyTo": "leftShin",
+      "bodyRadius": 0.06
+    },
+    {
+      "kind": "clearance",
+      "item": "load",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "leftShin",
+      "bodyTo": "leftFoot",
+      "bodyRadius": 0.044
+    },
+    {
+      "kind": "support",
+      "landmark": "rightHeel",
+      "surface": "floor",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "kind": "clearance",
+      "item": "load",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "rightThigh",
+      "bodyTo": "rightShin",
+      "bodyRadius": 0.06
+    },
+    {
+      "kind": "clearance",
+      "item": "load",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "rightShin",
+      "bodyTo": "rightFoot",
+      "bodyRadius": 0.044
+    },
+    {
+      "kind": "hinge",
+      "joint": "bothForearm",
+      "child": "bothHand",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "min": -15,
+      "max": 12,
+      "maxSwing": 12
+    }
   ]
 }

@@ -1,14 +1,14 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "chest-supported-dumbbell-row",
   "title": "Chest-Supported Dumbbell Row",
   "instructions": "Support the chest on the inclined bench. Row two dumbbells toward the torso and lower them.",
   "start": {
     "pose": "upper-chest-support-grip-both",
-    "joints": {"bothUpperArm": [-47.74, -10.86, -2.27], "bothForearm": [-5.09, -0.77, 0.18], "bothHand": [32.52, 7.32, 3.34]}
+    "joints": {"bothUpperArm": [-48.75, -4.34, 5.53], "bothForearm": [-9.96, -82.91, 28.19], "bothHand": [0, 0, 0]}
   },
   "equipment": [
-    {"id": "bench", "kind": "incline-bench", "position": [0, 0.14, 0.06]},
+    {"id": "bench", "kind": "prone-row-bench", "position": [0, 0, -0.1484], "rotation": [0, 180, 0]},
     {
       "id": "left-load",
       "kind": "dumbbell",
@@ -34,14 +34,14 @@
       "ease": "ease-in",
       "actions": [{"use": "upper-shoulder-extension-row-midrange", "amount": 1}],
       "detail": {
-        "joints": {"bothUpperArm": [5.23, 1.05, -0.24], "bothForearm": [-85.51, -17.69, 1.74], "bothHand": [59.66, 7.29, 11.46]}
+        "joints": {"bothUpperArm": [6.9, -0.1, 2.81], "bothForearm": [-70.41, -10.62, 83.65]}
       }
     },
     {
       "id": "row",
       "seconds": 0.8,
       "actions": [{"use": "row-to-torso", "amount": 1}],
-      "detail": {"joints": {"bothUpperArm": [53.8, 4.96, 12.13], "bothHand": [37.17, 3.85, 9.42]}},
+      "detail": {"joints": {"bothUpperArm": [53.06, 2.69, 6.3], "bothForearm": [-73.85, 19.86, 83.36]}},
       "ease": "ease-out"
     },
     {
@@ -50,12 +50,23 @@
       "ease": "ease-in",
       "actions": [{"use": "upper-shoulder-extension-row-midrange", "amount": 1}],
       "detail": {
-        "joints": {"bothUpperArm": [5.23, 1.05, -0.24], "bothForearm": [-85.51, -17.69, 1.74], "bothHand": [59.66, 7.29, 11.46]}
+        "joints": {"bothUpperArm": [7.99, -3.89, 6.11], "bothForearm": [-70.46, -10.21, 83.65]}
       }
     },
     {"id": "extend", "seconds": 0.8, "actions": [], "ease": "ease-out"}
   ],
   "repeat": {"mode": "loop", "count": 1},
   "muscles": {"primary": ["lats", "trapezius", "rhomboids"], "secondary": ["biceps", "posteriorDeltoids"]},
-  "camera": [80, 9]
+  "camera": [80, 9],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "chest",
+      "offset": [-0.0462, 0.1346, 0.1611],
+      "surface": {"item": "bench", "part": 0},
+      "min": -0.005,
+      "max": 0.012,
+      "edgeTolerance": 0.004
+    }
+  ]
 }

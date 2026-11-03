@@ -1,0 +1,374 @@
+{
+  "eml": "1.1",
+  "description": "Verified starting poses and compatible motions on the reference rig. A motion defines joint and root deltas and may declare setup landmark pins in fixedPoints. A support template supplies ordinary EML fields for a complete planted demonstration with prescribed surface, hand orientation and contact releases. Copy its fields together. Each example shows the catalog exercise and its own equipment, contacts and timing.",
+  "setups": [
+    {
+      "pose": "upper-lateral-raise-start",
+      "motions": ["upper-lateral-elevation"],
+      "example": "dumbbell-lateral-raise"
+    },
+    {
+      "pose": "upper-front-raise-start",
+      "motions": ["upper-anterior-elevation"],
+      "example": "dumbbell-front-raise"
+    },
+    {
+      "pose": "upper-flat-dumbbell-press-start",
+      "motions": ["upper-horizontal-press-midrange", "horizontal-press"],
+      "example": "dumbbell-bench-press"
+    },
+    {
+      "pose": "upper-seated-dumbbell-press-start",
+      "motions": ["upper-overhead-press-midrange", "overhead-press"],
+      "example": "dumbbell-shoulder-press"
+    },
+    {"pose": "upper-barbell-row-start", "motions": ["row-to-torso"], "example": "row"},
+    {
+      "pose": "upper-face-pull-start",
+      "motions": ["upper-face-pull-midrange", "upper-face-pull"],
+      "example": "face-pull"
+    },
+    {"pose": "upper-overhand-hang-start", "motions": ["upper-vertical-body-pull"], "example": "pull-up"},
+    {
+      "pose": "upper-inverted-row-start",
+      "motions": ["upper-plank-row-midrange", "upper-plank-row"],
+      "example": "inverted-row"
+    },
+    {
+      "pose": "upper-overhand-pulldown-start",
+      "motions": ["upper-vertical-pulldown-midrange", "upper-vertical-pulldown"],
+      "example": "lat-pulldown"
+    },
+    {
+      "pose": "upper-incline-dumbbell-press-start",
+      "motions": ["upper-incline-dumbbell-press-midrange", "upper-incline-dumbbell-press"],
+      "example": "incline-dumbbell-press"
+    },
+    {
+      "pose": "upper-underhand-hang-start",
+      "motions": ["upper-underhand-body-pull"],
+      "example": "chin-up"
+    },
+    {
+      "pose": "upper-neutral-pulldown-start",
+      "motions": ["upper-neutral-pulldown-midrange", "upper-neutral-pulldown"],
+      "example": "neutral-grip-lat-pulldown"
+    },
+    {
+      "pose": "upper-left-supported-row-start",
+      "motions": ["upper-left-supported-row-midrange", "upper-left-supported-row"],
+      "example": "single-arm-dumbbell-row"
+    },
+    {
+      "pose": "upper-left-supported-curl-start",
+      "motions": ["upper-left-supported-curl"],
+      "example": "concentration-curl"
+    },
+    {
+      "pose": "upper-two-hand-overhead-start",
+      "motions": ["upper-two-hand-overhead-lower-midrange", "upper-two-hand-overhead-lower"],
+      "example": "overhead-dumbbell-triceps-extension"
+    },
+    {
+      "pose": "upper-lying-triceps-start",
+      "motions": ["upper-overhead-elbow-flexion-midrange", "upper-overhead-elbow-flexion"],
+      "example": "lying-dumbbell-triceps-extension"
+    },
+    {
+      "pose": "high-plank",
+      "motions": ["lower-pushup-midrange", "lower-pushup-lower"],
+      "example": "push-up",
+      "support": {
+        "contacts": [
+          {"effector": "leftPalm", "target": "start", "rotation": [-66, -9, -172]},
+          {"effector": "rightPalm", "target": "start", "rotation": [-66, 9, 172]},
+          {"effector": "leftBall", "target": "start", "rotation": [63, 0, 0]},
+          {"effector": "rightBall", "target": "start", "rotation": [63, 0, 0]}
+        ],
+        "supports": [{"body": "bothHand", "surface": "floor"}, {"body": "bothFoot", "surface": "floor"}],
+        "constraints": [
+          {
+            "kind": "support",
+            "landmark": "leftPalm",
+            "surface": "floor",
+            "min": -0.005,
+            "max": 0.012,
+            "offset": [0.0646, -0.0246, 0.0276]
+          },
+          {
+            "kind": "support",
+            "landmark": "rightPalm",
+            "surface": "floor",
+            "min": -0.005,
+            "max": 0.012,
+            "offset": [-0.0646, -0.0246, 0.0276]
+          }
+        ],
+        "phases": [
+          {"id": "lower-midrange", "seconds": 1, "actions": [{"use": "lower-pushup-midrange"}]},
+          {"id": "lower", "seconds": 1, "actions": [{"use": "lower-pushup-lower"}]},
+          {"id": "press-midrange", "seconds": 1, "actions": [{"use": "lower-pushup-midrange"}]},
+          {"id": "press", "seconds": 1, "actions": []}
+        ]
+      }
+    },
+    {
+      "pose": "upper-kneeling-plank",
+      "motions": ["upper-kneeling-push-midrange", "upper-kneeling-push-lower"],
+      "example": "knee-push-up",
+      "support": {
+        "contacts": [
+          {"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]},
+          {"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]}
+        ],
+        "supports": [{"body": "bothHand", "surface": "floor"}, {"body": "bothShin", "surface": "floor"}],
+        "constraints": [
+          {
+            "kind": "support",
+            "landmark": "leftPalm",
+            "surface": "floor",
+            "min": -0.005,
+            "max": 0.012,
+            "offset": [-0.0114, -0.0878, 0.0549]
+          },
+          {
+            "kind": "support",
+            "landmark": "rightPalm",
+            "surface": "floor",
+            "min": -0.005,
+            "max": 0.012,
+            "offset": [0.0114, -0.0878, 0.0549]
+          }
+        ],
+        "phases": [
+          {"id": "lower-midrange", "seconds": 1, "actions": [{"use": "upper-kneeling-push-midrange"}]},
+          {"id": "lower", "seconds": 1, "actions": [{"use": "upper-kneeling-push-lower"}]},
+          {"id": "press-midrange", "seconds": 1, "actions": [{"use": "upper-kneeling-push-midrange"}]},
+          {"id": "press", "seconds": 1, "actions": []}
+        ]
+      }
+    },
+    {
+      "pose": "upper-inclined-plank",
+      "motions": ["upper-supported-push-midrange", "upper-supported-push"],
+      "example": "incline-push-up",
+      "support": {
+        "contacts": [
+          {
+            "effector": "leftPalm",
+            "target": {"item": "platform", "socket": "leftPalm"},
+            "rotation": [-73.2, -10.28, 176.92]
+          },
+          {
+            "effector": "rightPalm",
+            "target": {"item": "platform", "socket": "rightPalm"},
+            "rotation": [-73.64, 10.29, -177.0]
+          },
+          {"effector": "leftBall", "target": "start", "rotation": [62, 0, 0]},
+          {"effector": "rightBall", "target": "start", "rotation": [62, 0, 0]}
+        ],
+        "supports": [{"body": "bothHand", "surface": "platform"}, {"body": "bothFoot", "surface": "floor"}],
+        "constraints": [
+          {
+            "kind": "support",
+            "landmark": "leftPalm",
+            "surface": {"item": "platform", "part": 0},
+            "min": -0.005,
+            "max": 0.012,
+            "offset": [-0.0114, -0.0878, 0.0549]
+          },
+          {
+            "kind": "support",
+            "landmark": "rightPalm",
+            "surface": {"item": "platform", "part": 1},
+            "min": -0.005,
+            "max": 0.012,
+            "offset": [0.0114, -0.0878, 0.0549]
+          }
+        ],
+        "phases": [
+          {"id": "lower-midrange", "seconds": 1, "actions": [{"use": "upper-supported-push-midrange"}]},
+          {"id": "lower", "seconds": 1, "actions": [{"use": "upper-supported-push"}]},
+          {"id": "press-midrange", "seconds": 1, "actions": [{"use": "upper-supported-push-midrange"}]},
+          {"id": "press", "seconds": 1, "actions": []}
+        ],
+        "equipment": [{"id": "platform", "kind": "incline-hand-platforms", "position": [0, 0, 0.25]}]
+      }
+    },
+    {
+      "pose": "quadruped",
+      "motions": [
+        "upper-contralateral-reach-quadruped-left-midrange",
+        "upper-contralateral-reach-quadruped-left",
+        "upper-contralateral-reach-quadruped-right-midrange",
+        "upper-contralateral-reach-quadruped-right"
+      ],
+      "example": "bird-dog",
+      "support": {
+        "phases": [
+          {
+            "id": "reach-midrange-left",
+            "seconds": 1,
+            "actions": [{"use": "upper-contralateral-reach-quadruped-left-midrange"}],
+            "contacts": [{"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]}],
+            "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}]
+          },
+          {
+            "id": "reach-left",
+            "seconds": 1,
+            "actions": [{"use": "upper-contralateral-reach-quadruped-left"}],
+            "contacts": [{"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]}],
+            "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}]
+          },
+          {
+            "id": "return-midrange-left",
+            "seconds": 1,
+            "actions": [{"use": "upper-contralateral-reach-quadruped-left-midrange"}],
+            "contacts": [{"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]}],
+            "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}]
+          },
+          {
+            "id": "return-left",
+            "seconds": 1,
+            "actions": [],
+            "contacts": [{"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]}],
+            "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftShin", "surface": "floor"}]
+          },
+          {
+            "id": "reach-midrange-right",
+            "seconds": 1,
+            "actions": [{"use": "upper-contralateral-reach-quadruped-right-midrange"}],
+            "contacts": [{"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]}],
+            "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}]
+          },
+          {
+            "id": "reach-right",
+            "seconds": 1,
+            "actions": [{"use": "upper-contralateral-reach-quadruped-right"}],
+            "contacts": [{"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]}],
+            "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}]
+          },
+          {
+            "id": "return-midrange-right",
+            "seconds": 1,
+            "actions": [{"use": "upper-contralateral-reach-quadruped-right-midrange"}],
+            "contacts": [{"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]}],
+            "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}]
+          },
+          {
+            "id": "return-right",
+            "seconds": 1,
+            "actions": [],
+            "contacts": [{"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]}],
+            "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightShin", "surface": "floor"}]
+          }
+        ],
+        "constraints": [
+          {
+            "kind": "support",
+            "landmark": "rightPalm",
+            "surface": "floor",
+            "min": -0.005,
+            "max": 0.012,
+            "offset": [0.0114, -0.0878, 0.0549],
+            "phases": ["reach-midrange-left", "reach-left", "return-midrange-left", "return-left"]
+          },
+          {
+            "kind": "support",
+            "landmark": "leftPalm",
+            "surface": "floor",
+            "min": -0.005,
+            "max": 0.012,
+            "offset": [-0.0114, -0.0878, 0.0549],
+            "phases": ["reach-midrange-right", "reach-right", "return-midrange-right", "return-right"]
+          }
+        ]
+      }
+    },
+    {
+      "pose": "lower-bear",
+      "motions": ["lower-crawl-left", "lower-crawl-right"],
+      "example": "bear-crawl",
+      "support": {
+        "phases": [
+          {
+            "id": "advance-left",
+            "seconds": 1,
+            "actions": [{"use": "lower-crawl-left"}],
+            "contacts": [
+              {"effector": "leftPalm", "target": "start", "rotation": [-66, -9, -172]},
+              {"effector": "rightBall", "target": "start", "rotation": [62, 0, 0]}
+            ],
+            "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightFoot", "surface": "floor"}]
+          },
+          {
+            "id": "return-left",
+            "seconds": 1,
+            "actions": [],
+            "contacts": [
+              {"effector": "leftPalm", "target": "start", "rotation": [-66, -9, -172]},
+              {"effector": "rightBall", "target": "start", "rotation": [62, 0, 0]}
+            ],
+            "supports": [{"body": "leftHand", "surface": "floor"}, {"body": "rightFoot", "surface": "floor"}]
+          },
+          {
+            "id": "advance-right",
+            "seconds": 1,
+            "actions": [{"use": "lower-crawl-right"}],
+            "contacts": [
+              {"effector": "rightPalm", "target": "start", "rotation": [-66, 9, 172]},
+              {"effector": "leftBall", "target": "start", "rotation": [62, 0, 0]}
+            ],
+            "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftFoot", "surface": "floor"}]
+          },
+          {
+            "id": "return-right",
+            "seconds": 1,
+            "actions": [],
+            "contacts": [
+              {"effector": "rightPalm", "target": "start", "rotation": [-66, 9, 172]},
+              {"effector": "leftBall", "target": "start", "rotation": [62, 0, 0]}
+            ],
+            "supports": [{"body": "rightHand", "surface": "floor"}, {"body": "leftFoot", "surface": "floor"}]
+          }
+        ],
+        "constraints": [
+          {
+            "kind": "support",
+            "landmark": "leftPalm",
+            "surface": "floor",
+            "min": -0.005,
+            "max": 0.012,
+            "offset": [0.0646, -0.0246, 0.0276],
+            "phases": ["advance-left", "return-left"]
+          },
+          {
+            "kind": "support",
+            "landmark": "rightBall",
+            "surface": "floor",
+            "min": -0.005,
+            "max": 0.012,
+            "phases": ["advance-left", "return-left"]
+          },
+          {
+            "kind": "support",
+            "landmark": "rightPalm",
+            "surface": "floor",
+            "min": -0.005,
+            "max": 0.012,
+            "offset": [-0.0646, -0.0246, 0.0276],
+            "phases": ["advance-right", "return-right"]
+          },
+          {
+            "kind": "support",
+            "landmark": "leftBall",
+            "surface": "floor",
+            "min": -0.005,
+            "max": 0.012,
+            "phases": ["advance-right", "return-right"]
+          }
+        ]
+      }
+    }
+  ]
+}

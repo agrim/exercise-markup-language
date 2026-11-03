@@ -1,11 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "face-pull",
   "title": "Face Pull",
   "instructions": "Draw the ends of the rope toward either side of the face, keeping the upper arms elevated.",
   "start": {
-    "pose": "upper-standing-grip-both",
-    "joints": {"bothUpperArm": [-78.5, 2.79, 26.69], "bothForearm": [-1.89, -5.52, -24.7], "bothHand": [-49.67, 33.78, 73.82]}
+    "pose": "upper-face-pull-start"
   },
   "equipment": [
     {"id": "station", "kind": "cable-machine", "position": [0, 0, 0.92], "sockets": {"anchor": [0, 1.46, 0]}},

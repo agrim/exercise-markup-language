@@ -1,48 +1,68 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "kettlebell-clean",
   "title": "Kettlebell Clean",
   "instructions": "Hike one kettlebell between the legs, drive with the hips, and bring it close into the left front rack before lowering it.",
   "start": {
     "pose": "lower-ready",
     "stance": {
-      "width": 0.37,
-      "toeOut": 9
+      "width": 0.5,
+      "toeOut": 20
+    },
+    "joints": {
+      "leftUpperArm": [
+        -15,
+        0,
+        -16
+      ]
     }
   },
   "equipment": [
     {
       "id": "bell",
       "kind": "kettlebell",
-      "follow": {
-        "joint": "leftHand",
-        "offset": [
-          0.01,
-          -0.162,
-          0.05
-        ],
-        "grip": true
-      }
+      "position": [
+        0.11328,
+        0.7439,
+        0.25764
+      ]
     }
   ],
   "contacts": [
     {
-      "effector": "leftBall",
-      "target": "floor",
+      "effector": "leftHeel",
+      "target": "start",
+      "rotation": [
+        0,
+        20,
+        0
+      ],
       "pole": [
-        0.1,
+        0.55,
         0,
         1
       ]
     },
     {
-      "effector": "rightBall",
-      "target": "floor",
+      "effector": "rightHeel",
+      "target": "start",
+      "rotation": [
+        0,
+        -20,
+        0
+      ],
       "pole": [
-        -0.1,
+        -0.55,
         0,
         1
       ]
+    },
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "bell",
+        "socket": "handle"
+      }
     }
   ],
   "phases": [
@@ -54,22 +74,211 @@
           "use": "lower-swing-back",
           "amount": 1
         }
-      ]
+      ],
+      "detail": {
+        "root": [
+          0,
+          -0.176,
+          -0.28
+        ],
+        "joints": {
+          "leftUpperArm": [
+            -30,
+            0,
+            -29
+          ]
+        }
+      },
+      "items": {
+        "bell": {
+          "position": [
+            0.02509,
+            0.36593,
+            -0.01286
+          ],
+          "controlPosition": [
+            0.05505,
+            0.5859,
+            0.17013
+          ],
+          "rotation": [
+            26,
+            0,
+            -8
+          ]
+        }
+      }
+    },
+    {
+      "id": "pass-hips",
+      "seconds": 0.29,
+      "ease": "ease-in",
+      "actions": [
+        {
+          "use": "lower-swing-back",
+          "amount": 0.25
+        }
+      ],
+      "detail": {
+        "root": [
+          0,
+          -0.06,
+          -0.08
+        ],
+        "joints": {
+          "leftUpperArm": [
+            -33,
+            0,
+            -15
+          ],
+          "leftForearm": [
+            -16,
+            0,
+            0
+          ]
+        }
+      },
+      "items": {
+        "bell": {
+          "position": [
+            0.23677,
+            0.83873,
+            0.42909
+          ],
+          "controlPosition": [
+            0.17882,
+            0.49948,
+            0.26023
+          ],
+          "rotation": [
+            -34,
+            0,
+            78
+          ]
+        }
+      }
     },
     {
       "id": "rack",
-      "seconds": 0.8,
+      "seconds": 0.54,
       "actions": [
         {
           "use": "lower-left-clean",
           "amount": 1
         }
-      ]
+      ],
+      "ease": "ease-out",
+      "detail": {
+        "joints": {
+          "leftUpperArm": [
+            -16,
+            0,
+            14
+          ],
+          "leftForearm": [
+            -123,
+            0,
+            0
+          ],
+          "leftHand": [
+            3,
+            0,
+            -8
+          ]
+        }
+      },
+      "items": {
+        "bell": {
+          "position": [
+            0.31117,
+            1.40346,
+            0.15555
+          ],
+          "controlPosition": [
+            0.41082,
+            1.1683,
+            0.533
+          ],
+          "rotation": [
+            34,
+            0,
+            76
+          ]
+        }
+      }
+    },
+    {
+      "id": "return-past-hips",
+      "seconds": 0.57,
+      "ease": "ease-in",
+      "actions": [
+        {
+          "use": "lower-swing-back",
+          "amount": 0.25
+        }
+      ],
+      "detail": {
+        "root": [
+          0,
+          -0.06,
+          -0.08
+        ],
+        "joints": {
+          "leftUpperArm": [
+            -33,
+            0,
+            -15
+          ],
+          "leftForearm": [
+            -16,
+            0,
+            0
+          ]
+        }
+      },
+      "items": {
+        "bell": {
+          "position": [
+            0.23677,
+            0.83873,
+            0.42909
+          ],
+          "controlPosition": [
+            0.41082,
+            1.1683,
+            0.533
+          ],
+          "rotation": [
+            -34,
+            0,
+            78
+          ]
+        }
+      }
     },
     {
       "id": "lower",
-      "seconds": 0.95,
-      "actions": []
+      "seconds": 0.39,
+      "actions": [],
+      "items": {
+        "bell": {
+          "position": [
+            0.11328,
+            0.7439,
+            0.25764
+          ],
+          "controlPosition": [
+            0.20661,
+            0.76479,
+            0.35178
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
     }
   ],
   "repeat": {
@@ -105,5 +314,43 @@
   "camera": [
     56,
     8
+  ],
+  "constraints": [
+    {
+      "kind": "clearance",
+      "item": "bell",
+      "from": [
+        0,
+        -0.06175,
+        0
+      ],
+      "to": [
+        0,
+        -0.06175,
+        0
+      ],
+      "radius": 0.085,
+      "bodyFrom": "leftThigh",
+      "bodyTo": "leftShin",
+      "bodyRadius": 0.05
+    },
+    {
+      "kind": "clearance",
+      "item": "bell",
+      "from": [
+        0,
+        -0.06175,
+        0
+      ],
+      "to": [
+        0,
+        -0.06175,
+        0
+      ],
+      "radius": 0.085,
+      "bodyFrom": "rightThigh",
+      "bodyTo": "rightShin",
+      "bodyRadius": 0.05
+    }
   ]
 }

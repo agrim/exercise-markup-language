@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "battle-rope-waves",
   "title": "Battle Rope Waves",
   "instructions": "Hold one rope end in each hand and alternate raising the left and right arms with softly bent knees. Both ropes run to one fixed anchor.",
   "start": {
-    "pose": "lower-wave-ready",
+    "pose": "lower-wave-ready", "root": [0, -0.115, -0.045],
     "stance": {
       "width": 0.32,
       "toeOut": 5

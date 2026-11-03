@@ -1,18 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "chin-up",
   "title": "Chin-Up",
   "instructions": "Use a narrower underhand grip. Pull the body toward the fixed handles and lower with the same grip.",
   "start": {
-    "pose": "upper-hang-grip-both",
-    "joints": {
-      "leftUpperArm": [-52.79, 54.01, 117.98],
-      "leftForearm": [-3.22, -0.3, 1.0],
-      "leftHand": [-139.06, 65.13, -123.6],
-      "rightUpperArm": [-54.87, -54.73, -116.17],
-      "rightForearm": [-2.49, 0.25, -0.72],
-      "rightHand": [-136.46, -65.8, 120.58]
-    }
+    "pose": "upper-underhand-hang-start"
   },
   "equipment": [
     {
@@ -23,25 +15,14 @@
     }
   ],
   "contacts": [
-    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}, "pole": [1.0, 0, -0.45]},
-    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}, "pole": [-1.0, 0, -0.45]}
+    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
   ],
   "phases": [
     {
       "id": "pull-up",
       "seconds": {"param": "phase-seconds"},
-      "actions": [{"use": "upper-vertical-body-pull", "amount": 1}],
-      "detail": {
-        "joints": {
-          "leftUpperArm": [-18.22, 8.39, 82.73],
-          "leftForearm": [-126.35, -14.13, 12.26],
-          "leftHand": [-166.84, 139.14, -92.46],
-          "rightUpperArm": [-18.33, -8.46, -82.73],
-          "rightForearm": [-126.2, 14.21, -12.21],
-          "rightHand": [-167.27, -139.16, 92.48]
-        },
-        "root": [0, 0.60921, -0.005]
-      }
+      "actions": [{"use": "upper-underhand-body-pull", "amount": 1}]
     },
     {"id": "lower", "seconds": {"param": "phase-seconds"}, "actions": []}
   ],
@@ -52,6 +33,6 @@
   },
   "camera": [140, 9],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+    "phase-seconds": {"default": 1.6, "min": 0.33, "max": 15}
   }
 }

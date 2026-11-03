@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "bodyweight-squat",
   "title": "Bodyweight Squat",
   "instructions": "Reach both arms forward as the hips lower. Stand with the arms returning to the sides.",
   "start": {
-    "pose": "lower-ready",
+    "pose": "lower-ready", "root": [0, -0.025, 0],
     "stance": {
       "width": {
         "param": "stance-width-m"
@@ -12,27 +12,18 @@
       "toeOut": {
         "param": "toe-out-deg"
       }
-    }
+    },
+    "joints": {"bothThigh": {"y": {"param": "toe-out-deg"}}}
   },
   "equipment": [],
   "contacts": [
     {
       "effector": "leftBall",
-      "target": "floor",
-      "pole": [
-        0.1,
-        0,
-        1
-      ]
+      "target": "floor"
     },
     {
       "effector": "rightBall",
-      "target": "floor",
-      "pole": [
-        -0.1,
-        0,
-        1
-      ]
+      "target": "floor"
     }
   ],
   "phases": [
@@ -49,7 +40,8 @@
         {
           "use": "lower-counterbalance",
           "amount": 1
-        }
+        },
+        {"use": "lower-track-squat-stance", "amount": {"param": "stance-width-m"}}
       ]
     },
     {

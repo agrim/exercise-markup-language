@@ -1,40 +1,187 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "assisted-dip",
   "title": "Assisted Dip",
   "instructions": "Support both knees on the assistance pad and both hands on parallel bars. Lower and press the body up.",
   "start": {
     "pose": "upper-assisted-dip-support-grip-both",
     "joints": {
-      "leftUpperArm": [5.81, 0.9, 3.23],
-      "leftForearm": [-4.39, -0.7, 0.01],
-      "leftHand": [-89.93, -67.43, 104.17],
-      "rightUpperArm": [5.68, -0.87, -3.29],
-      "rightForearm": [-4.27, 0.67, -0.03],
-      "rightHand": [-92.31, 67.38, -106.2]
+      "leftUpperArm": [
+        5.81,
+        0.9,
+        3.23
+      ],
+      "leftForearm": [
+        -4.39,
+        -0.7,
+        0.01
+      ],
+      "leftHand": [
+        -89.93,
+        -67.43,
+        104.17
+      ],
+      "rightUpperArm": [
+        5.68,
+        -0.87,
+        -3.29
+      ],
+      "rightForearm": [
+        -4.27,
+        0.67,
+        -0.03
+      ],
+      "rightHand": [
+        -92.31,
+        67.38,
+        -106.2
+      ]
     }
   },
   "equipment": [
     {
       "id": "station",
       "kind": "assisted-dip-machine",
-      "position": [0, 0, 0.02],
-      "sockets": {"anchor": [0, 1.13, 0], "leftGrip": [0.25, 1.11113, 0], "rightGrip": [-0.25, 1.11113, 0]}
+      "position": [
+        0,
+        0,
+        0.02
+      ],
+      "sockets": {
+        "anchor": [
+          0,
+          1.13,
+          0
+        ],
+        "leftGrip": [
+          0.25,
+          1.11113,
+          0
+        ],
+        "rightGrip": [
+          -0.25,
+          1.11113,
+          0
+        ]
+      }
+    },
+    {
+      "id": "platform",
+      "kind": "assistance-knee-pad",
+      "position": [
+        0,
+        0.7276,
+        0.02
+      ]
     }
   ],
   "contacts": [
-    {"effector": "leftGrip", "target": {"item": "station", "socket": "leftGrip"}},
-    {"effector": "rightGrip", "target": {"item": "station", "socket": "rightGrip"}}
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "station",
+        "socket": "leftGrip"
+      }
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "station",
+        "socket": "rightGrip"
+      }
+    }
   ],
-  "supports": [{"body": "bothShin", "surface": "station"}],
+  "supports": [
+    {
+      "body": "bothShin",
+      "surface": "platform"
+    }
+  ],
   "phases": [
-    {"id": "lower", "seconds": {"param": "phase-seconds"}, "actions": [{"use": "upper-dip", "amount": 1}]},
-    {"id": "press", "seconds": {"param": "phase-seconds"}, "actions": []}
+    {
+      "id": "lower",
+      "seconds": {
+        "param": "phase-seconds"
+      },
+      "actions": [
+        {
+          "use": "upper-dip",
+          "amount": 1
+        }
+      ],
+      "items": {
+        "platform": {
+          "position": [
+            0,
+            0.4876,
+            0.02
+          ]
+        }
+      }
+    },
+    {
+      "id": "press",
+      "seconds": {
+        "param": "phase-seconds"
+      },
+      "actions": []
+    }
   ],
-  "repeat": {"mode": "loop", "count": 1},
-  "muscles": {"primary": ["triceps", "pectorals", "upperPectorals"], "secondary": ["anteriorDeltoids"]},
-  "camera": [32, 9],
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "triceps",
+      "pectorals",
+      "upperPectorals"
+    ],
+    "secondary": [
+      "anteriorDeltoids"
+    ]
+  },
+  "camera": [
+    32,
+    9
+  ],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
-  }
+    "phase-seconds": {
+      "default": 1.6,
+      "min": 0.24,
+      "max": 15
+    }
+  },
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftShin",
+      "offset": [
+        0.0026,
+        -0.031,
+        0.0364
+      ],
+      "surface": {
+        "item": "platform",
+        "part": 0
+      },
+      "min": -0.004,
+      "max": 0.006
+    },
+    {
+      "kind": "support",
+      "landmark": "rightShin",
+      "offset": [
+        -0.0026,
+        -0.031,
+        0.0364
+      ],
+      "surface": {
+        "item": "platform",
+        "part": 0
+      },
+      "min": -0.004,
+      "max": 0.006
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "rope-triceps-pushdown",
   "title": "Rope Triceps Pushdown",
   "instructions": "Extend the elbows below the high cable. Separate the rope ends slightly as the arms straighten.",
@@ -57,6 +57,6 @@
   "muscles": {"primary": ["triceps"], "secondary": []},
   "camera": [115, 9],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+    "phase-seconds": {"default": 1.6, "min": 0.2, "max": 15}
   }
 }

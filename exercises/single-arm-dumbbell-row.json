@@ -1,22 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "single-arm-dumbbell-row",
   "title": "Single-Arm Dumbbell Row",
   "instructions": "Keep the right palm on the bench. Row the dumbbell with the left arm and return it to the hanging position.",
   "start": {
-    "pose": "upper-hip-hinge-grip-left",
-    "root": [0, -0.22, -0.0704],
-    "joints": {
-      "leftUpperArm": [-49.76, -11.11, -1.68],
-      "leftForearm": [-5.1, -0.76, 0.25],
-      "leftHand": [32.5, 7.58, 3.29],
-      "bothThigh": [-100.75, 8.71, 5.79],
-      "bothShin": [85.88, 5.69, -6.63],
-      "bothFoot": [-42.05, -0.73, -1.68],
-      "rightUpperArm": [-36.33, 1.54, -19.14],
-      "rightForearm": [-42.41, 10.94, 5.37],
-      "rightHand": [-96.46, 34.12, 169.44]
-    }
+    "pose": "upper-left-supported-row-start"
   },
   "equipment": [
     {"id": "bench", "kind": "bench", "position": [-0.26, 0, 0.24], "sockets": {"support": [0, 0.451, 0.24]}},
@@ -33,7 +21,6 @@
     {
       "effector": "rightPalm",
       "target": {"item": "bench", "socket": "support"},
-      "pole": [-0.531, 0.022, -0.847],
       "rotation": [-73.64, 10.29, -177.0]
     }
   ],
@@ -42,28 +29,22 @@
       "id": "row-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-shoulder-extension-row-midrange", "amount": 1}],
+      "actions": [{"use": "upper-left-supported-row-midrange", "amount": 1}],
       "detail": {
         "joints": {
-          "leftUpperArm": [3.3, 0.67, -0.31],
-          "leftForearm": [-85.62, -17.28, 2.08],
-          "leftHand": [59.68, 7.59, 11.41],
-          "rightUpperArm": [-36.33, 1.54, -19.14],
-          "rightForearm": [-42.41, 10.94, 5.37],
-          "rightHand": [-96.46, 34.12, 169.44]
+          "rightUpperArm": [-51.59, 36.53, -84.16],
+          "rightForearm": [-64.9, 46.77, -80.86]
         }
       }
     },
     {
       "id": "row",
       "seconds": 0.8,
-      "actions": [{"use": "row-to-torso", "amount": 1}],
+      "actions": [{"use": "upper-left-supported-row", "amount": 1}],
       "detail": {
         "joints": {
-          "leftHand": [37.18, 4.2, 9.35],
-          "rightUpperArm": [-36.33, 1.54, -19.14],
-          "rightForearm": [-42.41, 10.94, 5.37],
-          "rightHand": [-96.46, 34.12, 169.44]
+          "rightUpperArm": [-51.59, 36.53, -84.16],
+          "rightForearm": [-64.9, 46.77, -80.86]
         }
       },
       "ease": "ease-out"
@@ -72,15 +53,13 @@
       "id": "extend-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-shoulder-extension-row-midrange", "amount": 1}],
+      "actions": [{"use": "upper-left-supported-row-midrange", "amount": 1}],
       "detail": {
         "joints": {
-          "leftUpperArm": [3.3, 0.67, -0.31],
-          "leftForearm": [-85.62, -17.28, 2.08],
-          "leftHand": [59.68, 7.59, 11.41],
-          "rightUpperArm": [-36.33, 1.54, -19.14],
-          "rightForearm": [-42.41, 10.94, 5.37],
-          "rightHand": [-96.46, 34.12, 169.44]
+          "leftUpperArm": [6.0, -3.74, 6.31],
+          "leftForearm": [-70.46, -10.21, 83.65],
+          "rightUpperArm": [-51.59, 36.53, -84.16],
+          "rightForearm": [-64.9, 46.77, -80.86]
         }
       }
     },

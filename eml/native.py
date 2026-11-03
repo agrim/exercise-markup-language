@@ -38,7 +38,7 @@ def compile_pack(programs, output, fps=24):
     ids = [p.doc["id"] for p in programs]
     if len(set(ids)) != len(ids):
         raise Error("duplicate-exercise", "", "IDs in a pack must be unique")
-    _, _, kit, model = registry()
+    _, _, _, model = registry()
     joints = [j["name"] for j in model["joints"]]
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=output.parent) as tmp:
@@ -48,6 +48,7 @@ def compile_pack(programs, output, fps=24):
             shutil.copyfile(ROOT / "anatomy" / name, work / name)
         motions = []
         for program in programs:
+            kit = program.kit
             if program.repeat["mode"] == "once" or any(
                 program.repeat.get("travel", [])
             ):

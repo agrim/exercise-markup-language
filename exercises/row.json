@@ -1,16 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "row",
   "title": "Row",
   "instructions": "Hinge the torso and hold the bar below the shoulders. Draw it toward the lower ribs with both elbows moving behind the trunk.",
   "start": {
-    "pose": "upper-hip-hinge-grip-both",
-    "joints": {
-      "bothUpperArm": [-49.76, -11.11, -1.68],
-      "bothForearm": [-5.1, -0.76, 0.25],
-      "leftHand": [-161.36, 0.89, 179.91],
-      "rightHand": [-161.78, -1.68, 179.89]
-    }
+    "pose": "upper-barbell-row-start"
   },
   "equipment": [
     {
@@ -44,6 +38,6 @@
   "muscles": {"primary": ["lats", "trapezius", "rhomboids"], "secondary": ["biceps", "posteriorDeltoids"]},
   "camera": [140, 9],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+    "phase-seconds": {"default": 1.6, "min": 0.3, "max": 15}
   }
 }

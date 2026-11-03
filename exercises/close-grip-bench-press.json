@@ -1,15 +1,14 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "close-grip-bench-press",
   "title": "Close-Grip Bench Press",
   "instructions": "Hold one bar with a narrower grip. Extend the elbows while keeping the hands on their assigned grip points.",
   "start": {
     "pose": "upper-flat-bench-grip-both",
     "joints": {
-      "bothUpperArm": [16.54, -4.5, 45.06],
-      "bothForearm": [-129.09, -65.85, -3.15],
-      "leftHand": [-161.8, -0.34, -126.29],
-      "rightHand": [-162.22, -0.45, 126.09]
+      "bothUpperArm": [39.96, -51.49, 27.75],
+      "bothForearm": [-77.59, 43.73, 81.34],
+      "bothHand": [0, 0, 0]
     }
   },
   "equipment": [
@@ -36,10 +35,8 @@
       "actions": [{"use": "horizontal-press", "amount": 1}],
       "detail": {
         "joints": {
-          "bothUpperArm": [-84.49, -4.75, 17.51],
-          "bothForearm": [-1.23, -1.51, -6.67],
-          "leftHand": [-156.31, -11.85, -179.69],
-          "rightHand": [-156.79, 11.08, 179.41]
+          "bothUpperArm": [96.9, -170.74, -84.03],
+          "bothForearm": [-27.3, -81.09, 45.36]
         }
       },
       "items": {"weight": {"position": [-0.00037, 1.13834, -0.49288]}}
@@ -55,6 +52,6 @@
   "muscles": {"primary": ["triceps", "pectorals", "upperPectorals"], "secondary": ["anteriorDeltoids"]},
   "camera": [119, 32],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+    "phase-seconds": {"default": 1.6, "min": 0.43, "max": 15}
   }
 }

@@ -82,9 +82,13 @@ class Program:
         self.values = parameter_values(recipe, parameters or {})
         doc = self.doc = substitute(recipe, self.values)
         check_schema(doc)  # Bound parameters must also fit their receiving sockets.
-        poses, motions, self.kit, self.model = registry()
+        poses, motions, self.kit, self.model = registry(doc["eml"])
         self.names = {j["name"] for j in self.model["joints"]}
-        self.solver = Kinematics(self.model, self.kit)
+        self.solver = (
+            Kinematics(self.model, self.kit, hinge_arms=True)
+            if doc["eml"] == "1.1"
+            else Kinematics(self.model, self.kit)
+        )
         self.tables = []
         for key, table in (("poses", poses), ("motions", motions)):
             local = doc.get("definitions", {}).get(key, {})
@@ -122,7 +126,8 @@ class Program:
                 self.socket(end["item"], end["socket"])
         if len({p["id"] for p in doc["phases"]}) != len(doc["phases"]):
             raise Error("duplicate-phase", "/phases", "Phase IDs must be unique")
-        self.start = self.pose(doc["start"]["pose"])
+        setup_points = set()
+        self.start = self.pose(doc["start"]["pose"], fixed_points=setup_points)
         self.start[0][:] = doc["start"].get("root", self.start[0])
         channels(doc["start"].get("joints", {}), self.names, self.start[1])
         self.stance = []
@@ -132,13 +137,23 @@ class Program:
         self.anchors = dict(self.base["landmarks"])
         self.targets = [self.start]
         self.end_times, self.item_states = [], [self.equipment]
+        self.phase_pins = {}
+        departure_points = set()
         self.duration = 0.0
         self.roles(doc["muscles"])
         for phase in doc["phases"]:
             self.roles(phase.get("muscles", doc["muscles"]))
             end = copy.deepcopy(self.start)
+            arrival_points = set()
             for act in phase["actions"]:
-                self.action(act["use"], act.get("amount", 1), end)
+                self.action(
+                    act["use"], act.get("amount", 1), end, fixed_points=arrival_points
+                )
+            # A segment moves between two authored endpoints, including a return to setup.
+            self.phase_pins[phase["id"]] = self.inherited_pins(
+                phase, setup_points | departure_points | arrival_points
+            )
+            departure_points = arrival_points
             detail = phase.get("detail", {})
             if "root" in detail:
                 end[0][:] = detail["root"]
@@ -197,6 +212,9 @@ class Program:
             self.pose(name)
         for name in doc.get("definitions", {}).get("motions", {}):
             self.action(name, 1, [ZERO.copy(), {}])
+        from .posture import Constraints
+
+        self.posture = Constraints(self) if doc["eml"] == "1.1" else None
         self.entry_cache = {}
         for phase in doc["phases"]:
             effectors = [c["effector"] for c in self.effective_contacts(phase)]
@@ -220,14 +238,26 @@ class Program:
                 "muscle-role", "/muscles", "Unknown group or conflicting muscle role"
             )
 
-    def pose(self, name, trail=()):
+    def fixed_points(self, definition, path):
+        points = set(definition.get("fixedPoints", ()))
+        unknown = points.difference(self.solver.rig.landmarks)
+        if unknown:
+            raise Error(
+                "unknown-effector", path + "/fixedPoints", ", ".join(sorted(unknown))
+            )
+        return points
+
+    def pose(self, name, trail=(), fixed_points=None):
         if name in trail or len(trail) >= 16:
             raise Error("cyclic-definition", "/definitions/poses", name)
         node = self.poses.get(name)
         if node is None:
             raise Error("unknown-pose", "/start/pose", name)
+        points = self.fixed_points(node, "/definitions/poses/" + name)
+        if fixed_points is not None:
+            fixed_points.update(points)
         result = (
-            self.pose(node["extends"], trail + (name,))
+            self.pose(node["extends"], trail + (name,), fixed_points)
             if "extends" in node
             else [ZERO.copy(), {}]
         )
@@ -236,7 +266,7 @@ class Program:
         channels(node.get("joints", {}), self.names, result[1])
         return result
 
-    def action(self, name, amount, end, trail=()):
+    def action(self, name, amount, end, trail=(), fixed_points=None):
         if name in trail or len(trail) >= 16:
             raise Error("cyclic-definition", "/definitions/motions", name)
         node = self.motions.get(name)
@@ -244,17 +274,24 @@ class Program:
             raise Error("unknown-motion", "/phases/actions", name)
         if name not in self.motion_cache:
             expanded = [ZERO.copy(), {}]
+            points = self.fixed_points(node, "/definitions/motions/" + name)
             for child in node.get("actions", []):
                 self.action(
-                    child["use"], child.get("amount", 1), expanded, trail + (name,)
+                    child["use"],
+                    child.get("amount", 1),
+                    expanded,
+                    trail + (name,),
+                    points,
                 )
             for i, x in enumerate(node.get("root", ZERO)):
                 expanded[0][i] += x
             normalized = {}
             channels(node.get("joints", {}), self.names, normalized)
             channels(normalized, self.names, expanded[1], 1)
-            self.motion_cache[name] = expanded
-        vector, joints = self.motion_cache[name]
+            self.motion_cache[name] = (*expanded, points)
+        vector, joints, points = self.motion_cache[name]
+        if amount != 0 and fixed_points is not None:
+            fixed_points.update(points)
         for i, x in enumerate(vector):
             end[0][i] += amount * x
         channels(joints, self.names, end[1], amount)
@@ -359,12 +396,30 @@ class Program:
             result.append(item)
         return result
 
+    def inherited_pins(self, phase, points):
+        if not points or "contacts" in phase:
+            return []
+
+        def limb(effector):
+            joint, _ = self.solver.rig.socket(effector)
+            return self.solver.limb_of_joint(joint)
+
+        # An explicit ball target, for example, must remain free to lift its heel.
+        chosen = self.stance + self.doc.get("contacts", [])
+        claimed = {limb(c["effector"]) for c in chosen}
+        return [
+            {"effector": point, "target": "start"}
+            for point in sorted(points)
+            if limb(point) not in claimed
+        ]
+
     def effective_contacts(self, phase):
         if "contacts" in phase:
             return phase["contacts"]
         base = self.doc.get("contacts", [])
         explicit = {c["effector"] for c in base}
-        return [c for c in self.stance if c["effector"] not in explicit] + base
+        stance = [c for c in self.stance if c["effector"] not in explicit]
+        return stance + base + self.phase_pins.get(phase.get("id"), [])
 
     def sample(self, seconds, cycle=0):
         if not math.isfinite(seconds) or not 0 <= seconds <= self.duration + 1e-8:
@@ -465,6 +520,43 @@ class Program:
             muscles=phase.get("muscles", self.doc["muscles"]),
             supports=phase.get("supports", self.doc.get("supports", [])),
         )
+        if self.posture is not None:
+            for d in frame["diagnostics"]:
+                angular = d["reason"] == "inconsistent-orientation"
+                measured = d["orientationErrorDegrees"] if angular else d["residual"]
+                limit = 0.1 if angular else self.solver.tolerance
+                units = "deg" if angular else "m"
+                if d["reason"] == "conflicting-root-anchor":
+                    path = (
+                        f"/phases/{i}/rootAnchor"
+                        if "rootAnchor" in phase
+                        else "/rootAnchor"
+                    )
+                else:
+                    authored = phase.get("contacts", self.doc.get("contacts", []))
+                    base = (
+                        f"/phases/{i}/contacts" if "contacts" in phase else "/contacts"
+                    )
+                    path = next(
+                        (
+                            f"{base}/{j}"
+                            for j, c in enumerate(authored)
+                            if c["effector"] == d["effector"]
+                        ),
+                        "/start/stance",
+                    )
+                d.update(
+                    unit=units,
+                    measured=measured,
+                    limit=limit,
+                    residual=max(0, measured - limit),
+                    phase=phase["id"],
+                    time=elapsed,
+                    cycle=cycle,
+                    path=path,
+                    message=f"{d['effector']}: {d['reason']}; measured {measured:.4f} {units}, limit {limit:.4f} {units}",
+                )
+            frame["diagnostics"].extend(self.posture.diagnose(frame, cycle))
         if self.focus:
             p = (elapsed / self.duration) % 1
             side = next(
@@ -478,7 +570,7 @@ class Program:
             frame["sideWeights"] = [int(side != "right"), int(side != "left")]
         return frame
 
-    def frames(self, fps):
+    def frames(self, fps, cycle=0):
         if not 1 <= fps <= 120:
             raise Error("fps", "/fps", "Expected 1 through 120")
         n = math.ceil(self.duration * fps)
@@ -492,8 +584,15 @@ class Program:
         times = sorted(
             set([self.duration * i / n for i in range(n + 1)] + self.end_times)
         )
+        from .posture import speed_findings
+
+        previous = None
         for t in times:
-            yield self.sample(t)
+            frame = self.sample(t, cycle)
+            if self.posture:
+                frame["diagnostics"].extend(speed_findings(previous, frame, cycle))
+            yield frame
+            previous = frame
 
     def playback(self, seconds):
         """Absolute time over the requested repetitions. At finish, keep the final pose."""
@@ -523,14 +622,28 @@ class Program:
             frames=list(self.frames(fps)),
         )
         if strict:
-            for frame in out["frames"]:
-                if frame["diagnostics"]:
-                    issue = frame["diagnostics"][0]
-                    raise Error(
-                        issue["reason"],
-                        "/contacts",
-                        f"{issue['effector']} at {frame['time']:.4f} s",
-                    )
+            count = (
+                self.repeat["count"]
+                if self.posture and any(self.repeat.get("travel", []))
+                else 1
+            )
+            if self.posture and count * len(out["frames"]) > 120_000:
+                raise Error(
+                    "constraint-budget",
+                    "/repeat",
+                    "Reduce the number of travelling repetitions or the sample rate",
+                )
+            for cycle in range(count):
+                for sample in out["frames"]:
+                    frame = sample if cycle == 0 else self.sample(sample["time"], cycle)
+                    if frame["diagnostics"]:
+                        issue = frame["diagnostics"][0]
+                        raise Error(
+                            issue["reason"],
+                            issue.get("path", "/contacts"),
+                            f"{issue.get('message', issue['effector'])} during {frame['phase']} "
+                            f"at {frame['time']:.4f} s (rep {cycle + 1})",
+                        )
         if self.focus:
             out["sideFocus"] = self.focus
         return out

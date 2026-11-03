@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "walking-lunge",
   "title": "Walking Lunge",
   "instructions": "In the in-place demonstration frame, alternate left and right lead steps. Lower the rear knee after each landing, then rise and bring the trailing leg through.",
   "start": {
-    "pose": "lower-ready",
+    "pose": "lower-ready", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.26,
       "toeOut": 5

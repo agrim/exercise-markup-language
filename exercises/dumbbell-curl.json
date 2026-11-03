@@ -1,5 +1,5 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "dumbbell-curl",
   "title": "Dumbbell Curl",
   "instructions": "Curl a separate dumbbell in each hand while keeping the upper arms near the torso.",
@@ -44,7 +44,7 @@
   "muscles": {"primary": ["biceps"], "secondary": ["forearms"]},
   "camera": [32, 9],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15},
+    "phase-seconds": {"default": 1.6, "min": 0.29, "max": 15},
     "excursion": {"default": 1, "min": 0.25, "max": 1}
   }
 }

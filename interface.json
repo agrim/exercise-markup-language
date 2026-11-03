@@ -1,17 +1,18 @@
 {
   "name": "Exercise Markup Language",
-  "version": "1.0",
+  "version": "1.1",
   "encoding": "UTF-8 JSON",
-  "schema": "schema/exercise-v1.schema.json",
+  "schema": "schema/exercise-v1.1.schema.json",
   "semantics": "docs/specification.md",
   "producerGuide": "docs/authoring.md",
   "catalog": "exercises/",
-  "example": "examples/paused-goblet-look-left.json",
+  "example": "examples/personal-paused-squat.json",
   "vocabulary": {
     "definitions": [
       "library/base.json",
       "library/lower.json",
-      "library/upper.json"
+      "library/upper.json",
+      "library/coordination.json"
     ],
     "equipment": "library/equipment.json",
     "rig": "anatomy/model.json"
@@ -20,6 +21,13 @@
   "validationCommand": "python -m eml validate <recipe.json>",
   "runtime": "eml.Program",
   "equipmentSchema": "schema/equipment-v1.schema.json",
-  "librarySchema": "schema/library-v1.schema.json",
-  "conformanceVector": "tests/fixtures/portable-vector.json"
+  "librarySchema": "schema/library-v1.1.schema.json",
+  "conformanceVector": "tests/fixtures/portable-vector.json",
+  "supportedVersions": [
+    "1.0",
+    "1.1"
+  ],
+  "legacySchema": "schema/exercise-v1.schema.json",
+  "postureGuide": "docs/posture.md",
+  "compatibleSetups": "docs/upper-motion-setups.json"
 }

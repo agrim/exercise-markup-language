@@ -2994,5 +2994,9 @@
     }
   ],
   "vertexCount": 113681,
-  "indexCount": 667737
+  "indexCount": 667737,
+  "wristPivots": [
+    "leftHand",
+    "rightHand"
+  ]
 }

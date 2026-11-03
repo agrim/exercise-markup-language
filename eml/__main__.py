@@ -9,7 +9,7 @@ from pathlib import Path
 
 from . import Error, Program, interface, load
 from .checks import check
-from .data import ROOT
+from .data import ROOT, VERSIONS
 from .native import compile_pack
 
 
@@ -32,6 +32,12 @@ def main(argv=None):
         "interface",
         help="Machine-readable schema, poses, motions, equipment, rig and muscles",
     )
+    inf.add_argument(
+        "--version",
+        choices=VERSIONS,
+        default="1.1",
+        help="Schema and vocabulary version (default: 1.1)",
+    )
     inf.add_argument("-o", "--output")
     cat = subs.add_parser(
         "catalog", help="Check every catalog entry and any additional recipes"
@@ -51,7 +57,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     try:
         if args.command == "interface":
-            emit(interface(), args.output)
+            emit(interface(args.version), args.output)
             return 0
         if args.command == "catalog":
             if not 2 <= args.samples <= 121:
@@ -77,7 +83,7 @@ def main(argv=None):
             issues = sum(len(x["issues"]) for x in entries)
             emit(
                 {
-                    "eml": "1.0",
+                    "eml": "1.1",
                     "exercises": len(entries),
                     "samples": sum(x["samples"] for x in entries),
                     "issues": issues,
@@ -109,7 +115,10 @@ def main(argv=None):
             raise Error(issue["code"], issue["path"], issue["message"])
         frame = p.playback(args.seconds)
         if frame["diagnostics"]:
-            raise Error("unresolved-contact", "/contacts", str(frame["diagnostics"]))
+            d = frame["diagnostics"][0]
+            raise Error(
+                d["reason"], d.get("path", "/contacts"), d.get("message", str(d))
+            )
         emit(frame, args.output)
         return 0
     except (Error, OSError, ValueError) as exc:

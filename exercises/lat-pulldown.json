@@ -1,16 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "lat-pulldown",
   "title": "Lat Pulldown",
   "instructions": "Keep the thighs under the pads. Draw the wide bar toward the upper chest and let it travel upward again.",
   "start": {
-    "pose": "upper-seated-grip-both",
-    "joints": {
-      "bothUpperArm": [-8.92, 9.45, 140.24],
-      "bothForearm": [1.17, 2.6, 14.22],
-      "leftHand": [12.14, -20.61, 36.27],
-      "rightHand": [11.76, 21.42, -36.14]
-    }
+    "pose": "upper-overhand-pulldown-start"
   },
   "equipment": [
     {"id": "station", "kind": "lat-pulldown-machine", "position": [0, 0, 0.32], "sockets": {"anchor": [0, 2.3, 0]}},
@@ -24,8 +18,8 @@
   "contacts": [
     {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
     {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
-    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}, "pole": [0.6, -0.55, -0.45]},
-    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}, "pole": [-0.6, -0.55, -0.45]}
+    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
   ],
   "connections": [
     {"kind": "cable", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "grip", "socket": "center"}}

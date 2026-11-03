@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "cable-pull-through",
   "title": "Cable Pull-Through",
   "instructions": "Face away from the low pulley and hold the rope between the legs. Hinge to move the rope backwards, then extend the hips.",
   "start": {
-    "pose": "lower-two-hand-hang",
+    "pose": "lower-two-hand-hang", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.37,
       "toeOut": 9

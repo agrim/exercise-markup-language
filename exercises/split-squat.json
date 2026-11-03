@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "split-squat",
   "title": "Split Squat",
   "instructions": "Keep the feet in a fixed split stance. Lower vertically between them, then extend the front knee and hip.",
   "start": {
-    "pose": "split-stance",
+    "pose": "split-stance", "root": [0, -0.14, 0],
     "joints": {
       "rightToe": [
         -42,

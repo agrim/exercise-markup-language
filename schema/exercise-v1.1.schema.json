@@ -1,0 +1,1619 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agrim/exercise-markup-language/main/schema/exercise-v1.1.schema.json",
+  "title": "Exercise Markup Language 1.1",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "maxLength": 96
+    },
+    "scalar": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": -10000,
+          "maximum": 10000
+        },
+        {
+          "type": "object",
+          "properties": {
+            "param": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+              "maxLength": 96
+            }
+          },
+          "required": [
+            "param"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "position": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "number",
+            "minimum": -30,
+            "maximum": 30
+          },
+          {
+            "type": "object",
+            "properties": {
+              "param": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                "maxLength": 96
+              }
+            },
+            "required": [
+              "param"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "rotation": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "number",
+            "minimum": -360,
+            "maximum": 360
+          },
+          {
+            "type": "object",
+            "properties": {
+              "param": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                "maxLength": 96
+              }
+            },
+            "required": [
+              "param"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "joints": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/rotation"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "x": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": -360,
+                    "maximum": 360
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                        "maxLength": 96
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "y": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": -360,
+                    "maximum": 360
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                        "maxLength": 96
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "z": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": -360,
+                    "maximum": 360
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                        "maxLength": 96
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": false,
+            "minProperties": 1
+          }
+        ]
+      },
+      "maxProperties": 128
+    },
+    "action": {
+      "type": "object",
+      "properties": {
+        "use": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "maxLength": 96
+        },
+        "amount": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": -4,
+              "maximum": 4
+            },
+            {
+              "type": "object",
+              "properties": {
+                "param": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                  "maxLength": 96
+                }
+              },
+              "required": [
+                "param"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "use"
+      ],
+      "additionalProperties": false
+    },
+    "parameter": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "number",
+          "minimum": -10000,
+          "maximum": 10000
+        },
+        "min": {
+          "type": "number",
+          "minimum": -10000,
+          "maximum": 10000
+        },
+        "max": {
+          "type": "number",
+          "minimum": -10000,
+          "maximum": 10000
+        }
+      },
+      "required": [
+        "default",
+        "min",
+        "max"
+      ],
+      "additionalProperties": false
+    },
+    "fixedPoints": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/contact/properties/effector"},
+      "uniqueItems": true,
+      "maxItems": 8
+    },
+    "poseDefinition": {
+      "type": "object",
+      "properties": {
+        "fixedPoints": {"$ref": "#/$defs/fixedPoints"},
+        "extends": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "maxLength": 96
+        },
+        "root": {
+          "$ref": "#/$defs/position"
+        },
+        "joints": {
+          "$ref": "#/$defs/joints"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "motionDefinition": {
+      "type": "object",
+      "properties": {
+        "fixedPoints": {"$ref": "#/$defs/fixedPoints"},
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/action"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "root": {
+          "$ref": "#/$defs/position"
+        },
+        "joints": {
+          "$ref": "#/$defs/joints"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "stance": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0.08,
+              "maximum": 1.1
+            },
+            {
+              "type": "object",
+              "properties": {
+                "param": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                  "maxLength": 96
+                }
+              },
+              "required": [
+                "param"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "enum": [
+                "shoulder-width",
+                "hip-width"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "of": {
+                  "enum": [
+                    "shoulder-width",
+                    "hip-width"
+                  ]
+                },
+                "factor": {
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": 0.5,
+                      "maximum": 3
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "param": {
+                          "type": "string",
+                          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                          "maxLength": 96
+                        }
+                      },
+                      "required": [
+                        "param"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "of",
+                "factor"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "toeOut": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": -35,
+              "maximum": 60
+            },
+            {
+              "type": "object",
+              "properties": {
+                "param": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                  "maxLength": 96
+                }
+              },
+              "required": [
+                "param"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "enum": [
+                "forward",
+                "slight-out",
+                "out"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "width"
+      ],
+      "additionalProperties": false
+    },
+    "start": {
+      "type": "object",
+      "properties": {
+        "pose": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "maxLength": 96
+        },
+        "stance": {
+          "$ref": "#/$defs/stance"
+        },
+        "root": {
+          "$ref": "#/$defs/position"
+        },
+        "joints": {
+          "$ref": "#/$defs/joints"
+        }
+      },
+      "required": [
+        "pose"
+      ],
+      "additionalProperties": false
+    },
+    "item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "maxLength": 96
+        },
+        "kind": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "maxLength": 96
+        },
+        "position": {
+          "$ref": "#/$defs/position"
+        },
+        "rotation": {
+          "$ref": "#/$defs/rotation"
+        },
+        "sockets": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/position"
+          },
+          "maxProperties": 128
+        },
+        "follow": {
+          "type": "object",
+          "properties": {
+            "joint": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "offset": {
+              "$ref": "#/$defs/position"
+            },
+            "grip": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "joint",
+            "offset"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "effector": {
+          "enum": [
+            "leftGrip",
+            "leftPalm",
+            "leftHeel",
+            "leftBall",
+            "rightGrip",
+            "rightPalm",
+            "rightHeel",
+            "rightBall"
+          ]
+        },
+        "target": {
+          "oneOf": [
+            {
+              "enum": [
+                "start",
+                "floor"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "point": {
+                  "$ref": "#/$defs/position"
+                }
+              },
+              "required": [
+                "point"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "item": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                  "maxLength": 96
+                },
+                "socket": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                }
+              },
+              "required": [
+                "item",
+                "socket"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "pole": {
+          "$ref": "#/$defs/position"
+        },
+        "rotation": {
+          "$ref": "#/$defs/rotation"
+        },
+        "engage": {
+          "enum": [
+            "pin",
+            "reach"
+          ]
+        }
+      },
+      "required": [
+        "effector",
+        "target"
+      ],
+      "additionalProperties": false
+    },
+    "roles": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "minItems": 0,
+          "maxItems": 32,
+          "uniqueItems": true
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "minItems": 0,
+          "maxItems": 32,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "primary",
+        "secondary"
+      ],
+      "additionalProperties": false
+    },
+    "phase": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "maxLength": 96
+        },
+        "seconds": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0.02,
+              "maximum": 600
+            },
+            {
+              "type": "object",
+              "properties": {
+                "param": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                  "maxLength": 96
+                }
+              },
+              "required": [
+                "param"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/action"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "detail": {
+          "type": "object",
+          "properties": {
+            "joints": {
+              "$ref": "#/$defs/joints"
+            },
+            "root": {
+              "$ref": "#/$defs/position"
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "items": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "position": {
+                "$ref": "#/$defs/position"
+              },
+              "rotation": {
+                "$ref": "#/$defs/rotation"
+              },
+              "offset": {
+                "$ref": "#/$defs/position"
+              },
+              "controlPosition": {
+                "$ref": "#/$defs/position"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "maxProperties": 128
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contact"
+          },
+          "minItems": 0,
+          "maxItems": 4
+        },
+        "ease": {
+          "enum": [
+            "linear",
+            "smooth",
+            "ease-in",
+            "ease-out"
+          ]
+        },
+        "muscles": {
+          "$ref": "#/$defs/roles"
+        },
+        "supports": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "properties": {
+              "body": {
+                "type": "string",
+                "minLength": 1
+              },
+              "surface": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "body",
+              "surface"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "rootAnchor": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/rootAnchor"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "seconds",
+        "actions"
+      ],
+      "additionalProperties": false
+    },
+    "sideFocus": {
+      "type": "object",
+      "properties": {
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true
+        },
+        "intervals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "end": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "side": {
+                "enum": [
+                  "left",
+                  "right"
+                ]
+              }
+            },
+            "required": [
+              "start",
+              "end",
+              "side"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 32
+        }
+      },
+      "required": [
+        "groups",
+        "intervals"
+      ],
+      "additionalProperties": false
+    },
+    "definitions": {
+      "type": "object",
+      "properties": {
+        "poses": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/poseDefinition"
+          },
+          "maxProperties": 128,
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+            "maxLength": 96
+          }
+        },
+        "motions": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/motionDefinition"
+          },
+          "maxProperties": 128,
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+            "maxLength": 96
+          }
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "rootAnchor": {
+      "type": "object",
+      "properties": {
+        "joint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target": {
+          "oneOf": [
+            {
+              "const": "start"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "point": {
+                  "$ref": "#/$defs/position"
+                }
+              },
+              "required": [
+                "point"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "joint",
+        "target"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "eml": {
+      "const": "1.1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "maxLength": 96
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "instructions": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1200
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/parameter"
+      },
+      "maxProperties": 128,
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+        "maxLength": 96
+      }
+    },
+    "definitions": {
+      "$ref": "#/$defs/definitions"
+    },
+    "start": {
+      "$ref": "#/$defs/start"
+    },
+    "equipment": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      },
+      "minItems": 0,
+      "maxItems": 48
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contact"
+      },
+      "minItems": 0,
+      "maxItems": 4
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/phase"
+      },
+      "minItems": 1,
+      "maxItems": 64
+    },
+    "repeat": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "enum": [
+            "loop",
+            "hold",
+            "once"
+          ]
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "travel": {
+          "$ref": "#/$defs/position"
+        }
+      },
+      "required": [
+        "mode",
+        "count"
+      ],
+      "additionalProperties": false
+    },
+    "muscles": {
+      "$ref": "#/$defs/roles"
+    },
+    "sideFocus": {
+      "$ref": "#/$defs/sideFocus"
+    },
+    "camera": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": -360,
+        "maximum": 360
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "connections": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "rope",
+              "cable",
+              "band",
+              "link"
+            ]
+          },
+          "from": {
+            "type": "object",
+            "properties": {
+              "item": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                "maxLength": 96
+              },
+              "socket": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "item",
+              "socket"
+            ],
+            "additionalProperties": false
+          },
+          "to": {
+            "type": "object",
+            "properties": {
+              "item": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                "maxLength": 96
+              },
+              "socket": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "item",
+              "socket"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "kind",
+          "from",
+          "to"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "supports": {
+      "type": "array",
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "string",
+            "minLength": 1
+          },
+          "surface": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "body",
+          "surface"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "rootAnchor": {
+      "$ref": "#/$defs/rootAnchor"
+    },
+    "constraints": {
+      "type": "array",
+      "maxItems": 128,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "hinge"
+              },
+              "joint": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "child": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "axis": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": -1000,
+                      "maximum": 1000
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "param": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "param"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                "minItems": 3,
+                "maxItems": 3
+              },
+              "min": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": -180,
+                    "maximum": 180
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "$ref": "#/$defs/id"
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "max": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": -180,
+                    "maximum": 180
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "$ref": "#/$defs/id"
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "maxSwing": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 180
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "$ref": "#/$defs/id"
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "phases": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "uniqueItems": true,
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            },
+            "required": [
+              "kind",
+              "joint",
+              "axis",
+              "min",
+              "max",
+              "maxSwing"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "orientation"
+              },
+              "joint": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "axis": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": -1000,
+                      "maximum": 1000
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "param": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "param"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                "minItems": 3,
+                "maxItems": 3
+              },
+              "direction": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": -1000,
+                      "maximum": 1000
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "param": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "param"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                "minItems": 3,
+                "maxItems": 3
+              },
+              "maxAngle": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 180
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "$ref": "#/$defs/id"
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "relativeTo": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "joint": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 128
+                      }
+                    },
+                    "required": [
+                      "joint"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "item": {
+                        "$ref": "#/$defs/id"
+                      }
+                    },
+                    "required": [
+                      "item"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "phases": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "uniqueItems": true,
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            },
+            "required": [
+              "kind",
+              "joint",
+              "axis",
+              "direction",
+              "maxAngle"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "clearance"
+              },
+              "item": {
+                "$ref": "#/$defs/id"
+              },
+              "from": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -1000,
+                          "maximum": 1000
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "param": {
+                              "$ref": "#/$defs/id"
+                            }
+                          },
+                          "required": [
+                            "param"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  },
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  }
+                ]
+              },
+              "to": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -1000,
+                          "maximum": 1000
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "param": {
+                              "$ref": "#/$defs/id"
+                            }
+                          },
+                          "required": [
+                            "param"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  },
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  }
+                ]
+              },
+              "radius": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 10
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "$ref": "#/$defs/id"
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "bodyFrom": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "bodyTo": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "bodyRadius": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 10
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "$ref": "#/$defs/id"
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "min": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": -10,
+                    "maximum": 10
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "$ref": "#/$defs/id"
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "phases": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "uniqueItems": true,
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            },
+            "required": [
+              "kind",
+              "item",
+              "from",
+              "to",
+              "radius",
+              "bodyFrom",
+              "bodyTo",
+              "bodyRadius"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "support"
+              },
+              "landmark": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "offset": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": -1000,
+                      "maximum": 1000
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "param": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "param"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                "minItems": 3,
+                "maxItems": 3
+              },
+              "surface": {
+                "oneOf": [
+                  {
+                    "const": "floor"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "item": {
+                        "$ref": "#/$defs/id"
+                      },
+                      "part": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 255
+                      }
+                    },
+                    "required": [
+                      "item",
+                      "part"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "min": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": -10,
+                    "maximum": 10
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "$ref": "#/$defs/id"
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "max": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": -10,
+                    "maximum": 10
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "$ref": "#/$defs/id"
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "edgeTolerance": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "param": {
+                        "$ref": "#/$defs/id"
+                      }
+                    },
+                    "required": [
+                      "param"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "phases": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "uniqueItems": true,
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            },
+            "required": [
+              "kind",
+              "landmark",
+              "surface",
+              "min",
+              "max"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "eml",
+    "id",
+    "title",
+    "start",
+    "phases",
+    "repeat",
+    "muscles"
+  ],
+  "additionalProperties": false
+}

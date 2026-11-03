@@ -594,7 +594,10 @@ def main():
         p["group"] for p in parts
     }
     mesh["reserved"] = ambient_accessibility(mesh["p"], mesh["n"], tri.reshape(-1, 3))
-    mesh.tofile(args.output / "vertices.bin")
+    from pivots import WRIST_PIVOTS, mark_wrist_blends
+
+    (args.output / "vertices.bin").write_bytes(mark_wrist_blends(mesh.tobytes(), meta["joints"]))
+    meta["wristPivots"] = WRIST_PIVOTS
     tri.tofile(args.output / "indices.bin")
     meta.update(version=1, groups=GROUPS, parts=parts, vertexCount=nv, indexCount=ni)
     (args.output / "model.json").write_text(json.dumps(meta, indent=2) + "\n")

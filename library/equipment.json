@@ -109,7 +109,7 @@
   "category": "free-weight",
   "dimensions": [
    1.55,
-   0.26,
+   0.35,
    0.65
   ],
   "shape": "barbell",
@@ -126,16 +126,16 @@
    ],
    "leftGrip": [
     0.32,
-    0,
+    0.09,
     0
    ],
    "rightGrip": [
     -0.32,
-    0,
+    0.09,
     0
    ]
   },
-  "description": "Trap bar.",
+  "description": "Trap bar with raised neutral handles.",
   "visual": [
    {
     "shape": "rod",
@@ -241,6 +241,158 @@
     ],
     "position": [
      0.52,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.27,
+     0.032,
+     0.032
+    ],
+    "position": [
+     0.32,
+     0.09,
+     0
+    ],
+    "rotation": [
+     0,
+     90,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.09,
+     0.032,
+     0.032
+    ],
+    "position": [
+     0.32,
+     0.045,
+     0.12
+    ],
+    "rotation": [
+     0,
+     0,
+     90
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.09,
+     0.032,
+     0.032
+    ],
+    "position": [
+     0.32,
+     0.045,
+     -0.12
+    ],
+    "rotation": [
+     0,
+     0,
+     90
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.455,
+     0.05,
+     0.05
+    ],
+    "position": [
+     0.5475,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.27,
+     0.032,
+     0.032
+    ],
+    "position": [
+     -0.32,
+     0.09,
+     0
+    ],
+    "rotation": [
+     0,
+     90,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.09,
+     0.032,
+     0.032
+    ],
+    "position": [
+     -0.32,
+     0.045,
+     0.12
+    ],
+    "rotation": [
+     0,
+     0,
+     90
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.09,
+     0.032,
+     0.032
+    ],
+    "position": [
+     -0.32,
+     0.045,
+     -0.12
+    ],
+    "rotation": [
+     0,
+     0,
+     90
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.455,
+     0.05,
+     0.05
+    ],
+    "position": [
+     -0.5475,
      0,
      0
     ],
@@ -905,8 +1057,8 @@
    ],
    "support": [
     0,
-    0.44,
-    0
+    0.4055,
+    0.21487
    ],
    "leftFoot": [
     0.13,
@@ -937,15 +1089,15 @@
     "dimensions": [
      0.34,
      0.075,
-     0.4
+     0.43
     ],
     "position": [
      0,
-     0.4025,
-     0.19
+     0.36802,
+     0.21356
     ],
     "rotation": [
-     0,
+     2,
      0,
      0
     ],
@@ -956,15 +1108,15 @@
     "dimensions": [
      0.34,
      0.07,
-     0.8
+     0.82
     ],
     "position": [
      0,
-     0.3214723819589917,
-     -0.38637033051562736
+     0.25966,
+     -0.38185
     ],
     "rotation": [
-     -15,
+     -17,
      0,
      0
     ],
@@ -974,12 +1126,12 @@
     "shape": "box",
     "dimensions": [
      0.06,
-     0.06,
-     0.86
+     0.055,
+     0.87
     ],
     "position": [
      0,
-     0.345,
+     0.125,
      0
     ],
     "rotation": [
@@ -993,12 +1145,12 @@
     "shape": "box",
     "dimensions": [
      0.055,
-     0.32,
+     0.1826,
      0.055
     ],
     "position": [
      0,
-     0.17,
+     0.1263,
      -0.39
     ],
     "rotation": [
@@ -1031,12 +1183,12 @@
     "shape": "box",
     "dimensions": [
      0.055,
-     0.32,
+     0.2863,
      0.055
     ],
     "position": [
      0,
-     0.17,
+     0.1782,
      0.39
     ],
     "rotation": [
@@ -1083,8 +1235,8 @@
    ],
    "support": [
     0,
-    0.44,
-    0
+    0.42594,
+    0.21316
    ],
    "leftFoot": [
     0.13,
@@ -1115,15 +1267,15 @@
     "dimensions": [
      0.34,
      0.075,
-     0.4
+     0.43
     ],
     "position": [
      0,
-     0.4025,
-     0.19
+     0.38876,
+     0.20827
     ],
     "rotation": [
-     0,
+     7.5,
      0,
      0
     ],
@@ -1134,15 +1286,15 @@
     "dimensions": [
      0.34,
      0.07,
-     0.8
+     0.82
     ],
     "position": [
      0,
-     0.6544305745404184,
-     -0.32766081771559674
+     0.64795,
+     -0.36292
     ],
     "rotation": [
-     35,
+     33,
      0,
      0
     ],
@@ -1261,8 +1413,8 @@
    ],
    "support": [
     0,
-    0.44,
-    0
+    0.419,
+    0.215
    ],
    "leftFoot": [
     0.13,
@@ -1293,12 +1445,12 @@
     "dimensions": [
      0.34,
      0.075,
-     0.4
+     0.43
     ],
     "position": [
      0,
-     0.4025,
-     0.19
+     0.3815,
+     0.215
     ],
     "rotation": [
      0,
@@ -1312,15 +1464,15 @@
     "dimensions": [
      0.34,
      0.07,
-     0.8
+     0.82
     ],
     "position": [
      0,
-     0.8162590402935223,
-     -0.08316467632710378
+     0.82753,
+     -0.04929
     ],
     "rotation": [
-     78,
+     88,
      0,
      0
     ],
@@ -1684,74 +1836,37 @@
   ]
  },
  "stable-raised-surface": {
-  "category": "support",
-  "dimensions": [
-   0.7,
-   0.46,
-   0.5
-  ],
-  "shape": "box",
-  "sockets": {
-   "center": [
-    0,
-    0,
-    0
+   "category": "support",
+   "dimensions": [0.7, 0.44, 0.5],
+   "shape": "box",
+   "sockets": {
+     "center": [0, 0, 0],
+     "support": [0, 0.44, 0],
+     "leftFoot": [0.13, 0, 0],
+     "rightFoot": [-0.13, 0, 0],
+     "leftGrip": [0.15, 0, 0],
+     "rightGrip": [-0.15, 0, 0],
+     "leftPalm": [0.20398, 0.46798523853691776, 0.03996],
+     "rightPalm": [-0.20402, 0.4680069072014478, 0.04002]
+   },
+   "description": "A floor-mounted training platform with a level padded top and calibrated palm target sockets.",
+   "visual": [
+     {
+       "shape": "box",
+       "dimensions": [0.7, 0.44, 0.5],
+       "position": [0, 0.22, 0],
+       "rotation": [0, 0, 0],
+       "material": "pad"
+     }
    ],
-   "support": [
-    0,
-    0.23,
-    0
-   ],
-   "leftFoot": [
-    0.13,
-    0,
-    0
-   ],
-   "rightFoot": [
-    -0.13,
-    0,
-    0
-   ],
-   "leftGrip": [
-    0.15,
-    0,
-    0
-   ],
-   "rightGrip": [
-    -0.15,
-    0,
-    0
-   ]
-  },
-  "description": "Stable raised surface.",
-  "visual": [
-   {
-    "shape": "box",
-    "dimensions": [
-     0.7,
-     0.46,
-     0.5
-    ],
-    "position": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0
-    ],
-    "material": "pad"
-   }
-  ]
+   "origin": "floor midpoint underneath the contact face"
  },
  "wall": {
   "category": "support",
   "dimensions": [
    1.5,
    2,
-   0.08
+   0.05
   ],
   "shape": "box",
   "sockets": {
@@ -1786,28 +1901,29 @@
     0
    ]
   },
-  "description": "Wall.",
+  "description": "Vertical wall panel with its local top face oriented toward the athlete.",
   "visual": [
    {
     "shape": "box",
     "dimensions": [
      1.5,
-     2,
-     0.05
+     0.05,
+     2.0
     ],
     "position": [
      0,
-     0,
+     1,
      0
     ],
     "rotation": [
-     0,
+     90,
      0,
      0
     ],
     "material": "steel"
    }
-  ]
+  ],
+  "origin": "floor midpoint of panel"
  },
  "floor": {
   "category": "support",
@@ -2068,7 +2184,7 @@
    0.09,
    0.09
   ],
-  "shape": "box",
+  "shape": "rod",
   "sockets": {
    "center": [
     0,
@@ -2101,10 +2217,10 @@
     0
    ]
   },
-  "description": "Bar pad.",
+  "description": "Cylindrical padded sleeve for the hip-thrust bar.",
   "visual": [
    {
-    "shape": "box",
+    "shape": "rod",
     "dimensions": [
      0.4,
      0.09,
@@ -2634,9 +2750,9 @@
  "leg-press-machine": {
   "category": "station",
   "dimensions": [
-   0.8,
-   1.45,
-   0.85
+   1,
+   1.35,
+   1.36
   ],
   "shape": "box",
   "sockets": {
@@ -2667,8 +2783,8 @@
    ],
    "support": [
     0,
-    0,
-    0
+    0.413,
+    0.1189
    ]
   },
   "description": "Station reference frame. The instance chooses mounting position and attachments.",
@@ -2773,13 +2889,13 @@
     "shape": "box",
     "dimensions": [
      0.34,
-     0.075,
-     0.38
+     0.07,
+     0.41
     ],
     "position": [
      0,
-     0.405,
-     0
+     0.378,
+     0.1189
     ],
     "rotation": [
      0,
@@ -2824,6 +2940,34 @@
      0,
      0
     ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [0.34, 0.065, 0.8],
+    "position": [0.0, 0.67286, -0.3919],
+    "rotation": [45, 0, 0],
+    "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [0.065, 0.31, 0.065],
+    "position": [0, 0.19, 0.12],
+    "rotation": [0, 0, 0],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [0.85, 0.05, 0.065],
+    "position": [0, 0.055, 0.12],
+    "rotation": [0, 0, 0],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [0.06, 0.37, 0.06],
+    "position": [0, 0.56, -0.41],
+    "rotation": [0, 0, 0],
     "material": "steel"
    }
   ]
@@ -3149,9 +3293,9 @@
  "lying-leg-curl-machine": {
   "category": "station",
   "dimensions": [
-   0.8,
-   1.45,
-   0.85
+   0.69,
+   0.575,
+   1.48
   ],
   "shape": "box",
   "sockets": {
@@ -3166,14 +3310,14 @@
     0
    ],
    "leftGrip": [
-    0.25,
-    0,
-    0
+    0.1579,
+    0.4065,
+    0.9447
    ],
    "rightGrip": [
-    -0.25,
-    0,
-    0
+    -0.1579,
+    0.4065,
+    0.9447
    ],
    "anchor": [
     0,
@@ -3184,22 +3328,65 @@
     0,
     0,
     0
+   ],
+   "pivot": [
+    0.255,
+    0.5411,
+    -0.422
    ]
   },
-  "description": "Station reference frame. The instance chooses mounting position and attachments.",
+  "description": "Prone curl station with separate thigh and sloped torso pads and a side-mounted knee lever pivot.",
   "origin": "floor midpoint of frame",
   "visual": [
    {
     "shape": "box",
     "dimensions": [
-     0.04,
-     1.35,
-     0.04
+     0.35,
+     0.066,
+     0.418
     ],
     "position": [
-     -0.475,
-     0.675,
-     -0.35
+     0,
+     0.435,
+     -0.222
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.376,
+     0.062,
+     0.541
+    ],
+    "position": [
+     0,
+     0.387,
+     0.245
+    ],
+    "rotation": [
+     7,
+     0,
+     0
+    ],
+    "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.08,
+     0.075,
+     0.92
+    ],
+    "position": [
+     0,
+     0.337,
+     0.02
     ],
     "rotation": [
      0,
@@ -3211,14 +3398,33 @@
    {
     "shape": "box",
     "dimensions": [
-     0.04,
-     1.35,
-     0.04
+     0.044,
+     0.54,
+     0.044
     ],
     "position": [
-     0.475,
-     0.675,
-     -0.35
+     0.255,
+     0.27,
+     -0.422
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.1,
+     0.065,
+     0.065
+    ],
+    "position": [
+     0.255,
+     0.5411,
+     -0.422
     ],
     "rotation": [
      0,
@@ -3230,14 +3436,14 @@
    {
     "shape": "box",
     "dimensions": [
-     0.99,
-     0.04,
-     0.04
+     0.66,
+     0.047,
+     0.085
     ],
     "position": [
      0,
-     1.33,
-     -0.35
+     0.0235,
+     -0.412
     ],
     "rotation": [
      0,
@@ -3249,14 +3455,71 @@
    {
     "shape": "box",
     "dimensions": [
+     0.073,
+     0.338,
+     0.078
+    ],
+    "position": [
+     0,
+     0.2,
+     -0.412
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.66,
+     0.047,
+     0.085
+    ],
+    "position": [
+     0,
+     0.0235,
+     0.43
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.073,
+     0.338,
+     0.078
+    ],
+    "position": [
+     0,
+     0.2,
+     0.43
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.09,
      0.06,
-     0.045,
-     0.7
+     0.35
     ],
     "position": [
-     -0.475,
-     0.024,
-     0
+     0,
+     0.4,
+     -0.22
     ],
     "rotation": [
      0,
@@ -3268,14 +3531,109 @@
    {
     "shape": "box",
     "dimensions": [
-     0.06,
-     0.045,
-     0.7
+     0.25,
+     0.035,
+     0.3
     ],
     "position": [
-     0.475,
-     0.024,
+     0,
+     0.36,
+     0.245
+    ],
+    "rotation": [
+     7,
+     0,
      0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.038,
+     0.041,
+     0.53
+    ],
+    "position": [
+     -0.235,
+     0.361,
+     0.688
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.041,
+     0.073,
+     0.041
+    ],
+    "position": [
+     -0.235,
+     0.39,
+     0.9447
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.038,
+     0.041,
+     0.53
+    ],
+    "position": [
+     0.235,
+     0.361,
+     0.688
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.041,
+     0.073,
+     0.041
+    ],
+    "position": [
+     0.235,
+     0.39,
+     0.9447
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.52,
+     0.034,
+     0.034
+    ],
+    "position": [
+     0,
+     0.4065,
+     0.9447
     ],
     "rotation": [
      0,
@@ -4100,6 +4458,16 @@
     0,
     0,
     0
+   ],
+   "leftPivot": [
+    0.171,
+    1.46,
+    0.196
+   ],
+   "rightPivot": [
+    -0.171,
+    1.46,
+    0.196
    ]
   },
   "description": "Station reference frame. The instance chooses mounting position and attachments.",
@@ -4218,6 +4586,44 @@
      0
     ],
     "material": "pad"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.638304,
+     0.035,
+     0.035
+    ],
+    "position": [
+     0.323,
+     1.395,
+     -0.077
+    ],
+    "rotation": [
+     0,
+     -58.803,
+     156.8469
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.638304,
+     0.035,
+     0.035
+    ],
+    "position": [
+     -0.323,
+     1.395,
+     -0.077
+    ],
+    "rotation": [
+     0,
+     -58.803,
+     23.1531
+    ],
+    "material": "steel"
    }
   ]
  },
@@ -4226,7 +4632,7 @@
   "dimensions": [
    0.8,
    1.45,
-   0.85
+   1.055
   ],
   "shape": "box",
   "sockets": {
@@ -4257,8 +4663,8 @@
    ],
    "support": [
     0,
-    0,
-    0
+    0.4425,
+    -0.505
    ]
   },
   "description": "Station reference frame. The instance chooses mounting position and attachments.",
@@ -4369,7 +4775,7 @@
     "position": [
      0,
      0.405,
-     0
+     -0.505
     ],
     "rotation": [
      0,
@@ -4377,6 +4783,63 @@
      0
     ],
     "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.055,
+     0.38,
+     0.055
+    ],
+    "position": [
+     0,
+     0.205,
+     -0.505
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.34,
+     0.045,
+     0.08
+    ],
+    "position": [
+     0,
+     0.025,
+     -0.505
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.06,
+     0.045,
+     0.555
+    ],
+    "position": [
+     0,
+     0.025,
+     -0.253
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
    }
   ]
  },
@@ -4563,7 +5026,7 @@
   "dimensions": [
    0.8,
    1.45,
-   0.85
+   1.055
   ],
   "shape": "box",
   "sockets": {
@@ -4594,8 +5057,8 @@
    ],
    "support": [
     0,
-    0,
-    0
+    0.4425,
+    -0.505
    ]
   },
   "description": "Station reference frame. The instance chooses mounting position and attachments.",
@@ -4706,7 +5169,7 @@
     "position": [
      0,
      0.405,
-     0
+     -0.505
     ],
     "rotation": [
      0,
@@ -4714,6 +5177,63 @@
      0
     ],
     "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.055,
+     0.38,
+     0.055
+    ],
+    "position": [
+     0,
+     0.205,
+     -0.505
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.34,
+     0.045,
+     0.08
+    ],
+    "position": [
+     0,
+     0.025,
+     -0.505
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.06,
+     0.045,
+     0.555
+    ],
+    "position": [
+     0,
+     0.025,
+     -0.253
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
    }
   ]
  },
@@ -4722,7 +5242,7 @@
   "dimensions": [
    0.8,
    1.45,
-   0.85
+   1.465
   ],
   "shape": "box",
   "sockets": {
@@ -4753,8 +5273,8 @@
    ],
    "support": [
     0,
-    0,
-    0
+    0.4425,
+    -0.915
    ]
   },
   "description": "Station reference frame. The instance chooses mounting position and attachments.",
@@ -4865,7 +5385,7 @@
     "position": [
      0,
      0.405,
-     0
+     -0.915
     ],
     "rotation": [
      0,
@@ -4873,6 +5393,63 @@
      0
     ],
     "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.055,
+     0.38,
+     0.055
+    ],
+    "position": [
+     0,
+     0.205,
+     -0.915
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.34,
+     0.045,
+     0.08
+    ],
+    "position": [
+     0,
+     0.025,
+     -0.915
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.06,
+     0.045,
+     0.965
+    ],
+    "position": [
+     0,
+     0.025,
+     -0.458
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
    }
   ]
  },
@@ -5038,9 +5615,9 @@
  "assisted-pull-up-machine": {
   "category": "station",
   "dimensions": [
-   0.8,
-   1.45,
-   0.85
+   1.05,
+   2.14105,
+   0.8
   ],
   "shape": "box",
   "sockets": {
@@ -5055,13 +5632,13 @@
     0
    ],
    "leftGrip": [
-    0.25,
-    0,
+    0.31,
+    2.11605,
     0
    ],
    "rightGrip": [
-    -0.25,
-    0,
+    -0.31,
+    2.11605,
     0
    ],
    "anchor": [
@@ -5075,20 +5652,39 @@
     0
    ]
   },
-  "description": "Station reference frame. The instance chooses mounting position and attachments.",
+  "description": "Fixed overhead grips and side guides for the moving knee platform.",
   "origin": "floor midpoint of frame",
   "visual": [
    {
     "shape": "box",
     "dimensions": [
-     0.04,
-     2.05,
-     0.04
+     0.06,
+     0.045,
+     0.8
     ],
     "position": [
      -0.475,
-     1.025,
-     -0.35
+     0.0225,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.044,
+     2.14105,
+     0.046
+    ],
+    "position": [
+     -0.475,
+     1.070525,
+     -0.34
     ],
     "rotation": [
      0,
@@ -5101,13 +5697,13 @@
     "shape": "box",
     "dimensions": [
      0.04,
-     2.05,
-     0.04
+     0.045,
+     0.355
     ],
     "position": [
-     0.475,
-     1.025,
-     -0.35
+     -0.475,
+     2.11505,
+     -0.17
     ],
     "rotation": [
      0,
@@ -5119,14 +5715,52 @@
    {
     "shape": "box",
     "dimensions": [
-     0.99,
-     0.04,
-     0.04
+     0.027,
+     1.12,
+     0.03
     ],
     "position": [
+     -0.345,
+     0.56,
+     -0.17
+    ],
+    "rotation": [
      0,
-     2.03,
-     -0.35
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.16,
+     0.04,
+     0.035
+    ],
+    "position": [
+     -0.409,
+     0.055,
+     -0.17
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.04,
+     0.04,
+     0.20500000000000002
+    ],
+    "position": [
+     -0.475,
+     0.055,
+     -0.255
     ],
     "rotation": [
      0,
@@ -5140,11 +5774,11 @@
     "dimensions": [
      0.06,
      0.045,
-     0.7
+     0.8
     ],
     "position": [
-     -0.475,
-     0.024,
+     0.475,
+     0.0225,
      0
     ],
     "rotation": [
@@ -5157,14 +5791,109 @@
    {
     "shape": "box",
     "dimensions": [
-     0.06,
-     0.045,
-     0.7
+     0.044,
+     2.14105,
+     0.046
     ],
     "position": [
      0.475,
-     0.024,
+     1.070525,
+     -0.34
+    ],
+    "rotation": [
+     0,
+     0,
      0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.04,
+     0.045,
+     0.355
+    ],
+    "position": [
+     0.475,
+     2.11505,
+     -0.17
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.027,
+     1.12,
+     0.03
+    ],
+    "position": [
+     0.345,
+     0.56,
+     -0.17
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.16,
+     0.04,
+     0.035
+    ],
+    "position": [
+     0.409,
+     0.055,
+     -0.17
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.04,
+     0.04,
+     0.20500000000000002
+    ],
+    "position": [
+     0.475,
+     0.055,
+     -0.255
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.98,
+     0.05,
+     0.045
+    ],
+    "position": [
+     0,
+     2.11605,
+     -0.34
     ],
     "rotation": [
      0,
@@ -5177,12 +5906,12 @@
     "shape": "rod",
     "dimensions": [
      1.05,
-     0.035,
-     0.035
+     0.038,
+     0.038
     ],
     "position": [
      0,
-     1.9999999999999998,
+     2.11605,
      0
     ],
     "rotation": [
@@ -5197,9 +5926,9 @@
  "assisted-dip-machine": {
   "category": "station",
   "dimensions": [
-   0.8,
-   1.45,
-   0.85
+   1.05,
+   1.11113,
+   0.8
   ],
   "shape": "box",
   "sockets": {
@@ -5215,12 +5944,12 @@
    ],
    "leftGrip": [
     0.25,
-    0,
+    1.11113,
     0
    ],
    "rightGrip": [
     -0.25,
-    0,
+    1.11113,
     0
    ],
    "anchor": [
@@ -5234,20 +5963,39 @@
     0
    ]
   },
-  "description": "Station reference frame. The instance chooses mounting position and attachments.",
+  "description": "Fixed parallel dip handles and side guides for the moving knee platform.",
   "origin": "floor midpoint of frame",
   "visual": [
    {
     "shape": "box",
     "dimensions": [
-     0.04,
-     1.35,
-     0.04
+     0.06,
+     0.045,
+     0.8
     ],
     "position": [
      -0.475,
-     0.675,
-     -0.35
+     0.0225,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.044,
+     1.11113,
+     0.046
+    ],
+    "position": [
+     -0.475,
+     0.555565,
+     -0.34
     ],
     "rotation": [
      0,
@@ -5260,13 +6008,13 @@
     "shape": "box",
     "dimensions": [
      0.04,
-     1.35,
-     0.04
+     0.045,
+     0.355
     ],
     "position": [
-     0.475,
-     0.675,
-     -0.35
+     -0.475,
+     1.11013,
+     -0.17
     ],
     "rotation": [
      0,
@@ -5278,18 +6026,94 @@
    {
     "shape": "box",
     "dimensions": [
-     0.99,
-     0.04,
-     0.04
+     0.027,
+     0.85,
+     0.03
     ],
     "position": [
-     0,
-     1.33,
-     -0.35
+     -0.345,
+     0.425,
+     0
     ],
     "rotation": [
      0,
      0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.16,
+     0.04,
+     0.035
+    ],
+    "position": [
+     -0.409,
+     0.055,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.04,
+     0.04,
+     0.375
+    ],
+    "position": [
+     -0.475,
+     0.055,
+     -0.17
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.25,
+     0.045,
+     0.045
+    ],
+    "position": [
+     -0.3625,
+     1.11113,
+     -0.3
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.66,
+     0.037,
+     0.037
+    ],
+    "position": [
+     -0.25,
+     1.11113,
+     0.015
+    ],
+    "rotation": [
+     0,
+     90,
      0
     ],
     "material": "steel"
@@ -5299,11 +6123,11 @@
     "dimensions": [
      0.06,
      0.045,
-     0.7
+     0.8
     ],
     "position": [
-     -0.475,
-     0.024,
+     0.475,
+     0.0225,
      0
     ],
     "rotation": [
@@ -5316,14 +6140,147 @@
    {
     "shape": "box",
     "dimensions": [
-     0.06,
-     0.045,
-     0.7
+     0.044,
+     1.11113,
+     0.046
     ],
     "position": [
      0.475,
-     0.024,
+     0.555565,
+     -0.34
+    ],
+    "rotation": [
+     0,
+     0,
      0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.04,
+     0.045,
+     0.355
+    ],
+    "position": [
+     0.475,
+     1.11013,
+     -0.17
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.027,
+     0.85,
+     0.03
+    ],
+    "position": [
+     0.345,
+     0.425,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.16,
+     0.04,
+     0.035
+    ],
+    "position": [
+     0.409,
+     0.055,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.04,
+     0.04,
+     0.375
+    ],
+    "position": [
+     0.475,
+     0.055,
+     -0.17
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.25,
+     0.045,
+     0.045
+    ],
+    "position": [
+     0.3625,
+     1.11113,
+     -0.3
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.66,
+     0.037,
+     0.037
+    ],
+    "position": [
+     0.25,
+     1.11113,
+     0.015
+    ],
+    "rotation": [
+     0,
+     90,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.98,
+     0.05,
+     0.045
+    ],
+    "position": [
+     0,
+     1.11113,
+     -0.34
     ],
     "rotation": [
      0,
@@ -6245,9 +7202,9 @@
  "neutral-grip-handle": {
   "category": "attachment",
   "dimensions": [
-   0.24,
-   0.1,
-   0.14
+   0.265,
+   0.04,
+   0.19
   ],
   "shape": "rod",
   "sockets": {
@@ -6262,19 +7219,19 @@
     0
    ],
    "leftGrip": [
-    0.1,
+    0.123,
     0,
     0
    ],
    "rightGrip": [
-    -0.1,
+    -0.123,
     0,
     0
    ],
    "anchor": [
     0,
     0,
-    0
+    0.073
    ],
    "support": [
     0,
@@ -6287,18 +7244,56 @@
    {
     "shape": "rod",
     "dimensions": [
-     0.24,
-     0.03,
-     0.03
+     0.246,
+     0.028,
+     0.028
     ],
     "position": [
      0,
+     0,
+     0.073
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.18,
+     0.028,
+     0.028
+    ],
+    "position": [
+     0.123,
      0,
      0
     ],
     "rotation": [
      0,
+     90,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.18,
+     0.028,
+     0.028
+    ],
+    "position": [
+     -0.123,
      0,
+     0
+    ],
+    "rotation": [
+     0,
+     90,
      0
     ],
     "material": "steel"
@@ -6749,11 +7744,11 @@
  "ab-wheel": {
   "category": "attachment",
   "dimensions": [
-   0.3,
-   0.15,
-   0.15
+   0.31,
+   0.234,
+   0.234
   ],
-  "shape": "dumbbell",
+  "shape": "rod",
   "sockets": {
    "center": [
     0,
@@ -6766,12 +7761,12 @@
     0
    ],
    "leftGrip": [
-    0.12,
+    0.104,
     0,
     0
    ],
    "rightGrip": [
-    -0.12,
+    -0.104,
     0,
     0
    ],
@@ -6782,22 +7777,136 @@
    ],
    "support": [
     0,
-    0,
+    -0.117,
     0
    ]
   },
-  "description": "Ab wheel.",
+  "description": "A single 234 mm wheel centred on an axle with two hand grips.",
   "visual": [
    {
-    "shape": "dumbbell",
+    "shape": "rod",
     "dimensions": [
-     0.3,
-     0.15,
-     0.15
+     0.31,
+     0.027,
+     0.027
     ],
     "position": [
      0,
      0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.052,
+     0.234,
+     0.234
+    ],
+    "position": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "pad"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.065,
+     0.055,
+     0.055
+    ],
+    "position": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.075,
+     0.035,
+     0.035
+    ],
+    "position": [
+     -0.106,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.003,
+     0.14,
+     0.009
+    ],
+    "position": [
+     -0.027,
+     0.018,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.075,
+     0.035,
+     0.035
+    ],
+    "position": [
+     0.106,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.003,
+     0.14,
+     0.009
+    ],
+    "position": [
+     0.027,
+     0.018,
      0
     ],
     "rotation": [
@@ -7064,9 +8173,9 @@
  "v-handle": {
   "category": "attachment",
   "dimensions": [
-   0.24,
-   0.1,
-   0.14
+   0.348,
+   0.032,
+   0.228
   ],
   "shape": "rod",
   "sockets": {
@@ -7081,16 +8190,118 @@
     0
    ],
    "leftGrip": [
-    0.1,
+    0.16,
     0,
     0
    ],
    "rightGrip": [
-    -0.1,
+    -0.16,
     0,
     0
    ],
    "anchor": [
+    0,
+    0,
+    0.145
+   ],
+   "support": [
+    0,
+    0,
+    0
+   ]
+  },
+  "description": "Parallel hand grips on a V yoke; cable attaches at its forward apex.",
+  "visual": [
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.144,
+     0.032,
+     0.032
+    ],
+    "position": [
+     -0.16,
+     0.0,
+     0.0
+    ],
+    "rotation": [
+     0,
+     -90.0,
+     0.0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.175866,
+     0.021,
+     0.021
+    ],
+    "position": [
+     -0.08,
+     0.0,
+     0.1085
+    ],
+    "rotation": [
+     0,
+     -24.5248,
+     0.0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.144,
+     0.032,
+     0.032
+    ],
+    "position": [
+     0.16,
+     0.0,
+     0.0
+    ],
+    "rotation": [
+     0,
+     -90.0,
+     0.0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.175866,
+     0.021,
+     0.021
+    ],
+    "position": [
+     0.08,
+     0.0,
+     0.1085
+    ],
+    "rotation": [
+     0,
+     -24.5248,
+     180.0
+    ],
+    "material": "steel"
+   }
+  ]
+ },
+ "assistance-knee-pad": {
+  "category": "support",
+  "shape": "box",
+  "dimensions": [
+   0.73,
+   0.115,
+   0.3
+  ],
+  "origin": "midpoint of the padded top contact face",
+  "description": "A bilateral kneeling platform with a crosshead and sleeves for the station side guides.",
+  "sockets": {
+   "center": [
     0,
     0,
     0
@@ -7101,17 +8312,179 @@
     0
    ]
   },
-  "description": "V handle.",
+  "visual": [
+   {
+    "shape": "box",
+    "dimensions": [
+     0.43,
+     0.065,
+     0.3
+    ],
+    "position": [
+     0,
+     -0.0325,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.715,
+     0.035,
+     0.042
+    ],
+    "position": [
+     0,
+     -0.083,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.053,
+     0.11,
+     0.053
+    ],
+    "position": [
+     -0.345,
+     -0.058,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.053,
+     0.11,
+     0.053
+    ],
+    "position": [
+     0.345,
+     -0.058,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   }
+  ]
+ },
+ "prone-curl-lever": {
+  "category": "support",
+  "shape": "rod",
+  "dimensions": [
+   0.541,
+   0.36,
+   0.18
+  ],
+  "origin": "midpoint between the knee hinges; local -Y points towards the ankles",
+  "description": "Padded ankle roller and rigid side arm, rotating about the fixed knee axis of the prone curl station.",
+  "sockets": {
+   "center": [
+    0,
+    0,
+    0
+   ],
+   "axle": [
+    0.255,
+    0,
+    0
+   ],
+   "roller": [
+    0,
+    -0.328,
+    -0.125
+   ]
+  },
   "visual": [
    {
     "shape": "rod",
     "dimensions": [
-     0.24,
-     0.03,
-     0.03
+     0.48,
+     0.14,
+     0.14
     ],
     "position": [
      0,
+     -0.328,
+     -0.125
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "pad"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.54,
+     0.023,
+     0.023
+    ],
+    "position": [
+     0,
+     -0.328,
+     -0.125
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.032,
+     0.35101139582640334,
+     0.034
+    ],
+    "position": [
+     0.255,
+     -0.164,
+     -0.0625
+    ],
+    "rotation": [
+     20.86,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "rod",
+    "dimensions": [
+     0.06,
+     0.076,
+     0.076
+    ],
+    "position": [
+     0.255,
      0,
      0
     ],
@@ -7120,6 +8493,342 @@
      0,
      0
     ],
+    "material": "steel"
+   }
+  ]
+ },
+ "incline-hand-platforms": {
+    "category": "support",
+    "dimensions": [0.7, 0.44, 0.48],
+    "shape": "box",
+    "sockets": {
+      "center": [0, 0, 0],
+      "support": [0.22, 0.44, 0.048],
+      "leftFoot": [0.13, 0, 0],
+      "rightFoot": [-0.13, 0, 0],
+      "leftGrip": [0.15, 0, 0],
+      "rightGrip": [-0.15, 0, 0],
+      "leftPalm": [0.20398, 0.46798523853691776, 0.03996],
+      "rightPalm": [-0.20402, 0.4680069072014478, 0.04002]
+    },
+    "description": "Two raised palm pads on a braced floor frame. The open channel between the pads provides chest clearance at the bottom of an incline push-up.",
+    "visual": [
+      {
+        "shape": "box",
+        "dimensions": [0.168, 0.058, 0.32],
+        "position": [0.22, 0.411, 0.048],
+        "rotation": [0, 0, 0],
+        "material": "pad"
+      },
+      {
+        "shape": "box",
+        "dimensions": [0.168, 0.058, 0.32],
+        "position": [-0.22, 0.411, 0.048],
+        "rotation": [0, 0, 0],
+        "material": "pad"
+      },
+      {
+        "shape": "box",
+        "dimensions": [0.062, 0.365, 0.06],
+        "position": [0.226, 0.198, 0.0],
+        "rotation": [0, 0, 0],
+        "material": "steel"
+      },
+      {
+        "shape": "box",
+        "dimensions": [0.065, 0.365, 0.06],
+        "position": [0.226, 0.198, 0.134],
+        "rotation": [0, 0, 0],
+        "material": "steel"
+      },
+      {
+        "shape": "box",
+        "dimensions": [0.196, 0.046, 0.465],
+        "position": [0.226, 0.023, 0.046],
+        "rotation": [0, 0, 0],
+        "material": "steel"
+      },
+      {
+        "shape": "box",
+        "dimensions": [0.133, 0.04, 0.296],
+        "position": [0.22, 0.365, 0.048],
+        "rotation": [0, 0, 0],
+        "material": "steel"
+      },
+      {
+        "shape": "box",
+        "dimensions": [0.062, 0.365, 0.06],
+        "position": [-0.226, 0.198, 0.0],
+        "rotation": [0, 0, 0],
+        "material": "steel"
+      },
+      {
+        "shape": "box",
+        "dimensions": [0.065, 0.365, 0.06],
+        "position": [-0.226, 0.198, 0.134],
+        "rotation": [0, 0, 0],
+        "material": "steel"
+      },
+      {
+        "shape": "box",
+        "dimensions": [0.196, 0.046, 0.465],
+        "position": [-0.226, 0.023, 0.046],
+        "rotation": [0, 0, 0],
+        "material": "steel"
+      },
+      {
+        "shape": "box",
+        "dimensions": [0.133, 0.04, 0.296],
+        "position": [-0.22, 0.365, 0.048],
+        "rotation": [0, 0, 0],
+        "material": "steel"
+      },
+      {
+        "shape": "box",
+        "dimensions": [0.445, 0.038, 0.052],
+        "position": [0, 0.055, 0.12],
+        "rotation": [0, 0, 0],
+        "material": "steel"
+      }
+    ],
+    "origin": "floor midpoint between the two pads"
+  },
+ "hack-squat-carriage": {
+  "category": "support",
+  "shape": "box",
+  "dimensions": [
+   0.4,
+   0.44,
+   0.24
+  ],
+  "description": "Back and separate shoulder pads on the travelling hack squat carriage. Local +Z is the front of the backrest.",
+  "sockets": {
+   "center": [
+    0,
+    0.06,
+    -0.11
+   ],
+   "support": [
+    0,
+    0.06,
+    -0.0827
+   ],
+   "anchor": [
+    0,
+    0.06,
+    -0.16
+   ]
+  },
+  "visual": [
+   {
+    "shape": "box",
+    "dimensions": [
+     0.35,
+     0.055,
+     0.38
+    ],
+    "position": [
+     0,
+     0.06,
+     -0.1102
+    ],
+    "rotation": [
+     90,
+     0,
+     0
+    ],
+    "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.34,
+     0.048,
+     0.045
+    ],
+    "position": [
+     0,
+     0.3,
+     -0.15
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.088,
+     0.06,
+     0.14
+    ],
+    "position": [
+     -0.147,
+     0.324,
+     -0.01
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.038,
+     0.36,
+     0.035
+    ],
+    "position": [
+     -0.146,
+     0.145,
+     -0.15
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.038,
+     0.038,
+     0.14
+    ],
+    "position": [
+     -0.146,
+     0.32,
+     -0.095
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.088,
+     0.06,
+     0.14
+    ],
+    "position": [
+     0.147,
+     0.324,
+     -0.01
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.038,
+     0.36,
+     0.035
+    ],
+    "position": [
+     0.146,
+     0.145,
+     -0.15
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [
+     0.038,
+     0.038,
+     0.14
+    ],
+    "position": [
+     0.146,
+     0.32,
+     -0.095
+    ],
+    "rotation": [
+     0,
+     0,
+     0
+    ],
+    "material": "steel"
+   }
+  ]
+ },
+ "prone-row-bench": {
+  "category": "support",
+  "dimensions": [0.45, 0.94, 0.91],
+  "shape": "box",
+  "sockets": {
+   "center": [0, 0, 0],
+   "support": [0.0, 0.79628, -0.48739],
+   "leftFoot": [0.13, 0, 0],
+   "rightFoot": [-0.13, 0, 0],
+   "leftGrip": [0.15, 0, 0],
+   "rightGrip": [-0.15, 0, 0]
+  },
+  "description": "A compact angled chest pad on a steel stand, open below the hips for a prone dumbbell row.",
+  "origin": "floor midpoint under seat",
+  "visual": [
+   {
+    "shape": "box",
+    "dimensions": [0.3, 0.07, 0.45],
+    "position": [0.0, 0.76761, -0.50747],
+    "rotation": [35, 0, 0],
+    "material": "pad"
+   },
+   {
+    "shape": "box",
+    "dimensions": [0.06, 0.06, 0.86],
+    "position": [0, 0.345, 0],
+    "rotation": [0, 0, 0],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [0.055, 0.6396, 0.055],
+    "position": [0, 0.3548, -0.44],
+    "rotation": [0, 0, 0],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [0.45, 0.035, 0.065],
+    "position": [0, 0.018, -0.44],
+    "rotation": [0, 0, 0],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [0.055, 0.32, 0.055],
+    "position": [0, 0.17, 0.39],
+    "rotation": [0, 0, 0],
+    "material": "steel"
+   },
+   {
+    "shape": "box",
+    "dimensions": [0.45, 0.035, 0.065],
+    "position": [0, 0.018, 0.39],
+    "rotation": [0, 0, 0],
     "material": "steel"
    }
   ]

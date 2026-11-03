@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "suitcase-carry",
   "title": "Suitcase Carry",
   "instructions": "Carry one weight at the left side and keep the torso upright. Alternate the supporting foot through an in-place gait cycle.",
   "start": {
-    "pose": "lower-farm",
+    "pose": "lower-farm", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.26,
       "toeOut": 5

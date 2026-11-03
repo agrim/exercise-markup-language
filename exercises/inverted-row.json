@@ -1,11 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "inverted-row",
   "title": "Inverted Row",
   "instructions": "Grip the low bar from underneath and support the heels. Draw the chest toward the bar as the body pivots about the heels.",
   "start": {
-    "pose": "upper-inverted-hang-grip-both",
-    "joints": {"bothUpperArm": [-85.91, 2.42, 25.74], "bothForearm": [-4.21, -1.37, -3.11], "bothHand": [24.38, 5.48, -1.78]}
+    "pose": "upper-inverted-row-start", "root": [0, -0.63637, 0.20732]
   },
   "equipment": [
     {

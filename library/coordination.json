@@ -1,0 +1,50 @@
+{
+  "poses": {
+    "paired-dumbbell-rack": {
+      "extends": "lower-ready",
+      "joints": {
+        "bothUpperArm": [
+          -1.42,
+          -21.58,
+          -9.56
+        ],
+        "bothForearm": [
+          -144.34,
+          -43.62,
+          -21.08
+        ],
+        "bothHand": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "motions": {
+    "paired-dumbbell-press": {
+      "joints": {
+        "bothUpperArm": [
+          -134.89,
+          54.46,
+          11.3
+        ],
+        "bothForearm": [
+          59.98,
+          71.24,
+          -61.87
+        ],
+        "bothHand": [
+          0,
+          0,
+          0
+        ],
+        "bothClavicle": [
+          0,
+          0,
+          10
+        ]
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "dumbbell-thruster",
   "title": "Dumbbell Thruster",
   "instructions": "Rack one dumbbell at each shoulder. Descend, drive up through both feet, continue into the overhead press, then lower the bells to the shoulders.",
   "start": {
-    "pose": "lower-front-rack",
+    "pose": "paired-dumbbell-rack", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.35,
       "toeOut": 10
@@ -22,7 +22,12 @@
           0.05
         ],
         "grip": true
-      }
+      },
+      "rotation": [
+        0,
+        3,
+        -11.5
+      ]
     },
     {
       "id": "right-bell",
@@ -35,7 +40,12 @@
           0.05
         ],
         "grip": true
-      }
+      },
+      "rotation": [
+        0,
+        -3,
+        11.5
+      ]
     }
   ],
   "contacts": [
@@ -74,7 +84,7 @@
       "seconds": 0.62,
       "actions": [
         {
-          "use": "lower-overhead-drive",
+          "use": "paired-dumbbell-press",
           "amount": 0.35
         }
       ]
@@ -84,7 +94,7 @@
       "seconds": 0.58,
       "actions": [
         {
-          "use": "lower-overhead-drive",
+          "use": "paired-dumbbell-press",
           "amount": 1
         }
       ]

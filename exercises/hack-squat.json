@@ -1,10 +1,15 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "hack-squat",
   "title": "Hack Squat",
   "instructions": "Place both feet on the sloped plate with the shoulders beneath the pads. Lower the body along the angled rails, then straighten the knees.",
   "start": {
-    "pose": "lower-hack"
+    "pose": "lower-hack",
+    "root": [
+      0,
+      -0.13,
+      -0.16
+    ]
   },
   "equipment": [
     {
@@ -18,13 +23,13 @@
     },
     {
       "id": "carriage-pad",
-      "kind": "thigh-pad",
+      "kind": "hack-squat-carriage",
       "follow": {
         "joint": "chest",
         "offset": [
           0,
-          0.19,
-          -0.085
+          0,
+          0
         ]
       }
     }
@@ -107,6 +112,24 @@
     {
       "body": "chest",
       "surface": "carriage-pad"
+    }
+  ],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "chest",
+      "offset": [
+        0,
+        0.06,
+        -0.0827
+      ],
+      "surface": {
+        "item": "carriage-pad",
+        "part": 0
+      },
+      "min": -0.004,
+      "max": 0.004,
+      "edgeTolerance": 0.005
     }
   ]
 }

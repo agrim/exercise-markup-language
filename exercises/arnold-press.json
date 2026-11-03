@@ -1,37 +1,34 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "arnold-press",
   "title": "Arnold Press",
   "instructions": "Begin seated with the palms turned inward in front of the shoulders. Rotate the forearms as the dumbbells press overhead.",
   "start": {
     "pose": "upper-seated-grip-both",
     "joints": {
-      "bothUpperArm": [-34.85, 7.7, 50.66],
-      "bothForearm": [-123.2, -66.81, -7.66],
-      "leftHand": [-29.96, -2.09, 84.22],
-      "rightHand": [-30.38, 2.15, -84.27]
+      "bothUpperArm": [-39.66, -37.29, -10.15],
+      "bothForearm": [-115.48, 33.71, 33.78],
+      "bothHand": [0, 0, 0]
     }
   },
   "equipment": [
-    {"id": "seat", "kind": "upright-bench", "position": [0, 0, 0]},
+    {"id": "seat", "kind": "upright-bench", "position": [0, 0, -0.0735]},
     {
       "id": "left-load",
       "kind": "dumbbell",
-      "rotation": [-164.86, -9.18, 20.64],
-      "position": [0.13143, 1.0876, 0.12571]
+      "rotation": [0, 3, -11.5],
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]}
     },
     {
       "id": "right-load",
       "kind": "dumbbell",
-      "rotation": [127.16, -9.9, 159.51],
-      "position": [-0.13145, 1.08739, 0.12508]
+      "rotation": [0, -3, 11.5],
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]}
     }
   ],
   "contacts": [
     {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
-    {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
-    {"effector": "leftGrip", "target": {"item": "left-load", "socket": "center"}, "pole": [0.76, -0.15, 0.15]},
-    {"effector": "rightGrip", "target": {"item": "right-load", "socket": "center"}, "pole": [-0.76, -0.15, 0.15]}
+    {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]}
   ],
   "supports": [{"body": "pelvis", "surface": "seat"}],
   "phases": [
@@ -42,15 +39,9 @@
       "actions": [{"use": "upper-overhead-press-midrange", "amount": 1}],
       "detail": {
         "joints": {
-          "bothUpperArm": [-36.48, 20.22, 84.84],
-          "bothForearm": [-81.98, 42.16, 49.95],
-          "leftHand": [-35.87, 169.24, 16.5],
-          "rightHand": [-36.3, -169.19, -16.44]
+          "bothUpperArm": [-71.08, 43.0, 28.79],
+          "bothForearm": [-79.07, 15.53, 69.42]
         }
-      },
-      "items": {
-        "left-load": {"position": [0.17979, 1.37907, 0.13193], "rotation": [82.19, -67.49, 114.63]},
-        "right-load": {"position": [-0.18042, 1.37886, 0.13195], "rotation": [-118.13, -67.34, 63.5]}
       }
     },
     {
@@ -59,17 +50,11 @@
       "actions": [{"use": "overhead-press", "amount": 1}],
       "detail": {
         "joints": {
-          "bothUpperArm": [-2.64, -0.99, 143.32],
-          "bothForearm": [14.19, 3.24, 19.33],
-          "leftHand": [5.49, -1.83, -8.56],
-          "rightHand": [5.07, 1.91, 8.55]
+          "bothUpperArm": [-173.28, 152.7, -26.44],
+          "bothForearm": [-52.56, -71.45, 70.01]
         }
       },
-      "ease": "ease-out",
-      "items": {
-        "left-load": {"position": [0.17357, 1.69036, 0.04529], "rotation": [15.14, 9.18, 159.36]},
-        "right-load": {"position": [-0.17355, 1.69015, 0.04592], "rotation": [-52.84, 9.9, 20.49]}
-      }
+      "ease": "ease-out"
     },
     {
       "id": "lower-midrange",
@@ -78,29 +63,39 @@
       "actions": [{"use": "upper-overhead-press-midrange", "amount": 1}],
       "detail": {
         "joints": {
-          "bothUpperArm": [-36.48, 20.22, 84.84],
-          "bothForearm": [-81.98, 42.16, 49.95],
-          "leftHand": [-35.87, 169.24, 16.5],
-          "rightHand": [-36.3, -169.19, -16.44]
+          "bothUpperArm": [-71.08, 43.0, 28.79],
+          "bothForearm": [-79.07, 15.53, 69.42]
         }
-      },
-      "items": {
-        "left-load": {"position": [0.17979, 1.37907, 0.13193], "rotation": [82.19, -67.49, 114.63]},
-        "right-load": {"position": [-0.18042, 1.37886, 0.13195], "rotation": [-118.13, -67.34, 63.5]}
       }
     },
     {
       "id": "lower",
       "seconds": 0.8,
       "actions": [],
-      "ease": "ease-out",
-      "items": {
-        "left-load": {"position": [0.13143, 1.0876, 0.12571], "rotation": [-164.86, -9.18, 20.64]},
-        "right-load": {"position": [-0.13145, 1.08739, 0.12508], "rotation": [127.16, -9.9, 159.51]}
-      }
+      "ease": "ease-out"
     }
   ],
   "repeat": {"mode": "loop", "count": 1},
   "muscles": {"primary": ["anteriorDeltoids", "lateralDeltoids"], "secondary": ["triceps"]},
-  "camera": [32, 9]
+  "camera": [32, 9],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftThigh",
+      "offset": [-0.0326, -0.35, -0.0403],
+      "surface": {"item": "seat", "part": 0},
+      "min": -0.005,
+      "max": 0.009,
+      "edgeTolerance": 0.004
+    },
+    {
+      "kind": "support",
+      "landmark": "chest",
+      "offset": [-0.0645, 0.1373, -0.0826],
+      "surface": {"item": "seat", "part": 1},
+      "min": -0.005,
+      "max": 0.014,
+      "edgeTolerance": 0.004
+    }
+  ]
 }

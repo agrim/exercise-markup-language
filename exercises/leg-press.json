@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "leg-press",
   "title": "Leg Press",
   "instructions": "Sit against the inclined backrest with both feet on the sled. Let the sled approach as the knees bend, then press it away along the guide.",
   "start": {
-    "pose": "lower-sled-seat"
+    "pose": "lower-sled-seat", "root": [0, -0.397, -0.015]
   },
   "equipment": [
     {
@@ -114,6 +114,27 @@
     {
       "body": "pelvis",
       "surface": "machine"
+    },
+    {"body": "chest", "surface": "machine"}
+  ],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "pelvis",
+      "offset": [-0.0493, -0.0152, -0.072],
+      "surface": {"item": "machine", "part": 5},
+      "min": -0.005,
+      "max": 0.009,
+      "edgeTolerance": 0.004
+    },
+    {
+      "kind": "support",
+      "landmark": "chest",
+      "offset": [-0.0645, 0.1373, -0.0826],
+      "surface": {"item": "machine", "part": 8},
+      "min": -0.005,
+      "max": 0.014,
+      "edgeTolerance": 0.004
     }
   ]
 }

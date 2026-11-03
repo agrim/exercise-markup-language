@@ -1,10 +1,15 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "hip-thrust",
   "title": "Hip Thrust",
   "instructions": "Rest the upper back across the bench and steady the padded bar over the pelvis. Drive through both feet to extend the hips.",
   "start": {
-    "pose": "lower-thrust"
+    "pose": "lower-thrust",
+    "root": [
+      0,
+      -0.675,
+      0.017
+    ]
   },
   "equipment": [
     {
@@ -13,7 +18,7 @@
       "position": [
         0,
         0,
-        -0.33
+        -0.555
       ],
       "rotation": [
         0,
@@ -28,8 +33,8 @@
         "joint": "pelvis",
         "offset": [
           0,
-          0.037,
-          0.08
+          0.108,
+          0.157
         ]
       }
     },
@@ -40,8 +45,8 @@
         "joint": "pelvis",
         "offset": [
           0,
-          0.037,
-          0.08
+          0.108,
+          0.157
         ]
       }
     }
@@ -82,24 +87,14 @@
       "target": {
         "item": "load",
         "socket": "leftGrip"
-      },
-      "pole": [
-        0.7,
-        -0.6,
-        0.3
-      ]
+      }
     },
     {
       "effector": "rightGrip",
       "target": {
         "item": "load",
         "socket": "rightGrip"
-      },
-      "pole": [
-        -0.7,
-        -0.6,
-        0.3
-      ]
+      }
     }
   ],
   "phases": [
@@ -111,7 +106,30 @@
           "use": "lower-thrust-raise",
           "amount": 1
         }
-      ]
+      ],
+      "detail": {
+        "root": [
+          0,
+          -0.397,
+          0.162
+        ]
+      },
+      "items": {
+        "load": {
+          "offset": [
+            0,
+            -0.014,
+            0.12
+          ]
+        },
+        "pad": {
+          "offset": [
+            0,
+            -0.014,
+            0.12
+          ]
+        }
+      }
     },
     {
       "id": "lower",
@@ -141,6 +159,22 @@
     {
       "body": "chest",
       "surface": "bench"
+    }
+  ],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftBall",
+      "surface": "floor",
+      "min": -0.003,
+      "max": 0.006
+    },
+    {
+      "kind": "support",
+      "landmark": "rightBall",
+      "surface": "floor",
+      "min": -0.003,
+      "max": 0.006
     }
   ]
 }

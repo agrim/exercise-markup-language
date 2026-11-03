@@ -1,19 +1,18 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "incline-bench-press",
   "title": "Incline Bench Press",
   "instructions": "Brace against the inclined pad and press the bar vertically over the upper chest.",
   "start": {
     "pose": "upper-incline-bench-grip-both",
     "joints": {
-      "bothUpperArm": [19.84, -1.8, 28.49],
-      "bothForearm": [-117.01, 26.45, 26.77],
-      "leftHand": [-139.25, -53.56, 168.7],
-      "rightHand": [-140.32, 52.9, -169.5]
+      "bothUpperArm": [20.75, -1.22, 37.48],
+      "bothForearm": [-76.26, 36.71, 82.2],
+      "bothHand": [0, 0, 0]
     }
   },
   "equipment": [
-    {"id": "bench", "kind": "incline-bench", "position": [0, 0, 0]},
+    {"id": "bench", "kind": "incline-bench", "position": [0, 0, -0.0803]},
     {"id": "rack", "kind": "rack", "position": [0, 0, -0.4]},
     {
       "id": "weight",
@@ -36,10 +35,8 @@
       "actions": [{"use": "horizontal-press", "amount": 1}],
       "detail": {
         "joints": {
-          "bothUpperArm": [-93.19, 23.04, 45.8],
-          "bothForearm": [-4.28, -0.26, 1.92],
-          "leftHand": [-135.09, -38.58, 153.48],
-          "rightHand": [-135.93, 37.96, -154.16]
+          "bothUpperArm": [-65.56, 21.77, 93.15],
+          "bothForearm": [-47.08, -75.22, 64.76]
         }
       },
       "items": {"weight": {"position": [-0.00037, 1.3955, -0.41197]}}
@@ -55,6 +52,26 @@
   "muscles": {"primary": ["upperPectorals"], "secondary": ["triceps", "anteriorDeltoids"]},
   "camera": [119, 32],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
-  }
+    "phase-seconds": {"default": 1.6, "min": 0.32, "max": 15}
+  },
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "rightThigh",
+      "offset": [0.0003, -0.2926, -0.0521],
+      "surface": {"item": "bench", "part": 0},
+      "min": -0.005,
+      "max": 0.009,
+      "edgeTolerance": 0.004
+    },
+    {
+      "kind": "support",
+      "landmark": "chest",
+      "offset": [0.0669, 0.1412, -0.0827],
+      "surface": {"item": "bench", "part": 1},
+      "min": -0.005,
+      "max": 0.014,
+      "edgeTolerance": 0.004
+    }
+  ]
 }

@@ -7,7 +7,7 @@ identity, so local axes coincide with world axes in the rest pose.
 
 from __future__ import annotations
 
-from math import acos, cos, degrees, hypot, isfinite, radians, sin, sqrt
+from math import acos, atan2, cos, degrees, hypot, isfinite, radians, sin, sqrt
 
 IDENTITY = (0.0, 0.0, 0.0, 1.0)
 ZERO = (0.0, 0.0, 0.0)
@@ -179,7 +179,56 @@ class Pose:
         )
         return tip, offset
 
-    def reach(self, socket, target, pole=None, rotation=None):
+    def hinge_arm(
+        self, upper, elbow, wrist, mid_vector, end_vector, end_rotation, pole
+    ):
+        """Reconstruct a flexing elbow from the solved triangle. Hand orientation remains exact.
+
+        An unconstrained two-link IK has arbitrary roll about each link. The atlas elbow
+        flexes towards negative local X. First place that plane, then rotate around the forearm shaft
+        before assigning wrist orientation.
+        """
+        a, b = unit(self.rig.offsets[elbow]), unit(self.rig.offsets[wrist])
+        u, v = unit(mid_vector), unit(end_vector)
+        c = a[1] * b[1] + a[2] * b[2]
+        s = a[2] * b[1] - a[1] * b[2]
+        angle = atan2(s, c) - acos(
+            max(-1.0, min(1.0, (dot(u, v) - a[0] * b[0]) / hypot(c, s)))
+        )
+        flex = (sin(angle / 2), 0.0, 0.0, cos(angle / 2))
+        shoulder = align(a, u)
+        predicted = rotate(shoulder, rotate(flex, b))
+        across = sub(predicted, scale(u, dot(u, predicted)))
+        desired = sub(v, scale(u, dot(u, v)))
+        # At full reach the triangle provides no bend plane. The same elbow pole
+        # continues it through extension instead of taking an arbitrary axial flip.
+        if hypot(*desired) < 1e-6 and pole is not None:
+            desired = scale(perpendicular(u, pole), -1.0)
+        if hypot(*desired) < 1e-6 or hypot(*across) < 1e-6:
+            prior = self.orientations[upper]
+            shoulder = multiply(align(rotate(prior, a), u), prior)
+        else:
+            twist = atan2(dot(u, cross(across, desired)), dot(across, desired))
+            shoulder = multiply((*scale(u, sin(twist / 2)), cos(twist / 2)), shoulder)
+        forearm = multiply(shoulder, flex)
+        forearm = multiply(align(rotate(forearm, b), v), forearm)
+        rel = multiply(inverse(forearm), end_rotation)
+        if rel[3] < 0:
+            rel = scale(rel, -1)
+        # The atlas binds with palms facing forward (supinated), not at midrange.
+        # Choose the mirror-consistent pronation branch before limiting axial travel;
+        # otherwise a target crossing +/-180 would snap between opposite limits.
+        side = 1 if self.rig.names[wrist].startswith("left") else -1
+        requested = side * degrees(2 * atan2(dot(rel[:3], b), rel[3]))
+        requested = (requested + 110) % 360 - 110
+        roll = radians(side * max(-20.0, min(165.0, requested)))
+        forearm = multiply(forearm, (*scale(b, sin(roll / 2)), cos(roll / 2)))
+        self.orient(upper, shoulder)
+        self.local[elbow] = unit(multiply(inverse(shoulder), forearm))
+        self.local[wrist] = unit(multiply(inverse(forearm), end_rotation))
+        self.refresh()
+
+    def reach(self, socket, target, pole=None, rotation=None, hinge_arms=False):
         joint, offset = self.endpoint(socket)
         side = "left" if joint.startswith("left") else "right"
         part = joint[len(side) :]
@@ -202,7 +251,9 @@ class Pose:
 
         if pole is None:
             # If FK already matches, preserve its elbow/knee and all existing twist.
-            if hypot(*sub(joint_target, self.positions[end])) < EPSILON:
+            if hypot(*sub(joint_target, self.positions[end])) < EPSILON and not (
+                hinge_arms and socket.endswith("Palm")
+            ):
                 self.orient(end, end_rotation)
                 self.refresh()
                 return hypot(*sub(target, self.point(socket)))
@@ -226,10 +277,14 @@ class Pose:
                         (1 if side == "left" else -1, -0.5, -0.5),
                     )
         mid_vector = add(scale(axis, along), scale(perpendicular(axis, pole), radial))
-        self.aim(start, bend, mid_vector)
-        self.aim(bend, end, sub(scale(axis, d), mid_vector))
-        self.orient(end, end_rotation)
-        self.refresh()
+        end_vector = sub(scale(axis, d), mid_vector)
+        if hinge_arms and socket.endswith("Palm"):
+            self.hinge_arm(start, bend, end, mid_vector, end_vector, end_rotation, pole)
+        else:
+            self.aim(start, bend, mid_vector)
+            self.aim(bend, end, end_vector)
+            self.orient(end, end_rotation)
+            self.refresh()
         return hypot(*sub(target, self.point(socket)))
 
 
@@ -244,7 +299,8 @@ class Kinematics:
 
     tolerance = 0.012
 
-    def __init__(self, model, equipment_registry):
+    def __init__(self, model, equipment_registry, *, hinge_arms=False):
+        self.hinge_arms = hinge_arms
         self.rig = Rig(model)
         self.registry = equipment_registry
 
@@ -311,7 +367,9 @@ class Kinematics:
                 if hypot(*source) > EPSILON and hypot(*goal) > EPSILON:
                     rotation = multiply(align(source, goal), rotation)
                     break
-        pose.reach(lead["effector"], targets[0], pole, rotation)
+        pose.reach(
+            lead["effector"], targets[0], pole, rotation, hinge_arms=self.hinge_arms
+        )
 
     def sample(self, root, joints, equipment, contacts, start_anchors=None):
         """Return local quaternions, world joints and landmarks, props and residuals.

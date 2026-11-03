@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "band-row",
   "title": "Band Row",
   "instructions": "Face the anchored band. Pull the elbows back toward the sides from arms forward, then reach forward again.",
   "start": {
-    "pose": "lower-arms-front",
+    "pose": "lower-arms-front", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.32,
       "toeOut": 5

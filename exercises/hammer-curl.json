@@ -1,5 +1,5 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "hammer-curl",
   "title": "Hammer Curl",
   "instructions": "Curl two dumbbells with the thumbs upward and palms facing one another throughout the rep.",
@@ -7,9 +7,9 @@
     "pose": "upper-standing-grip-both",
     "root": [0, -0.025, -0.008],
     "joints": {
-      "bothUpperArm": [-6.23, -1.5, -8.62],
-      "bothForearm": [7.56, 1.17, -0.16],
-      "bothHand": [3.28, -76.5, 13.84],
+      "bothUpperArm": [6.73, -11.58, 8.93],
+      "bothForearm": [-42.27, -77.4, 60.09],
+      "bothHand": [0, 0, 0],
       "bothThigh": [-12.74, 0.84, 5.74],
       "bothShin": [26.27, 0.31, -1.89],
       "bothFoot": [-13.43, -1.6, -3.55]
@@ -37,7 +37,7 @@
     {
       "id": "curl",
       "seconds": {"param": "phase-seconds"},
-      "actions": [{"use": "upper-elbow-flexion", "amount": {"param": "excursion"}}]
+      "actions": [{"use": "hammer-curl-flexion", "amount": {"param": "excursion"}}]
     },
     {"id": "extend", "seconds": {"param": "phase-seconds"}, "actions": []}
   ],
@@ -45,7 +45,8 @@
   "muscles": {"primary": ["biceps", "brachialis"], "secondary": ["forearms"]},
   "camera": [32, 9],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15},
+    "phase-seconds": {"default": 1.6, "min": 0.27, "max": 15},
     "excursion": {"default": 1, "min": 0.25, "max": 1}
-  }
+  },
+  "definitions": {"motions": {"hammer-curl-flexion": {"joints": {"bothForearm": [-33.35, 110.15, 22.48]}}}}
 }

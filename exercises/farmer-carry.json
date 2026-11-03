@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "farmer-carry",
   "title": "Farmer Carry",
   "instructions": "Carry one weight at each side. Alternate the supporting foot through an in-place gait cycle.",
   "start": {
-    "pose": "lower-farm",
+    "pose": "lower-farm", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.26,
       "toeOut": 5

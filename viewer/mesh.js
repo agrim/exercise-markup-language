@@ -33,10 +33,20 @@ layout(location=0) in vec3 pos;layout(location=1) in vec3 normal;
 layout(location=2) in uvec4 joints;layout(location=3) in vec4 weights;
 layout(location=4) in uint group;layout(location=5) in uint ao;
 uniform mat4 skin[51];uniform vec4 palette[32];uniform vec2 sides;
+uniform vec4 wristPivots[2],wristTurns[2];
 out vec3 surface,n,world;out float visibility;
 ${common}
 void main(){
   mat4 m=skin[joints.x]*weights.x+skin[joints.y]*weights.y+skin[joints.z]*weights.z+skin[joints.w]*weights.w;
+  uint tag=(ao>>8u)&255u;
+  if(tag==1u || tag==2u) {
+    vec4 p=wristPivots[tag-1u], q=wristTurns[tag-1u];
+    float a=float((ao>>16u)&255u),b=float(ao>>24u),t=b/(a+b);
+    float w=mix(1.,q.w,t),n=w*w+t*t*dot(q.xyz,q.xyz);
+    mat3 k=mat3(0.,q.z,-q.y,-q.z,0.,q.x,q.y,-q.x,0.);
+    mat3 delta=mat3(skin[int(p.w)])*(k*(2.*t*(w/n-q.w))+k*k*(2.*t*(t/n-1.)))*((a+b)/255.);
+    m[0].xyz+=delta[0];m[1].xyz+=delta[1];m[2].xyz+=delta[2];m[3].xyz-=delta*p.xyz;
+  }
   vec3 a=m[0].xyz,b=m[1].xyz,c=m[2].xyz;
   n=mat3(cross(b,c),cross(c,a),cross(a,b))*normal*sign(dot(a,cross(b,c)));
   vec4 mat=palette[group];surface=mat.rgb;
@@ -144,6 +154,12 @@ export class Atlas {
     if(!gl)throw new Error('A WebGL 2 capable browser is required for the atlas.');
     this.gl=gl;this.canvas=canvas;this.model=model;this.kit=kit;
     this.body=shaderProgram(gl,vertex,fragment);this.prop=shaderProgram(gl,propVert,fragment);this.floor=shaderProgram(gl,propVert,floorFrag);
+    this.wristJoints=(model.wristPivots||[]).map(name=>model.joints.find(j=>j.name===name));
+    if(this.wristJoints.length) {
+      if(this.wristJoints.length!==2 || this.wristJoints.some(j=>!j || j.parent<0))throw new Error('Invalid wrist pivots');
+      gl.useProgram(this.body.program);
+      gl.uniform4fv(this.body.u.wristPivots,this.wristJoints.flatMap(j=>[...j.position,j.parent]));
+    }
     this.vao=gl.createVertexArray();gl.bindVertexArray(this.vao);dataBuffer(gl,gl.ARRAY_BUFFER,vertices);dataBuffer(gl,gl.ELEMENT_ARRAY_BUFFER,indices);
     for(const [slot,n,type,off,integer,normalized] of [[0,3,gl.FLOAT,0,false,false],[1,3,gl.FLOAT,12,false,false],
       [2,4,gl.UNSIGNED_BYTE,24,true,false],[3,4,gl.UNSIGNED_BYTE,28,false,true],[4,1,gl.UNSIGNED_INT,32,true,false],[5,1,gl.UNSIGNED_INT,36,true,false]]) {
@@ -216,7 +232,7 @@ export class Atlas {
           this.link(at([sign*w*.74,0,0]),at([sign*w,-.04,0]),.017,metal);
           this.link(at([sign*w,-.04,0]),at([sign*r*.55,cy+r*.65,0]),.017,metal);
         }
-      }else if(part.shape==='rod')place('rod',[0,0,0],[x,y,z],metal);
+      }else if(part.shape==='rod')place('rod',[0,0,0],[x,y,z],part.material==='pad'?pad:metal);
       else if(part.shape==='ball')place('sphere',[0,0,0],[x,y,z],dark);
       else if(!spec.visual&&spec.category==='station'){
         // A legacy registry may lack components; retain visible sockets without a solid occluding block.
@@ -272,6 +288,9 @@ export class Atlas {
       if(roles.secondary.includes(group))return [1,.72,.31,restricted.includes(group)?-1:1];
       return group==='bone'?[.78,.76,.7,1]:group==='tendon'?[.72,.71,.67,1]:[.53,.60,.64,1];
     });
+    if(this.wristJoints.length)gl.uniform4fv(this.body.u.wristTurns,this.wristJoints.flatMap(j=>{
+      const q=norm(frame.rotations[j.name]);return q[3]<0?mul(q,-1):q;
+    }));
     gl.uniformMatrix4fv(this.body.u.skin,false,bones);gl.uniform4fv(this.body.u.palette,palette);
     gl.uniform2fv(this.body.u.sides,frame.sideWeights||[1,1]);gl.bindVertexArray(this.vao);gl.drawElements(gl.TRIANGLES,this.model.indexCount,gl.UNSIGNED_INT,0);
     this.uniforms(this.prop);

@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "reverse-lunge",
   "title": "Reverse Lunge",
   "instructions": "Keep the left foot in place, take the right foot back, lower the rear knee, then step the right foot forward.",
   "start": {
-    "pose": "lower-ready",
+    "pose": "lower-ready", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.26,
       "toeOut": 4

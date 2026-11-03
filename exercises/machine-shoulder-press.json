@@ -1,15 +1,14 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "machine-shoulder-press",
   "title": "Machine Shoulder Press",
   "instructions": "Keep the back supported by the seat and press both machine handles upward.",
   "start": {
     "pose": "upper-seated-grip-both",
     "joints": {
-      "bothUpperArm": [10.08, -5.04, 60.29],
-      "bothForearm": [-130.7, -10.23, 13.98],
-      "leftHand": [-120.81, -38.36, -121.28],
-      "rightHand": [-121.75, 37.89, 120.44]
+      "bothUpperArm": [-5.3, 3.26, 6.38],
+      "bothForearm": [-78.79, 48.9, 80.48],
+      "bothHand": [0, 0, 0]
     }
   },
   "equipment": [
@@ -35,8 +34,8 @@
   "contacts": [
     {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
     {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
-    {"effector": "leftGrip", "target": {"item": "left-load", "socket": "center"}, "pole": [0.76, -0.15, -0.48]},
-    {"effector": "rightGrip", "target": {"item": "right-load", "socket": "center"}, "pole": [-0.76, -0.15, -0.48]}
+    {"effector": "leftGrip", "target": {"item": "left-load", "socket": "center"}},
+    {"effector": "rightGrip", "target": {"item": "right-load", "socket": "center"}}
   ],
   "connections": [
     {"kind": "link", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "left-load", "socket": "center"}},
@@ -56,7 +55,8 @@
       "items": {
         "left-load": {"position": [0.22099, 1.37247, 0.16428], "rotation": [16.82, 0, -180.0]},
         "right-load": {"position": [-0.22173, 1.37242, 0.16495], "rotation": [-54.63, 0, -0.01]}
-      }
+      },
+      "detail": {"joints": {"bothUpperArm": [1.35, 48.23, 100.49], "bothForearm": [-73.58, 13.4, 82.23]}}
     },
     {
       "id": "press",
@@ -66,7 +66,8 @@
       "items": {
         "left-load": {"position": [0.20849, 1.68196, 0.04678], "rotation": [16.82, 0, -180.0]},
         "right-load": {"position": [-0.20923, 1.68191, 0.04745], "rotation": [-54.63, 0, -0.01]}
-      }
+      },
+      "detail": {"joints": {"bothUpperArm": [-28.95, 75.02, 120.37], "bothForearm": [-39.3, -78.42, 57.18]}}
     },
     {
       "id": "lower-midrange",
@@ -76,7 +77,8 @@
       "items": {
         "left-load": {"position": [0.22099, 1.37247, 0.16428], "rotation": [16.82, 0, -180.0]},
         "right-load": {"position": [-0.22173, 1.37242, 0.16495], "rotation": [-54.63, 0, -0.01]}
-      }
+      },
+      "detail": {"joints": {"bothUpperArm": [1.35, 48.23, 100.49], "bothForearm": [-73.58, 13.4, 82.23]}}
     },
     {
       "id": "lower",

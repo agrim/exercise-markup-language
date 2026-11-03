@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "kettlebell-overhead-press",
   "title": "Kettlebell Overhead Press",
   "instructions": "Begin with one bell racked at the left shoulder. Press overhead while keeping the trunk steady, then return the bell to the rack.",
   "start": {
-    "pose": "lower-rack-left",
+    "pose": "lower-rack-left", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.3,
       "toeOut": 8

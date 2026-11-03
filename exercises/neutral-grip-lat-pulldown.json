@@ -1,16 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "neutral-grip-lat-pulldown",
   "title": "Neutral-Grip Lat Pulldown",
   "instructions": "Use the parallel grips of the handle with palms facing inward. Pull the handle toward the upper chest.",
   "start": {
-    "pose": "upper-seated-grip-both",
-    "joints": {
-      "bothUpperArm": [-11.82, 23.11, 161.39],
-      "bothForearm": [-2.02, 1.77, 10.48],
-      "leftHand": [47.37, 51.76, 29.71],
-      "rightHand": [46.76, -51.1, -28.61]
-    }
+    "pose": "upper-neutral-pulldown-start"
   },
   "equipment": [
     {"id": "station", "kind": "lat-pulldown-machine", "position": [0, 0, 0.32], "sockets": {"anchor": [0, 2.3, 0]}},
@@ -26,15 +20,11 @@
     {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
     {
       "effector": "leftGrip",
-      "target": {"item": "grip", "socket": "leftGrip"},
-      "pole": [0.6, -0.55, -0.45],
-      "rotation": [74.9, 78.01, -129.96]
+      "target": {"item": "grip", "socket": "leftGrip"}
     },
     {
       "effector": "rightGrip",
-      "target": {"item": "grip", "socket": "rightGrip"},
-      "pole": [-0.6, -0.55, -0.45],
-      "rotation": [70.92, -77.72, 134.28]
+      "target": {"item": "grip", "socket": "rightGrip"}
     }
   ],
   "connections": [
@@ -46,29 +36,13 @@
       "id": "pull-down-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-vertical-pulldown-midrange", "amount": 1}],
-      "detail": {
-        "joints": {
-          "bothUpperArm": [-19.9, 15.64, 109.43],
-          "bothForearm": [-92.87, 40.04, 42.74],
-          "leftHand": [93.83, -15.89, 20.99],
-          "rightHand": [94.35, 15.84, -20.0]
-        }
-      },
+      "actions": [{"use": "upper-neutral-pulldown-midrange", "amount": 1}],
       "items": {"grip": {"position": [-0.00017, 1.33109, 0.12686]}}
     },
     {
       "id": "pull-down",
       "seconds": 0.8,
-      "actions": [{"use": "upper-vertical-pulldown", "amount": 1}],
-      "detail": {
-        "joints": {
-          "bothUpperArm": [-7.58, -0.7, 19.1],
-          "bothForearm": [-112.15, -45.05, -4.37],
-          "leftHand": [110.07, 192.6, -31.76],
-          "rightHand": [110.12, -192.92, 30.84]
-        }
-      },
+      "actions": [{"use": "upper-neutral-pulldown", "amount": 1}],
       "items": {"grip": {"position": [-0.00017, 1.01771, 0.17686]}},
       "ease": "ease-out"
     },
@@ -76,13 +50,11 @@
       "id": "raise-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-vertical-pulldown-midrange", "amount": 1}],
+      "actions": [{"use": "upper-neutral-pulldown-midrange", "amount": 1}],
       "detail": {
         "joints": {
-          "bothUpperArm": [-19.9, 15.64, 109.43],
-          "bothForearm": [-92.87, 40.04, 42.74],
-          "leftHand": [93.83, -15.89, 20.99],
-          "rightHand": [94.35, 15.84, -20.0]
+          "bothUpperArm": [-46.4, 35.85, 71.09],
+          "bothForearm": [-93.29, -41.98, -81.59]
         }
       },
       "items": {"grip": {"position": [-0.00017, 1.33109, 0.12686]}}

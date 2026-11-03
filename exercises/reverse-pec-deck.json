@@ -1,5 +1,5 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "reverse-pec-deck",
   "title": "Reverse Pec Deck",
   "instructions": "Face the chest pad and sweep both upper arms out to the sides with elbows softly bent.",
@@ -68,5 +68,16 @@
   ],
   "repeat": {"mode": "loop", "count": 1},
   "muscles": {"primary": ["posteriorDeltoids"], "secondary": ["trapezius", "upperTrapezius", "rhomboids"]},
-  "camera": [140, 9]
+  "camera": [140, 9],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "pelvis",
+      "offset": [0, -0.088, 0],
+      "surface": {"item": "station", "part": 5},
+      "min": -0.009,
+      "max": 0.014,
+      "edgeTolerance": 0.01
+    }
+  ]
 }

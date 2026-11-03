@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "band-pull-apart",
   "title": "Band Pull-Apart",
   "instructions": "Start with the band stretched between the hands at shoulder height. Move both arms apart, then bring them forward.",
   "start": {
-    "pose": "lower-arms-front",
+    "pose": "lower-arms-front", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.32,
       "toeOut": 5

@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "goblet-squat",
   "title": "Goblet Squat",
   "instructions": "Hold the horns of one kettlebell at the chest. Keep both soles planted as the hips descend between the knees.",
   "start": {
-    "pose": "goblet-hold",
+    "pose": "goblet-hold", "root": [0, -0.025, 0],
     "stance": {
       "width": {
         "param": "stance-width-m"
@@ -12,7 +12,8 @@
       "toeOut": {
         "param": "toe-out-deg"
       }
-    }
+    },
+    "joints": {"bothThigh": {"y": {"param": "toe-out-deg"}}}
   },
   "equipment": [
     {
@@ -31,45 +32,25 @@
   "contacts": [
     {
       "effector": "leftBall",
-      "target": "floor",
-      "pole": [
-        0.1,
-        0,
-        1
-      ]
+      "target": "floor"
     },
     {
       "effector": "rightBall",
-      "target": "floor",
-      "pole": [
-        -0.1,
-        0,
-        1
-      ]
+      "target": "floor"
     },
     {
       "effector": "leftGrip",
       "target": {
         "item": "bell",
         "socket": "leftGrip"
-      },
-      "pole": [
-        0.7,
-        -0.6,
-        0.3
-      ]
+      }
     },
     {
       "effector": "rightGrip",
       "target": {
         "item": "bell",
         "socket": "rightGrip"
-      },
-      "pole": [
-        -0.7,
-        -0.6,
-        0.3
-      ]
+      }
     }
   ],
   "phases": [
@@ -82,7 +63,8 @@
           "amount": {
             "param": "depth"
           }
-        }
+        },
+        {"use": "lower-track-squat-stance", "amount": {"param": "stance-width-m"}}
       ]
     },
     {

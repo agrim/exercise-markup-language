@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "squat",
   "title": "Squat",
   "instructions": "Rest the bar across the upper back. Bend the hips and knees together, keep pressure through both feet, then stand.",
   "start": {
-    "pose": "lower-back-rack",
+    "pose": "lower-back-rack", "root": [0, -0.025, 0],
     "stance": {
       "width": {
         "param": "stance-width-m"
@@ -12,7 +12,8 @@
       "toeOut": {
         "param": "toe-out-deg"
       }
-    }
+    },
+    "joints": {"bothThigh": {"y": {"param": "toe-out-deg"}}}
   },
   "equipment": [
     {
@@ -40,45 +41,25 @@
   "contacts": [
     {
       "effector": "leftBall",
-      "target": "floor",
-      "pole": [
-        0.1,
-        0,
-        1
-      ]
+      "target": "floor"
     },
     {
       "effector": "rightBall",
-      "target": "floor",
-      "pole": [
-        -0.1,
-        0,
-        1
-      ]
+      "target": "floor"
     },
     {
       "effector": "leftGrip",
       "target": {
         "item": "bar",
         "socket": "leftGrip"
-      },
-      "pole": [
-        0.7,
-        -0.6,
-        -0.7
-      ]
+      }
     },
     {
       "effector": "rightGrip",
       "target": {
         "item": "bar",
         "socket": "rightGrip"
-      },
-      "pole": [
-        -0.7,
-        -0.6,
-        -0.7
-      ]
+      }
     }
   ],
   "phases": [
@@ -91,7 +72,8 @@
           "amount": {
             "param": "depth"
           }
-        }
+        },
+        {"use": "lower-track-squat-stance", "amount": {"param": "stance-width-m"}}
       ]
     },
     {

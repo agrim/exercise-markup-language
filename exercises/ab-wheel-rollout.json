@@ -1,64 +1,259 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "ab-wheel-rollout",
   "title": "Ab Wheel Rollout",
   "instructions": "Keep the knees planted. Roll the wheel forward while extending through the hips and shoulders, then return.",
   "start": {
     "pose": "upper-rollout-kneel-grip-both",
     "joints": {
-      "leftUpperArm": [-93.31, -15.06, 7.95],
-      "leftForearm": [-8.03, -1.52, -0.88],
-      "leftHand": [-170.53, -8.09, -151.95],
-      "rightUpperArm": [-93.54, 15.07, -8.0],
-      "rightForearm": [-7.71, 1.45, 0.84],
-      "rightHand": [-170.86, 8.05, 152.0]
+      "bothUpperArm": [
+        -81.21,
+        -16.11,
+        -43.67
+      ],
+      "bothForearm": [
+        -4.42,
+        -50.41,
+        14.99
+      ],
+      "bothHand": [
+        0,
+        0,
+        0
+      ]
     }
   },
   "equipment": [
     {
       "id": "grip",
       "kind": "ab-wheel",
-      "position": [0, 0.117, 0.32469],
-      "sockets": {"leftGrip": [0.104, 0, 0], "rightGrip": [-0.104, 0, 0]}
+      "position": [
+        0,
+        0.117,
+        0.32469
+      ],
+      "sockets": {
+        "leftGrip": [
+          0.104,
+          0,
+          0
+        ],
+        "rightGrip": [
+          -0.104,
+          0,
+          0
+        ]
+      },
+      "rotation": [
+        -175,
+        0,
+        0
+      ]
     }
   ],
   "contacts": [
-    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
-    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "grip",
+        "socket": "leftGrip"
+      }
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "grip",
+        "socket": "rightGrip"
+      }
+    }
   ],
-  "rootAnchor": {"joint": "leftShin", "target": {"point": [0.075, 0.0368, -0.27]}},
-  "supports": [{"body": "bothShin", "surface": "floor"}],
+  "rootAnchor": {
+    "joint": "leftShin",
+    "target": {
+      "point": [
+        0.075,
+        0.0368,
+        -0.27
+      ]
+    }
+  },
+  "supports": [
+    {
+      "body": "bothShin",
+      "surface": "floor"
+    }
+  ],
   "phases": [
     {
       "id": "roll-out-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-kneeling-rollout-midrange", "amount": 1}],
-      "items": {"grip": {"position": [0, 0.117, 0.73242]}}
+      "actions": [
+        {
+          "use": "upper-kneeling-rollout-midrange",
+          "amount": 1
+        }
+      ],
+      "items": {
+        "grip": {
+          "position": [
+            0,
+            0.117,
+            0.66242
+          ],
+          "rotation": [
+            -9.612,
+            0,
+            0
+          ]
+        }
+      },
+      "detail": {
+        "joints": {
+          "bothUpperArm": [
+            -98.87,
+            -30.78,
+            -40.39
+          ],
+          "bothForearm": [
+            -2.1,
+            -56.93,
+            14.76
+          ],
+          "bothHand": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
     },
     {
       "id": "roll-out",
       "seconds": 0.8,
-      "actions": [{"use": "upper-kneeling-rollout", "amount": 1}],
-      "items": {"grip": {"position": [0, 0.117, 1.13984]}},
-      "ease": "ease-out"
+      "actions": [
+        {
+          "use": "upper-kneeling-rollout",
+          "amount": 1
+        }
+      ],
+      "items": {
+        "grip": {
+          "position": [
+            0,
+            0.117,
+            1.13984
+          ],
+          "rotation": [
+            224.185,
+            0,
+            0
+          ]
+        }
+      },
+      "ease": "ease-out",
+      "detail": {
+        "joints": {
+          "bothUpperArm": [
+            -142.15,
+            -51.64,
+            -13.33
+          ],
+          "bothForearm": [
+            -3.02,
+            -58.68,
+            16.02
+          ],
+          "bothHand": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
     },
     {
       "id": "return-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-kneeling-rollout-midrange", "amount": 1}],
-      "items": {"grip": {"position": [0, 0.117, 0.73242]}}
+      "actions": [
+        {
+          "use": "upper-kneeling-rollout-midrange",
+          "amount": 1
+        }
+      ],
+      "items": {
+        "grip": {
+          "position": [
+            0,
+            0.117,
+            0.66242
+          ],
+          "rotation": [
+            -9.612,
+            0,
+            0
+          ]
+        }
+      },
+      "detail": {
+        "joints": {
+          "bothUpperArm": [
+            -98.13,
+            -31.35,
+            -42.83
+          ],
+          "bothForearm": [
+            -2.98,
+            -60.92,
+            16.53
+          ],
+          "bothHand": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
     },
     {
       "id": "return",
       "seconds": 0.8,
       "actions": [],
-      "items": {"grip": {"position": [0, 0.117, 0.32469]}},
+      "items": {
+        "grip": {
+          "position": [
+            0,
+            0.117,
+            0.32469
+          ],
+          "rotation": [
+            -175.0,
+            0,
+            0
+          ]
+        }
+      },
       "ease": "ease-out"
     }
   ],
-  "repeat": {"mode": "loop", "count": 1},
-  "muscles": {"primary": ["abdominals", "obliques"], "secondary": ["lats", "anteriorDeltoids", "lateralDeltoids"]},
-  "camera": [64, 17]
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "abdominals",
+      "obliques"
+    ],
+    "secondary": [
+      "lats",
+      "anteriorDeltoids",
+      "lateralDeltoids"
+    ]
+  },
+  "camera": [
+    64,
+    17
+  ]
 }

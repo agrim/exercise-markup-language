@@ -1,15 +1,14 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "machine-chest-press",
   "title": "Machine Chest Press",
   "instructions": "Brace the back against the seat. Press both handles forward, then return without moving the torso.",
   "start": {
     "pose": "upper-seated-grip-both",
     "joints": {
-      "bothUpperArm": [43.67, -6.08, 35.13],
-      "bothForearm": [-123.57, 5.34, 18.15],
-      "leftHand": [-127.11, 47.06, -166.85],
-      "rightHand": [-127.08, -47.58, 165.99]
+      "bothUpperArm": [46.26, -18.74, 33.83],
+      "bothForearm": [-76.32, 37.01, 82.17],
+      "bothHand": [0, 0, 0]
     }
   },
   "equipment": [
@@ -30,8 +29,8 @@
   "contacts": [
     {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
     {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
-    {"effector": "leftGrip", "target": {"item": "left-load", "socket": "center"}, "pole": [0.7, -0.54, -0.18]},
-    {"effector": "rightGrip", "target": {"item": "right-load", "socket": "center"}, "pole": [-0.7, -0.54, -0.18]}
+    {"effector": "leftGrip", "target": {"item": "left-load", "socket": "center"}},
+    {"effector": "rightGrip", "target": {"item": "right-load", "socket": "center"}}
   ],
   "connections": [
     {"kind": "link", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "left-load", "socket": "center"}},
@@ -48,7 +47,7 @@
       "seconds": 0.8,
       "ease": "ease-in",
       "actions": [{"use": "upper-horizontal-press-midrange", "amount": 1}],
-      "detail": {"joints": {"leftHand": [-159.46, 40.47, -201.72], "rightHand": [-159.87, -41.23, 201.45]}},
+      "detail": {"joints": {"bothUpperArm": [-11.95, -10.58, 55.64], "bothForearm": [-71.68, 0.83, 83.75]}},
       "items": {
         "left-load": {"position": [0.28117, 0.97049, 0.38024], "rotation": [-40.81, 0, -90.0]},
         "right-load": {"position": [-0.28202, 0.97123, 0.38062], "rotation": [3.17, 0.01, -90.0]}
@@ -58,7 +57,7 @@
       "id": "press",
       "seconds": 0.8,
       "actions": [{"use": "horizontal-press", "amount": 1}],
-      "detail": {"joints": {"leftHand": [-113.34, 69.96, -167.2], "rightHand": [-112.01, -70.32, 165.16]}},
+      "detail": {"joints": {"bothUpperArm": [-68.69, -9.39, 92.69], "bothForearm": [-40.85, -77.92, 58.69]}},
       "ease": "ease-out",
       "items": {
         "left-load": {"position": [0.28117, 1.03049, 0.59725], "rotation": [-40.81, 0, -90.0]},
@@ -70,7 +69,7 @@
       "seconds": 0.8,
       "ease": "ease-in",
       "actions": [{"use": "upper-horizontal-press-midrange", "amount": 1}],
-      "detail": {"joints": {"leftHand": [-159.46, 40.47, -201.72], "rightHand": [-159.87, -41.23, 201.45]}},
+      "detail": {"joints": {"bothUpperArm": [-11.95, -10.58, 55.64], "bothForearm": [-71.68, 0.83, 83.75]}},
       "items": {
         "left-load": {"position": [0.28117, 0.97049, 0.38024], "rotation": [-40.81, 0, -90.0]},
         "right-load": {"position": [-0.28202, 0.97123, 0.38062], "rotation": [3.17, 0.01, -90.0]}

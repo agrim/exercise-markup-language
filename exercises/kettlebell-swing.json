@@ -1,13 +1,30 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "kettlebell-swing",
   "title": "Kettlebell Swing",
   "instructions": "Hike the bell between the thighs, extend the hips, and let both arms guide the bell to chest height before it falls.",
   "start": {
     "pose": "lower-two-hand-hang",
     "stance": {
-      "width": 0.38,
-      "toeOut": 9
+      "width": 0.5,
+      "toeOut": 20
+    },
+    "joints": {
+      "bothUpperArm": [
+        -21,
+        35,
+        -12
+      ],
+      "bothForearm": [
+        -5,
+        88,
+        0
+      ],
+      "bothHand": [
+        0,
+        34,
+        0
+      ]
     }
   },
   "equipment": [
@@ -16,30 +33,17 @@
       "kind": "kettlebell",
       "position": [
         0,
-        0.8,
-        0.12
+        0.72195,
+        0.16534
+      ],
+      "rotation": [
+        -10,
+        0,
+        0
       ]
     }
   ],
   "contacts": [
-    {
-      "effector": "leftBall",
-      "target": "floor",
-      "pole": [
-        0.1,
-        0,
-        1
-      ]
-    },
-    {
-      "effector": "rightBall",
-      "target": "floor",
-      "pole": [
-        -0.1,
-        0,
-        1
-      ]
-    },
     {
       "effector": "leftGrip",
       "target": {
@@ -47,9 +51,9 @@
         "socket": "leftGrip"
       },
       "pole": [
-        0.7,
-        -0.6,
-        -0.7
+        0.25,
+        -0.1,
+        -1
       ]
     },
     {
@@ -59,9 +63,37 @@
         "socket": "rightGrip"
       },
       "pole": [
-        -0.7,
-        -0.6,
-        -0.7
+        -0.25,
+        -0.1,
+        -1
+      ]
+    },
+    {
+      "effector": "leftHeel",
+      "target": "start",
+      "rotation": [
+        0,
+        20,
+        0
+      ],
+      "pole": [
+        0.55,
+        0,
+        1
+      ]
+    },
+    {
+      "effector": "rightHeel",
+      "target": "start",
+      "rotation": [
+        0,
+        -20,
+        0
+      ],
+      "pole": [
+        -0.55,
+        0,
+        1
       ]
     }
   ],
@@ -79,20 +111,94 @@
         "bell": {
           "position": [
             0,
-            0.52,
-            -0.083
+            0.42747,
+            -0.16414
           ],
           "rotation": [
-            20,
+            30,
             0,
+            0
+          ],
+          "controlPosition": [
+            0.0,
+            0.58588,
+            0.03632
+          ]
+        }
+      },
+      "detail": {
+        "root": [
+          0,
+          -0.176,
+          -0.28
+        ],
+        "joints": {
+          "bothUpperArm": [
+            -32.0,
+            35,
+            -12
+          ],
+          "bothForearm": [
+            -5,
+            88,
             0
           ]
         }
-      }
+      },
+      "ease": "ease-out"
+    },
+    {
+      "id": "pass-hips",
+      "seconds": 0.3,
+      "actions": [
+        {
+          "use": "lower-swing-back",
+          "amount": 0.28
+        }
+      ],
+      "items": {
+        "bell": {
+          "position": [
+            0,
+            0.68373,
+            0.20401
+          ],
+          "rotation": [
+            -6,
+            0,
+            0
+          ],
+          "controlPosition": [
+            0.0,
+            0.5184,
+            0.04294
+          ]
+        }
+      },
+      "detail": {
+        "root": [
+          0,
+          -0.06,
+          -0.09
+        ],
+        "joints": {
+          "bothUpperArm": [
+            -36.56,
+            35,
+            -12
+          ],
+          "bothForearm": [
+            -5,
+            88,
+            0
+          ]
+        }
+      },
+      "ease": "ease-in"
     },
     {
       "id": "hip-drive",
-      "seconds": 0.52,
+      "seconds": 0.42,
       "actions": [
         {
           "use": "lower-swing-forward",
@@ -103,21 +209,119 @@
         "bell": {
           "position": [
             0,
-            1.21,
-            0.49
+            1.17574,
+            0.59336
           ],
           "rotation": [
-            -65,
+            -75,
             0,
+            0
+          ],
+          "controlPosition": [
+            0.0,
+            0.82648,
+            0.5175
+          ]
+        }
+      },
+      "detail": {
+        "joints": {
+          "bothUpperArm": [
+            -78,
+            35,
+            -12
+          ],
+          "bothForearm": [
+            -5,
+            88,
             0
           ]
         }
-      }
+      },
+      "ease": "ease-out"
+    },
+    {
+      "id": "descend",
+      "seconds": 0.38,
+      "actions": [],
+      "detail": {
+        "root": [
+          0,
+          -0.025,
+          0
+        ],
+        "joints": {
+          "bothUpperArm": [
+            -43,
+            35,
+            -12
+          ],
+          "bothForearm": [
+            -5,
+            88,
+            0
+          ]
+        }
+      },
+      "items": {
+        "bell": {
+          "position": [
+            0,
+            0.85281,
+            0.39447
+          ],
+          "rotation": [
+            -42,
+            0,
+            0
+          ],
+          "controlPosition": [
+            0.0,
+            0.98348,
+            0.54475
+          ]
+        }
+      },
+      "ease": "ease-in"
     },
     {
       "id": "drop",
-      "seconds": 0.61,
-      "actions": []
+      "seconds": 0.3,
+      "actions": [],
+      "detail": {
+        "joints": {
+          "bothUpperArm": [
+            -21,
+            35,
+            -12
+          ],
+          "bothForearm": [
+            -5,
+            88,
+            0
+          ]
+        }
+      },
+      "items": {
+        "bell": {
+          "position": [
+            0,
+            0.72195,
+            0.16534
+          ],
+          "rotation": [
+            -10,
+            0,
+            0
+          ],
+          "controlPosition": [
+            0.0,
+            0.76286,
+            0.29376
+          ]
+        }
+      },
+      "ease": "linear"
     }
   ],
   "repeat": {
@@ -138,5 +342,20 @@
   "camera": [
     -82,
     12
+  ],
+  "constraints": [
+    {
+      "kind": "hinge",
+      "joint": "bothForearm",
+      "child": "bothHand",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "min": -22,
+      "max": 18,
+      "maxSwing": 23
+    }
   ]
 }

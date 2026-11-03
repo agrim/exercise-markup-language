@@ -1,4 +1,17 @@
-# Reference implementation checks
+# EML reference verification
+
+## EML 1.1
+
+The 108 catalog IDs now use the v1.1 solver and posture profile. The [strict catalog run](evidence/v1.1/catalog.json) exercised 9,564 poses with all authored constraints enabled. The [baseline screen](evidence/v1.1/baseline.json), run against the published 1.0 catalog, flagged 56 of the 108 exercises for review. Fixes cover planted support, joint bending and roll, equipment clearance, apparatus fit, contact changes and motion rate. The [paired atlas images](evidence/v1.1/upper-body.jpg) show the side plank, lateral raise and dumbbell shoulder press at comparable poses.
+
+- **Parameter ranges.** The [declared minimum and maximum assignments](evidence/v1.1/parameters.json) passed across 197 programs and 40,980 sampled poses at 24 Hz. Fifty-two additional combinations of simultaneous lower and upper parameter bounds passed. The minimum duration was raised on 21 catalog movements, with their 1.6 s defaults preserved.
+- **Bodies and apparatus.** The [finite machine-part and cable screen](evidence/v1.1/apparatus.json) measured 4,403 equipment poses. Its deep torso-overlap threshold is 12 mm against conservative core proxies. Compare the [same screen on 1.0](evidence/v1.1/apparatus-before.json). Targeted regressions also measure plates, shaft paths, hand sockets, supports and actual atlas vertices. In the [full skinned-floor sweep](evidence/v1.1/floor.json), the lowest sampled vertex is 4.2 mm below the reference plane.
+- **New programs.** The [92 standalone starting poses](evidence/v1.1/starting-poses.json) pass the rig checks. The deepest sampled skin point among those setups is 3.2 mm below the floor. The [portable setup map](upper-motion-setups.json) supplies compatible motions, including templates for planted ground exercises. The [custom paused squat](../examples/personal-paused-squat.json) demonstrates inherited foot pins at different depths.
+- **Version compatibility.** The 1.0 schema, vocabulary, equipment and solver behavior remain available by document version. All 108 original recipes reproduced their v1.0.0 reference results at 1,715 compared samples, including joint and equipment transforms.
+
+Reproduce the release checks from the repository root with `python -m unittest discover -s tests`, `python -m eml catalog --samples 17 -o catalog.json`, `python tools/audit_posture.py --parameter-limits --fps 24 -o posture.json`, `python tools/audit_apparatus.py --samples 17 -o apparatus.json`, and `python tools/audit_floor.py --samples 9 -o floor.json`. The latter requires NumPy and SciPy. These measurements cover sampled poses, selected extrema, and the reference geometry. They do not establish continuous collision freedom for every possible exercise, load or parameter combination.
+
+## Archived EML 1.0 verification
 
 The v1 catalog contains the 108 original Simple Trainer IDs, split into 104 repeating movements and four holds. The language accepts additional IDs and never dispatches motion by ID. The [baseline fixture](../tests/fixtures/catalog-baseline.json) checks inherited catalog identity and muscle assignments. A new contributor can add an exercise without expanding a hardcoded allowable ID list.
 

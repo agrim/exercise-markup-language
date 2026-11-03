@@ -1,32 +1,29 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "incline-dumbbell-press",
   "title": "Incline Dumbbell Press",
   "instructions": "From an inclined back support, press the dumbbells upward and bring them back to chest height.",
   "start": {
-    "pose": "upper-incline-bench-grip-both",
-    "joints": {
-      "bothUpperArm": [19.84, -1.8, 28.49],
-      "bothForearm": [-117.01, 26.45, 26.77],
-      "leftHand": [-139.25, -53.56, 168.7],
-      "rightHand": [-140.32, 52.9, -169.5]
-    }
+    "pose": "upper-incline-dumbbell-press-start"
   },
   "equipment": [
-    {"id": "bench", "kind": "incline-bench", "position": [0, 0, 0]},
-    {"id": "left-load", "kind": "dumbbell", "rotation": [16.82, 0, -180.0], "position": [0.27849, 0.96151, -0.29231]},
+    {"id": "bench", "kind": "incline-bench", "position": [0, 0, -0.0803]},
+    {
+      "id": "left-load",
+      "kind": "dumbbell",
+      "rotation": [0, 3, -11.5],
+      "follow": {"joint": "leftHand", "grip": true, "offset": [0.01, -0.072, 0.05]}
+    },
     {
       "id": "right-load",
       "kind": "dumbbell",
-      "rotation": [-54.63, 0, -0.01],
-      "position": [-0.27923, 0.96147, -0.29164]
+      "rotation": [0, -3, 11.5],
+      "follow": {"joint": "rightHand", "grip": true, "offset": [-0.01, -0.072, 0.05]}
     }
   ],
   "contacts": [
     {"effector": "leftHeel", "target": "start", "pole": [-0.084, 0.741, 0.667], "rotation": [0, 0, 0]},
-    {"effector": "rightHeel", "target": "start", "pole": [0.084, 0.741, 0.667], "rotation": [0, 0, 0]},
-    {"effector": "leftGrip", "target": {"item": "left-load", "socket": "center"}, "pole": [0.7, -0.18, 0.54]},
-    {"effector": "rightGrip", "target": {"item": "right-load", "socket": "center"}, "pole": [-0.7, -0.18, 0.54]}
+    {"effector": "rightHeel", "target": "start", "pole": [0.084, 0.741, 0.667], "rotation": [0, 0, 0]}
   ],
   "supports": [{"body": "chest", "surface": "bench"}],
   "phases": [
@@ -34,68 +31,48 @@
       "id": "press-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-horizontal-press-midrange", "amount": 1}],
-      "detail": {
-        "joints": {
-          "bothUpperArm": [-33.2, 6.97, 49.69],
-          "bothForearm": [-86.94, 15.91, 26.93],
-          "leftHand": [-176.87, -64.51, 183.3],
-          "rightHand": [-177.26, 63.69, -183.26]
-        }
-      },
-      "items": {
-        "left-load": {"position": [0.27849, 1.17852, -0.35231], "rotation": [16.82, 0, -180.0]},
-        "right-load": {"position": [-0.27923, 1.17847, -0.35164], "rotation": [-54.63, 0, -0.01]}
-      }
+      "actions": [{"use": "upper-incline-dumbbell-press-midrange", "amount": 1}]
     },
     {
       "id": "press",
       "seconds": 0.8,
-      "actions": [{"use": "horizontal-press", "amount": 1}],
-      "detail": {
-        "joints": {
-          "bothUpperArm": [-93.19, 23.04, 45.8],
-          "bothForearm": [-4.28, -0.26, 1.92],
-          "leftHand": [-135.09, -38.58, 153.48],
-          "rightHand": [-135.93, 37.96, -154.16]
-        }
-      },
-      "ease": "ease-out",
-      "items": {
-        "left-load": {"position": [0.27849, 1.39552, -0.41231], "rotation": [16.82, 0, -180.0]},
-        "right-load": {"position": [-0.27923, 1.39548, -0.41164], "rotation": [-54.63, 0, -0.01]}
-      }
+      "actions": [{"use": "upper-incline-dumbbell-press", "amount": 1}],
+      "ease": "ease-out"
     },
     {
       "id": "lower-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-horizontal-press-midrange", "amount": 1}],
-      "detail": {
-        "joints": {
-          "bothUpperArm": [-33.2, 6.97, 49.69],
-          "bothForearm": [-86.94, 15.91, 26.93],
-          "leftHand": [-176.87, -64.51, 183.3],
-          "rightHand": [-177.26, 63.69, -183.26]
-        }
-      },
-      "items": {
-        "left-load": {"position": [0.27849, 1.17852, -0.35231], "rotation": [16.82, 0, -180.0]},
-        "right-load": {"position": [-0.27923, 1.17847, -0.35164], "rotation": [-54.63, 0, -0.01]}
-      }
+      "actions": [{"use": "upper-incline-dumbbell-press-midrange", "amount": 1}]
     },
     {
       "id": "lower",
       "seconds": 0.8,
       "actions": [],
-      "ease": "ease-out",
-      "items": {
-        "left-load": {"position": [0.27849, 0.96151, -0.29231], "rotation": [16.82, 0, -180.0]},
-        "right-load": {"position": [-0.27923, 0.96147, -0.29164], "rotation": [-54.63, 0, -0.01]}
-      }
+      "ease": "ease-out"
     }
   ],
   "repeat": {"mode": "loop", "count": 1},
   "muscles": {"primary": ["upperPectorals"], "secondary": ["triceps", "anteriorDeltoids"]},
-  "camera": [119, 32]
+  "camera": [119, 32],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "rightThigh",
+      "offset": [0.0003, -0.2926, -0.0521],
+      "surface": {"item": "bench", "part": 0},
+      "min": -0.005,
+      "max": 0.009,
+      "edgeTolerance": 0.004
+    },
+    {
+      "kind": "support",
+      "landmark": "chest",
+      "offset": [0.0669, 0.1412, -0.0827],
+      "surface": {"item": "bench", "part": 1},
+      "min": -0.005,
+      "max": 0.014,
+      "edgeTolerance": 0.004
+    }
+  ]
 }

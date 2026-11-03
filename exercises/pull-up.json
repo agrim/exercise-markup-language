@@ -1,18 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "pull-up",
   "title": "Pull-Up",
   "instructions": "Use a wide overhand grip. Keep the hands fixed on the bar as the body rises, then lower to the hang.",
   "start": {
-    "pose": "upper-hang-grip-both",
-    "joints": {
-      "leftUpperArm": [-18.45, 24.54, 139.15],
-      "leftForearm": [-1.16, 1.73, 9.99],
-      "leftHand": [21.64, -28.97, 15.15],
-      "rightUpperArm": [-18.36, -24.44, -139.25],
-      "rightForearm": [-1.07, -1.74, -9.99],
-      "rightHand": [21.14, 28.89, -15.13]
-    }
+    "pose": "upper-overhand-hang-start", "root": [0, 0.164, 0]
   },
   "equipment": [
     {
@@ -23,8 +15,8 @@
     }
   ],
   "contacts": [
-    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}, "pole": [1.0, 0, -0.45]},
-    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}, "pole": [-1.0, 0, -0.45]}
+    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
+    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
   ],
   "phases": [
     {
@@ -41,6 +33,6 @@
   },
   "camera": [140, 9],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+    "phase-seconds": {"default": 1.6, "min": 0.36, "max": 15}
   }
 }

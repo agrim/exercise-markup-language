@@ -1,5 +1,5 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "trap-bar-deadlift",
   "title": "Trap Bar Deadlift",
   "instructions": "Stand inside the trap bar and grip its side handles. Extend the hips and knees, keeping the frame level.",
@@ -7,18 +7,18 @@
     "pose": "lower-wide-floor-pull",
     "root": [
       0,
-      -0.4137,
-      -0.17
+      -0.41501,
+      -0.19
     ],
     "joints": {
       "bothUpperArm": [
         -48,
-        0,
+        -18,
         6
       ],
       "bothForearm": [
         -4,
-        0,
+        -70,
         0
       ]
     }
@@ -29,21 +29,9 @@
       "kind": "trap-bar",
       "position": [
         0,
-        0.268,
-        0.125
-      ],
-      "sockets": {
-        "leftGrip": [
-          0.28,
-          0,
-          0
-        ],
-        "rightGrip": [
-          -0.28,
-          0,
-          0
-        ]
-      }
+        0.175,
+        0.115
+      ]
     }
   ],
   "contacts": [
@@ -51,19 +39,19 @@
       "effector": "leftBall",
       "target": {
         "point": [
-          0.14,
+          0.145,
           0,
-          0.183
+          0.16
         ]
       },
       "pole": [
-        0.1,
+        0.13,
         0,
         1
       ],
       "rotation": [
         0,
-        9,
+        8,
         0
       ]
     },
@@ -71,19 +59,19 @@
       "effector": "rightBall",
       "target": {
         "point": [
-          -0.14,
+          -0.145,
           0,
-          0.183
+          0.16
         ]
       },
       "pole": [
-        -0.1,
+        -0.13,
         0,
         1
       ],
       "rotation": [
         0,
-        -9,
+        -8,
         0
       ]
     },
@@ -94,9 +82,14 @@
         "socket": "leftGrip"
       },
       "pole": [
-        0.7,
-        -0.6,
-        0.3
+        0.25,
+        -0.1,
+        -1
+      ],
+      "rotation": [
+        12,
+        -88,
+        0
       ]
     },
     {
@@ -106,9 +99,14 @@
         "socket": "rightGrip"
       },
       "pole": [
-        -0.7,
-        -0.6,
-        0.3
+        -0.25,
+        -0.1,
+        -1
+      ],
+      "rotation": [
+        12,
+        88,
+        0
       ]
     }
   ],
@@ -126,20 +124,20 @@
         "root": [
           0,
           -0.2108,
-          -0.071
+          -0.115
         ]
       },
       "items": {
         "load": {
           "position": [
             0,
-            0.57298,
-            0.113
+            0.48333,
+            0.115
           ],
           "controlPosition": [
             0,
-            0.43629,
-            0.119
+            0.34096,
+            0.115
           ]
         }
       }
@@ -157,20 +155,20 @@
         "root": [
           0,
           -0.008,
-          0.028
+          0.014
         ]
       },
       "items": {
         "load": {
           "position": [
             0,
-            0.8231,
-            0.032
+            0.73376,
+            0.09
           ],
           "controlPosition": [
             0,
-            0.71598,
-            0.07250000000000001
+            0.62503,
+            0.1025
           ]
         }
       }
@@ -188,20 +186,20 @@
         "root": [
           0,
           -0.2108,
-          -0.071
+          -0.115
         ]
       },
       "items": {
         "load": {
           "position": [
             0,
-            0.57298,
-            0.113
+            0.48333,
+            0.115
           ],
           "controlPosition": [
             0,
-            0.71598,
-            0.07250000000000001
+            0.62503,
+            0.1025
           ]
         }
       }
@@ -214,13 +212,13 @@
         "load": {
           "position": [
             0,
-            0.268,
-            0.125
+            0.175,
+            0.115
           ],
           "controlPosition": [
             0,
-            0.43629,
-            0.119
+            0.34096,
+            0.115
           ]
         }
       }
@@ -245,5 +243,34 @@
   "camera": [
     139,
     13
+  ],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftHeel",
+      "surface": "floor",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "kind": "support",
+      "landmark": "rightHeel",
+      "surface": "floor",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "kind": "hinge",
+      "joint": "bothForearm",
+      "child": "bothHand",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "min": -15,
+      "max": 12,
+      "maxSwing": 12
+    }
   ]
 }

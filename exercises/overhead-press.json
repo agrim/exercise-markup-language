@@ -1,5 +1,5 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "overhead-press",
   "title": "Overhead Press",
   "instructions": "Start the bar at shoulder height. Press overhead and let the shoulders elevate as the elbows extend.",
@@ -7,13 +7,12 @@
     "pose": "upper-standing-grip-both",
     "root": [0, -0.026, -0.00832],
     "joints": {
-      "bothUpperArm": [10.08, -5.04, 60.29],
-      "bothForearm": [-130.7, -10.23, 13.98],
-      "leftHand": [-120.81, -38.36, -121.28],
+      "bothUpperArm": [-5.3, 3.26, 6.38],
+      "bothForearm": [-78.79, 48.9, 80.48],
       "bothThigh": [-13.03, 0.86, 5.75],
       "bothShin": [26.86, 0.33, -1.91],
       "bothFoot": [-13.73, -1.63, -3.53],
-      "rightHand": [-121.75, 37.89, 120.44]
+      "bothHand": [0, 0, 0]
     }
   },
   "equipment": [
@@ -37,21 +36,24 @@
       "seconds": 0.8,
       "ease": "ease-in",
       "actions": [{"use": "upper-overhead-press-midrange", "amount": 1}],
-      "items": {"weight": {"position": [-0.00037, 1.68758, 0.1383]}}
+      "items": {"weight": {"position": [-0.00037, 1.68758, 0.1383]}},
+      "detail": {"joints": {"bothUpperArm": [2.02, 48.13, 99.36], "bothForearm": [-73.11, 12.81, 83.32]}}
     },
     {
       "id": "press",
       "seconds": 0.8,
       "actions": [{"use": "overhead-press", "amount": 1}],
       "items": {"weight": {"position": [-0.00037, 1.99706, 0.0208]}},
-      "ease": "ease-out"
+      "ease": "ease-out",
+      "detail": {"joints": {"bothUpperArm": [-32.3, 75.54, 116.52], "bothForearm": [-27.3, -81.09, 45.36]}}
     },
     {
       "id": "lower-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
       "actions": [{"use": "upper-overhead-press-midrange", "amount": 1}],
-      "items": {"weight": {"position": [-0.00037, 1.68758, 0.1383]}}
+      "items": {"weight": {"position": [-0.00037, 1.68758, 0.1383]}},
+      "detail": {"joints": {"bothUpperArm": [2.02, 48.13, 99.36], "bothForearm": [-73.11, 12.81, 83.32]}}
     },
     {
       "id": "lower",

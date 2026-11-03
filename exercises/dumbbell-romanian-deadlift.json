@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "dumbbell-romanian-deadlift",
   "title": "Dumbbell Romanian Deadlift",
   "instructions": "Keep the knees softly bent and the load close to the thighs. Send the hips backwards, then stand without curling the arms.",
   "start": {
-    "pose": "lower-farm",
+    "pose": "lower-farm", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.24,
       "toeOut": 6

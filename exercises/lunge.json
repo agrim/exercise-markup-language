@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "lunge",
   "title": "Lunge",
   "instructions": "Step the left foot forward, lower both knees in the split stance, then push off the front foot and return to standing.",
   "start": {
-    "pose": "lower-ready",
+    "pose": "lower-ready", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.26,
       "toeOut": 4

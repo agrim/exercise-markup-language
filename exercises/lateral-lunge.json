@@ -1,10 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "lateral-lunge",
   "title": "Lateral Lunge",
   "instructions": "Step left, shift the hips back over the bending left knee, and keep the right leg longer. Push back to the starting stance.",
   "start": {
-    "pose": "lower-ready",
+    "pose": "lower-ready", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.26,
       "toeOut": 5

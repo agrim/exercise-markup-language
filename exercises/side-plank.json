@@ -1,8 +1,8 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "side-plank",
   "title": "Side Plank",
-  "instructions": "Support the left forearm and the lateral edge of the lower foot. Hold the pelvis elevated and the trunk aligned.",
+  "instructions": "Press the left forearm and the outer edge of the left foot into the floor. Keep the elbow beneath the shoulder and the forearm in front of the chest. Stack the legs and lift the hips into a straight line.",
   "start": {"pose": "upper-side-forearm-support"},
   "equipment": [],
   "supports": [{"body": "leftForearm", "surface": "floor"}, {"body": "leftFoot", "surface": "floor"}],
@@ -11,7 +11,7 @@
   ],
   "repeat": {"mode": "hold", "count": 1},
   "muscles": {"primary": ["obliques", "abdominals"], "secondary": ["anteriorDeltoids", "lateralDeltoids", "glutes"]},
-  "camera": [-41, 17],
+  "camera": [-73, 12],
   "sideFocus": {
     "groups": ["obliques", "anteriorDeltoids", "lateralDeltoids"],
     "intervals": [
@@ -20,5 +20,24 @@
   },
   "parameters": {
     "hold-seconds": {"default": 5, "min": 0.2, "max": 120}
-  }
+  },
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftForearm",
+      "offset": [0.0089, -0.0506, -0.0286],
+      "surface": "floor",
+      "min": -0.004,
+      "max": 0.012
+    },
+    {
+      "kind": "support",
+      "landmark": "leftFoot",
+      "offset": [0.0983, -0.0663, 0.0919],
+      "surface": "floor",
+      "min": -0.004,
+      "max": 0.012
+    },
+    {"kind": "hinge", "joint": "leftForearm", "axis": [1, 0, 0], "min": -108, "max": -73, "maxSwing": 12}
+  ]
 }

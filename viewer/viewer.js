@@ -10,7 +10,7 @@ async function request(path,options) {
   return response;
 }
 const titleCase=s=>s.replace(/([a-z])([A-Z])/g,'$1 $2').replaceAll('-',' ').replace(/^./,c=>c.toUpperCase());
-let atlas, catalog, clip, recipe, loadedEntry, startClock, playing=false, requestNumber=0;
+let kits, atlas, catalog, clip, recipe, loadedEntry, startClock, playing=false, requestNumber=0;
 function message(text,warning=false) {el('status').textContent=text;el('status').classList.toggle('warning',warning);}
 function refresh() {
   if(!clip)return;
@@ -28,18 +28,18 @@ function refresh() {
   });
   if(recipe?.start?.stance&&phase?.contacts===undefined)descriptions.push('Stance width and foot angle');
   for(const support of f.supports||[])descriptions.push(titleCase(support.body)+' on '+support.surface);
-  for(const d of f.diagnostics)descriptions.push(titleCase(d.effector)+' · '+d.reason+' · '+(d.residual*1000).toFixed(0)+' mm');
+  for(const d of f.diagnostics)descriptions.push(d.message || (titleCase(d.effector)+' · '+d.reason+' · '+(d.residual*1000).toFixed(0)+' mm'));
   el('contacts').textContent=descriptions.join(' · ')||'Free pose';
 }
 function stop(){playing=false;el('play').textContent='Play';}
 function preview(data,source) {
-  stop();clip=data;atlas.setClip(clip);atlas.time=0;
+  stop();clip=data;atlas.kit=kits[data.eml];atlas.setClip(clip);atlas.time=0;
   el('title').textContent=data.title;el('view').value='recipe';
   el('kit').textContent=data.equipment.map(x=>titleCase(x.kind)).join(', ')||'Bodyweight';
   const link=el('source');if(source){link.href='/api/source?entry='+encodeURIComponent(source);link.hidden=false;}else{link.removeAttribute('href');link.hidden=true;}
   el('scrub').disabled=false;el('play').disabled=false;
   const warnings=data.frames.filter(f=>f.diagnostics.length).length;
-  message(warnings?`${warnings} samples have unresolved contacts. Scrub to inspect the residuals.`:'',Boolean(warnings));
+  message(warnings?`${warnings} samples have movement findings. Inspect their phase and measurement.`:'',Boolean(warnings));
   refresh();
 }
 function parameters(doc,entry) {
@@ -100,6 +100,7 @@ try {
   const [model,vertices,indices,equipment,entries]=await Promise.all([
     request('/anatomy/model.json').then(x=>x.json()),request('/anatomy/vertices.bin').then(x=>x.arrayBuffer()),
     request('/anatomy/indices.bin').then(x=>x.arrayBuffer()),request('/library/equipment.json').then(x=>x.json()),request('/api/catalog').then(x=>x.json())]);
+  kits={'1.0':await request('/compat/1.0/library/equipment.json').then(r=>r.json()),'1.1':equipment};
   atlas=new Atlas(el('anatomy'),model,vertices,indices,equipment);catalog=entries;
   const groups={};for(const [path,row] of Object.entries(entries)){
     const section=path.startsWith('exercises/')?'Catalog':'Examples';

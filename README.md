@@ -1,6 +1,6 @@
-# Exercise Markup Language · v1.0
+# Exercise Markup Language · v1.1
 
-EML describes how to demonstrate an exercise on an articulated anatomy model. An author supplies the starting pose, equipment, motions, contacts, phase timing, repetition policy and muscle roles. Built-in and user-defined exercises use the same document format and solver.
+EML describes how to demonstrate an exercise on an articulated anatomy model. An author supplies the starting pose, equipment, motions, contacts, phase timing, repetition policy and muscle roles. Built-in and user-defined exercises use the same document format and solver. Version 1.1 measures wrist, elbow and knee motion, ground clearance and intersections between free weights and the body. An author can require a specific direction, grip clearance or contact with a finite support surface. [Posture rules and examples](docs/posture.md)
 
 **[Read the specification](docs/specification.md)** · **[Author a new movement](docs/authoring.md)** · **[Machine-readable interface](interface.json)** · **[Browse the 108 exercises](exercises/)**
 
@@ -24,13 +24,15 @@ python -m viewer
 
 For an installable CLI and library, run `python -m pip install .` from the checkout. The resulting `eml` command includes the registries, 108 recipes and portable anatomy buffers. The Blender master and interactive viewer are available in the source checkout.
 
-The viewer displays the bundled mesh and serves assets locally. Choose a catalog exercise or open your own JSON file. To check every catalog entry and see diagnostics in machine-readable form, run `python -m eml catalog -o out/report.json`.
+The viewer displays the bundled mesh and serves assets locally. Choose a catalog exercise or open your own JSON file. A structurally valid raw file can be previewed with per-frame findings. The CLI rejects a failed posture check when compiling. To check every catalog entry and see diagnostics in machine-readable form, run `python -m eml catalog -o out/report.json`.
 
 ## Author at different levels
 
 One action can coordinate the hips, knees, ankles and trunk. A recipe can combine that action with another, override just one joint axis, or supply an independent hand target while requiring both feet to stay planted. In [the parameterized goblet squat](examples/paused-goblet-look-left.json), a single depth parameter changes the squat, a timed phase holds its bottom position, and a partial head override turns the dummy to the left. The hands continue to grip the same kettlebell. [Diagonal reach](examples/diagonal-reach.json) adds a movement with a new ID and its own local definitions.
 
-Applications and authoring tools can obtain the entire interface with `python -m eml interface`. It includes the schema, admissible joints and muscle roles, the registered motions, equipment and local socket coordinates. A document contains declarative data and never references executable Python or a fixed exercise clip.
+Applications and authoring tools can obtain the 1.1 interface with `python -m eml interface`. It includes the schema, rig names, muscles, pose and motion definitions, equipment socket coordinates and default posture profile. Its tested setup map pairs starting poses with compatible motions. Ground entries also include complete portable contact templates for a planted press, quadruped reach or bear step. [Compatible setups and support templates](docs/upper-motion-setups.json)
+
+The required `eml` field selects the schema, pose and motion definitions, equipment geometry, and contact solver behavior. Published 1.0 documents still resolve against their original vocabulary. Use `python -m eml interface --version 1.0` to inspect their definitions. To upgrade a document, set its version to 1.1, validate at each authored parameter range, and review the solved movement. [Version and migration rules](docs/specification.md#versions-and-migration)
 
 ## Renderers and collaboration
 

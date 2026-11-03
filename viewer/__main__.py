@@ -40,8 +40,7 @@ class PreviewServer(ThreadingHTTPServer):
         self.signature = None
 
     def refresh_registry(self):
-        files = sorted((ROOT / "library").glob("*.json")) + [
-            ROOT / "schema/exercise-v1.schema.json",
+        files = sorted((ROOT / "library").glob("*.json")) + sorted((ROOT / "schema").glob("*.json")) + [
             ROOT / "anatomy/model.json",
         ]
         signature = [(p.name, p.stat().st_mtime_ns, p.stat().st_size) for p in files]
@@ -117,6 +116,7 @@ class Viewer(BaseHTTPRequestHandler):
                 "/anatomy/vertices.bin": "anatomy/vertices.bin",
                 "/credits": "anatomy/ATTRIBUTION.md",
                 "/library/equipment.json": "library/equipment.json",
+                "/compat/1.0/library/equipment.json": "compat/1.0/library/equipment.json",
             }
             if url.path not in allowed:
                 return self.send_error(404)

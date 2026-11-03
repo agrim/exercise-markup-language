@@ -1,32 +1,35 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "incline-push-up",
   "title": "Incline Push-Up",
-  "instructions": "Anchor both palms on the elevated surface and both forefeet on the floor. Lower the chest and press back.",
-  "start": {
-    "pose": "upper-inclined-plank",
-    "joints": {
-      "leftUpperArm": [-40.58, -4.76, 10.13],
-      "leftForearm": [-27.1, -9.15, -10.02],
-      "leftHand": [-91.57, -25.32, -165.84],
-      "rightUpperArm": [-40.49, 4.73, -10.18],
-      "rightForearm": [-27.35, 9.23, 10.05],
-      "rightHand": [-92.2, 25.34, 165.65]
-    }
-  },
-  "equipment": [
-    {
-      "id": "platform",
-      "kind": "stable-raised-surface",
-      "position": [0, 0, 0.25],
-      "sockets": {"support": [0, 0.44, 0]}
-    }
-  ],
+  "instructions": "Place one palm on each raised pad and anchor the toes on the floor. Lower the chest between the hands, then press back to the incline plank.",
+  "start": {"pose": "upper-inclined-plank", "root": [0, -0.23428, -0.30244]},
+  "equipment": [{"id": "platform", "kind": "incline-hand-platforms", "position": [0, 0, 0.25]}],
   "contacts": [
-    {"effector": "leftBall", "target": "start", "pole": [-0.33, -0.727, 0.602], "rotation": [62.0, 0, 0]},
-    {"effector": "rightBall", "target": "start", "pole": [0.33, -0.727, 0.602], "rotation": [62.0, 0, 0]},
-    {"effector": "leftPalm", "target": "start", "rotation": [-73.2, -10.28, 176.92]},
-    {"effector": "rightPalm", "target": "start", "rotation": [-73.64, 10.29, -177.0]}
+    {
+      "effector": "leftBall",
+      "target": "start",
+      "pole": [-0.33, -0.727, 0.602],
+      "rotation": [62.0, 0, 0]
+    },
+    {
+      "effector": "rightBall",
+      "target": "start",
+      "pole": [0.33, -0.727, 0.602],
+      "rotation": [62.0, 0, 0]
+    },
+    {
+      "effector": "leftPalm",
+      "target": {"item": "platform", "socket": "leftPalm"},
+      "rotation": [-73.2, -10.28, 176.92],
+      "pole": [0.15, 0, -1]
+    },
+    {
+      "effector": "rightPalm",
+      "target": {"item": "platform", "socket": "rightPalm"},
+      "rotation": [-73.64, 10.29, -177.0],
+      "pole": [-0.15, 0, -1]
+    }
   ],
   "phases": [
     {
@@ -35,7 +38,12 @@
       "ease": "ease-in",
       "actions": [{"use": "upper-supported-push-midrange", "amount": 1}]
     },
-    {"id": "lower", "seconds": 0.8, "actions": [{"use": "upper-supported-push", "amount": 1}], "ease": "ease-out"},
+    {
+      "id": "lower",
+      "seconds": 0.8,
+      "actions": [{"use": "upper-supported-push", "amount": 1}],
+      "ease": "ease-out"
+    },
     {
       "id": "press-midrange",
       "seconds": 0.8,
@@ -49,5 +57,24 @@
     "primary": ["pectorals", "upperPectorals"],
     "secondary": ["triceps", "anteriorDeltoids", "abdominals", "obliques"]
   },
-  "camera": [64, 17]
+  "camera": [64, 17],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftPalm",
+      "surface": {"item": "platform", "part": 0},
+      "min": -0.005,
+      "max": 0.012,
+      "offset": [-0.0114, -0.0878, 0.0549]
+    },
+    {
+      "kind": "support",
+      "landmark": "rightPalm",
+      "surface": {"item": "platform", "part": 1},
+      "min": -0.005,
+      "max": 0.012,
+      "offset": [0.0114, -0.0878, 0.0549]
+    }
+  ],
+  "supports": [{"body": "bothHand", "surface": "platform"}, {"body": "bothFoot", "surface": "floor"}]
 }

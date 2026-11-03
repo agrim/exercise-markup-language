@@ -1,99 +1,28 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "bear-crawl",
   "title": "Bear Crawl",
   "instructions": "Hover the knees and alternate the advancing hand and opposite foot in an in-place crawl. Replant each diagonal pair before the other advances.",
   "start": {
     "pose": "lower-bear",
-    "joints": {
-      "bothToe": [
-        -62,
-        0,
-        0
-      ]
-    }
+    "joints": {"bothToe": [-62, 0, 0], "pelvis": [96, 0, 0]},
+    "root": [0, -0.302, -0.14]
   },
   "equipment": [],
   "contacts": [
-    {
-      "effector": "leftBall",
-      "target": {
-        "point": [
-          0.145,
-          0.003,
-          -0.46
-        ]
-      },
-      "pole": [
-        0.1,
-        1,
-        1
-      ],
-      "rotation": [
-        62,
-        0,
-        0
-      ]
-    },
-    {
-      "effector": "rightBall",
-      "target": {
-        "point": [
-          -0.145,
-          0.003,
-          -0.46
-        ]
-      },
-      "pole": [
-        -0.1,
-        1,
-        1
-      ],
-      "rotation": [
-        62,
-        0,
-        0
-      ]
-    },
+    {"effector": "leftBall", "target": {"point": [0.145, 0.003, -0.46]}, "rotation": [62, 0, 0]},
+    {"effector": "rightBall", "target": {"point": [-0.145, 0.003, -0.46]}, "rotation": [62, 0, 0]},
     {
       "effector": "leftPalm",
-      "target": {
-        "point": [
-          0.21,
-          0.023,
-          0.362
-        ]
-      },
-      "pole": [
-        0.4,
-        -0.4,
-        -1
-      ],
-      "rotation": [
-        -66,
-        -9,
-        -172
-      ]
+      "target": {"point": [0.21, 0.023, 0.512]},
+      "pole": [0.15, 0, -1],
+      "rotation": [-66, -9, -172]
     },
     {
       "effector": "rightPalm",
-      "target": {
-        "point": [
-          -0.21,
-          0.023,
-          0.362
-        ]
-      },
-      "pole": [
-        -0.4,
-        -0.4,
-        -1
-      ],
-      "rotation": [
-        -66,
-        9,
-        172
-      ]
+      "target": {"point": [-0.21, 0.023, 0.512]},
+      "pole": [-0.15, 0, -1],
+      "rotation": [-66, 9, 172]
     }
   ],
   "phases": [
@@ -102,181 +31,58 @@
       "seconds": 0.13,
       "actions": [],
       "contacts": [
-        {
-          "effector": "leftBall",
-          "target": {
-            "point": [
-              0.145,
-              0.003,
-              -0.46
-            ]
-          },
-          "pole": [
-            0.1,
-            1,
-            1
-          ],
-          "rotation": [
-            62,
-            0,
-            0
-          ]
-        },
-        {
-          "effector": "rightBall",
-          "target": {
-            "point": [
-              -0.145,
-              0.003,
-              -0.46
-            ]
-          },
-          "pole": [
-            -0.1,
-            1,
-            1
-          ],
-          "rotation": [
-            62,
-            0,
-            0
-          ]
-        },
+        {"effector": "leftBall", "target": {"point": [0.145, 0.003, -0.46]}, "rotation": [62, 0, 0]},
+        {"effector": "rightBall", "target": {"point": [-0.145, 0.003, -0.46]}, "rotation": [62, 0, 0]},
         {
           "effector": "leftPalm",
-          "target": {
-            "point": [
-              0.21,
-              0.023,
-              0.362
-            ]
-          },
-          "pole": [
-            0.4,
-            -0.4,
-            -1
-          ],
-          "rotation": [
-            -66,
-            -9,
-            -172
-          ]
+          "target": {"point": [0.21, 0.023, 0.512]},
+          "pole": [0.15, 0, -1],
+          "rotation": [-66, -9, -172]
         },
         {
           "effector": "rightPalm",
-          "target": {
-            "point": [
-              -0.21,
-              0.023,
-              0.362
-            ]
-          },
-          "pole": [
-            -0.4,
-            -0.4,
-            -1
-          ],
-          "rotation": [
-            -66,
-            9,
-            172
-          ]
+          "target": {"point": [-0.21, 0.023, 0.512]},
+          "pole": [-0.15, 0, -1],
+          "rotation": [-66, 9, 172]
         }
       ]
     },
     {
       "id": "advance-left",
       "seconds": 0.7,
-      "actions": [
-        {
-          "use": "lower-crawl-left",
-          "amount": 1
-        }
-      ],
+      "actions": [{"use": "lower-crawl-left", "amount": 1}],
       "contacts": [
         {
           "effector": "leftBall",
-          "target": {
-            "point": [
-              0.145,
-              0.067,
-              -0.34
-            ]
-          },
-          "pole": [
-            0.1,
-            1,
-            1
-          ],
-          "rotation": [
-            62,
-            0,
-            0
-          ],
+          "target": {"point": [0.145, 0.067, -0.34]},
+          "rotation": [62, 0, 0],
           "engage": "reach"
         },
-        {
-          "effector": "rightBall",
-          "target": {
-            "point": [
-              -0.145,
-              0.003,
-              -0.46
-            ]
-          },
-          "pole": [
-            -0.1,
-            1,
-            1
-          ],
-          "rotation": [
-            62,
-            0,
-            0
-          ]
-        },
+        {"effector": "rightBall", "target": {"point": [-0.145, 0.003, -0.46]}, "rotation": [62, 0, 0]},
         {
           "effector": "leftPalm",
-          "target": {
-            "point": [
-              0.21,
-              0.023,
-              0.362
-            ]
-          },
-          "pole": [
-            0.4,
-            -0.4,
-            -1
-          ],
-          "rotation": [
-            -66,
-            -9,
-            -172
-          ]
+          "target": {"point": [0.21, 0.023, 0.512]},
+          "pole": [0.15, 0, -1],
+          "rotation": [-66, -9, -172]
         },
         {
           "effector": "rightPalm",
-          "target": {
-            "point": [
-              -0.21,
-              0.075,
-              0.42
-            ]
-          },
-          "pole": [
-            -0.4,
-            -0.4,
-            -1
-          ],
-          "rotation": [
-            -66,
-            9,
-            172
-          ],
+          "target": {"point": [-0.21, 0.075, 0.57]},
+          "pole": [-0.15, 0, -1],
+          "rotation": [-66, 9, 172],
           "engage": "reach"
         }
-      ]
+      ],
+      "detail": {
+        "joints": {
+          "leftThigh": [-128.6646, 1.9912, -0.19],
+          "rightThigh": [-100.6646, -1.9912, 0.19],
+          "leftShin": [124.1554, -2.2938, -0.1644],
+          "rightShin": [95.1554, 2.2938, 0.1644],
+          "leftFoot": [-28.49, -2.0426, -2.3015],
+          "rightFoot": [-28.49, 2.0426, 2.3015]
+        }
+      }
     },
     {
       "id": "replace-left",
@@ -285,84 +91,22 @@
       "contacts": [
         {
           "effector": "leftBall",
-          "target": {
-            "point": [
-              0.145,
-              0.003,
-              -0.46
-            ]
-          },
-          "pole": [
-            0.1,
-            1,
-            1
-          ],
-          "rotation": [
-            62,
-            0,
-            0
-          ],
+          "target": {"point": [0.145, 0.003, -0.46]},
+          "rotation": [62, 0, 0],
           "engage": "reach"
         },
-        {
-          "effector": "rightBall",
-          "target": {
-            "point": [
-              -0.145,
-              0.003,
-              -0.46
-            ]
-          },
-          "pole": [
-            -0.1,
-            1,
-            1
-          ],
-          "rotation": [
-            62,
-            0,
-            0
-          ]
-        },
+        {"effector": "rightBall", "target": {"point": [-0.145, 0.003, -0.46]}, "rotation": [62, 0, 0]},
         {
           "effector": "leftPalm",
-          "target": {
-            "point": [
-              0.21,
-              0.023,
-              0.362
-            ]
-          },
-          "pole": [
-            0.4,
-            -0.4,
-            -1
-          ],
-          "rotation": [
-            -66,
-            -9,
-            -172
-          ]
+          "target": {"point": [0.21, 0.023, 0.512]},
+          "pole": [0.15, 0, -1],
+          "rotation": [-66, -9, -172]
         },
         {
           "effector": "rightPalm",
-          "target": {
-            "point": [
-              -0.21,
-              0.023,
-              0.362
-            ]
-          },
-          "pole": [
-            -0.4,
-            -0.4,
-            -1
-          ],
-          "rotation": [
-            -66,
-            9,
-            172
-          ],
+          "target": {"point": [-0.21, 0.023, 0.512]},
+          "pole": [-0.15, 0, -1],
+          "rotation": [-66, 9, 172],
           "engage": "reach"
         }
       ]
@@ -370,204 +114,69 @@
     {
       "id": "advance-right",
       "seconds": 0.7,
-      "actions": [
-        {
-          "use": "lower-crawl-right",
-          "amount": 1
-        }
-      ],
+      "actions": [{"use": "lower-crawl-right", "amount": 1}],
       "contacts": [
-        {
-          "effector": "leftBall",
-          "target": {
-            "point": [
-              0.145,
-              0.003,
-              -0.46
-            ]
-          },
-          "pole": [
-            0.1,
-            1,
-            1
-          ],
-          "rotation": [
-            62,
-            0,
-            0
-          ]
-        },
+        {"effector": "leftBall", "target": {"point": [0.145, 0.003, -0.46]}, "rotation": [62, 0, 0]},
         {
           "effector": "rightBall",
-          "target": {
-            "point": [
-              -0.145,
-              0.067,
-              -0.34
-            ]
-          },
-          "pole": [
-            -0.1,
-            1,
-            1
-          ],
-          "rotation": [
-            62,
-            0,
-            0
-          ],
+          "target": {"point": [-0.145, 0.067, -0.34]},
+          "rotation": [62, 0, 0],
           "engage": "reach"
         },
         {
           "effector": "leftPalm",
-          "target": {
-            "point": [
-              0.21,
-              0.075,
-              0.42
-            ]
-          },
-          "pole": [
-            0.4,
-            -0.4,
-            -1
-          ],
-          "rotation": [
-            -66,
-            -9,
-            -172
-          ],
+          "target": {"point": [0.21, 0.075, 0.57]},
+          "pole": [0.15, 0, -1],
+          "rotation": [-66, -9, -172],
           "engage": "reach"
         },
         {
           "effector": "rightPalm",
-          "target": {
-            "point": [
-              -0.21,
-              0.023,
-              0.362
-            ]
-          },
-          "pole": [
-            -0.4,
-            -0.4,
-            -1
-          ],
-          "rotation": [
-            -66,
-            9,
-            172
-          ]
+          "target": {"point": [-0.21, 0.023, 0.512]},
+          "pole": [-0.15, 0, -1],
+          "rotation": [-66, 9, 172]
         }
-      ]
+      ],
+      "detail": {
+        "joints": {
+          "leftThigh": [-100.6646, 1.9912, -0.19],
+          "rightThigh": [-128.6646, -1.9912, 0.19],
+          "leftShin": [95.1554, -2.2938, -0.1644],
+          "rightShin": [124.1554, 2.2938, 0.1644],
+          "leftFoot": [-28.49, -2.0426, -2.3015],
+          "rightFoot": [-28.49, 2.0426, 2.3015]
+        }
+      }
     },
     {
       "id": "replace-right",
       "seconds": 0.7,
       "actions": [],
       "contacts": [
-        {
-          "effector": "leftBall",
-          "target": {
-            "point": [
-              0.145,
-              0.003,
-              -0.46
-            ]
-          },
-          "pole": [
-            0.1,
-            1,
-            1
-          ],
-          "rotation": [
-            62,
-            0,
-            0
-          ]
-        },
+        {"effector": "leftBall", "target": {"point": [0.145, 0.003, -0.46]}, "rotation": [62, 0, 0]},
         {
           "effector": "rightBall",
-          "target": {
-            "point": [
-              -0.145,
-              0.003,
-              -0.46
-            ]
-          },
-          "pole": [
-            -0.1,
-            1,
-            1
-          ],
-          "rotation": [
-            62,
-            0,
-            0
-          ],
+          "target": {"point": [-0.145, 0.003, -0.46]},
+          "rotation": [62, 0, 0],
           "engage": "reach"
         },
         {
           "effector": "leftPalm",
-          "target": {
-            "point": [
-              0.21,
-              0.023,
-              0.362
-            ]
-          },
-          "pole": [
-            0.4,
-            -0.4,
-            -1
-          ],
-          "rotation": [
-            -66,
-            -9,
-            -172
-          ],
+          "target": {"point": [0.21, 0.023, 0.512]},
+          "pole": [0.15, 0, -1],
+          "rotation": [-66, -9, -172],
           "engage": "reach"
         },
         {
           "effector": "rightPalm",
-          "target": {
-            "point": [
-              -0.21,
-              0.023,
-              0.362
-            ]
-          },
-          "pole": [
-            -0.4,
-            -0.4,
-            -1
-          ],
-          "rotation": [
-            -66,
-            9,
-            172
-          ]
+          "target": {"point": [-0.21, 0.023, 0.512]},
+          "pole": [-0.15, 0, -1],
+          "rotation": [-66, 9, 172]
         }
       ]
     }
   ],
-  "repeat": {
-    "mode": "loop",
-    "count": 1
-  },
-  "muscles": {
-    "primary": [
-      "abdominals",
-      "obliques",
-      "anteriorDeltoids",
-      "quadriceps"
-    ],
-    "secondary": [
-      "glutes"
-    ]
-  },
-  "camera": [
-    62,
-    14
-  ]
+  "repeat": {"mode": "loop", "count": 1},
+  "muscles": {"primary": ["abdominals", "obliques", "anteriorDeltoids", "quadriceps"], "secondary": ["glutes"]},
+  "camera": [62, 14]
 }

@@ -1,65 +1,306 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "seated-cable-row",
   "title": "Seated Cable Row",
   "instructions": "Brace the feet and pull both grips toward the ribs while maintaining the seated trunk position.",
   "start": {
     "pose": "upper-seated-grip-both",
-    "joints": {"bothUpperArm": [-84.4, -7.18, 14.69], "bothForearm": [-2.8, -1.71, -6.0], "bothHand": [30.8, 12.63, 6.1]}
+    "joints": {
+      "bothUpperArm": [
+        -81.84,
+        -13.47,
+        96.43
+      ],
+      "bothForearm": [
+        -73.54,
+        65.81,
+        -74.61
+      ],
+      "bothHand": [
+        0,
+        0,
+        0
+      ]
+    }
   },
   "equipment": [
-    {"id": "station", "kind": "cable-row-machine", "position": [0, 0, 0.93], "sockets": {"anchor": [0, 0.4, 0]}},
+    {
+      "id": "station",
+      "kind": "cable-row-machine",
+      "position": [
+        0,
+        0,
+        0.93
+      ],
+      "sockets": {
+        "anchor": [
+          0,
+          0.4,
+          0
+        ]
+      }
+    },
     {
       "id": "grip",
       "kind": "v-handle",
-      "position": [0, 1.052, 0.62075],
-      "sockets": {"leftGrip": [0.16, 0, 0], "rightGrip": [-0.16, 0, 0]}
+      "position": [
+        0,
+        1.052,
+        0.62075
+      ]
     }
   ],
   "contacts": [
-    {"effector": "leftHeel", "target": "start", "pole": [-0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
-    {"effector": "rightHeel", "target": "start", "pole": [0.002, 0.593, 0.805], "rotation": [0, 0, 0]},
-    {"effector": "leftGrip", "target": {"item": "grip", "socket": "leftGrip"}},
-    {"effector": "rightGrip", "target": {"item": "grip", "socket": "rightGrip"}}
+    {
+      "effector": "leftHeel",
+      "target": "start",
+      "pole": [
+        -0.002,
+        0.593,
+        0.805
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "effector": "rightHeel",
+      "target": "start",
+      "pole": [
+        0.002,
+        0.593,
+        0.805
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "grip",
+        "socket": "leftGrip"
+      }
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "grip",
+        "socket": "rightGrip"
+      }
+    }
   ],
   "connections": [
-    {"kind": "cable", "from": {"item": "station", "socket": "anchor"}, "to": {"item": "grip", "socket": "center"}}
+    {
+      "kind": "cable",
+      "from": {
+        "item": "station",
+        "socket": "anchor"
+      },
+      "to": {
+        "item": "grip",
+        "socket": "anchor"
+      }
+    }
   ],
-  "supports": [{"body": "pelvis", "surface": "station"}],
+  "supports": [
+    {
+      "body": "pelvis",
+      "surface": "station"
+    }
+  ],
   "phases": [
     {
       "id": "row-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-shoulder-extension-row-midrange", "amount": 1}],
-      "items": {"grip": {"position": [0, 0.9395, 0.28937]}}
+      "actions": [
+        {
+          "use": "upper-shoulder-extension-row-midrange",
+          "amount": 1
+        }
+      ],
+      "items": {
+        "grip": {
+          "position": [
+            0,
+            0.9395,
+            0.425
+          ]
+        }
+      },
+      "detail": {
+        "joints": {
+          "bothUpperArm": [
+            -29.27,
+            -30.63,
+            53.22
+          ],
+          "bothForearm": [
+            -85.4,
+            -1.94,
+            -49.82
+          ],
+          "bothHand": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
     },
     {
       "id": "row",
       "seconds": 0.8,
-      "actions": [{"use": "row-to-torso", "amount": 1}],
+      "actions": [
+        {
+          "use": "row-to-torso",
+          "amount": 1
+        }
+      ],
       "detail": {
-        "joints": {"bothUpperArm": [82.08, 0.5, 21.19], "bothForearm": [-98.04, -37.48, -7.04], "bothHand": [-37.39, -13.63, 16.92]}
+        "joints": {
+          "bothUpperArm": [
+            12.72,
+            -58.6,
+            44.24
+          ],
+          "bothForearm": [
+            -103.26,
+            0.9,
+            2.05
+          ],
+          "bothHand": [
+            0,
+            0,
+            0
+          ]
+        }
       },
-      "items": {"grip": {"position": [0, 0.827, -0.042]}},
+      "items": {
+        "grip": {
+          "position": [
+            0,
+            0.827,
+            0.23
+          ]
+        }
+      },
       "ease": "ease-out"
     },
     {
       "id": "extend-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-shoulder-extension-row-midrange", "amount": 1}],
-      "items": {"grip": {"position": [0, 0.9395, 0.28937]}}
+      "actions": [
+        {
+          "use": "upper-shoulder-extension-row-midrange",
+          "amount": 1
+        }
+      ],
+      "items": {
+        "grip": {
+          "position": [
+            0,
+            0.9395,
+            0.425
+          ]
+        }
+      },
+      "detail": {
+        "joints": {
+          "bothUpperArm": [
+            -29.27,
+            -30.63,
+            53.22
+          ],
+          "bothForearm": [
+            -85.4,
+            -1.94,
+            -49.82
+          ],
+          "bothHand": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
     },
     {
       "id": "extend",
       "seconds": 0.8,
       "actions": [],
-      "items": {"grip": {"position": [0, 1.052, 0.62075]}},
+      "items": {
+        "grip": {
+          "position": [
+            0,
+            1.052,
+            0.62075
+          ]
+        }
+      },
       "ease": "ease-out"
     }
   ],
-  "repeat": {"mode": "loop", "count": 1},
-  "muscles": {"primary": ["lats", "trapezius", "rhomboids"], "secondary": ["biceps", "posteriorDeltoids"]},
-  "camera": [140, 9]
+  "repeat": {
+    "mode": "loop",
+    "count": 1
+  },
+  "muscles": {
+    "primary": [
+      "lats",
+      "trapezius",
+      "rhomboids"
+    ],
+    "secondary": [
+      "biceps",
+      "posteriorDeltoids"
+    ]
+  },
+  "camera": [
+    140,
+    9
+  ],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "pelvis",
+      "offset": [
+        0,
+        -0.088,
+        0
+      ],
+      "surface": {
+        "item": "station",
+        "part": 5
+      },
+      "min": -0.009,
+      "max": 0.014,
+      "edgeTolerance": 0.01
+    },
+    {
+      "kind": "clearance",
+      "item": "grip",
+      "from": [
+        -0.16,
+        0,
+        0
+      ],
+      "to": [
+        0.16,
+        0,
+        0
+      ],
+      "radius": 0.016,
+      "bodyFrom": "pelvis",
+      "bodyTo": "chest",
+      "bodyRadius": 0.11,
+      "min": 0.0
+    }
+  ]
 }

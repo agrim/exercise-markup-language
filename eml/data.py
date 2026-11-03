@@ -2,14 +2,34 @@
 
 import json
 import sysconfig
-from functools import lru_cache
+from functools import cache, lru_cache
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
-ROOT = Path(__file__).resolve().parents[1]
-if not (ROOT / "interface.json").is_file():
-    ROOT = Path(sysconfig.get_path("data")) / "share/exercise-markup-language"
+def _resource_root():
+    package_root = Path(__file__).resolve().parents[1]
+    marker = Path("share/exercise-markup-language/interface.json")
+    for path in (package_root / "interface.json", package_root / marker):
+        if path.is_file():
+            return path.parent
+
+    # A wheel may be installed into a user prefix different from the interpreter's.
+    from importlib.metadata import PackageNotFoundError, files
+
+    try:
+        records = files("exercise-markup-language") or ()
+    except PackageNotFoundError:
+        records = ()
+    for record in records:
+        if record.parts[-3:] == marker.parts:
+            path = Path(record.locate()).resolve()
+            if path.is_file():
+                return path.parent
+    return Path(sysconfig.get_path("data")) / marker.parent
+
+
+ROOT = _resource_root()
 
 
 class Error(ValueError):
@@ -44,15 +64,23 @@ def load(path):
         raise Error("invalid-json", "", str(exc)) from exc
 
 
-@lru_cache(maxsize=1)
-def schema():
-    return load(ROOT / "schema/exercise-v1.schema.json")
+VERSIONS = {"1.0": "exercise-v1.schema.json", "1.1": "exercise-v1.1.schema.json"}
 
 
-@lru_cache(maxsize=1)
-def registry():
+@lru_cache(maxsize=2)
+def schema(version="1.1"):
+    return load(ROOT / "schema" / VERSIONS[version])
+
+
+@cache
+def registry(version="1.1"):
+    if version not in VERSIONS:
+        raise Error("version", "/eml", "Unsupported EML version")
+    directory = ROOT / ("compat/1.0/library" if version == "1.0" else "library")
+    if not directory.is_dir():
+        raise Error("registry", "/eml", f"Missing {version} vocabulary directory")
     poses, motions = {}, {}
-    for file in sorted((ROOT / "library").glob("*.json")):
+    for file in sorted(directory.glob("*.json")):
         if file.name == "equipment.json":
             continue
         values = load(file)
@@ -64,18 +92,21 @@ def registry():
     return (
         poses,
         motions,
-        load(ROOT / "library/equipment.json"),
+        load(directory / "equipment.json"),
         load(ROOT / "anatomy/model.json"),
     )
 
 
-@lru_cache(maxsize=1)
-def validator():
-    return Draft202012Validator(schema())
+@lru_cache(maxsize=2)
+def validator(version="1.1"):
+    return Draft202012Validator(schema(version))
 
 
 def check_schema(data):
-    error = next(validator().iter_errors(data), None)
+    version = data.get("eml") if isinstance(data, dict) else None
+    if not isinstance(version, str) or version not in VERSIONS:
+        raise Error("schema", "/eml", "Expected a supported EML version: 1.0 or 1.1")
+    error = next(validator(version).iter_errors(data), None)
     if error:
         path = "/".join(
             str(p).replace("~", "~0").replace("/", "~1") for p in error.absolute_path
@@ -83,11 +114,14 @@ def check_schema(data):
         raise Error("schema", "/" + path, error.message)
 
 
-def interface():
-    poses, motions, kit, model = registry()
-    return {
-        "eml": "1.0",
-        "schema": schema(),
+def interface(version="1.1"):
+    from .posture import PROFILE
+
+    poses, motions, kit, model = registry(version)
+    out = {
+        "eml": version,
+        "versions": list(VERSIONS),
+        "schema": schema(version),
         "poses": poses,
         "motions": motions,
         "equipment": kit,
@@ -99,3 +133,13 @@ def interface():
             if g not in ("neutral", "bone", "tendon", "shell")
         ],
     }
+    if version == "1.1":
+        out["compatibleSetups"] = load(ROOT / "docs/upper-motion-setups.json")
+        out["postureProfile"] = {
+            "id": "studio-humanoid/1.1",
+            "angularBudgetsDegrees": PROFILE,
+            "floorAllowanceMetres": 0.012,
+            "corePenetrationAllowanceMetres": 0.005,
+            "constraintKinds": ["hinge", "orientation", "support", "clearance"],
+        }
+    return out

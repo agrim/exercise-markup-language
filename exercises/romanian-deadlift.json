@@ -1,47 +1,66 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "romanian-deadlift",
   "title": "Romanian Deadlift",
   "instructions": "Keep the knees softly bent and the load close to the thighs. Send the hips backwards, then stand without curling the arms.",
   "start": {
-    "pose": "lower-farm",
+    "pose": "lower-farm", "root": [0, -0.025, 0],
     "stance": {
       "width": 0.24,
       "toeOut": 6
+    },
+    "joints": {
+      "bothUpperArm": [
+        0,
+        45,
+        2
+      ],
+      "bothForearm": [
+        -5,
+        88,
+        0
+      ]
     }
   },
   "equipment": [
     {
       "id": "bar",
       "kind": "barbell",
-      "follow": {
-        "joint": "leftHand",
-        "offset": [
-          -0.24,
-          -0.072,
-          0.05
+      "position": [
+        0,
+        0.78503,
+        0.13
+      ],
+      "sockets": {
+        "leftGrip": [
+          0.235,
+          0,
+          0
         ],
-        "grip": true
+        "rightGrip": [
+          -0.235,
+          0,
+          0
+        ]
       }
     }
   ],
   "contacts": [
     {
-      "effector": "leftBall",
-      "target": "floor",
+      "effector": "leftGrip",
+      "target": {
+        "item": "bar",
+        "socket": "leftGrip"
+      },
       "pole": [
-        0.1,
-        0,
-        1
-      ]
-    },
-    {
-      "effector": "rightBall",
-      "target": "floor",
-      "pole": [
+        0.25,
         -0.1,
-        0,
-        1
+        -1
+      ],
+      "rotation": [
+        35,
+        174,
+        2
       ]
     },
     {
@@ -54,6 +73,11 @@
         -0.25,
         -0.1,
         -1
+      ],
+      "rotation": [
+        35,
+        -174,
+        -2
       ]
     }
   ],
@@ -66,12 +90,47 @@
           "use": "hip-hinge",
           "amount": 1
         }
-      ]
+      ],
+      "detail": {
+        "root": [
+          0,
+          -0.095,
+          -0.3
+        ]
+      },
+      "items": {
+        "bar": {
+          "position": [
+            0,
+            0.44837,
+            0.098
+          ],
+          "controlPosition": [
+            0,
+            0.71352,
+            0.114
+          ]
+        }
+      }
     },
     {
       "id": "extend",
       "seconds": 1.7,
-      "actions": []
+      "actions": [],
+      "items": {
+        "bar": {
+          "position": [
+            0,
+            0.78503,
+            0.13
+          ],
+          "controlPosition": [
+            0,
+            0.71352,
+            0.114
+          ]
+        }
+      }
     }
   ],
   "repeat": {
@@ -93,5 +152,106 @@
   "camera": [
     139,
     13
+  ],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftHeel",
+      "surface": "floor",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "kind": "clearance",
+      "item": "bar",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "leftThigh",
+      "bodyTo": "leftShin",
+      "bodyRadius": 0.06
+    },
+    {
+      "kind": "clearance",
+      "item": "bar",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "leftShin",
+      "bodyTo": "leftFoot",
+      "bodyRadius": 0.044
+    },
+    {
+      "kind": "support",
+      "landmark": "rightHeel",
+      "surface": "floor",
+      "min": -0.005,
+      "max": 0.005
+    },
+    {
+      "kind": "clearance",
+      "item": "bar",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "rightThigh",
+      "bodyTo": "rightShin",
+      "bodyRadius": 0.06
+    },
+    {
+      "kind": "clearance",
+      "item": "bar",
+      "from": [
+        -0.5,
+        0,
+        0
+      ],
+      "to": [
+        0.5,
+        0,
+        0
+      ],
+      "radius": 0.0145,
+      "bodyFrom": "rightShin",
+      "bodyTo": "rightFoot",
+      "bodyRadius": 0.044
+    },
+    {
+      "kind": "hinge",
+      "joint": "bothForearm",
+      "child": "bothHand",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "min": -15,
+      "max": 12,
+      "maxSwing": 12
+    }
   ]
 }

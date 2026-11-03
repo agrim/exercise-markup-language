@@ -1,18 +1,10 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "dumbbell-front-raise",
   "title": "Dumbbell Front Raise",
   "instructions": "Lift both dumbbells in front of the body to shoulder level and lower with long arms.",
   "start": {
-    "pose": "upper-standing-grip-both",
-    "root": [0, -0.026, -0.00832],
-    "joints": {
-      "bothUpperArm": [-9.19, -2.05, -4.1],
-      "bothForearm": [1.15, 0.41, 1.33],
-      "bothThigh": [-13.03, 0.86, 5.75],
-      "bothShin": [26.86, 0.33, -1.91],
-      "bothFoot": [-13.73, -1.63, -3.53]
-    }
+    "pose": "upper-front-raise-start"
   },
   "equipment": [
     {
@@ -44,7 +36,24 @@
   "muscles": {"primary": ["anteriorDeltoids"], "secondary": ["upperPectorals"]},
   "camera": [32, 9],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15},
+    "phase-seconds": {"default": 1.6, "min": 0.18, "max": 15},
     "excursion": {"default": 1, "min": 0.25, "max": 1}
-  }
+  },
+  "constraints": [
+    {
+      "kind": "orientation",
+      "joint": "leftHand",
+      "axis": [0.979, -0.2, -0.055],
+      "direction": [1, 0, 0],
+      "maxAngle": 23
+    },
+    {
+      "kind": "orientation",
+      "joint": "rightHand",
+      "axis": [-0.979, -0.2, -0.055],
+      "direction": [-1, 0, 0],
+      "maxAngle": 23
+    },
+    {"kind": "hinge", "joint": "bothForearm", "axis": [1, 0, 0], "min": -18, "max": -2, "maxSwing": 6}
+  ]
 }

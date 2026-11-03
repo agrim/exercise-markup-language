@@ -1,19 +1,18 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "decline-bench-press",
   "title": "Decline Bench Press",
   "instructions": "Brace against the declined pad and lift the bar from the chest. Keep the bar level as it returns.",
   "start": {
     "pose": "upper-decline-bench-grip-both",
     "joints": {
-      "bothUpperArm": [54.33, -10.55, 40.56],
-      "bothForearm": [-125.16, -8.17, 13.92],
-      "leftHand": [-145.42, -39.35, 175.9],
-      "rightHand": [-146.17, 38.64, -176.43]
+      "bothUpperArm": [63.58, -28.24, 25.77],
+      "bothForearm": [-76.26, 36.71, 82.2],
+      "bothHand": [0, 0, 0]
     }
   },
   "equipment": [
-    {"id": "bench", "kind": "decline-bench", "position": [0, 0, 0]},
+    {"id": "bench", "kind": "decline-bench", "position": [0, 0, -0.0642]},
     {"id": "rack", "kind": "rack", "position": [0, 0, -0.4]},
     {
       "id": "weight",
@@ -36,10 +35,8 @@
       "actions": [{"use": "horizontal-press", "amount": 1}],
       "detail": {
         "joints": {
-          "bothUpperArm": [-63.07, 0.34, 23.92],
-          "bothForearm": [-1.96, -1.44, -5.56],
-          "leftHand": [-150.18, -14.41, 165.49],
-          "rightHand": [-150.69, 13.67, -165.86]
+          "bothUpperArm": [111.77, -152.84, -86.71],
+          "bothForearm": [-47.08, -75.22, 64.76]
         }
       },
       "items": {"weight": {"position": [-0.00037, 0.96659, -0.47095]}}
@@ -55,6 +52,26 @@
   "muscles": {"primary": ["pectorals", "upperPectorals"], "secondary": ["triceps", "anteriorDeltoids"]},
   "camera": [119, 32],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
-  }
+    "phase-seconds": {"default": 1.6, "min": 0.37, "max": 15}
+  },
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftThigh",
+      "offset": [-0.0424, -0.3972, -0.0325],
+      "surface": {"item": "bench", "part": 0},
+      "min": -0.005,
+      "max": 0.009,
+      "edgeTolerance": 0.004
+    },
+    {
+      "kind": "support",
+      "landmark": "chest",
+      "offset": [0.0669, 0.1412, -0.0827],
+      "surface": {"item": "bench", "part": 1},
+      "min": -0.005,
+      "max": 0.014,
+      "edgeTolerance": 0.004
+    }
+  ]
 }

@@ -1,136 +1,44 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "push-up",
   "title": "Push-Up",
   "instructions": "Start with palms and toes planted in a long plank. Bend the elbows to lower the chest, then press back up without dropping the pelvis.",
-  "start": {
-    "pose": "high-plank",
-    "joints": {
-      "bothToe": [
-        -63,
-        0,
-        0
-      ]
-    }
-  },
+  "start": {"pose": "high-plank"},
   "equipment": [],
   "contacts": [
     {
       "effector": "leftPalm",
-      "target": {
-        "point": [
-          0.206,
-          0.023,
-          0.63
-        ]
-      },
-      "pole": [
-        0.22,
-        0,
-        -0.6
-      ],
-      "rotation": [
-        -66,
-        -9,
-        -172
-      ]
+      "target": {"point": [0.206, 0.023, 0.72]},
+      "pole": [0.15, 0, -1],
+      "rotation": [-66, -9, -172]
     },
     {
       "effector": "rightPalm",
-      "target": {
-        "point": [
-          -0.206,
-          0.023,
-          0.63
-        ]
-      },
-      "pole": [
-        -0.22,
-        0,
-        -0.6
-      ],
-      "rotation": [
-        -66,
-        9,
-        172
-      ]
+      "target": {"point": [-0.206, 0.023, 0.72]},
+      "pole": [-0.15, 0, -1],
+      "rotation": [-66, 9, 172]
     },
     {
       "effector": "leftBall",
-      "target": {
-        "point": [
-          0.109,
-          0.003,
-          -0.66
-        ]
-      },
-      "pole": [
-        0.13,
-        0,
-        1
-      ],
-      "rotation": [
-        63,
-        0,
-        0
-      ]
+      "target": {"point": [0.109, 0.003, -0.66]},
+      "pole": [0.13, 0, 1],
+      "rotation": [63, 0, 0]
     },
     {
       "effector": "rightBall",
-      "target": {
-        "point": [
-          -0.109,
-          0.003,
-          -0.66
-        ]
-      },
-      "pole": [
-        -0.13,
-        0,
-        1
-      ],
-      "rotation": [
-        63,
-        0,
-        0
-      ]
+      "target": {"point": [-0.109, 0.003, -0.66]},
+      "pole": [-0.13, 0, 1],
+      "rotation": [63, 0, 0]
     }
   ],
   "phases": [
-    {
-      "id": "lower",
-      "seconds": 1.7,
-      "actions": [
-        {
-          "use": "lower-pushup-lower",
-          "amount": 1
-        }
-      ]
-    },
-    {
-      "id": "press",
-      "seconds": 1.7,
-      "actions": []
-    }
+    {"id": "lower", "seconds": 1.7, "actions": [{"use": "lower-pushup-lower", "amount": 1}]},
+    {"id": "press", "seconds": 1.7, "actions": []}
   ],
-  "repeat": {
-    "mode": "loop",
-    "count": 1
-  },
+  "repeat": {"mode": "loop", "count": 1},
   "muscles": {
-    "primary": [
-      "pectorals",
-      "upperPectorals"
-    ],
-    "secondary": [
-      "triceps",
-      "anteriorDeltoids",
-      "abdominals",
-      "obliques"
-    ]
+    "primary": ["pectorals", "upperPectorals"],
+    "secondary": ["triceps", "anteriorDeltoids", "abdominals", "obliques"]
   },
-  "camera": [
-    54,
-    14
-  ]
+  "camera": [54, 14]
 }

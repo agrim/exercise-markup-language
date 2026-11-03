@@ -1,18 +1,13 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "overhead-dumbbell-triceps-extension",
   "title": "Overhead Dumbbell Triceps Extension",
   "instructions": "Hold one dumbbell overhead with both hands. Lower it behind the head by bending the elbows, then extend.",
   "start": {
-    "pose": "upper-seated-grip-both",
-    "joints": {
-      "bothUpperArm": [-54.88, 66.08, 128.87],
-      "bothForearm": [1.12, 3.22, 17.86],
-      "bothHand": [-125.84, -69.51, -161.67]
-    }
+    "pose": "upper-two-hand-overhead-start"
   },
   "equipment": [
-    {"id": "seat", "kind": "upright-bench", "position": [0, 0, 0]},
+    {"id": "seat", "kind": "upright-bench", "position": [0, 0, -0.0735]},
     {
       "id": "weight",
       "kind": "dumbbell",
@@ -32,13 +27,13 @@
       "id": "lower-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-overhead-elbow-flexion-midrange", "amount": 1}],
+      "actions": [{"use": "upper-two-hand-overhead-lower-midrange", "amount": 1}],
       "items": {"weight": {"position": [0, 1.47014, -0.1995]}}
     },
     {
       "id": "lower",
       "seconds": 0.8,
-      "actions": [{"use": "upper-overhead-elbow-flexion", "amount": 1}],
+      "actions": [{"use": "upper-two-hand-overhead-lower", "amount": 1}],
       "items": {"weight": {"position": [0, 1.232, -0.252]}},
       "ease": "ease-out"
     },
@@ -46,7 +41,7 @@
       "id": "extend-midrange",
       "seconds": 0.8,
       "ease": "ease-in",
-      "actions": [{"use": "upper-overhead-elbow-flexion-midrange", "amount": 1}],
+      "actions": [{"use": "upper-two-hand-overhead-lower-midrange", "amount": 1}],
       "items": {"weight": {"position": [0, 1.47014, -0.1995]}}
     },
     {
@@ -59,5 +54,25 @@
   ],
   "repeat": {"mode": "loop", "count": 1},
   "muscles": {"primary": ["triceps"], "secondary": []},
-  "camera": [32, 9]
+  "camera": [32, 9],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "leftThigh",
+      "offset": [-0.0326, -0.35, -0.0403],
+      "surface": {"item": "seat", "part": 0},
+      "min": -0.005,
+      "max": 0.009,
+      "edgeTolerance": 0.004
+    },
+    {
+      "kind": "support",
+      "landmark": "chest",
+      "offset": [-0.0645, 0.1373, -0.0826],
+      "surface": {"item": "seat", "part": 1},
+      "min": -0.005,
+      "max": 0.014,
+      "edgeTolerance": 0.004
+    }
+  ]
 }

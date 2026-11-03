@@ -1,5 +1,5 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "hanging-knee-raise",
   "title": "Hanging Knee Raise",
   "instructions": "With the hands fixed to the bar, bend the knees and flex the hips toward the torso. Lower the legs.",
@@ -39,6 +39,6 @@
   "muscles": {"primary": ["abdominals", "hipFlexors"], "secondary": ["forearms", "anteriorDeltoids", "lateralDeltoids"]},
   "camera": [63, 17],
   "parameters": {
-    "phase-seconds": {"default": 1.6, "min": 0.15, "max": 15}
+    "phase-seconds": {"default": 1.6, "min": 0.21, "max": 15}
   }
 }

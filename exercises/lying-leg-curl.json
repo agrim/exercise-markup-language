@@ -1,10 +1,18 @@
 {
-  "eml": "1.0",
+  "eml": "1.1",
   "id": "lying-leg-curl",
   "title": "Lying Leg Curl",
-  "instructions": "Lie face down with the pad behind the ankles. Bend the knees to bring the heels toward the hips and then extend.",
+  "instructions": "Lie face down with the roller behind the ankles and hold the front bar. Bend both knees to draw the heels toward the hips, then extend.",
   "start": {
-    "pose": "prone-on-bench"
+    "pose": "prone-on-bench",
+    "joints": {
+      "bothUpperArm": {
+        "z": 14
+      },
+      "bothForearm": {
+        "x": -68
+      }
+    }
   },
   "equipment": [
     {
@@ -18,18 +26,33 @@
     },
     {
       "id": "roller",
-      "kind": "ankle-roller",
+      "kind": "prone-curl-lever",
       "follow": {
-        "joint": "leftFoot",
+        "joint": "leftShin",
         "offset": [
-          -0.095,
-          0.046,
-          -0.037
+          -0.075,
+          0,
+          0
         ]
       }
     }
   ],
-  "contacts": [],
+  "contacts": [
+    {
+      "effector": "leftGrip",
+      "target": {
+        "item": "machine",
+        "socket": "leftGrip"
+      }
+    },
+    {
+      "effector": "rightGrip",
+      "target": {
+        "item": "machine",
+        "socket": "rightGrip"
+      }
+    }
+  ],
   "phases": [
     {
       "id": "curl",
@@ -72,6 +95,38 @@
     {
       "body": "chest",
       "surface": "machine"
+    }
+  ],
+  "constraints": [
+    {
+      "kind": "support",
+      "landmark": "pelvis",
+      "offset": [
+        -0.0315,
+        0.1176,
+        0.1103
+      ],
+      "surface": {
+        "item": "machine",
+        "part": 1
+      },
+      "min": -0.004,
+      "max": 0.006
+    },
+    {
+      "kind": "support",
+      "landmark": "chest",
+      "offset": [
+        0.0508,
+        0.1036,
+        0.161
+      ],
+      "surface": {
+        "item": "machine",
+        "part": 1
+      },
+      "min": -0.004,
+      "max": 0.006
     }
   ]
 }
