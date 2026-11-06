@@ -2,7 +2,11 @@
 
 The artist-facing mesh is built from the original BodyParts3D 4.0 and Z-Anatomy atlases. The generator reads the publisher's element IDs, selects musculoskeletal structures, registers the second atlas against eight corresponding bones and emits indexed geometry in meters. The neutral hand and foot surfaces come from the same scanned body as its skeleton.
 
-Run from the repository root with Python 3.14, Blender on PATH (or set BLENDER to its executable). Use a scratch directory outside the repository for the upstream archives and the extracted Blender file.
+Run from the repository root with Python 3.14 and **Blender 5.2.1 LTS** as the authoring environment baseline. This matches the local installation checked with `--version` and a headless Python startup on macOS; full rebuilds and Linux execution remain separate validation steps. Select the explicit release rather than relying on an operating-system package's default version. Blender is optional for ordinary EML compilation, conformance tests and the viewer.
+
+Put Blender on PATH, or set `BLENDER` to its absolute executable path. Use the matching Linux build in Cloud; the macOS app executable is `/Applications/Blender.app/Contents/MacOS/Blender`. Verify `"${BLENDER:-blender}" --version` and a background factory-startup smoke check before rebuilding. Keep Python 3.14 and the pinned requirements below in a separate virtual environment. The extraction script runs inside Blender's bundled Python; do not substitute a PyPI `bpy` installation for the executable.
+
+Use a scratch directory outside the repository for upstream archives, the extracted Blender file and generated candidates. For any Blender version change, first verify headless startup and a read-only load of `anatomy/ExerciseDummy.blend`, then run the affected rebuild and audit and inspect the geometry before replacing committed outputs. Record the exact release/build used. See [Cloud setup and Blender checks](../../.codex/cloud/README.md).
 
 ```sh
 python3.14 -m venv /tmp/exercise-atlas-env
