@@ -55,21 +55,52 @@ function preview(data,source) {
   message(warnings?`${warnings} samples have movement findings. Inspect their phase and measurement.`:'',Boolean(warnings));
   refresh();
 }
-// Keep native constraint validation, but retain its error beside the field after
-// the browser bubble closes. Do not show errors before the first failed submit.
-function bindParameterError(input,error) {
+// A single delayed live region avoids speaking over the next focused field.
+let parameterAnnouncementTimer;
+let parameterAnnouncementField;
+function clearParameterAnnouncement(input) {
+  if(input&&parameterAnnouncementField!==input)return;
+  clearTimeout(parameterAnnouncementTimer);
+  parameterAnnouncementField=null;
+  el('parameter-announcement').textContent='';
+}
+function announceParameterError(input,error) {
+  clearParameterAnnouncement();
+  parameterAnnouncementField=input;
+  parameterAnnouncementTimer=setTimeout(()=>{
+    if(input.isConnected&&input.getAttribute('aria-invalid')==='true'){
+      const label=input.labels?.[0]?.textContent.trim()||input.name;
+      el('parameter-announcement').textContent=`${label}: ${error.textContent}`;
+    }
+  },500);
+}
+// Keep native validation and focus. Reveal errors only after an edited field
+// loses focus or a submit attempt, not while entering a value for the first time.
+function bindParameterError(input,error,announce=()=>{},clear=()=>{}) {
+  let edited=false,reviewed=false,announced=false;
   const sync=()=>{
     const invalid=!input.validity.valid;
     error.textContent=invalid?input.validationMessage:'';
     error.hidden=!invalid;
     input.setAttribute('aria-invalid',String(invalid));
     if(invalid)input.setAttribute('aria-describedby',error.id);
-    else input.removeAttribute('aria-describedby');
+    else{input.removeAttribute('aria-describedby');announced=false;clear(input);}
+    return invalid;
   };
-  input.addEventListener('invalid',sync);
-  input.addEventListener('input',()=>{if(input.getAttribute('aria-invalid')==='true')sync();});
+  input.addEventListener('invalid',()=>{
+    reviewed=true;announced=true;clear();sync();
+  });
+  input.addEventListener('input',()=>{edited=true;if(reviewed)sync();});
+  // Returning focus exposes aria-describedby directly; avoid a delayed repeat.
+  input.addEventListener('focus',()=>clear(input));
+  input.addEventListener('blur',()=>{
+    if(!edited&&!reviewed)return;
+    reviewed=true;
+    if(sync()&&!announced){announce(input,error);announced=true;}
+  });
 }
 function parameters(doc,entry) {
+  clearParameterAnnouncement();
   recipe=doc;loadedEntry=entry;el('instructions').textContent=doc.instructions||'';
   const host=el('fields');host.replaceChildren();
   for(const [key,rule] of Object.entries(doc.parameters||{})){
@@ -79,7 +110,7 @@ function parameters(doc,entry) {
     input.setAttribute('aria-invalid','false');
     input.min=rule.min;input.max=rule.max;input.value=rule.default;input.required=true;
     const error=document.createElement('span');error.id=input.id+'-error';error.className='parameter-error';error.hidden=true;
-    bindParameterError(input,error);label.append(input);host.append(label,error);
+    bindParameterError(input,error,announceParameterError,clearParameterAnnouncement);label.append(input);host.append(label,error);
   }
   el('params').hidden=host.childElementCount===0;refresh();
 }
@@ -95,6 +126,7 @@ el('params').onsubmit=async e=>{
   }catch(error){if(number===requestNumber)message(error.message,true);}
 };
 async function select(entry) {
+  clearParameterAnnouncement();
   const number=++requestNumber;stop();message('Solving '+titleCase(catalog[entry].title)+'…');
   try{const [data,doc]=await Promise.all(['/api/clip','/api/source'].map(url=>request(url+'?entry='+encodeURIComponent(entry)).then(r=>r.json())));
     if(number!==requestNumber)return;preview(data,entry);parameters(doc,entry);
@@ -120,6 +152,7 @@ for(const button of document.querySelectorAll('[data-camera]')) {
 }
 el('file').onchange=async()=>{
   const file=el('file').files[0];if(!file)return;
+  clearParameterAnnouncement();
   const number=++requestNumber;
   try {
     if(file.size>512000)throw new Error('Recipe exceeds the 512 KB viewer input limit.');

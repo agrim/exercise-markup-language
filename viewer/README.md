@@ -43,3 +43,11 @@ Focused HTTP regression checks:
 ```sh
 python -m unittest discover -s tests -p test_viewer_headers.py -v
 ```
+
+Parameter errors appear after an edited field loses focus or a failed submit.
+A shared polite live region delays blur feedback briefly so it does not compete
+with the next field's focus announcement. Correcting the field, submitting native
+validation, or changing recipes cancels pending feedback. Native validation still
+focuses the first invalid parameter on submit. Automated tests cover state and
+cancellation; actual screen-reader speech and browser combinations need separate
+verification.
