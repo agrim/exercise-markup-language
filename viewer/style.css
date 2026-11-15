@@ -31,3 +31,7 @@ p{font-size:0.8125rem;color:var(--muted);margin:0 0 14px}.hint{font-size:0.75rem
 .camera-controls [role=group]{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .camera-controls button{font-size:0.8125rem;min-height:32px}
 .camera-controls :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* Persistent text supplements native validation; color is not the only cue. */
+.parameter-error:not([hidden]){display:block;color:#ffb075;font-size:.8125rem;margin:0 0 12px;overflow-wrap:anywhere}
+#fields input[aria-invalid="true"]{border-color:#ffb075}

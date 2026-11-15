@@ -44,14 +44,31 @@ function preview(data,source) {
   message(warnings?`${warnings} samples have movement findings. Inspect their phase and measurement.`:'',Boolean(warnings));
   refresh();
 }
+// Keep native constraint validation, but retain its error beside the field after
+// the browser bubble closes. Do not show errors before the first failed submit.
+function bindParameterError(input,error) {
+  const sync=()=>{
+    const invalid=!input.validity.valid;
+    error.textContent=invalid?input.validationMessage:'';
+    error.hidden=!invalid;
+    input.setAttribute('aria-invalid',String(invalid));
+    if(invalid)input.setAttribute('aria-describedby',error.id);
+    else input.removeAttribute('aria-describedby');
+  };
+  input.addEventListener('invalid',sync);
+  input.addEventListener('input',()=>{if(input.getAttribute('aria-invalid')==='true')sync();});
+}
 function parameters(doc,entry) {
   recipe=doc;loadedEntry=entry;el('instructions').textContent=doc.instructions||'';
   const host=el('fields');host.replaceChildren();
   for(const [key,rule] of Object.entries(doc.parameters||{})){
     const label=document.createElement('label');label.textContent=titleCase(key);
     const input=document.createElement('input');input.name=key;input.type='number';input.step='any';
+    input.id=`parameter-${host.childElementCount}`;label.htmlFor=input.id;
+    input.setAttribute('aria-invalid','false');
     input.min=rule.min;input.max=rule.max;input.value=rule.default;input.required=true;
-    label.append(input);host.append(label);
+    const error=document.createElement('span');error.id=input.id+'-error';error.className='parameter-error';error.hidden=true;
+    bindParameterError(input,error);label.append(input);host.append(label,error);
   }
   el('params').hidden=host.childElementCount===0;refresh();
 }
