@@ -1,5 +1,8 @@
 """The local viewer's same-origin policy covers success and error responses."""
 import http.client
+import contextlib
+import io
+import socket
 import threading
 import unittest
 
@@ -53,3 +56,27 @@ class ViewerHeaderTests(unittest.TestCase):
         self.check_response('POST', '/api/preview', 415, body='{}')
         self.check_response('POST', '/api/preview', 400, body='{',
                             headers={'Content-Type': 'application/json'})
+
+    def test_access_logs_omit_request_targets(self):
+        output = io.StringIO()
+        with contextlib.redirect_stderr(output):
+            self.check_response('GET', '/?private-test-token=fictional-secret', 200)
+            self.check_response('GET', '/fictional-private-filename?token=secret', 404)
+        logs = output.getvalue()
+        self.assertIn('Response 200', logs)
+        self.assertIn('Response 404', logs)
+        self.assertNotIn('fictional', logs)
+        self.assertNotIn('token', logs)
+        self.assertNotIn('secret', logs)
+
+    def test_malformed_request_logs_omit_raw_request(self):
+        output = io.StringIO()
+        with contextlib.redirect_stderr(output):
+            with socket.create_connection(self.server.server_address) as connection:
+                connection.sendall(b'GET /fictional-secret HTTP/not-a-version\r\n\r\n')
+                while connection.recv(4096):
+                    pass
+        logs = output.getvalue()
+        self.assertIn('Request error', logs)
+        self.assertNotIn('fictional-secret', logs)
+        self.assertNotIn('not-a-version', logs)

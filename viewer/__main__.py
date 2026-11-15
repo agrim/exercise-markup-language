@@ -53,6 +53,16 @@ class PreviewServer(ThreadingHTTPServer):
 
 
 class Viewer(BaseHTTPRequestHandler):
+    def log_request(self, code="-", size="-"):
+        # Recipe IDs, filenames and arbitrary query values need not be retained
+        # in terminal logs. Keep response diagnostics without the request target.
+        super().log_message("Response %s %s", code, size)
+
+    def log_error(self, format, *args):
+        # The base handler may include an invalid request line in error text.
+        # Status is recorded separately by log_request; omit request-derived data.
+        super().log_message("Request error")
+
     def end_headers(self):
         # This local viewer needs only its own modules, styles and data. Apply
         # the policy to errors as well as successful responses.
