@@ -34,3 +34,28 @@ for(const [time,duration,position,spoken] of [
     assert.equal(el('clock').textContent,time.toFixed(2)+' s');
   });
 }
+
+// A rapid Play -> Pause -> Play must not revive the original queued callback.
+test('rapid playback toggles keep exactly one scheduled animation frame',()=>{
+  const stopStart=source.indexOf('function stop()');
+  const stopEnd=source.indexOf('function preview(',stopStart);
+  const loopStart=source.indexOf('function loop(now)');
+  const loopEnd=source.indexOf("el('scrub').oninput",loopStart);
+  assert.ok(stopStart>=0&&stopEnd>stopStart&&loopStart>=0&&loopEnd>loopStart);
+  const elements=new Map();
+  const el=id=>{if(!elements.has(id))elements.set(id,{});return elements.get(id);};
+  const frames=new Map();let nextId=0,draws=0;
+  runInNewContext(source.slice(stopStart,stopEnd)+source.slice(loopStart,loopEnd),{
+    el,playing:false,animationFrame:null,startClock:0,atlas:{time:0},clip:{duration:4},
+    performance:{now:()=>0},refresh:()=>draws++,
+    requestAnimationFrame:callback=>{frames.set(++nextId,callback);return nextId;},
+    cancelAnimationFrame:id=>frames.delete(id),
+  });
+  const toggle=el('play').onclick;
+  toggle();assert.equal(frames.size,1);const first=nextId;
+  toggle();assert.equal(frames.size,0);
+  toggle();assert.equal(frames.size,1);assert.ok(!frames.has(first));
+  const [id,callback]=frames.entries().next().value;frames.delete(id);callback(1000);
+  assert.equal(draws,1);assert.equal(frames.size,1);
+  toggle();assert.equal(frames.size,0);
+});

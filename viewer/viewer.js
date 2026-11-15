@@ -11,7 +11,7 @@ async function request(path,options) {
   return response;
 }
 const titleCase=s=>s.replace(/([a-z])([A-Z])/g,'$1 $2').replaceAll('-',' ').replace(/^./,c=>c.toUpperCase());
-let kits, atlas, catalog, clip, recipe, loadedEntry, startClock, playing=false, requestNumber=0;
+let kits, atlas, catalog, clip, recipe, loadedEntry, startClock, playing=false, requestNumber=0, animationFrame=null;
 function message(text,warning=false) {el('status').textContent=text;el('status').classList.toggle('warning',warning);}
 function refresh() {
   if(!clip)return;
@@ -33,7 +33,7 @@ function refresh() {
   for(const d of f.diagnostics)descriptions.push(d.message || (titleCase(d.effector)+' · '+d.reason+' · '+(d.residual*1000).toFixed(0)+' mm'));
   el('contacts').textContent=descriptions.join(' · ')||'Free pose';
 }
-function stop(){playing=false;el('play').textContent='Play';}
+function stop(){playing=false;if(animationFrame!==null){cancelAnimationFrame(animationFrame);animationFrame=null;}el('play').textContent='Play';}
 function preview(data,source) {
   stop();clip=data;atlas.kit=kits[data.eml];atlas.setClip(clip);atlas.time=0;
   el('title').textContent=data.title;el('view').value='recipe';
@@ -76,11 +76,12 @@ async function select(entry) {
   }
 }
 function loop(now) {
-  if(playing){atlas.time=((now-startClock)/1000)%clip.duration;refresh();requestAnimationFrame(loop);}
+  animationFrame=null;
+  if(playing){atlas.time=((now-startClock)/1000)%clip.duration;refresh();animationFrame=requestAnimationFrame(loop);}
 }
 el('play').onclick=()=>{
   if(playing){stop();return;}
-  playing=true;el('play').textContent='Pause';startClock=performance.now()-atlas.time*1000;requestAnimationFrame(loop);
+  playing=true;el('play').textContent='Pause';startClock=performance.now()-atlas.time*1000;animationFrame=requestAnimationFrame(loop);
 };
 el('scrub').oninput=()=>{stop();atlas.time=el('scrub').value/1000*clip.duration;refresh();};
 el('catalog').onchange=()=>select(el('catalog').value);
