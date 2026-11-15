@@ -35,3 +35,10 @@ p{font-size:0.8125rem;color:var(--muted);margin:0 0 14px}.hint{font-size:0.75rem
 /* Persistent text supplements native validation; color is not the only cue. */
 .parameter-error:not([hidden]){display:block;color:#ffb075;font-size:.8125rem;margin:0 0 12px;overflow-wrap:anywhere}
 #fields input[aria-invalid="true"]{border-color:#ffb075}
+
+/* Keep header and camera actions reachable with enlarged or widely spaced text. */
+header{flex-wrap:wrap}
+header>*{min-inline-size:0}
+.camera-bar{flex-wrap:wrap;max-inline-size:calc(100% - 24px)}
+.camera-bar select{min-inline-size:0;max-inline-size:100%}
+@media(max-width:700px){.camera-bar{top:calc(18px + 1.5rem)}}
