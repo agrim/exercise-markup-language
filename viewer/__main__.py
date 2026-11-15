@@ -76,7 +76,7 @@ class Viewer(BaseHTTPRequestHandler):
             "Content-Security-Policy",
             "default-src 'self'; img-src 'self' data:; object-src 'none'; "
             "base-uri 'none'; frame-ancestors 'none'; form-action 'none'; "
-            "worker-src 'none'",
+            "worker-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'",
         )
         super().end_headers()
 

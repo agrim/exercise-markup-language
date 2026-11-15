@@ -35,7 +35,8 @@ class ViewerHeaderTests(unittest.TestCase):
             for directive in ("default-src 'self'", "img-src 'self' data:",
                               "object-src 'none'", "base-uri 'none'",
                               "frame-ancestors 'none'", "form-action 'none'",
-                              "worker-src 'none'"):
+                              "worker-src 'none'", "require-trusted-types-for 'script'",
+                              "trusted-types 'none'"):
                 self.assertIn(directive, policy.split('; '))
             self.assertNotIn('unsafe-inline', policy)
             self.assertNotIn('unsafe-eval', policy)
