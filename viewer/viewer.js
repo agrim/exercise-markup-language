@@ -1,4 +1,5 @@
 import {Atlas} from './mesh.js';
+import {adjustCamera} from './camera-controls.js';
 const el = id=>document.getElementById(id);
 async function request(path,options) {
   const response = await fetch(path,options);
@@ -16,6 +17,7 @@ function refresh() {
   if(!clip)return;
   atlas.draw();const f=atlas.frame;
   el('scrub').value=Math.round(atlas.time/clip.duration*1000);
+  el('scrub').setAttribute('aria-valuetext',`${atlas.time.toFixed(2)} seconds of ${clip.duration.toFixed(2)} seconds`);
   el('clock').textContent=atlas.time.toFixed(2)+' s';
   el('phase').textContent=titleCase(f.phase);
   el('primary').textContent=f.muscles.primary.map(titleCase).join(', ')||'—';
@@ -84,6 +86,9 @@ el('scrub').oninput=()=>{stop();atlas.time=el('scrub').value/1000*clip.duration;
 el('catalog').onchange=()=>select(el('catalog').value);
 el('reset').onclick=()=>{el('view').value='recipe';atlas?.camera('recipe');};
 el('view').onchange=()=>atlas?.camera(el('view').value);
+for(const button of document.querySelectorAll('[data-camera]')) {
+  button.onclick=()=>adjustCamera(atlas,button.dataset.camera);
+}
 el('file').onchange=async()=>{
   const file=el('file').files[0];if(!file)return;
   const number=++requestNumber;

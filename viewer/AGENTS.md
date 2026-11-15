@@ -1,0 +1,3 @@
+## Modern web guidance
+
+For HTML, CSS and browser-side JavaScript changes in this scope, consult the relevant current guidance in https://github.com/GoogleChrome/modern-web-guidance before implementation. Read the guidance directly when its CLI is unavailable; this instruction does not require installing or executing tools. Apply only guidance relevant to the requested change, preserve supported browsers and necessary fallbacks, and prefer native semantics. Run the project's applicable checks and distinguish source/test results from browser, accessibility and production evidence. A clean legacy scan is not proof of full compliance. Native application, backend and infrastructure work remain governed by their existing instructions.

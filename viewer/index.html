@@ -16,6 +16,13 @@
 <p id="instructions"></p><label for="catalog">Catalog</label><select id="catalog" disabled></select>
 <label class="open" for="file">Open a local recipe<input id="file" type="file" accept=".json,application/json"></label>
 <a id="source" class="source" target="_blank" rel="noopener">View recipe JSON ↗</a>
+<details class="camera-controls"><summary>Camera controls</summary>
+<div role="group" aria-label="Rotate model">
+<button type="button" data-camera="left">Left</button><button type="button" data-camera="right">Right</button>
+<button type="button" data-camera="up">Up</button><button type="button" data-camera="down">Down</button>
+</div><div role="group" aria-label="Zoom model">
+<button type="button" data-camera="in">Zoom in</button><button type="button" data-camera="out">Zoom out</button>
+</div></details>
 <form id="params" hidden><div class="divider"></div><div class="eyebrow">Recipe parameters</div>
 <div id="fields"></div><button type="submit">Apply to model</button></form>
 <div class="divider"></div><div class="eyebrow">Movement phase</div><h2 id="phase">—</h2>

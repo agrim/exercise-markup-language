@@ -15,3 +15,15 @@ The viewer uses sampled skeletal and equipment transforms from `Program.compile(
 Use `python -m viewer --fps 24` for finer sampling or `--port 9000` to choose another local port. The viewer previews at most 3,600 samples per cycle. Saved EML documents remain portable between engines; the local tool only needs the standard's reference Python dependencies. Geometry and adaptations are credited in [the atlas notice](../anatomy/ATTRIBUTION.md).
 
 [Open the visual review sheets for all 108 catalog exercises and a parameter variation.](review/README.md)
+
+### Accessible camera controls
+
+Expand **Camera controls** for native buttons that rotate and zoom without dragging,
+pinching, or a mouse wheel. They use the same pitch/zoom limits as pointer input;
+the existing camera presets and Reset button are unchanged.
+
+Run the focused, dependency-free regression checks with:
+
+```sh
+node --test viewer/camera-controls.test.mjs
+```

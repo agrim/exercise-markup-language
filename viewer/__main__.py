@@ -110,6 +110,7 @@ class Viewer(BaseHTTPRequestHandler):
                 "/index.html": "viewer/index.html",
                 "/viewer.js": "viewer/viewer.js",
                 "/mesh.js": "viewer/mesh.js",
+                "/camera-controls.js": "viewer/camera-controls.js",
                 "/style.css": "viewer/style.css",
                 "/anatomy/model.json": "anatomy/model.json",
                 "/anatomy/indices.bin": "anatomy/indices.bin",
