@@ -49,7 +49,11 @@ class SolvedConstraintTests(unittest.TestCase):
         tilt, roll = wrist(q, shaft)
         self.assertAlmostEqual(tilt, 0)
         self.assertAlmostEqual(roll, math.degrees(1.4))
-        self.assertEqual(wrist(q, shaft)[1], wrist(tuple(-v for v in q), shaft)[1])
+        # q and -q represent the same rotation, but atan2/modulo can differ by
+        # floating-point roundoff. Compare degrees, not bit-identical results.
+        self.assertAlmostEqual(
+            wrist(q, shaft)[1], wrist(tuple(-v for v in q), shaft)[1], places=12
+        )
         d = recipe()
         d["phases"][0]["detail"] = {"joints": {"leftForearm": {"y": 65}}}
         self.assertFalse(
