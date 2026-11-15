@@ -49,3 +49,8 @@ header>*{min-inline-size:0}
 button,select,input:not([type=file]),summary,.open,.credits,.source{min-block-size:var(--target-size);min-inline-size:var(--target-size)}
 .camera-controls button{min-height:max(32px,var(--target-size))}
 .credits,.source{display:inline-flex;align-items:center}
+
+/* Only the stacked mobile canvas scrolls away from the sidebar; the desktop
+   canvas stays sticky. Preserve its box while supported browsers skip drawing.
+   Unsupported browsers retain the existing behavior without a polyfill. */
+@supports(content-visibility:auto){@media(max-width:700px){.canvas-panel{content-visibility:auto;contain-intrinsic-size:auto none auto 380px}}}

@@ -12,6 +12,17 @@ async function request(path,options) {
 }
 const titleCase=s=>s.replace(/([a-z])([A-Z])/g,'$1 $2').replaceAll('-',' ').replace(/^./,c=>c.toUpperCase());
 let kits, atlas, catalog, clip, recipe, loadedEntry, startClock, playing=false, requestNumber=0, animationFrame=null;
+let canvasRenderingSkipped=false;
+const mobileCanvas=matchMedia('(max-width:700px)');
+function setCanvasRenderingSkipped(skipped) {
+  canvasRenderingSkipped=mobileCanvas.matches&&skipped;
+  if(atlas){atlas.renderingSkipped=canvasRenderingSkipped;if(!canvasRenderingSkipped)atlas.draw();}
+}
+// Listen directly: this rendering-lifecycle event does not reliably bubble.
+el('anatomy').parentElement.addEventListener('contentvisibilityautostatechange',event=>setCanvasRenderingSkipped(event.skipped));
+// Removing content-visibility:auto at the desktop breakpoint need not emit an
+// unskip event. Explicitly release the gate, including while playback is paused.
+mobileCanvas.addEventListener('change',()=>{if(!mobileCanvas.matches)setCanvasRenderingSkipped(false);});
 function message(text,warning=false) {el('status').textContent=text;el('status').classList.toggle('warning',warning);}
 function refresh() {
   if(!clip)return;
@@ -124,7 +135,7 @@ try {
     request('/anatomy/model.json').then(x=>x.json()),request('/anatomy/vertices.bin').then(x=>x.arrayBuffer()),
     request('/anatomy/indices.bin').then(x=>x.arrayBuffer()),request('/library/equipment.json').then(x=>x.json()),request('/api/catalog').then(x=>x.json())]);
   kits={'1.0':await request('/compat/1.0/library/equipment.json').then(r=>r.json()),'1.1':equipment};
-  atlas=new Atlas(el('anatomy'),model,vertices,indices,equipment);catalog=entries;
+  atlas=new Atlas(el('anatomy'),model,vertices,indices,equipment);atlas.renderingSkipped=canvasRenderingSkipped;catalog=entries;
   const groups={};for(const [path,row] of Object.entries(entries)){
     const section=path.startsWith('exercises/')?'Catalog':'Examples';
     if(!groups[section]){groups[section]=document.createElement('optgroup');groups[section].label=section;el('catalog').append(groups[section]);}

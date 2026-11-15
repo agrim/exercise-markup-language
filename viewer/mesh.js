@@ -268,12 +268,15 @@ export class Atlas {
   }
   draw() {
     if(!this.clip)return;
+    // Sidebar phase/diagnostic text must stay current even when the browser skips
+    // the offscreen canvas. Avoid GPU work and layout reads, not logical time.
+    const frame=this.sample(this.time);
+    this.frame=frame;
+    if(this.renderingSkipped)return;
     const gl=this.gl,dpr=Math.min(2,globalThis.devicePixelRatio||1);
     const w=Math.max(1,Math.round(this.canvas.clientWidth*dpr)),h=Math.max(1,Math.round(this.canvas.clientHeight*dpr));
     if(this.canvas.width!==w||this.canvas.height!==h){this.canvas.width=w;this.canvas.height=h;}
     gl.viewport(0,0,w,h);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
-    const frame=this.sample(this.time);
-    this.frame=frame;
     this.uniforms(this.floor);gl.uniformMatrix4fv(this.floor.u.model,false,transform(identity,[this.bounds.center[0],-.018,this.bounds.center[2]],[12,1,12]));
     gl.bindVertexArray(this.parts.plane.vao);gl.depthMask(false);gl.drawArrays(gl.TRIANGLES,0,this.parts.plane.count);gl.depthMask(true);
     this.uniforms(this.body);
