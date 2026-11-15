@@ -57,6 +57,9 @@ class Viewer(BaseHTTPRequestHandler):
         # This local viewer needs only its own modules, styles and data. Apply
         # the policy to errors as well as successful responses.
         self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
+        self.send_header("Permissions-Policy",
+                         "camera=(), microphone=(), geolocation=(), accelerometer=()")
         self.send_header(
             "Content-Security-Policy",
             "default-src 'self'; img-src 'self' data:; object-src 'none'; "

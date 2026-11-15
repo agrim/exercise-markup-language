@@ -33,7 +33,9 @@ node --test viewer/camera-controls.test.mjs
 The viewer sends a Content Security Policy on successful and error responses:
 modules, styles and API requests stay same-origin, the empty data favicon remains
 allowed, and plugins, workers, framing, base-URL overrides and native form
-navigation are blocked. Parameter updates and local-recipe previews still use
+navigation are blocked. A strict referrer policy prevents cross-origin URL-path
+sharing, and a permissions policy disables unused camera, microphone, geolocation
+and accelerometer access. Parameter updates and local-recipe previews still use
 same-origin JSON requests. This is defense in depth, not authentication or a
 complete audit of the local HTTP service. Do not expose this developer server to
 a public interface.
