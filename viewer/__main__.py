@@ -53,10 +53,21 @@ class PreviewServer(ThreadingHTTPServer):
 
 
 class Viewer(BaseHTTPRequestHandler):
+    def end_headers(self):
+        # This local viewer needs only its own modules, styles and data. Apply
+        # the policy to errors as well as successful responses.
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header(
+            "Content-Security-Policy",
+            "default-src 'self'; img-src 'self' data:; object-src 'none'; "
+            "base-uri 'none'; frame-ancestors 'none'; form-action 'none'; "
+            "worker-src 'none'",
+        )
+        super().end_headers()
+
     def send(self, data, mime, status=200):
         self.send_response(status)
         self.send_header("Content-Type", mime)
-        self.send_header("X-Content-Type-Options", "nosniff")
         if mime == "application/json" and "gzip" in self.headers.get(
             "Accept-Encoding", ""
         ):

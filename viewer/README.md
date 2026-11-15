@@ -27,3 +27,19 @@ Run the focused, dependency-free regression checks with:
 ```sh
 node --test viewer/camera-controls.test.mjs
 ```
+
+### Local viewer resource policy
+
+The viewer sends a Content Security Policy on successful and error responses:
+modules, styles and API requests stay same-origin, the empty data favicon remains
+allowed, and plugins, workers, framing, base-URL overrides and native form
+navigation are blocked. Parameter updates and local-recipe previews still use
+same-origin JSON requests. This is defense in depth, not authentication or a
+complete audit of the local HTTP service. Do not expose this developer server to
+a public interface.
+
+Focused HTTP regression checks:
+
+```sh
+python -m unittest discover -s tests -p test_viewer_headers.py -v
+```
