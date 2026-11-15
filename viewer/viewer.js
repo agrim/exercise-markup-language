@@ -13,16 +13,19 @@ async function request(path,options) {
 const titleCase=s=>s.replace(/([a-z])([A-Z])/g,'$1 $2').replaceAll('-',' ').replace(/^./,c=>c.toUpperCase());
 let kits, atlas, catalog, clip, recipe, loadedEntry, startClock, playing=false, requestNumber=0, animationFrame=null;
 let canvasRenderingSkipped=false;
-const mobileCanvas=matchMedia('(max-width:700px)');
 function setCanvasRenderingSkipped(skipped) {
-  canvasRenderingSkipped=mobileCanvas.matches&&skipped;
+  canvasRenderingSkipped=skipped;
   if(atlas){atlas.renderingSkipped=canvasRenderingSkipped;if(!canvasRenderingSkipped)atlas.draw();}
 }
-// Listen directly: this rendering-lifecycle event does not reliably bubble.
-el('anatomy').parentElement.addEventListener('contentvisibilityautostatechange',event=>setCanvasRenderingSkipped(event.skipped));
-// Removing content-visibility:auto at the desktop breakpoint need not emit an
-// unskip event. Explicitly release the gate, including while playback is paused.
-mobileCanvas.addEventListener('change',()=>{if(!mobileCanvas.matches)setCanvasRenderingSkipped(false);});
+// Skip GPU work only, never layout or accessibility exposure. Start drawing
+// before the canvas reaches the viewport; unsupported browsers keep drawing.
+if('IntersectionObserver' in globalThis){
+  const canvasObserver=new IntersectionObserver(entries=>{
+    const entry=entries[entries.length-1];
+    if(entry)setCanvasRenderingSkipped(!entry.isIntersecting);
+  },{rootMargin:'200px'});
+  canvasObserver.observe(el('anatomy').parentElement);
+}
 function message(text,warning=false) {el('status').textContent=text;el('status').classList.toggle('warning',warning);}
 function refresh() {
   if(!clip)return;

@@ -29,19 +29,32 @@ test('resuming rendering draws the current frame rather than a stale skipped fra
 
 const controller=await readFile(new URL('./viewer.js',import.meta.url),'utf8');
 const helperStart=controller.indexOf('function setCanvasRenderingSkipped(');
-const helperEnd=controller.indexOf('// Listen directly:',helperStart);
+const helperEnd=controller.indexOf('// Skip GPU work only',helperStart);
 const helper=controller.slice(helperStart,helperEnd);
-test('desktop breakpoint clears the gate and ignores late mobile skip events',()=>{
- const mobileCanvas={matches:true};let draws=0;const atlas={draw(){draws++;}};
- const context={mobileCanvas,atlas,canvasRenderingSkipped:false};
+test('intersection gate pauses and resumes GPU drawing independently of breakpoints',()=>{
+ let draws=0;const atlas={draw(){draws++;}};
+ const context={atlas,canvasRenderingSkipped:false};
  runInNewContext(helper+'\nsetCanvasRenderingSkipped(true);',context);
  assert.equal(atlas.renderingSkipped,true);assert.equal(draws,0);
- mobileCanvas.matches=false;
- runInNewContext(helper+'\nsetCanvasRenderingSkipped(false);setCanvasRenderingSkipped(true);',context);
- assert.equal(atlas.renderingSkipped,false);assert.equal(draws,2);
+ runInNewContext(helper+'\nsetCanvasRenderingSkipped(false);',context);
+ assert.equal(atlas.renderingSkipped,false);assert.equal(draws,1);
 });
 test('visibility state can arrive before the atlas initializes',()=>{
- const context={mobileCanvas:{matches:true},atlas:undefined,canvasRenderingSkipped:false};
+ const context={atlas:undefined,canvasRenderingSkipped:false};
  runInNewContext(helper+'\nsetCanvasRenderingSkipped(true);',context);
  assert.equal(context.canvasRenderingSkipped,true);
+});
+const observerCode=controller.slice(controller.indexOf("if('IntersectionObserver'"),controller.indexOf('function message('));
+test('unsupported observers retain normal rendering',()=>{
+ runInNewContext(observerCode,{el(){throw Error('no observation without support');}});
+});
+test('observer uses latest entry, prewarms nearby canvas and observes its panel',()=>{
+ const panel={};let callback,options,observed;const states=[];
+ runInNewContext(observerCode,{IntersectionObserver:class{
+  constructor(cb,opts){callback=cb;options=opts;}
+  observe(target){observed=target;}
+ },el:()=>({parentElement:panel}),setCanvasRenderingSkipped:x=>states.push(x)});
+ assert.equal(options.rootMargin,'200px');assert.equal(observed,panel);
+ callback([{isIntersecting:true},{isIntersecting:false}]);callback([{isIntersecting:true}]);callback([]);
+ assert.deepEqual(states,[true,false]);
 });
