@@ -1,5 +1,7 @@
 """The local viewer's same-origin policy covers success and error responses."""
 import http.client
+import gzip
+import json
 import contextlib
 import io
 import socket
@@ -39,6 +41,8 @@ class ViewerHeaderTests(unittest.TestCase):
             self.assertNotIn('unsafe-eval', policy)
             self.assertEqual(response.getheader('X-Content-Type-Options'), 'nosniff')
             self.assertEqual(response.getheader('X-Frame-Options'), 'DENY')
+            self.assertEqual(response.getheader('Vary'),
+                             'Accept-Encoding, Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site')
             self.assertEqual(response.getheader('Referrer-Policy'),
                              'strict-origin-when-cross-origin')
             self.assertEqual(response.getheader('Permissions-Policy'),
@@ -80,3 +84,53 @@ class ViewerHeaderTests(unittest.TestCase):
         self.assertIn('Request error', logs)
         self.assertNotIn('fictional-secret', logs)
         self.assertNotIn('not-a-version', logs)
+
+    def test_cross_site_api_requests_are_rejected_before_processing(self):
+        for path in ('/api/catalog', '/api/source?entry=examples/private.json', '/api/clip'):
+            with self.subTest(path=path):
+                self.check_response('GET', path, 403,
+                                    headers={'Sec-Fetch-Site': 'cross-site'})
+        for path in ('/api/preview', '/api/parameters'):
+            with self.subTest(path=path):
+                self.check_response('POST', path, 403, body='{}',
+                                    headers={'Content-Type': 'application/json',
+                                             'Sec-Fetch-Site': 'cross-site'})
+
+    def test_same_origin_and_document_navigation_remain_available(self):
+        self.check_response('GET', '/api/catalog', 200,
+                            headers={'Sec-Fetch-Site': 'same-origin'})
+        self.check_response('GET', '/', 200,
+                            headers={'Sec-Fetch-Site': 'cross-site',
+                                     'Sec-Fetch-Mode': 'navigate'})
+
+    def test_native_and_same_origin_clients_reach_all_api_routes(self):
+        for metadata in ({}, {'Sec-Fetch-Site': 'same-origin'}):
+            for path in ('/api/catalog',
+                         '/api/source?entry=exercises/goblet-squat.json',
+                         '/api/clip?entry=exercises/goblet-squat.json'):
+                with self.subTest(path=path, metadata=metadata):
+                    self.check_response('GET', path, 200, headers=metadata)
+            for path, status in (('/api/preview', 422), ('/api/parameters', 400)):
+                with self.subTest(path=path, metadata=metadata):
+                    self.check_response('POST', path, status, body='{}',
+                                        headers={'Content-Type': 'application/json', **metadata})
+
+    def test_json_compression_varies_by_accept_encoding(self):
+        bodies = []
+        for encoding in ('identity', 'gzip'):
+            connection = http.client.HTTPConnection(*self.server.server_address)
+            try:
+                connection.request('GET', '/api/catalog', headers={'Accept-Encoding': encoding})
+                response = connection.getresponse()
+                body = response.read()
+                self.assertEqual(response.status, 200)
+                self.assertIn('Accept-Encoding', response.getheader('Vary'))
+                if encoding == 'gzip':
+                    self.assertEqual(response.getheader('Content-Encoding'), 'gzip')
+                    body = gzip.decompress(body)
+                else:
+                    self.assertIsNone(response.getheader('Content-Encoding'))
+                bodies.append(json.loads(body))
+            finally:
+                connection.close()
+        self.assertEqual(bodies[0], bodies[1])

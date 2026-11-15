@@ -68,6 +68,7 @@ class Viewer(BaseHTTPRequestHandler):
         # the policy to errors as well as successful responses.
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("X-Frame-Options", "DENY")
+        self.send_header("Vary", "Accept-Encoding, Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site")
         self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
         self.send_header("Permissions-Policy",
                          "camera=(), microphone=(), geolocation=(), accelerometer=()")
@@ -116,7 +117,18 @@ class Viewer(BaseHTTPRequestHandler):
         except (Error, TypeError, KeyError, ValueError) as error:
             self.json({"error": str(error)}, 422)
 
+    def allow_api_request(self):
+        # Browser metadata is defense in depth, not authentication. Preserve
+        # CLI/native clients that do not send it, and ordinary document links.
+        if (urlsplit(self.path).path.startswith("/api/")
+                and self.headers.get("Sec-Fetch-Site") == "cross-site"):
+            self.send_error(403)
+            return False
+        return True
+
     def do_GET(self):
+        if not self.allow_api_request():
+            return
         url = urlsplit(self.path)
         if url.path == "/api/catalog":
             self.json(entries())
@@ -155,6 +167,8 @@ class Viewer(BaseHTTPRequestHandler):
             self.send(path.read_bytes(), mime)
 
     def do_POST(self):
+        if not self.allow_api_request():
+            return
         if self.path not in ("/api/preview", "/api/parameters"):
             return self.send_error(404)
         if self.headers.get_content_type() != "application/json":
