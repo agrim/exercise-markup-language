@@ -42,3 +42,10 @@ header>*{min-inline-size:0}
 .camera-bar{flex-wrap:wrap;max-inline-size:calc(100% - 24px)}
 .camera-bar select{min-inline-size:0;max-inline-size:100%}
 @media(max-width:700px){.camera-bar{top:calc(18px + 1.5rem)}}
+
+/* Standalone controls retain comfortable targets without changing inline prose. */
+:root{--target-size:24px}
+@media(pointer:coarse){:root{--target-size:44px}}
+button,select,input:not([type=file]),summary,.open,.credits,.source{min-block-size:var(--target-size);min-inline-size:var(--target-size)}
+.camera-controls button{min-height:max(32px,var(--target-size))}
+.credits,.source{display:inline-flex;align-items:center}
