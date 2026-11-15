@@ -35,6 +35,7 @@ class ViewerHeaderTests(unittest.TestCase):
             self.assertNotIn('unsafe-inline', policy)
             self.assertNotIn('unsafe-eval', policy)
             self.assertEqual(response.getheader('X-Content-Type-Options'), 'nosniff')
+            self.assertEqual(response.getheader('X-Frame-Options'), 'DENY')
             self.assertEqual(response.getheader('Referrer-Policy'),
                              'strict-origin-when-cross-origin')
             self.assertEqual(response.getheader('Permissions-Policy'),
