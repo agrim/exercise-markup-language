@@ -1,6 +1,7 @@
 :root { font-family: system-ui, sans-serif; color: #172027; background: #fff; }
 body { margin: 1rem; }
 main { max-width: 42rem; margin-inline: auto; }
+h1 { overflow-wrap: anywhere; }
 button { font: inherit; }
 #spacer { height: 110vh; }
 @media (prefers-color-scheme: dark) { :root { color: #f6f8fa; background: #151a1e; } }

@@ -64,3 +64,7 @@ These host runs use stubbed local API responses and no account/backend/native tr
 Run the commands in [the integration README](README.md#reproduce-verification). The full Playwright attachment report and original transient artifacts remain at `/tmp/eml-browser-validation-20261117`; compact results, source hashes, text logs and all 15 inspected captures are retained in `review/`. Test dependencies and generated assets remain ignored.
 
 These are source, local browser and local packaging results. Physical mobile GPU behavior, screen-reader speech and public deployment remain separate evidence boundaries. The preview's native buttons, fallback and text alternative continue to work without changing exercise IDs, media precedence, workouts or confirmed results.
+
+## Later Linux fixture correction
+
+The initial Linux workflow found enlarged host-heading overflow outside the preview. A fixture-only wrapping correction and more precise overflow diagnostics passed a separate complete local rerun (43 passed, zero failed, one unsupported-emulation skip). The original receipt and captures above remain unchanged; [the correction record](review/ci-fixture-correction/README.md) preserves the failing Linux evidence, diagnosis and rerun results.

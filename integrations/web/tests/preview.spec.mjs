@@ -19,6 +19,22 @@ async function assertOriginal(page) {
   await page.locator('#original').click();
   await expect(page.locator('#original-status')).toHaveText('Original media selected.');
 }
+async function assertNoHorizontalOverflow(page, phase) {
+  const layout = await page.evaluate(() => ({
+    viewportWidth: window.innerWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+    overflowing: [...document.querySelectorAll('body *')].flatMap(element => {
+      if (!element.getClientRects().length) return [];
+      const rect = element.getBoundingClientRect();
+      if (rect.left >= -1 && rect.right <= window.innerWidth + 1
+        && element.scrollWidth <= element.clientWidth + 1) return [];
+      return [{ tag: element.tagName, id: element.id, className: element.className,
+        text: element.textContent.trim().slice(0, 100), left: rect.left, right: rect.right,
+        clientWidth: element.clientWidth, scrollWidth: element.scrollWidth }];
+    }),
+  }));
+  expect(layout.scrollWidth, `${phase}: ${JSON.stringify(layout)}`).toBeLessThanOrEqual(layout.viewportWidth);
+}
 async function pixels(page) {
   return page.locator('#host canvas').evaluate(canvas => {
     const gl = canvas.getContext('webgl2');
@@ -250,9 +266,10 @@ test('accessible semantics and 320px enlarged text preserve controls and descrip
   await page.setViewportSize({ width: 320, height: 800 });
   await fixture(page);
   await page.evaluate(() => { document.documentElement.style.fontSize = '200%'; });
+  await assertNoHorizontalOverflow(page, 'Enlarged host before opening the preview');
   await open(page);
   await page.getByText('Camera', { exact: true }).click();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  await assertNoHorizontalOverflow(page, 'Enlarged preview with camera controls open');
   const violations = (await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze()).violations;
   expect(violations).toEqual([]);
   const dimensions = await page.locator('#host button').evaluateAll(buttons => buttons.filter(button => button.getClientRects().length).map(button => ({ text: button.textContent, width: button.getBoundingClientRect().width, height: button.getBoundingClientRect().height })));

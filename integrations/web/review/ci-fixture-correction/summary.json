@@ -1,0 +1,313 @@
+{
+  "date_utc": "2026-11-17T08:07:18.555607+00:00",
+  "source_base_commit": "7dfdf1d",
+  "initial_linux_ci": {
+    "url": "https://github.com/agrim/exercise-markup-language/actions/runs/44042856166",
+    "passed": 41,
+    "failed": 2,
+    "skipped": 1,
+    "failure": "The 320 CSS-pixel, 200% text fixture heading overflowed before the EML preview opened in Chromium and WebKit."
+  },
+  "root_cause": "Trace frames show the unscoped host h1 text Exercise extending past the right viewport edge with Linux system font metrics; preview controls and original-media button remain within the available width.",
+  "change": "Allow h1 wrapping in the test fixture. Preserve the whole-document overflow assertion; run it before and after opening and report overflowing elements with bounds and scroll/client widths.",
+  "runtime_source_unchanged": true,
+  "changed_test_source_sha256": {
+    "integrations/web/tests/preview.spec.mjs": "6e14cacfa937faf26019757886a1d07411358649fc24fa5e03f938f45944667a",
+    "integrations/web/tests/fixtures/fixture.css": "b4d8fd4d7817a7bb98e22a42d8e2b52b25846422a2c06ff6c215ecda0aa249cc"
+  },
+  "local_rerun": {
+    "host": "macOS arm64; Node24.21.0; Playwright1.65.1; axe-core4.14.0",
+    "engines": {
+      "chromium": "159.0.8154.6 (revision1255)",
+      "webkit": "27.2 (revision2388)"
+    },
+    "stats": {
+      "startTime": "2026-11-17T08:06:04.697Z",
+      "duration": 47565.456,
+      "expected": 43,
+      "skipped": 1,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "counts": {
+      "passed": 43,
+      "failed": 0,
+      "skipped": 1
+    },
+    "scenario_count": 22,
+    "records": [
+      {
+        "name": "optional exact mapping does no asset work before opening; real model renders paused",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 1344
+      },
+      {
+        "name": "optional exact mapping does no asset work before opening; real model renders paused",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 1126
+      },
+      {
+        "name": "missing, duplicate, numeric IDs and absent text alternatives remain optional",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 115
+      },
+      {
+        "name": "missing, duplicate, numeric IDs and absent text alternatives remain optional",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 217
+      },
+      {
+        "name": "keyboard play, pause, scrub and camera controls require no dragging",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 1474
+      },
+      {
+        "name": "keyboard play, pause, scrub and camera controls require no dragging",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 540
+      },
+      {
+        "name": "one cycle ends paused and never starts another automatically",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 1198
+      },
+      {
+        "name": "one cycle ends paused and never starts another automatically",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 680
+      },
+      {
+        "name": "unmount, repeated reopen and independent instances release owned resources",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 7713
+      },
+      {
+        "name": "unmount, repeated reopen and independent instances release owned resources",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 1534
+      },
+      {
+        "name": "cancel pending fetch and replace exercise without late canvas or stale result",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 637
+      },
+      {
+        "name": "cancel pending fetch and replace exercise without late canvas or stale result",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 350
+      },
+      {
+        "name": "asset error retains original media and explicit reopen retries cleanly",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 855
+      },
+      {
+        "name": "asset error retains original media and explicit reopen retries cleanly",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 417
+      },
+      {
+        "name": "unsupported WebGL and lost context leave an accessible original-media fallback",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 994
+      },
+      {
+        "name": "unsupported WebGL and lost context leave an accessible original-media fallback",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 452
+      },
+      {
+        "name": "reduced motion starts paused and preference changes stop explicit playback",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 1659
+      },
+      {
+        "name": "reduced motion starts paused and preference changes stop explicit playback",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 4474
+      },
+      {
+        "name": "offscreen and visibility changes pause without auto-resume",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 1319
+      },
+      {
+        "name": "offscreen and visibility changes pause without auto-resume",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 653
+      },
+      {
+        "name": "accessible semantics and 320px enlarged text preserve controls and descriptions",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 1042
+      },
+      {
+        "name": "accessible semantics and 320px enlarged text preserve controls and descriptions",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 624
+      },
+      {
+        "name": "forced colors retain native control affordances",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 770
+      },
+      {
+        "name": "forced colors retain native control affordances",
+        "browser": "webkit",
+        "status": "skipped",
+        "duration_ms": 134
+      },
+      {
+        "name": "React StrictMode cleanup and prop changes preserve one optional instance",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 1271
+      },
+      {
+        "name": "React StrictMode cleanup and prop changes preserve one optional instance",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 434
+      },
+      {
+        "name": "legacy EML clip uses its matching equipment registry and renders without changing host identity",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 756
+      },
+      {
+        "name": "legacy EML clip uses its matching equipment registry and renders without changing host identity",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 351
+      },
+      {
+        "name": "asset integrity and bundle path rejection fail closed without external requests",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 241
+      },
+      {
+        "name": "asset integrity and bundle path rejection fail closed without external requests",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 336
+      },
+      {
+        "name": "host translations and plain text descriptions do not introduce markup",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 673
+      },
+      {
+        "name": "host translations and plain text descriptions do not introduce markup",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 298
+      },
+      {
+        "name": "React inline callback and equal translated labels do not close an open preview",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 705
+      },
+      {
+        "name": "React inline callback and equal translated labels do not close an open preview",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 298
+      },
+      {
+        "name": "long localized RTL controls reflow at narrow width",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 848
+      },
+      {
+        "name": "long localized RTL controls reflow at narrow width",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 369
+      },
+      {
+        "name": "dark appearance keeps the readable text alternative and native controls",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 2059
+      },
+      {
+        "name": "dark appearance keeps the readable text alternative and native controls",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 750
+      },
+      {
+        "name": "partial shader initialization failure releases GPU objects and preserves fallback",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 239
+      },
+      {
+        "name": "partial shader initialization failure releases GPU objects and preserves fallback",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 263
+      },
+      {
+        "name": "packaged contribution runs independently with relative renderer imports and cleanup",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 1942
+      },
+      {
+        "name": "packaged contribution runs independently with relative renderer imports and cleanup",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 519
+      },
+      {
+        "name": "long translated instructions keep mobile Play adjacent to the visible canvas",
+        "browser": "chromium",
+        "status": "passed",
+        "duration_ms": 2348
+      },
+      {
+        "name": "long translated instructions keep mobile Play adjacent to the visible canvas",
+        "browser": "webkit",
+        "status": "passed",
+        "duration_ms": 722
+      }
+    ]
+  },
+  "linux_correction_rerun": "Not claimed by this local receipt; inspect the branch workflow for the subsequent Linux run.",
+  "original_receipt": "../summary.json",
+  "evidence_sha256": {
+    "linux-initial-failure.log": "d0d523a9c9cc956bf8f1cbedbc8ebb4ffb3de7c543f4e0a5f772d3f10d7c293c",
+    "webkit-linux-host-heading.jpeg": "3e40d88988434fc88f4153ff96d18b4adfbb64618a0ff975fea5045c940a3a44",
+    "chromium-linux-host-heading.jpeg": "a7251d8166be025a11d669330ba2b19c725ba021770e8b413a7a5c9faee92a48",
+    "macos-rerun.log": "da3e0a2eb5a57d420c3217ae8dff3f12079dabb2702859df6f38a26044d98f7f"
+  }
+}
