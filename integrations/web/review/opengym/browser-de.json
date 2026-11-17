@@ -1,0 +1,26 @@
+{
+  "browser": "157.0.8103.78",
+  "scope": "Real OpenGym guest Home → Library → exact front-plank detail sheet. Local API responses stubbed; no real account/backend/Health/native transport.",
+  "checks": {
+    "real_exercise_sheet": true,
+    "document_language_german": true,
+    "assets_deferred": true,
+    "actual_webgl": true,
+    "starts_paused": true,
+    "scoped_axe_passed": true,
+    "play_pause_keyboard_scrub_camera": true,
+    "context_loss_fallback": true,
+    "existing_media_retained": true,
+    "profile_unchanged": true
+  },
+  "pixels": {
+    "visible": 124632,
+    "total": 145728
+  },
+  "axe": {
+    "scope": ".eml-preview",
+    "violations": []
+  },
+  "errors": [],
+  "passed": true
+}

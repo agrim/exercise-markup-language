@@ -1,0 +1,48 @@
+{
+  "files": {
+    "EMLPreview.jsx": {
+      "sha256": "2b552ccba9125e1b5ac8e674317373601cb8bfd5a54a1180e2b65530286b455e",
+      "source": "integrations/web/EMLPreview.jsx",
+      "source_sha256": "2b552ccba9125e1b5ac8e674317373601cb8bfd5a54a1180e2b65530286b455e",
+      "transformation": "none"
+    },
+    "LICENSE": {
+      "sha256": "bcfa2c727e988cef23228a35db605e9cc5a1e835604da4515cc9389a54e539ba",
+      "source": "LICENSE",
+      "source_sha256": "bcfa2c727e988cef23228a35db605e9cc5a1e835604da4515cc9389a54e539ba",
+      "transformation": "none"
+    },
+    "preview.css": {
+      "sha256": "5c0305b7f9add74fe69f7864a9d9d6d3fb9ce8d3c745d13a73d9eb5100933316",
+      "source": "integrations/web/preview.css",
+      "source_sha256": "5c0305b7f9add74fe69f7864a9d9d6d3fb9ce8d3c745d13a73d9eb5100933316",
+      "transformation": "none"
+    },
+    "preview.js": {
+      "sha256": "8535a9c1e88e860bdc3d8ccf2d77e884b7c59e7ece7221226c09e4ef74d318a7",
+      "source": "integrations/web/preview.js",
+      "source_sha256": "04ea7c62783154e7015909892b827668d5b7e0acdabf7d45898555ea609467d9",
+      "transformation": "relative-renderer-imports"
+    },
+    "renderer/camera-controls.js": {
+      "sha256": "d00e518ac97b3805f364930c372f4730f17deab04437b2bd99be29c119e13cf2",
+      "source": "viewer/camera-controls.js",
+      "source_sha256": "d00e518ac97b3805f364930c372f4730f17deab04437b2bd99be29c119e13cf2",
+      "transformation": "none"
+    },
+    "renderer/mesh.js": {
+      "sha256": "17aaaeb51078f83760276a2d0ffd035e05454ae261fe9700ebd641754ac908d5",
+      "source": "viewer/mesh.js",
+      "source_sha256": "17aaaeb51078f83760276a2d0ffd035e05454ae261fe9700ebd641754ac908d5",
+      "transformation": "none"
+    }
+  },
+  "format": "eml-web-preview-package-v1",
+  "packager": {
+    "source": "integrations/web/package_preview.py",
+    "source_sha256": "ee323e5137960cecf18853efb37af44bbbdd3bce80a010053c8d9d4245e5ed33"
+  },
+  "source_modified": true,
+  "source_modified_scope": "Captured runtime inputs and packager compared with source_revision; null when Git provenance is unavailable.",
+  "source_revision": "20e2d1db698a10babadf20fb8c92ae05ba540425"
+}

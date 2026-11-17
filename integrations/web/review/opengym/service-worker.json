@@ -1,0 +1,33 @@
+{
+  "method": "Parse actual final production sw.js LAZY lists and index.html references; review upstream sw-stamp/precache/registration source. This is not an HTTPS service-worker browser network test.",
+  "upstream_revision": "e4a68a94c42a3c17cbd560d66ce2e46a7048ab99",
+  "builds": {
+    "disabled": {
+      "sw_sha256": "88043e31947ccc1140d7b6cd80daceb75a4c3dcfff70576f5cb727cedb1816cd",
+      "lazy_list_entries": 156,
+      "eml_code_and_styles_in_install_list": [],
+      "eml_export_payload_in_install_list": [],
+      "public_pilot_files_staged_in_test_build": 9,
+      "public_pilot_bytes_staged_in_test_build": 8210696
+    },
+    "enabled": {
+      "sw_sha256": "aa34f73317156daca06061293841b9d9f7392af58836df87e2733c384ebca3d3",
+      "lazy_list_entries": 162,
+      "eml_code_and_styles_in_install_list": [
+        "./assets/EMLPilot-2H6Yisa3.js",
+        "./assets/EMLPilot-BoOpyFvC.css",
+        "./assets/camera-controls-BbrnNnln.js",
+        "./assets/mesh-B8PxkhaD.js"
+      ],
+      "eml_export_payload_in_install_list": [],
+      "public_pilot_files_staged_in_test_build": 9,
+      "public_pilot_bytes_staged_in_test_build": 8210696
+    }
+  },
+  "source_sha256": {
+    "scripts/sw-stamp.mjs": "0f173f9c5ce43b8e70b7790272e223a843bfa1c404a555100b2d04fa5467ffa5",
+    "public/sw.js": "2bfeb54a84d6e8288f915e063a1356d4c5f87237d3ac74d3423b7422200938bc",
+    "src/main.jsx": "58a656f991aa51c529d9e9b9798188baddb84ad58a0bfd6899e223bde943213d"
+  },
+  "policy": "Enabled HTTPS web installs retain OpenGym\u2019s existing code/style precache policy. Caching those files does not execute the renderer or allocate WebGL. Exported model/clip data is absent from the precache lists and the preview requests it only on View. Stage public/eml-pilot only for enabled deployments."
+}

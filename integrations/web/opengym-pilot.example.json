@@ -1,0 +1,9 @@
+{
+  "format": "eml-web-map-v1",
+  "entries": [
+    {
+      "exercise_id": "0463",
+      "recipe": "exercises/plank.json"
+    }
+  ]
+}

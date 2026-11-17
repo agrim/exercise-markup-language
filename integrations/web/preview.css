@@ -1,0 +1,25 @@
+/* Scoped native controls; host typography, language and color scheme stay in charge. */
+.eml-preview { margin-block: 1rem; min-inline-size: 0; line-height: 1.5; overflow-wrap: anywhere; }
+.eml-preview *, .eml-preview *::before, .eml-preview *::after { box-sizing: border-box; }
+.eml-preview [hidden] { display: none !important; }
+.eml-preview button, .eml-preview summary, .eml-preview input {
+  font: inherit; min-block-size: 44px; min-inline-size: 44px;
+}
+.eml-preview button { padding: .5em .8em; white-space: normal; max-inline-size: 100%; cursor: pointer; }
+.eml-preview summary { padding-block: .5em; cursor: pointer; }
+.eml-preview :focus-visible { outline: 3px solid Highlight; outline-offset: 3px; }
+.eml-preview canvas {
+  display: block; inline-size: 100%; block-size: clamp(15rem, 50vh, 26rem);
+  border: 1px solid currentColor; border-radius: .5rem; background: #101a22;
+  touch-action: pan-y;
+}
+.eml-preview p { margin-block: .5em; }
+.eml-preview [role="status"]:empty { margin: 0; }
+.eml-preview-controls { display: flex; flex-wrap: wrap; gap: .5em; align-items: center; margin-block: .5em; }
+.eml-preview label, .eml-preview input[type="range"] { display: block; inline-size: 100%; }
+.eml-preview input[type="range"] { margin-inline: 0; }
+.eml-preview-clock { font-variant-numeric: tabular-nums; }
+.eml-preview a { display: inline-block; padding-block: .5em; color: inherit; text-decoration: underline; }
+@media (forced-colors: active) {
+  .eml-preview button, .eml-preview canvas { border: 1px solid CanvasText; }
+}

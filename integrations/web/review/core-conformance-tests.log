@@ -1,0 +1,123 @@
+test_finite_edges_and_very_thin_crossing (test_apparatus.ApparatusTests.test_finite_edges_and_very_thin_crossing) ... ok
+test_machine_pivots_cable_and_carriage_clear_the_torso (test_apparatus.ApparatusTests.test_machine_pivots_cable_and_carriage_clear_the_torso) ... ok
+test_actual_torso_and_thigh_mesh_stays_out_of_support_pads_and_steel (test_bench_fit.BenchSupportTests.test_actual_torso_and_thigh_mesh_stays_out_of_support_pads_and_steel) ... skipped 'The skin-surface oracle uses the optional floor-audit dependencies'
+test_moving_the_support_out_from_under_the_body_fails_a_contact_check (test_bench_fit.BenchSupportTests.test_moving_the_support_out_from_under_the_body_fails_a_contact_check) ... ok
+test_explicit_limb_targets_and_stance_take_priority (test_fixed_points.FixedPointTests.test_explicit_limb_targets_and_stance_take_priority) ... ok
+test_incompatible_inherited_pins_report_the_unsatisfied_contact (test_fixed_points.FixedPointTests.test_incompatible_inherited_pins_report_the_unsatisfied_contact) ... ok
+test_invalid_socket_and_conflicting_explicit_claims_are_rejected (test_fixed_points.FixedPointTests.test_invalid_socket_and_conflicting_explicit_claims_are_rejected) ... ok
+test_new_squats_and_hinges_hold_the_feet_on_entry_and_return (test_fixed_points.FixedPointTests.test_new_squats_and_hinges_hold_the_feet_on_entry_and_return) ... ok
+test_pose_and_nested_motions_union_pins_and_ignore_zero_amounts (test_fixed_points.FixedPointTests.test_pose_and_nested_motions_union_pins_and_ignore_zero_amounts) ... ok
+test_version_one_keeps_the_original_fk_and_rejects_new_definitions (test_fixed_points.FixedPointTests.test_version_one_keeps_the_original_fk_and_rejects_new_definitions) ... ok
+test_copying_the_ground_template_keeps_each_named_contact_during_its_phase (test_ground_vocabulary.GroundVocabulary.test_copying_the_ground_template_keeps_each_named_contact_during_its_phase) ... ok
+test_each_ground_motion_works_as_a_single_action_from_its_advertised_pose (test_ground_vocabulary.GroundVocabulary.test_each_ground_motion_works_as_a_single_action_from_its_advertised_pose) ... ok
+test_incline_pads_leave_space_for_the_lowered_chest (test_ground_vocabulary.GroundVocabulary.test_incline_pads_leave_space_for_the_lowered_chest) ... ok
+test_lowering_the_incline_surface_fails_if_the_hand_targets_stay_put (test_ground_vocabulary.GroundVocabulary.test_lowering_the_incline_surface_fails_if_the_hand_targets_stay_put) ... ok
+test_user_prefix_and_flattened_target_data (test_installation.InstalledDataTests.test_user_prefix_and_flattened_target_data) ... ok
+test_already_satisfied_grip_preserves_authored_elbow_and_twist (test_kinematics.ContactTests.test_already_satisfied_grip_preserves_authored_elbow_and_twist) ... ok
+test_chest_drives_one_rigid_bar_with_two_independent_grips (test_kinematics.ContactTests.test_chest_drives_one_rigid_bar_with_two_independent_grips) ... ok
+test_following_an_already_solved_hand_is_valid_but_self_driving_is_a_cycle (test_kinematics.ContactTests.test_following_an_already_solved_hand_is_valid_but_self_driving_is_a_cycle) ... ok
+test_gripping_driver_curls_its_fingers_while_preserving_explicit_detail (test_kinematics.ContactTests.test_gripping_driver_curls_its_fingers_while_preserving_explicit_detail) ... ok
+test_reach_limits_keep_both_segment_lengths_and_report_the_gap (test_kinematics.ContactTests.test_reach_limits_keep_both_segment_lengths_and_report_the_gap) ... ok
+test_rig_preserves_bind_landmarks_and_rotates_children_about_the_parent (test_kinematics.ContactTests.test_rig_preserves_bind_landmarks_and_rotates_children_about_the_parent) ... ok
+test_start_and_floor_anchors_do_not_move_when_root_or_knee_changes (test_kinematics.ContactTests.test_start_and_floor_anchors_do_not_move_when_root_or_knee_changes) ... ok
+test_two_points_on_one_foot_share_one_rigid_solution (test_kinematics.ContactTests.test_two_points_on_one_foot_share_one_rigid_solution) ... ok
+test_unreachable_rotated_socket_diagnostics_measure_the_socket_not_the_wrist (test_kinematics.ContactTests.test_unreachable_rotated_socket_diagnostics_measure_the_socket_not_the_wrist) ... ok
+test_barbell_pull_paths_remain_level_and_close_throughout_both_directions (test_lower_mechanics.LowerMechanics.test_barbell_pull_paths_remain_level_and_close_throughout_both_directions) ... ok
+test_crawling_and_burpee_knees_hover_above_the_floor (test_lower_mechanics.LowerMechanics.test_crawling_and_burpee_knees_hover_above_the_floor) ... ok
+test_hip_thrust_sleeve_and_bar_ride_together_clear_of_both_thighs (test_lower_mechanics.LowerMechanics.test_hip_thrust_sleeve_and_bar_ride_together_clear_of_both_thighs) ... ok
+test_kettlebell_clean_racks_on_the_outside_of_the_working_forearm (test_lower_mechanics.LowerMechanics.test_kettlebell_clean_racks_on_the_outside_of_the_working_forearm) ... ok
+test_kettlebell_clears_legs_and_forearms_do_not_enter_trunk (test_lower_mechanics.LowerMechanics.test_kettlebell_clears_legs_and_forearms_do_not_enter_trunk) ... ok
+test_loaded_pulls_extend_the_legs_without_curling_the_weight (test_lower_mechanics.LowerMechanics.test_loaded_pulls_extend_the_legs_without_curling_the_weight) ... ok
+test_plank_and_single_leg_hinge_keep_the_correct_supports (test_lower_mechanics.LowerMechanics.test_plank_and_single_leg_hinge_keep_the_correct_supports) ... ok
+test_planting_a_step_or_sled_changes_knee_angle_and_retains_support (test_lower_mechanics.LowerMechanics.test_planting_a_step_or_sled_changes_knee_angle_and_retains_support) ... ok
+test_squat_knees_follow_the_feet_across_stance_parameters (test_lower_mechanics.LowerMechanics.test_squat_knees_follow_the_feet_across_stance_parameters) ... ok
+test_trap_bar_palm_centres_on_raised_handles_and_plates_start_on_floor (test_lower_mechanics.LowerMechanics.test_trap_bar_palm_centres_on_raised_handles_and_plates_start_on_floor) ... ok
+test_user_changes_goblet_squat_without_detaching_hands_or_feet (test_lower_mechanics.LowerMechanics.test_user_changes_goblet_squat_without_detaching_hands_or_feet) ... ok
+test_backwards_knee_and_forearm_after_solving (test_posture.SolvedConstraintTests.test_backwards_knee_and_forearm_after_solving) ... ok
+test_interface_exports_the_requested_vocabulary_and_version (test_posture.SolvedConstraintTests.test_interface_exports_the_requested_vocabulary_and_version) ... ok
+test_item_direction_reference_and_unknown_references (test_posture.SolvedConstraintTests.test_item_direction_reference_and_unknown_references) ... ok
+test_legacy_registry_resolves_published_pose_not_revised_definition (test_posture.SolvedConstraintTests.test_legacy_registry_resolves_published_pose_not_revised_definition) ... ok
+test_orientation_in_world_or_another_joint_and_phase_selection (test_posture.SolvedConstraintTests.test_orientation_in_world_or_another_joint_and_phase_selection) ... ok
+test_parameters_bind_into_enforceable_constraints (test_posture.SolvedConstraintTests.test_parameters_bind_into_enforceable_constraints) ... ok
+test_parent_roll_not_a_wrist_bend_and_forearm_pronation_not_elbow_bend (test_posture.SolvedConstraintTests.test_parent_roll_not_a_wrist_bend_and_forearm_pronation_not_elbow_bend) ... ok
+test_strict_absolute_wrist_and_legacy_dispatch (test_posture.SolvedConstraintTests.test_strict_absolute_wrist_and_legacy_dispatch) ... ok
+test_support_uses_finite_rotated_face_not_unbounded_plane (test_posture.SolvedConstraintTests.test_support_uses_finite_rotated_face_not_unbounded_plane) ... ok
+test_swept_shaft_crosses_body_despite_clear_endpoints (test_posture.SolvedConstraintTests.test_swept_shaft_crosses_body_despite_clear_endpoints) ... ok
+test_travelling_repetition_checks_fixed_equipment_in_later_cycles (test_posture.SolvedConstraintTests.test_travelling_repetition_checks_fixed_equipment_in_later_cycles) ... ok
+test_unknown_socket_and_degenerate_segment_distance (test_posture.SolvedConstraintTests.test_unknown_socket_and_degenerate_segment_distance) ... ok
+test_fast_custom_motion_is_reported_at_the_frame_and_rejected_on_export (test_reference_motion.ReferenceMotionTests.test_fast_custom_motion_is_reported_at_the_frame_and_rejected_on_export) ... ok
+test_new_id_reaches_both_palms_without_half_turn_wrist_flips (test_reference_motion.ReferenceMotionTests.test_new_id_reaches_both_palms_without_half_turn_wrist_flips) ... ok
+test_asset_licence_mesh_and_native_pack (test_standard.StandardTests.test_asset_licence_mesh_and_native_pack) ... ok
+test_catalog_can_grow_while_preserving_original_108 (test_standard.StandardTests.test_catalog_can_grow_while_preserving_original_108) ... ok
+test_closed_symbols_version_cycles_fields_and_duplicate_json (test_standard.StandardTests.test_closed_symbols_version_cycles_fields_and_duplicate_json) ... ok
+test_contacts_must_be_possible_and_release_must_be_continuous (test_standard.StandardTests.test_contacts_must_be_possible_and_release_must_be_continuous) ... ok
+test_custom_parameters_modify_the_pose_and_timing (test_standard.StandardTests.test_custom_parameters_modify_the_pose_and_timing) ... ok
+test_id_independence_and_known_quaternion (test_standard.StandardTests.test_id_independence_and_known_quaternion) ... ok
+test_partial_override_and_composition (test_standard.StandardTests.test_partial_override_and_composition) ... ok
+test_portable_known_answer_vector (test_standard.StandardTests.test_portable_known_answer_vector) ... ok
+test_relative_stance_matches_explicit_metric_stance (test_standard.StandardTests.test_relative_stance_matches_explicit_metric_stance) ... ok
+test_repeat_travel_hold_and_once (test_standard.StandardTests.test_repeat_travel_hold_and_once) ... ok
+test_root_anchor_retains_a_knee_pivot_through_interpolation (test_standard.StandardTests.test_root_anchor_retains_a_knee_pivot_through_interpolation) ... ok
+test_schema_and_published_registries (test_standard.StandardTests.test_schema_and_published_registries) ... ok
+test_platforms_share_the_vertical_knee_travel_and_freezing_them_fails (test_station_supports.StationSupports.test_platforms_share_the_vertical_knee_travel_and_freezing_them_fails) ... ok
+test_prone_curl_hinge_pivot_stays_seated_in_the_frame (test_station_supports.StationSupports.test_prone_curl_hinge_pivot_stays_seated_in_the_frame) ... ok
+test_wall_support_checks_both_finite_face_contacts (test_station_supports.StationSupports.test_wall_support_checks_both_finite_face_contacts) ... ok
+test_weight_floor_includes_plate_extent_and_rotated_flat_caps (test_station_supports.StationSupports.test_weight_floor_includes_plate_extent_and_rotated_flat_caps) ... ok
+test_bird_dog_alternates_opposite_limbs_and_replants_between_reaches (test_upper_examples.UpperExamples.test_bird_dog_alternates_opposite_limbs_and_replants_between_reaches) ... ok
+test_fly_raise_and_straight_arm_pull_keep_a_soft_elbow (test_upper_examples.UpperExamples.test_fly_raise_and_straight_arm_pull_keep_a_soft_elbow) ... ok
+test_rollout_travels_on_its_axle_while_both_knees_stay_planted (test_upper_examples.UpperExamples.test_rollout_travels_on_its_axle_while_both_knees_stay_planted) ... ok
+test_shorter_raise_keeps_dumbbells_in_the_hands (test_upper_examples.UpperExamples.test_shorter_raise_keeps_dumbbells_in_the_hands) ... ok
+test_vertical_body_pull_raises_the_body_while_both_grips_stay_on_the_bar (test_upper_examples.UpperExamples.test_vertical_body_pull_raises_the_body_while_both_grips_stay_on_the_bar) ... ok
+test_personal_excursion_shortens_the_neutral_grip_curl (test_upper_posture.UpperPostureTests.test_personal_excursion_shortens_the_neutral_grip_curl) ... ok
+test_raises_and_presses_lift_a_gripped_level_load_without_breaking_the_wrist (test_upper_posture.UpperPostureTests.test_raises_and_presses_lift_a_gripped_level_load_without_breaking_the_wrist) ... ok
+test_side_plank_supports_on_the_forearm_in_front_of_the_body (test_upper_posture.UpperPostureTests.test_side_plank_supports_on_the_forearm_in_front_of_the_body) ... ok
+test_smith_bar_stays_on_the_rails_and_on_the_upper_back (test_upper_posture.UpperPostureTests.test_smith_bar_stays_on_the_rails_and_on_the_upper_back) ... ok
+test_documented_setup_motion_pairs_work_without_detail_or_contact_ik (test_upper_vocabulary.ReusableUpperVocabulary.test_documented_setup_motion_pairs_work_without_detail_or_contact_ik) ... ok
+test_supine_setups_have_forward_bending_knees_without_foot_targets (test_upper_vocabulary.ReusableUpperVocabulary.test_supine_setups_have_forward_bending_knees_without_foot_targets) ... ok
+test_access_logs_omit_request_targets (test_viewer_headers.ViewerHeaderTests.test_access_logs_omit_request_targets) ... ok
+test_cross_site_api_requests_are_rejected_before_processing (test_viewer_headers.ViewerHeaderTests.test_cross_site_api_requests_are_rejected_before_processing) ... 127.0.0.1 - - [17/Nov/2026 11:18:24] Request error
+127.0.0.1 - - [17/Nov/2026 11:18:24] Response 403 -
+127.0.0.1 - - [17/Nov/2026 11:18:24] Request error
+127.0.0.1 - - [17/Nov/2026 11:18:24] Response 403 -
+127.0.0.1 - - [17/Nov/2026 11:18:24] Request error
+127.0.0.1 - - [17/Nov/2026 11:18:24] Response 403 -
+127.0.0.1 - - [17/Nov/2026 11:18:24] Request error
+127.0.0.1 - - [17/Nov/2026 11:18:24] Response 403 -
+127.0.0.1 - - [17/Nov/2026 11:18:24] Request error
+127.0.0.1 - - [17/Nov/2026 11:18:24] Response 403 -
+ok
+test_error_responses (test_viewer_headers.ViewerHeaderTests.test_error_responses) ... 127.0.0.1 - - [17/Nov/2026 11:18:24] Request error
+127.0.0.1 - - [17/Nov/2026 11:18:24] Response 404 -
+127.0.0.1 - - [17/Nov/2026 11:18:24] Request error
+127.0.0.1 - - [17/Nov/2026 11:18:24] Response 415 -
+127.0.0.1 - - [17/Nov/2026 11:18:24] Response 400 -
+ok
+test_json_compression_varies_by_accept_encoding (test_viewer_headers.ViewerHeaderTests.test_json_compression_varies_by_accept_encoding) ... 127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+ok
+test_malformed_request_logs_omit_raw_request (test_viewer_headers.ViewerHeaderTests.test_malformed_request_logs_omit_raw_request) ... ok
+test_native_and_same_origin_clients_reach_all_api_routes (test_viewer_headers.ViewerHeaderTests.test_native_and_same_origin_clients_reach_all_api_routes) ... 127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 422 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 400 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 422 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 400 -
+ok
+test_same_origin_and_document_navigation_remain_available (test_viewer_headers.ViewerHeaderTests.test_same_origin_and_document_navigation_remain_available) ... 127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+ok
+test_successful_document_and_module (test_viewer_headers.ViewerHeaderTests.test_successful_document_and_module) ... 127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+127.0.0.1 - - [17/Nov/2026 11:18:25] Response 200 -
+ok
+
+----------------------------------------------------------------------
+Ran 84 tests in 10.058s
+
+OK (skipped=1)

@@ -1,0 +1,36 @@
+name: EML optional browser preview
+on:
+  push:
+    paths: ['integrations/web/**', 'viewer/**', 'anatomy/**', 'eml/**', 'library/**', 'compat/**', 'examples/**', 'exercises/**', '.github/workflows/web-preview.yml']
+  pull_request:
+    paths: ['integrations/web/**', 'viewer/**', 'anatomy/**', 'eml/**', 'library/**', 'compat/**', 'examples/**', 'exercises/**', '.github/workflows/web-preview.yml']
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: integrations/web/package-lock.json
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s integrations/web -p 'test_*.py' -v
+      - run: node --test viewer/*.test.mjs
+      - run: npm ci
+        working-directory: integrations/web
+      - run: npx playwright install --with-deps chromium webkit
+        working-directory: integrations/web
+      - run: npm run test:prepare && npm test
+        working-directory: integrations/web
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: optional-preview-browser-results
+          path: integrations/web/test-results/

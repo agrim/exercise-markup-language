@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-17",
+  "upstream_repository": "https://github.com/DuarteSantos8/openGym",
+  "upstream_revision": "e4a68a94c42a3c17cbd560d66ce2e46a7048ab99",
+  "pilot": {
+    "exercise_id": "0463",
+    "recipe": "exercises/plank.json",
+    "fps": 12
+  },
+  "host_tests": {
+    "passed": 69,
+    "failed": 0,
+    "files": 7
+  },
+  "locales": {
+    "files": 25,
+    "keys_per_file": 5846,
+    "added_strings": 425,
+    "helper_second_run_additions": 0
+  },
+  "production_builds": {
+    "disabled": "passed",
+    "enabled": "passed",
+    "disabled_preview_chunks": [],
+    "enabled_preview_chunks": [
+      "EMLPilot-2H6Yisa3.js",
+      "EMLPilot-BoOpyFvC.css",
+      "mesh-B8PxkhaD.js"
+    ],
+    "disabled_runtime_js_and_css_identifiers_absent": true
+  },
+  "browser_journeys": {
+    "en": "browser-en.json",
+    "de": "browser-de.json",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "axe_version": "4.14.1"
+  },
+  "media_source_unchanged": true,
+  "media_source_sha256": "45e31bbbafadc9698b058288dbd5a52002fcf549ea5d202ba6aa288e09870ace",
+  "proposal_source_sha256": {
+    "OptionalEMLMedia.jsx": "6bbea7dd34beb16d31875ef0a8f0cf4aa45e31bddd2af851beb1a8fd17505d5c",
+    "EMLPilot.jsx": "d8b1664787d0ee9af937d05143258ae032c94e68be05f3f3636a9489ee97a8c3",
+    "OptionalEMLMedia.test.jsx": "49fca0484eb821f8c24dbc8710c7369c6e144b077648ed14f05f86432bc1fa0c",
+    "locale-additions.json": "a85181d0834327893ec99cd900d07108bd4ac1096f7091ac367702aaaac33cf2",
+    "add-locales.mjs": "1e3d44de3a79c7e5d1903c1f6d4535ee47e1dc6b7eb9898430ab5cd0a7813639"
+  },
+  "tested_package_provenance": "package-provenance.json",
+  "captures": {
+    "preview-de.png": {
+      "sha256": "c39ed0127b0b9e8d8905a0839bcb5ca232d0e9a56a10bae200bc9dbe88efa3e2",
+      "visually_inspected": true
+    },
+    "fallback-de.png": {
+      "sha256": "2dfcdb3288b95593428379c4ee47ebec0c0ebe61bdc6f9183cbce2d76e542b26",
+      "visually_inspected": true
+    }
+  },
+  "limits": [
+    "Local isolated guest fixture; /api/ responses stubbed; no account or backend verification.",
+    "Original stock animation assets were not checked out; Media remained connected in its existing unavailable state. Existing media-selection unit tests passed.",
+    "German control labels are translated; host exercise description/instructions retain OpenGym English fallback where no translation exists.",
+    "Axe was scoped to .eml-preview, not the entire pre-existing OpenGym application.",
+    "No public deployment, physical GPU or screen-reader speech claim."
+  ],
+  "production_service_worker": {
+    "receipt": "service-worker.json",
+    "disabled_eml_install_entries": 0,
+    "enabled_eml_install_entries": 4,
+    "model_clip_install_entries": 0,
+    "https_browser_network_test": false
+  }
+}

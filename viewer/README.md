@@ -53,3 +53,36 @@ validation, or changing recipes cancels pending feedback. Native validation stil
 focuses the first invalid parameter on submit. Automated tests cover state and
 cancellation; actual screen-reader speech and browser combinations need separate
 verification.
+
+### Embedding and renderer lifetime
+
+`Atlas` in `mesh.js` can render the same compiled clips in an optional host panel.
+Keep the model, geometry and version-matched equipment registry together. The
+renderer does not schedule animation frames; the host owns loading, playback,
+visibility, reduced-motion behavior, accessible controls and its existing-media
+fallback. The standalone viewer remains a developer tool, not a required server
+for an embedded static clip.
+
+Call `atlas.dispose()` when that panel unmounts, when a clip setup fails, or before
+replacing its canvas. Disposal is idempotent: it removes pointer/wheel listeners,
+releases captured pointers, disconnects its resize observer, and deletes owned
+WebGL buffers, vertex arrays and programs. Shader objects are detached and deleted
+once linking finishes. A failed constructor rolls back partially created resources
+before rethrowing so the host can display its fallback. A disposed instance cannot
+be reused; its drawing and camera/clip methods do nothing. Construct a new instance
+for the next mount. Disposal does not force loss of a context owned by the canvas.
+
+The host must cancel its own pending fetches and animation frames and remove its
+own listeners/observers. On `webglcontextlost`, stop playback, dispose the renderer
+and retain the ordinary media/text fallback; a user-initiated retry can mount a new
+canvas. Do not make a lost GPU context start a workout or change exercise records.
+
+```sh
+node --test viewer/*.test.mjs
+```
+
+The lifecycle tests verify repeated mount/dispose, pointer capture loss, queued
+resize callbacks after disposal, unavailable WebGL, and rollback after partial
+shader, program, buffer, model, event-listener and observer failures. These mocked
+resource checks complement real-browser rendering and host lifecycle verification;
+they do not establish GPU memory usage or screen-reader speech.

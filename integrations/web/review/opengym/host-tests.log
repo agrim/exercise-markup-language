@@ -1,0 +1,42 @@
+
+ RUN  v4.1.12 /private/tmp/opengym-eml-host-20261117/frontend
+
+DOMException [NotSupportedError]: Failed to load iframe page "https://www.youtube-nocookie.com/embed/99QhMQoxmOk?autoplay=1&playsinline=1". Iframe page loading is disabled.
+    at #loadPage (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/html-iframe-element/HTMLIFrameElement.js:333:27)
+    at [connectedToDocument] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/html-iframe-element/HTMLIFrameElement.js:230:23)
+    at [connectedToNode] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/node/Node.js:801:53)
+    at [appendChild] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/node/Node.js:421:45)
+    at [appendChild] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/element/Element.js:1102:62)
+    at HTMLDivElement.appendChild (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/node/Node.js:314:48)
+    at insertOrAppendPlacementNode (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:14263:62)
+    at commitPlacement (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:14337:11)
+    at runWithFiberInDEV (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:1048:13)
+    at commitReconciliationEffects (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:16330:11)
+DOMException [NotSupportedError]: Failed to load iframe page "https://www.youtube-nocookie.com/embed/99QhMQoxmOk?autoplay=1&playsinline=1". Iframe page loading is disabled.
+    at #loadPage (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/html-iframe-element/HTMLIFrameElement.js:333:27)
+    at [connectedToDocument] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/html-iframe-element/HTMLIFrameElement.js:230:23)
+    at [connectedToNode] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/node/Node.js:801:53)
+    at [appendChild] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/node/Node.js:421:45)
+    at [appendChild] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/element/Element.js:1102:62)
+    at HTMLDivElement.appendChild (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/node/Node.js:314:48)
+    at insertOrAppendPlacementNode (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:14263:62)
+    at commitPlacement (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:14337:11)
+    at runWithFiberInDEV (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:1048:13)
+    at commitReconciliationEffects (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:16330:11)
+DOMException [NotSupportedError]: Failed to load iframe page "https://www.youtube-nocookie.com/embed/99QhMQoxmOk?autoplay=1&playsinline=1". Iframe page loading is disabled.
+    at #loadPage (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/html-iframe-element/HTMLIFrameElement.js:333:27)
+    at [connectedToDocument] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/html-iframe-element/HTMLIFrameElement.js:230:23)
+    at [connectedToNode] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/node/Node.js:801:53)
+    at [appendChild] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/node/Node.js:421:45)
+    at [appendChild] (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/element/Element.js:1102:62)
+    at HTMLDivElement.appendChild (file:///private/tmp/opengym-eml-host-20261117/frontend/node_modules/happy-dom/lib/nodes/node/Node.js:314:48)
+    at insertOrAppendPlacementNode (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:14263:62)
+    at commitPlacement (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:14337:11)
+    at runWithFiberInDEV (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:1048:13)
+    at commitReconciliationEffects (/private/tmp/opengym-eml-host-20261117/frontend/node_modules/react-dom/cjs/react-dom-client.development.js:16330:11)
+
+ Test Files  7 passed (7)
+      Tests  69 passed (69)
+   Start at  11:43:07
+   Duration  1.99s (transform 5.35s, setup 265ms, import 6.25s, tests 1.17s, environment 1.10s)
+
