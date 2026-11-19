@@ -32,13 +32,58 @@ This complete 1.1 document demonstrates a three-rep standing curl using the publ
 
 [Paused goblet squat](../examples/paused-goblet-look-left.json) changes stance, depth, pause and head turn without changing the global squat motion. [Diagonal reach](../examples/diagonal-reach.json) defines its own posture and compound motion, then reaches a world point with the right hand. [Travel cycle](../examples/traveling-reach.json) illustrates accumulated root displacement.
 
+## Chain movements in Python
+
+Create a `Recipe` and supply one movement at a time. Each authoring method updates the same recipe and returns it, so you can build a chain or extend it across multiple statements. A new recipe defaults to EML 1.1, a standing start, one playback and empty muscle highlights. Pass `version="1.0"` to use the 1.0 schema and vocabulary. [Python API and JSON field mappings](python-api.md)
+
+```python
+from pathlib import Path
+
+from eml import Program, Recipe
+
+recipe = Recipe("curl-and-turn", "Standing curl with head turn")
+recipe.move("bend-elbows", 1, amount=0.8, id="curl")
+(
+    recipe.phase(1, id="turn")
+    .action("bend-elbows", 0.8)
+    .action("turn-head", 0.25)
+    .return_to_start(1, id="return")
+    .muscles("biceps", "forearms")
+    .repeat(3)
+)
+
+clip = Program(recipe).compile(fps=18)
+Path("curl-and-turn.json").write_text(recipe.to_json() + "\n", encoding="utf-8")
+```
+
+`.move()` starts a new phase with one action. Use `.phase()` and successive `.action()` calls to combine movement macros at one endpoint. EML calculates each endpoint from the exercise's starting pose and interpolates from the preceding endpoint. The `turn` phase includes `bend-elbows` again to retain the curl while the head moves. The explicit return phase restores the setup for the next rep. [Phase and repetition rules](specification.md#phases-contacts-and-repetitions)
+
+| To author | Use |
+| --- | --- |
+| A starting posture and stance | `.start("standing", stance={"width": "shoulder-width"})` |
+| Phase timing and overrides | `.phase(seconds, id="lower", ease="linear", contacts=[])` or supply the same options to `.move()` |
+| A return to the setup | `.return_to_start(seconds, id="return", ease="linear")`. Pass contact or support overrides here as needed. |
+| Repeat mode, count or travel | `.repeat(3)` for a loop, or `.repeat(1, mode="hold")` for a held pose. A traveling loop can pass `travel=[x, y, z]`. |
+| Equipment and a pin to its socket | `.equipment("platform", "incline-hand-platforms", position=[0, 0, 0.25]).contact("leftPalm", "platform", socket="leftPalm")` |
+| Additional exercise-level fields | `.configure(**fields)` with standard EML field names and values |
+
+Phase IDs default to `phase-N` when you omit `id`. Supply explicit IDs when referring to phases from a constraint. Use standard EML field names such as `rootAnchor` for phase overrides, and pass `contacts=[]` explicitly to release inherited contacts. `Recipe` accepts normal EML parameter references such as `amount={"param": "depth"}` in `.move()` or `.action()`, and `Program(recipe, {"depth": 0.65})` binds the value for that evaluation.
+
+To extend an existing recipe, call `Recipe.from_document(load("exercise.json"))` with `load` imported from `eml`. The builder starts from an independent copy of the document, including its version, existing phases and optional fields.
+
+`.build()` returns an independent, structurally validated EML dictionary with parameter references intact. `.to_json()` serializes the same recipe for the CLI, viewer and other EML consumers. `Program` accepts the builder or a recipe dictionary loaded from JSON. It resolves references and parameters, and strict compilation checks the solved movement in either case. For example, compiling a recipe that uses `.move("unknown-macro", 1)` raises the same `unknown-motion` error as loading a JSON recipe with that action.
+
+The complete incline push-up example builds the catalog recipe with chained calls for the incline setup, palm contacts, pad geometry checks and intermediate phases. [Run the incline push-up example](python-api.md#author-a-supported-movement)
+
+## Validate and compile
+
 ```sh
 python -m eml validate examples/paused-goblet-look-left.json --set depth=0.66 --set stance-width=0.42
 python -m eml sample examples/paused-goblet-look-left.json --seconds 2.2
 python -m eml compile examples/diagonal-reach.json --fps 18 -o out/reach.json
 ```
 
-To send a new file programmatically:
+Load and evaluate an existing JSON recipe from Python as follows.
 
 ```python
 from eml import Program, load

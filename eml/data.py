@@ -122,6 +122,7 @@ def interface(version="1.1"):
         "eml": version,
         "versions": list(VERSIONS),
         "schema": schema(version),
+        "pythonAuthoring": load(ROOT / "interface.json")["pythonAuthoring"],
         "poses": poses,
         "motions": motions,
         "equipment": kit,

@@ -2,5 +2,6 @@
 
 from .data import Error, interface, load
 from .program import Program
+from .recipe import Recipe
 
-__all__ = ["Program", "Error", "interface", "load"]
+__all__ = ["Program", "Recipe", "Error", "interface", "load"]

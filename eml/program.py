@@ -6,6 +6,7 @@ from bisect import bisect_left
 
 from .data import Error, check_schema, registry
 from .kinematics import Kinematics
+from .recipe import Recipe
 
 ZERO = [0.0, 0.0, 0.0]
 
@@ -78,7 +79,10 @@ def channels(values, names, destination, gain=None):
 
 class Program:
     def __init__(self, recipe, parameters=None):
-        check_schema(recipe)
+        if isinstance(recipe, Recipe):
+            recipe = recipe.build()
+        else:
+            check_schema(recipe)
         self.values = parameter_values(recipe, parameters or {})
         doc = self.doc = substitute(recipe, self.values)
         check_schema(doc)  # Bound parameters must also fit their receiving sockets.

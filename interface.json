@@ -5,6 +5,11 @@
   "schema": "schema/exercise-v1.1.schema.json",
   "semantics": "docs/specification.md",
   "producerGuide": "docs/authoring.md",
+  "pythonAuthoring": {
+    "builder": "eml.Recipe",
+    "guide": "docs/python-api.md",
+    "example": "examples/fluent_incline_push_up.py"
+  },
   "catalog": "exercises/",
   "example": "examples/personal-paused-squat.json",
   "vocabulary": {

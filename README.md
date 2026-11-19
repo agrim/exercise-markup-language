@@ -2,7 +2,7 @@
 
 EML describes how to demonstrate an exercise on an articulated anatomy model. An author supplies the starting pose, equipment, motions, contacts, phase timing, repetition policy and muscle roles. Built-in and user-defined exercises use the same document format and solver. Version 1.1 measures wrist, elbow and knee motion, ground clearance and intersections between free weights and the body. An author can require a specific direction, grip clearance or contact with a finite support surface. [Posture rules and examples](docs/posture.md)
 
-**[Read the specification](docs/specification.md)** · **[Author a new movement](docs/authoring.md)** · **[Machine-readable interface](interface.json)** · **[Browse the 108 exercises](exercises/)**
+**[Specification](docs/specification.md)** · **[Authoring guide](docs/authoring.md)** · **[Python API](docs/python-api.md)** · **[Machine-readable interface](interface.json)** · **[Exercise catalog](exercises/)**
 
 ![One goblet squat recipe at two different depths](viewer/review/parameter-edit.jpg)
 
@@ -27,6 +27,8 @@ For an installable CLI and library, run `python -m pip install .` from the check
 The viewer displays the bundled mesh and serves assets locally. Choose a catalog exercise or open your own JSON file. A structurally valid raw file can be previewed with per-frame findings. The CLI rejects a failed posture check when compiling. To check every catalog entry and see diagnostics in machine-readable form, run `python -m eml catalog -o out/report.json`.
 
 ## Author at different levels
+
+Write a JSON recipe directly or chain movement calls in Python. Both forms use the same `Program` to resolve poses, actions and contacts. Export a Python-authored recipe as JSON to open it in the viewer or share it with another EML consumer. [Python quickstart and API reference](docs/python-api.md)
 
 One action can coordinate the hips, knees, ankles and trunk. A recipe can combine that action with another, override just one joint axis, or supply an independent hand target while requiring both feet to stay planted. In [the parameterized goblet squat](examples/paused-goblet-look-left.json), a single depth parameter changes the squat, a timed phase holds its bottom position, and a partial head override turns the dummy to the left. The hands continue to grip the same kettlebell. [Diagonal reach](examples/diagonal-reach.json) adds a movement with a new ID and its own local definitions.
 
