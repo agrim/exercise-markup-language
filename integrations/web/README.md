@@ -69,7 +69,7 @@ All labels are plain strings. Import `defaultLabels` to translate every key, inc
 
 Clips retain local XYZW joint quaternions, world positions, root displacement, equipment, connections, muscle roles and side focus. Use the paired renderer/model/equipment version together. Authored muscle roles are instructional labels, not activation percentages or workout measurements. [Specification](../../docs/specification.md) · [Authoring](../../docs/authoring.md) · [Conformance](../../docs/conformance.md).
 
-Code uses the repository's MIT license. Geometry separately retains the exact exported `anatomy/ATTRIBUTION.md` and its BodyParts3D/CC BY-SA terms; the visible credits link is required when redistributing the preview. The code package does not relicense anatomy assets. No OpenGym source or media is copied into this integration.
+Code uses the repository's MIT license. The exporter copies the V3 geometry credits from `anatomy/ATTRIBUTION.md`. Keep that file accessible through the preview’s credits link. The code package does not relicense anatomy assets. No OpenGym source or media is copied into this integration.
 
 ## Reproduce verification
 

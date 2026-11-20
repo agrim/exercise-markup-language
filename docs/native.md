@@ -1,8 +1,12 @@
-# Test an EML movement in the Apple wrapper
+# Native playback
+
+Exercise Studio and Simple Trainer consume ordinary EML JSON. A fluent author calls `recipe.to_json()` and the native runtime evaluates that document with `eml.Program`. The resulting clip carries the authored phases, repetition policy, apparatus, contacts and muscle roles. Exercise Studio accepts a file under **Exercises → Load EML**. [Native build and playback](https://github.com/agrim/3d-human-exercise-model/blob/main/README.md) · [Fluent authoring](python-api.md)
+
+## Historical EXM1 adapter
 
 The reference interpreter produces resolved animation. The optional Metal adapter converts its body and equipment transforms into the native player's EXM1 buffers. It writes a disposable workspace and leaves the source checkouts alone. The anatomical mesh, weights, motion and equipment geometry in that workspace come from this repository. The Swift view, shader and app target come from [the model wrapper](https://github.com/agrim/3d-human-exercise-model).
 
-Clone the two repositories as siblings. From the EML checkout, run:
+The following commands apply to the historical EXM1-only wrapper checkout. For the current wrapper use the native workflow above.
 
 ```sh
 python tools/metal_preview.py --wrapper ../3d-human-exercise-model --out /tmp/eml-metal-demo \

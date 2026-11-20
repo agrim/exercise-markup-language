@@ -11,11 +11,17 @@ rmSync(generated, { recursive: true, force: true });
 mkdirSync(generated);
 const mapping = JSON.parse(readFileSync(resolve(integration, 'manifest.example.json')));
 mapping.entries.push({ exercise_id: 'legacy:reach', recipe: 'examples/diagonal-reach.json' });
+const pilot = JSON.parse(readFileSync(resolve(integration, 'opengym-pilot.example.json')));
+mapping.entries.push(...pilot.entries);
+const python = process.env.EML_PYTHON || 'python3';
+execFileSync(python, ['-m', 'examples.fluent_incline_push_up', resolve(generated, 'incline.json')],
+  { cwd: resolve(integration, '../..'), stdio: 'inherit' });
+mapping.entries.push({ exercise_id: 'fluent:incline', recipe: 'integrations/web/tests/generated/incline.json' });
 writeFileSync(resolve(generated, 'mapping.json'), JSON.stringify(mapping));
-execFileSync(process.env.EML_PYTHON || 'python3', [resolve(integration, 'export_bundle.py'),
+execFileSync(python, [resolve(integration, 'export_bundle.py'),
   '--mapping', resolve(generated, 'mapping.json'), '--out', resolve(generated, 'bundle'),
   '--fps', '12'], { stdio: 'inherit' });
-execFileSync(process.env.EML_PYTHON || 'python3', [resolve(integration, 'package_preview.py'),
+execFileSync(python, [resolve(integration, 'package_preview.py'),
   '--out', resolve(generated, 'package')], { stdio: 'inherit' });
 await build({ entryPoints: [resolve(here, 'fixtures/react.jsx')], bundle: true, splitting: true,
   format: 'esm', outdir: resolve(generated, 'react'), jsx: 'automatic', sourcemap: true });

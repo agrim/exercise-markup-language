@@ -1,4 +1,6 @@
-# Building the anatomical dummy
+# Building the historical BodyParts3D/Z-Anatomy atlas
+
+For the current runtime surface, use the [V3 master and export workflow](../README.md).
 
 The artist-facing mesh is built from the original BodyParts3D 4.0 and Z-Anatomy atlases. The generator reads the publisher's element IDs, selects musculoskeletal structures, registers the second atlas against eight corresponding bones and emits indexed geometry in meters. The neutral hand and foot surfaces come from the same scanned body as its skeleton.
 
@@ -16,7 +18,7 @@ python3.14 -m venv /tmp/exercise-atlas-env
 /tmp/exercise-atlas-env/bin/python anatomy/rebuild/audit.py /tmp/exercise-atlas-output
 ```
 
-The upstream preparation verifies SHA-256 digests and loads Blender with embedded scripts disabled. The three generated files are `model.json`, `vertices.bin` and `indices.bin`. The package also distributes its human-readable attribution resource. [Source credits and license](../ATTRIBUTION.md)
+The upstream preparation verifies SHA-256 digests and loads Blender with embedded scripts disabled. The three generated files are `model.json`, `vertices.bin` and `indices.bin`. The package also distributes its human-readable attribution resource. [Source credits and license](ATTRIBUTION.md)
 
 ## Anatomy and visibility
 

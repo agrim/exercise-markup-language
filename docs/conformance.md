@@ -1,6 +1,10 @@
 # EML reference verification
 
-## EML 1.1
+## V3 surface
+
+The V3 skin uses the same joint and contact profile as EML 1.1. Across 108 catalog exercises sampled at nine positions per phase, the lowest skin point was 2.4 mm below the floor in the ab-wheel rollout. The OpenGym forearm plank measured 1.9 mm below the floor. Nine bench and machine recipes passed the finite-pad tests for torso contact and clearance from steel. [V3 floor measurements](evidence/v3/floor.json) · [Bench surface checks](../tests/test_bench_fit.py)
+
+## EML 1.1 release atlas
 
 The 108 catalog IDs now use the v1.1 solver and posture profile. The [strict catalog run](evidence/v1.1/catalog.json) exercised 9,564 poses with all authored constraints enabled. The [baseline screen](evidence/v1.1/baseline.json), run against the published 1.0 catalog, flagged 56 of the 108 exercises for review. Fixes cover planted support, joint bending and roll, equipment clearance, apparatus fit, contact changes and motion rate. The [paired atlas images](evidence/v1.1/upper-body.jpg) show the side plank, lateral raise and dumbbell shoulder press at comparable poses.
 

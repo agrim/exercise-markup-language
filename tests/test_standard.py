@@ -204,7 +204,10 @@ class StandardTests(unittest.TestCase):
         m = load(r / "model.json")
         self.assertEqual((r / "vertices.bin").stat().st_size, m["vertexCount"] * 40)
         self.assertEqual((r / "indices.bin").stat().st_size, m["indexCount"] * 4)
-        self.assertIn("Attribution-ShareAlike", (r / "ATTRIBUTION.md").read_text())
+        self.assertEqual(m["modelID"], "simple-trainer-v3")
+        credits = (r / "ATTRIBUTION.md").read_text()
+        self.assertIn("MakeHuman", credits)
+        self.assertIn("CC0", credits)
         with tempfile.TemporaryDirectory() as td:
             out = Path(td) / "pack"
             compile_pack([Program(minimal())], out, 4)

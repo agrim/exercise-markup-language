@@ -76,6 +76,23 @@ test('optional exact mapping does no asset work before opening; real model rende
   await assertOriginal(page);
 });
 
+test('the OpenGym plank and fluent incline push-up render with the packaged V3 human', async ({ page }) => {
+  await fixture(page);
+  for (const [exerciseID, title] of [['0463', 'Plank'], ['fluent:incline', 'Incline push-up']]) {
+    await page.evaluate(options => window.fixture.mountPackaged(options), { exerciseID, title });
+    const model = page.waitForResponse(response => response.url().endsWith('/anatomy/model.json'));
+    await open(page);
+    expect((await (await model).json()).modelID).toBe('simple-trainer-v3');
+    const image = await pixels(page);
+    expect(image.colors).toBeGreaterThan(80);
+    const credits = page.getByRole('link', { name: /credit/i });
+    const notice = await page.request.get(await credits.getAttribute('href'));
+    expect(await notice.text()).toContain('MakeHuman');
+    await expect(page.getByRole('button', { name: 'Play', exact: true })).toBeVisible();
+    await assertOriginal(page);
+  }
+});
+
 test('missing, duplicate, numeric IDs and absent text alternatives remain optional', async ({ page }) => {
   await fixture(page, { exerciseID: 'missing' });
   await expect(page.locator('#host')).toBeEmpty();

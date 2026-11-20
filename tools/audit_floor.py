@@ -82,13 +82,14 @@ class WristSurface:
             heights[ids] += weight * ((spherical - chord) @ rotations[parent, 1])
 
 
-def audit(num=5):
+def audit(num=5, *, recipes=None):
     model = load(ROOT / "anatomy/model.json")
     surface = build_surface(model)
     wrist = WristSurface(model)
     joints = model["joints"]
     out = {}
-    for path in sorted((ROOT / "exercises").glob("*.json")):
+    paths = sorted((ROOT / "exercises").glob("*.json")) if recipes is None else recipes
+    for path in paths:
         p = Program(load(path))
         extrema = []
         for i in range(len(p.doc["phases"])):

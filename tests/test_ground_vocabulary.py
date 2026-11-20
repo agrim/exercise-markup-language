@@ -1,6 +1,7 @@
 """Ground movements need usable FK and explicit, portable contacts for planted demonstrations."""
 
 import copy
+import importlib.util
 import unittest
 from math import dist
 
@@ -29,6 +30,18 @@ def personal(row, **fields):
 
 
 class GroundVocabulary(unittest.TestCase):
+    @unittest.skipUnless(importlib.util.find_spec("numpy") and importlib.util.find_spec("scipy"),
+                         "The skin-surface oracle uses the optional floor-audit dependencies")
+    def test_planted_plank_and_kneeling_skin_stays_at_floor_height(self):
+        from tools.audit_floor import audit
+
+        ids = ["plank", "knee-push-up", "ab-wheel-rollout"]
+        paths = [ROOT / "exercises" / f"{identity}.json" for identity in ids]
+        for name, (low, high) in audit(9, recipes=paths)["lowestVertexRanges"].items():
+            with self.subTest(name=name):
+                self.assertGreaterEqual(low, -.005)
+                self.assertLessEqual(high, .005)
+
     def test_each_ground_motion_works_as_a_single_action_from_its_advertised_pose(self):
         self.assertEqual(
             {r["pose"] for r in guide()},

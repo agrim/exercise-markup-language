@@ -12,4 +12,4 @@ python -m eml catalog -o out/catalog-report.json
 python -m eml validate examples/paused-goblet-look-left.json
 ```
 
-Code, schemas and original exercise descriptions use the repository's MIT license. The anatomy asset and its derivatives have separate attribution and share-alike terms in [anatomy/ATTRIBUTION.md](anatomy/ATTRIBUTION.md). Keep those notices with redistributed assets.
+Code, schemas and original exercise descriptions use the repository's MIT license. Keep the current geometry credits with redistributed runtime assets and the historical atlas credits with its master and captures. [V3 credits](anatomy/ATTRIBUTION.md) · [Historical atlas terms](anatomy/rebuild/ATTRIBUTION.md)

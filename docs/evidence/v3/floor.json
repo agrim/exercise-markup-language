@@ -1,0 +1,438 @@
+{
+  "samplesPerPhase": 9,
+  "units": "metres",
+  "lowestVertexRanges": {
+    "ab-wheel-rollout": [
+      -0.0024,
+      0.0038
+    ],
+    "arnold-press": [
+      0.0027,
+      0.0027
+    ],
+    "assisted-dip": [
+      0.3209,
+      0.5609
+    ],
+    "assisted-pull-up": [
+      0.451,
+      0.8969
+    ],
+    "band-pull-apart": [
+      -0.0004,
+      -0.0004
+    ],
+    "band-row": [
+      -0.0004,
+      -0.0004
+    ],
+    "bar-triceps-pushdown": [
+      0.0027,
+      0.0027
+    ],
+    "barbell-curl": [
+      0.0027,
+      0.0027
+    ],
+    "battle-rope-waves": [
+      -0.0004,
+      -0.0004
+    ],
+    "bear-crawl": [
+      0.0011,
+      0.0011
+    ],
+    "bench-press": [
+      0.0027,
+      0.0027
+    ],
+    "bent-over-rear-delt-fly": [
+      0.0025,
+      0.0025
+    ],
+    "bird-dog": [
+      0.0044,
+      0.0047
+    ],
+    "bodyweight-squat": [
+      -0.0004,
+      -0.0004
+    ],
+    "bulgarian-split-squat": [
+      0.0026,
+      0.0026
+    ],
+    "burpee": [
+      0.0013,
+      0.0049
+    ],
+    "cable-chest-fly": [
+      0.0027,
+      0.0027
+    ],
+    "cable-crunch": [
+      0.0037,
+      0.004
+    ],
+    "cable-curl": [
+      0.0027,
+      0.0027
+    ],
+    "cable-lateral-raise": [
+      0.0027,
+      0.0027
+    ],
+    "cable-pull-through": [
+      -0.0004,
+      -0.0004
+    ],
+    "cable-woodchop": [
+      0.0027,
+      0.0027
+    ],
+    "chest-supported-dumbbell-row": [
+      0.0027,
+      0.0027
+    ],
+    "chin-up": [
+      0.1389,
+      0.5881
+    ],
+    "close-grip-bench-press": [
+      0.0027,
+      0.0027
+    ],
+    "concentration-curl": [
+      0.0027,
+      0.0027
+    ],
+    "crunch": [
+      -0.0004,
+      -0.0004
+    ],
+    "dead-bug": [
+      0.002,
+      0.0023
+    ],
+    "deadlift": [
+      -0.0004,
+      -0.0004
+    ],
+    "decline-bench-press": [
+      0.0027,
+      0.0027
+    ],
+    "dumbbell-bench-press": [
+      0.0027,
+      0.0027
+    ],
+    "dumbbell-chest-fly": [
+      0.0027,
+      0.0027
+    ],
+    "dumbbell-curl": [
+      0.0027,
+      0.0027
+    ],
+    "dumbbell-floor-press": [
+      0.0026,
+      0.0026
+    ],
+    "dumbbell-front-raise": [
+      0.0027,
+      0.0027
+    ],
+    "dumbbell-lateral-raise": [
+      0.0027,
+      0.0027
+    ],
+    "dumbbell-romanian-deadlift": [
+      -0.0004,
+      -0.0004
+    ],
+    "dumbbell-shoulder-press": [
+      0.0027,
+      0.0027
+    ],
+    "dumbbell-shrug": [
+      0.0027,
+      0.0027
+    ],
+    "dumbbell-thruster": [
+      -0.0004,
+      -0.0004
+    ],
+    "face-pull": [
+      0.0027,
+      0.0027
+    ],
+    "farmer-carry": [
+      0.0026,
+      0.0026
+    ],
+    "front-squat": [
+      -0.0004,
+      -0.0004
+    ],
+    "glute-bridge": [
+      0.0024,
+      0.0024
+    ],
+    "goblet-carry": [
+      0.0026,
+      0.0026
+    ],
+    "goblet-squat": [
+      -0.0004,
+      -0.0004
+    ],
+    "hack-squat": [
+      0.1,
+      0.1
+    ],
+    "hammer-curl": [
+      0.0027,
+      0.0027
+    ],
+    "hanging-knee-raise": [
+      0.1435,
+      0.5037
+    ],
+    "hip-abduction": [
+      0.0794,
+      0.0856
+    ],
+    "hip-adduction": [
+      0.0813,
+      0.0889
+    ],
+    "hip-thrust": [
+      0.0026,
+      0.0026
+    ],
+    "hollow-body-hold": [
+      0.0018,
+      0.0018
+    ],
+    "incline-bench-press": [
+      0.0027,
+      0.0027
+    ],
+    "incline-dumbbell-curl": [
+      0.0027,
+      0.0027
+    ],
+    "incline-dumbbell-press": [
+      0.0027,
+      0.0027
+    ],
+    "incline-push-up": [
+      -0.0019,
+      -0.0019
+    ],
+    "inverted-row": [
+      0.0182,
+      0.0182
+    ],
+    "kettlebell-clean": [
+      -0.0014,
+      -0.0014
+    ],
+    "kettlebell-deadlift": [
+      -0.0004,
+      -0.0004
+    ],
+    "kettlebell-overhead-press": [
+      -0.0004,
+      -0.0004
+    ],
+    "kettlebell-swing": [
+      -0.0014,
+      0.0003
+    ],
+    "knee-push-up": [
+      -0.0006,
+      0.0043
+    ],
+    "lat-pulldown": [
+      0.0027,
+      0.0027
+    ],
+    "lateral-lunge": [
+      0.0026,
+      0.0026
+    ],
+    "leg-extension": [
+      0.0781,
+      0.2789
+    ],
+    "leg-press": [
+      0.4181,
+      0.4189
+    ],
+    "lunge": [
+      0.0026,
+      0.0026
+    ],
+    "lying-dumbbell-triceps-extension": [
+      0.0027,
+      0.0027
+    ],
+    "lying-leg-curl": [
+      0.2683,
+      0.2683
+    ],
+    "machine-chest-press": [
+      0.0027,
+      0.0027
+    ],
+    "machine-row": [
+      0.0027,
+      0.0027
+    ],
+    "machine-shoulder-press": [
+      0.0027,
+      0.0027
+    ],
+    "mountain-climber": [
+      0.0011,
+      0.0011
+    ],
+    "neutral-grip-lat-pulldown": [
+      0.0027,
+      0.0027
+    ],
+    "overhead-dumbbell-triceps-extension": [
+      0.0027,
+      0.0027
+    ],
+    "overhead-press": [
+      0.0027,
+      0.0027
+    ],
+    "pallof-press": [
+      0.0027,
+      0.0027
+    ],
+    "pec-deck": [
+      0.0027,
+      0.0027
+    ],
+    "plank": [
+      -0.0019,
+      -0.0019
+    ],
+    "preacher-curl": [
+      0.0027,
+      0.0027
+    ],
+    "pull-up": [
+      0.1429,
+      0.5888
+    ],
+    "push-up": [
+      0.0011,
+      0.0011
+    ],
+    "reverse-crunch": [
+      -0.0021,
+      -0.0011
+    ],
+    "reverse-lunge": [
+      0.0026,
+      0.0026
+    ],
+    "reverse-pec-deck": [
+      0.0027,
+      0.0027
+    ],
+    "romanian-deadlift": [
+      -0.0014,
+      -0.0014
+    ],
+    "rope-triceps-pushdown": [
+      0.0027,
+      0.0027
+    ],
+    "row": [
+      0.0027,
+      0.0027
+    ],
+    "russian-twist": [
+      -0.0005,
+      -0.0005
+    ],
+    "seated-cable-row": [
+      0.0027,
+      0.0027
+    ],
+    "seated-calf-raise": [
+      0.0723,
+      0.0785
+    ],
+    "seated-leg-curl": [
+      0.0784,
+      0.281
+    ],
+    "side-plank": [
+      0.003,
+      0.003
+    ],
+    "single-arm-dumbbell-row": [
+      0.0027,
+      0.0027
+    ],
+    "single-leg-glute-bridge": [
+      0.0024,
+      0.0024
+    ],
+    "single-leg-romanian-deadlift": [
+      -0.0004,
+      -0.0004
+    ],
+    "smith-machine-squat": [
+      -0.0004,
+      -0.0004
+    ],
+    "split-squat": [
+      0.0013,
+      0.0013
+    ],
+    "squat": [
+      -0.0004,
+      -0.0004
+    ],
+    "standing-calf-raise": [
+      0.0791,
+      0.0797
+    ],
+    "step-up": [
+      0.0026,
+      0.2816
+    ],
+    "straight-arm-pulldown": [
+      0.0027,
+      0.0027
+    ],
+    "suitcase-carry": [
+      0.0026,
+      0.0026
+    ],
+    "sumo-deadlift": [
+      -0.0004,
+      -0.0004
+    ],
+    "trap-bar-deadlift": [
+      -0.0004,
+      -0.0004
+    ],
+    "walking-lunge": [
+      0.0026,
+      0.0026
+    ],
+    "wall-sit": [
+      0.0026,
+      0.0026
+    ]
+  }
+}

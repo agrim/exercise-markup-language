@@ -22,7 +22,7 @@ python -m eml compile examples/diagonal-reach.json --fps 18 -o out/reach.json
 python -m viewer
 ```
 
-For an installable CLI and library, run `python -m pip install .` from the checkout. The resulting `eml` command includes the registries, 108 recipes and portable anatomy buffers. The Blender master and interactive viewer are available in the source checkout.
+For an installable CLI and library, run `python -m pip install .` from the checkout. The resulting `eml` command includes the registries, 108 recipes and portable anatomy buffers. The source checkout includes the interactive viewer. The editable V3 Blender master lives in the [model repository](https://github.com/agrim/3d-human-exercise-model/tree/main/V3).
 
 The viewer displays the bundled mesh and serves assets locally. Choose a catalog exercise or open your own JSON file. A structurally valid raw file can be previewed with per-frame findings. The CLI rejects a failed posture check when compiling. To check every catalog entry and see diagnostics in machine-readable form, run `python -m eml catalog -o out/report.json`.
 

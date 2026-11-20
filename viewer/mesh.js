@@ -34,11 +34,12 @@ layout(location=2) in uvec4 joints;layout(location=3) in vec4 weights;
 layout(location=4) in uint group;layout(location=5) in uint ao;
 uniform mat4 skin[51];uniform vec4 palette[32];uniform vec2 sides;
 uniform vec4 wristPivots[2],wristTurns[2];
-out vec3 surface,n,world;out float visibility;
+out vec3 surface,n,world;out float visibility;out vec2 fiber;
 ${common}
 void main(){
   mat4 m=skin[joints.x]*weights.x+skin[joints.y]*weights.y+skin[joints.z]*weights.z+skin[joints.w]*weights.w;
   uint tag=(ao>>8u)&255u;
+  fiber=tag==3u?vec2(float(ao>>16u)/16384.,1.):vec2(0.);
   if(tag==1u || tag==2u) {
     vec4 p=wristPivots[tag-1u], q=wristTurns[tag-1u];
     float a=float((ao>>16u)&255u),b=float(ao>>24u),t=b/(a+b);
@@ -55,22 +56,25 @@ void main(){
   world=(m*vec4(pos,1.)).xyz;gl_Position=project(world);
 }`;
 const fragment = `#version 300 es
-precision highp float;in vec3 surface,n,world;in float visibility;out vec4 color;uniform vec3 eye;
+precision highp float;in vec3 surface,n,world;in float visibility;in vec2 fiber;out vec4 color;uniform vec3 eye;
 void main(){
  vec3 N=normalize(n),L=normalize(vec3(-.48,.79,.56)),V=normalize(eye);
  float key=max(dot(N,L),0.),fill=.5+.5*dot(N,normalize(vec3(.7,.25,-.44)));
  float ambient=(.40+.18*fill+.15*max(dot(N,V),0.))*mix(.48,1.,visibility);
  float spec=pow(max(dot(N,normalize(L+V)),0.),25.);
- color=vec4(surface*(ambient+.53*key)+.06*spec,1.);
+ // The V3 fiber coordinate stays in bind space and fades below pixel resolution.
+ float phase=fiber.x*136.,resolved=1.-smoothstep(.15,.48,fwidth(phase));
+ float grain=1.+fiber.y*resolved*(.050*cos(phase*6.283185)+.022*cos(phase*12.56637));
+ color=vec4(surface*(ambient+.53*key)*grain+.06*spec,1.);
 }`;
 const propVert = `#version 300 es
 precision highp float;layout(location=0) in vec3 pos;layout(location=1) in vec3 normal;
 uniform mat4 model; uniform vec3 tint;
-out vec3 surface,n,world;out float visibility;
+out vec3 surface,n,world;out float visibility;out vec2 fiber;
 ${common}
 void main(){
  world=(model*vec4(pos,1.)).xyz;n=mat3(transpose(inverse(model)))*normal;
- surface=tint;visibility=1.;gl_Position=project(world);
+ surface=tint;visibility=1.;fiber=vec2(0.);gl_Position=project(world);
 }`;
 const floorFrag = `#version 300 es
 precision highp float;in vec3 world;out vec4 color;uniform vec3 center;
@@ -335,7 +339,7 @@ export class Atlas {
     const palette=this.model.groups.flatMap(group=>{
       if(roles.primary.includes(group))return [1,.36,.25,restricted.includes(group)?-1:1];
       if(roles.secondary.includes(group))return [1,.72,.31,restricted.includes(group)?-1:1];
-      return group==='bone'?[.78,.76,.7,1]:group==='tendon'?[.72,.71,.67,1]:[.53,.60,.64,1];
+      return group==='bone'?[.78,.76,.7,1]:group==='tendon'?[.72,.71,.67,1]:group==='shell'?[.63,.66,.68,1]:[.53,.60,.64,1];
     });
     if(this.wristJoints.length)gl.uniform4fv(this.body.u.wristTurns,this.wristJoints.flatMap(j=>{
       const q=norm(frame.rotations[j.name]);return q[3]<0?mul(q,-1):q;

@@ -35,7 +35,7 @@ The reviewed OpenGym revision is [`e4a68a94c42a3c17cbd560d66ce2e46a7048ab99`](ht
 
    The reviewed host results are recorded in [verification](VERIFICATION.md#opengym-host-validation); a standalone component test is not evidence that the host sheet integration passed.
 
-7. **Retain attribution and payload semantics.** Ship the exported license and anatomy attribution, with a visible credits route. The code's MIT license does not replace the anatomy geometry's separate CC BY-SA terms. Keep model/equipment files paired with the compiled clip's EML version. Authored muscle highlights describe the demonstration; they are not physiological measurements, workout results or replacements for OpenGym's own muscle data.
+7. **Retain attribution and payload semantics.** Ship the exported license and anatomy attribution, with a visible credits route. The V3 credits identify the MakeHuman core art, its CC0 dedication and the EML rig profile. Keep model/equipment files paired with the compiled clip's EML version. Authored muscle highlights describe the demonstration; they are not physiological measurements, workout results or replacements for OpenGym's own muscle data.
 
 8. **Propose the small patch for review.** Include the exact source revisions, one-entry mapping, export command, test results, screenshots and the chosen enablement policy. Recheck the current OpenGym ID, instructions, media flow and contribution requirements before submission. Ask maintainers to review the one movement before adding mappings. No account, backend, schema migration, language upgrade or catalogue import is required.
 

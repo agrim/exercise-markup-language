@@ -15,4 +15,4 @@ Partial browser review captured on 17 November 2026. All fifteen PNGs were opene
 
 The [summary](summary.json) records each capture's test name, engine, dimensions and SHA-256, plus the inspected source hashes and verification limits. [Verification report](../VERIFICATION.md).
 
-The code uses EML's MIT license. Anatomy imagery retains the model's separate [BodyParts3D attribution and CC BY-SA terms](../../../anatomy/ATTRIBUTION.md); these captures do not relicense those assets. No OpenGym exercise media is included.
+The code uses EML's MIT license. Anatomy imagery retains the model's separate [BodyParts3D attribution and CC BY-SA terms](../../../anatomy/rebuild/ATTRIBUTION.md); these captures do not relicense those assets. No OpenGym exercise media is included.
