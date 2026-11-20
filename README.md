@@ -38,4 +38,4 @@ The required `eml` field selects the schema, pose and motion definitions, equipm
 
 ## Renderers and collaboration
 
-The [Metal preview adapter](docs/native.md) produces animation tracks and a review workspace for the existing iOS wrapper. The language and its anatomy profile can be used independently of the wrapper or Simple Trainer. [Contribution guide](CONTRIBUTING.md) · [Conformance and evidence](docs/conformance.md) · [Anatomy licenses](anatomy/ATTRIBUTION.md)
+The [Metal preview adapter](docs/native.md) produces animation tracks and a review workspace for the existing iOS wrapper. The [optional browser preview](integrations/web/README.md) packages static clips and an accessible, disposable renderer for existing exercise libraries, including a small [OpenGym contribution example](integrations/web/OPENGYM.md). The language and its anatomy profile can be used independently of the wrapper or Simple Trainer. [Contribution guide](CONTRIBUTING.md) · [Conformance and evidence](docs/conformance.md) · [Anatomy licenses](anatomy/ATTRIBUTION.md)

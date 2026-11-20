@@ -1,0 +1,7 @@
+{
+  "format": "eml-web-map-v1",
+  "entries": [
+    {"exercise_id": "demo:squat", "recipe": "exercises/squat.json"},
+    {"exercise_id": "demo:plank", "recipe": "exercises/plank.json", "parameters": {"hold-seconds": 5}}
+  ]
+}

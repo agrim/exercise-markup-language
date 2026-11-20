@@ -81,26 +81,45 @@ void main(){
  color=vec4(mix(vec3(.17,.21,.24),vec3(.28,.34,.37),grid*.48),
    .72*exp(-.24*dist*dist));
 }`;
-function shaderProgram(gl,vert,frag) {
-  const program=gl.createProgram();
-  for (const [type,source] of [[gl.VERTEX_SHADER,vert],[gl.FRAGMENT_SHADER,frag]]) {
-    const shader=gl.createShader(type);gl.shaderSource(shader,source);gl.compileShader(shader);
-    if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(shader));
-    gl.attachShader(program,shader);gl.deleteShader(shader);
-  }
-  gl.linkProgram(program);
-  if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(program));
-  const u={};
-  for(let i=0;i<gl.getProgramParameter(program,gl.ACTIVE_UNIFORMS);i++) {
-    const name=gl.getActiveUniform(program,i).name;u[name.replace('[0]','')]=gl.getUniformLocation(program,name);
-  }
-  return {program,u};
+// Every allocation is registered before a later GL call can fail. The Atlas
+// constructor rolls these back if shader compilation, buffer upload or setup fails.
+function resource(gl,owned,type) {
+  const value=gl[`create${type}`]();
+  if(!value)throw new Error(`Unable to allocate WebGL ${type}.`);
+  owned.push({type,value});return value;
 }
-function dataBuffer(gl,target,bytes) {
-  const b=gl.createBuffer();gl.bindBuffer(target,b);gl.bufferData(target,bytes,gl.STATIC_DRAW);return b;
+function shaderProgram(gl,owned,vert,frag) {
+  const program=resource(gl,owned,'Program'),shaders=[];
+  try {
+    for (const [type,source] of [[gl.VERTEX_SHADER,vert],[gl.FRAGMENT_SHADER,frag]]) {
+      const shader=gl.createShader(type);
+      if(!shader)throw new Error('Unable to allocate WebGL shader.');
+      const entry={shader,attached:false};shaders.push(entry);
+      gl.shaderSource(shader,source);gl.compileShader(shader);
+      if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(shader));
+      gl.attachShader(program,shader);entry.attached=true;
+    }
+    gl.linkProgram(program);
+    if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(program));
+    const u={};
+    for(let i=0;i<gl.getProgramParameter(program,gl.ACTIVE_UNIFORMS);i++) {
+      const name=gl.getActiveUniform(program,i).name;u[name.replace('[0]','')]=gl.getUniformLocation(program,name);
+    }
+    return {program,u};
+  } finally {
+    // Linked programs retain their executable; shader objects need not remain
+    // attached until unmount. This also covers compile/link failures.
+    for(const {shader,attached} of shaders) {
+      if(attached)gl.detachShader(program,shader);
+      gl.deleteShader(shader);
+    }
+  }
 }
-function mesh(gl,vertices) {
-  const vao=gl.createVertexArray();gl.bindVertexArray(vao);dataBuffer(gl,gl.ARRAY_BUFFER,new Float32Array(vertices));
+function dataBuffer(gl,owned,target,bytes) {
+  const b=resource(gl,owned,'Buffer');gl.bindBuffer(target,b);gl.bufferData(target,bytes,gl.STATIC_DRAW);return b;
+}
+function mesh(gl,owned,vertices) {
+  const vao=resource(gl,owned,'VertexArray');gl.bindVertexArray(vao);dataBuffer(gl,owned,gl.ARRAY_BUFFER,new Float32Array(vertices));
   for(const [slot,off] of [[0,0],[1,12]]){gl.enableVertexAttribArray(slot);gl.vertexAttribPointer(slot,3,gl.FLOAT,false,24,off);}
   return {vao,count:vertices.length/6};
 }
@@ -153,37 +172,64 @@ export class Atlas {
     const gl=canvas.getContext('webgl2',{antialias:true,alpha:true,preserveDrawingBuffer:true});
     if(!gl)throw new Error('A WebGL 2 capable browser is required for the atlas.');
     this.gl=gl;this.canvas=canvas;this.model=model;this.kit=kit;
-    this.body=shaderProgram(gl,vertex,fragment);this.prop=shaderProgram(gl,propVert,fragment);this.floor=shaderProgram(gl,propVert,floorFrag);
-    this.wristJoints=(model.wristPivots||[]).map(name=>model.joints.find(j=>j.name===name));
-    if(this.wristJoints.length) {
-      if(this.wristJoints.length!==2 || this.wristJoints.some(j=>!j || j.parent<0))throw new Error('Invalid wrist pivots');
-      gl.useProgram(this.body.program);
-      gl.uniform4fv(this.body.u.wristPivots,this.wristJoints.flatMap(j=>[...j.position,j.parent]));
+    this.resources=[];this.listeners=[];this.pointer=new Map();this.disposed=false;
+    try {
+      this.body=shaderProgram(gl,this.resources,vertex,fragment);this.prop=shaderProgram(gl,this.resources,propVert,fragment);this.floor=shaderProgram(gl,this.resources,propVert,floorFrag);
+      this.wristJoints=(model.wristPivots||[]).map(name=>model.joints.find(j=>j.name===name));
+      if(this.wristJoints.length) {
+        if(this.wristJoints.length!==2 || this.wristJoints.some(j=>!j || j.parent<0))throw new Error('Invalid wrist pivots');
+        gl.useProgram(this.body.program);
+        gl.uniform4fv(this.body.u.wristPivots,this.wristJoints.flatMap(j=>[...j.position,j.parent]));
+      }
+      this.vao=resource(gl,this.resources,'VertexArray');gl.bindVertexArray(this.vao);
+      dataBuffer(gl,this.resources,gl.ARRAY_BUFFER,vertices);dataBuffer(gl,this.resources,gl.ELEMENT_ARRAY_BUFFER,indices);
+      for(const [slot,n,type,off,integer,normalized] of [[0,3,gl.FLOAT,0,false,false],[1,3,gl.FLOAT,12,false,false],
+        [2,4,gl.UNSIGNED_BYTE,24,true,false],[3,4,gl.UNSIGNED_BYTE,28,false,true],[4,1,gl.UNSIGNED_INT,32,true,false],[5,1,gl.UNSIGNED_INT,36,true,false]]) {
+        gl.enableVertexAttribArray(slot);if(integer)gl.vertexAttribIPointer(slot,n,type,40,off);else gl.vertexAttribPointer(slot,n,type,normalized,40,off);
+      }
+      this.parts=Object.fromEntries(['box','rod','sphere','plane'].map(name=>[name,mesh(gl,this.resources,primitive(name))]));
+      gl.enable(gl.DEPTH_TEST);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
+      this.yaw=25;this.pitch=8;this.zoom=1;this.time=0;
+      const listen=(type,handler,options)=>{
+        this.listeners.push({type,handler,options});canvas.addEventListener(type,handler,options);
+      };
+      listen('pointerdown',e=>{canvas.setPointerCapture(e.pointerId);this.pointer.set(e.pointerId,[e.clientX,e.clientY]);});
+      listen('pointermove',e=>{
+        const old=this.pointer.get(e.pointerId);if(!old)return;
+        const other=[...this.pointer].find(([id])=>id!==e.pointerId)?.[1];
+        if(other){const a=Math.hypot(old[0]-other[0],old[1]-other[1]),b=Math.hypot(e.clientX-other[0],e.clientY-other[1]);if(a>1)this.scaleZoom(b/a);}
+        else{this.yaw+=(e.clientX-old[0])*.5;this.pitch=Math.min(85,Math.max(-65,this.pitch+(e.clientY-old[1])*.35));}
+        this.pointer.set(e.pointerId,[e.clientX,e.clientY]);this.draw();
+      });
+      for(const event of ['pointerup','pointercancel','lostpointercapture'])listen(event,e=>this.pointer.delete(e.pointerId));
+      listen('wheel',e=>{e.preventDefault();this.scaleZoom(Math.exp(-e.deltaY*.001));this.draw();},{passive:false});
+      this.resizeObserver=new ResizeObserver(()=>this.draw());this.resizeObserver.observe(canvas);
+    } catch(error) {
+      this.dispose();throw error;
     }
-    this.vao=gl.createVertexArray();gl.bindVertexArray(this.vao);dataBuffer(gl,gl.ARRAY_BUFFER,vertices);dataBuffer(gl,gl.ELEMENT_ARRAY_BUFFER,indices);
-    for(const [slot,n,type,off,integer,normalized] of [[0,3,gl.FLOAT,0,false,false],[1,3,gl.FLOAT,12,false,false],
-      [2,4,gl.UNSIGNED_BYTE,24,true,false],[3,4,gl.UNSIGNED_BYTE,28,false,true],[4,1,gl.UNSIGNED_INT,32,true,false],[5,1,gl.UNSIGNED_INT,36,true,false]]) {
-      gl.enableVertexAttribArray(slot);if(integer)gl.vertexAttribIPointer(slot,n,type,40,off);else gl.vertexAttribPointer(slot,n,type,normalized,40,off);
-    }
-    this.parts=Object.fromEntries(['box','rod','sphere','plane'].map(name=>[name,mesh(gl,primitive(name))]));
-    gl.enable(gl.DEPTH_TEST);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
-    this.yaw=25;this.pitch=8;this.zoom=1;this.time=0;
-    this.pointer=new Map();
-    canvas.addEventListener('pointerdown',e=>{canvas.setPointerCapture(e.pointerId);this.pointer.set(e.pointerId,[e.clientX,e.clientY]);});
-    canvas.addEventListener('pointermove',e=>{
-      const old=this.pointer.get(e.pointerId);if(!old)return;
-      const other=[...this.pointer].find(([id])=>id!==e.pointerId)?.[1];
-      if(other){const a=Math.hypot(old[0]-other[0],old[1]-other[1]),b=Math.hypot(e.clientX-other[0],e.clientY-other[1]);if(a>1)this.scaleZoom(b/a);}
-      else{this.yaw+=(e.clientX-old[0])*.5;this.pitch=Math.min(85,Math.max(-65,this.pitch+(e.clientY-old[1])*.35));}
-      this.pointer.set(e.pointerId,[e.clientX,e.clientY]);this.draw();
-    });
-    for(const event of ['pointerup','pointercancel'])canvas.addEventListener(event,e=>this.pointer.delete(e.pointerId));
-    canvas.addEventListener('wheel',e=>{e.preventDefault();this.scaleZoom(Math.exp(-e.deltaY*.001));this.draw();},{passive:false});
-    new ResizeObserver(()=>this.draw()).observe(canvas);
   }
-  scaleZoom(scale){this.zoom=Math.max(.45,Math.min(3.5,this.zoom*scale));}
-  setClip(clip){this.clip=clip;this.bounds=extent(clip,this.model.joints,this.kit);this.time=0;this.camera('recipe');}
+  dispose() {
+    if(this.disposed)return;
+    this.disposed=true;
+    this.resizeObserver?.disconnect();
+    for(const {type,handler,options} of this.listeners)this.canvas.removeEventListener(type,handler,options);
+    this.listeners.length=0;
+    for(const id of this.pointer.keys()) {
+      // A canvas may already have been detached or lost the active pointer.
+      try {if(this.canvas.hasPointerCapture(id))this.canvas.releasePointerCapture(id);} catch {}
+    }
+    this.pointer.clear();
+    const gl=this.gl;
+    gl.useProgram(null);gl.bindVertexArray(null);
+    gl.bindBuffer(gl.ARRAY_BUFFER,null);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,null);
+    for(const {type,value} of this.resources.reverse())gl[`delete${type}`](value);
+    this.resources.length=0;
+    this.clip=null;this.frame=null;this.bounds=null;this.model=null;this.kit=null;
+  }
+  scaleZoom(scale){if(!this.disposed)this.zoom=Math.max(.45,Math.min(3.5,this.zoom*scale));}
+  setClip(clip){if(this.disposed)return;this.clip=clip;this.bounds=extent(clip,this.model.joints,this.kit);this.time=0;this.camera('recipe');}
   camera(view){
+    if(this.disposed)return;
     const [yaw,pitch]=({front:[0,8],side:[90,8],back:[180,8]})[view]||this.clip?.camera||[25,8];
     this.yaw=yaw;this.pitch=pitch;this.zoom=1;this.draw();
   }
@@ -267,7 +313,7 @@ export class Atlas {
     return {...b,rotations,positions,equipment,diagnostics:(t<.5?a:b).diagnostics};
   }
   draw() {
-    if(!this.clip)return;
+    if(this.disposed||!this.clip)return;
     // Sidebar phase/diagnostic text must stay current even when the browser skips
     // the offscreen canvas. Avoid GPU work and layout reads, not logical time.
     const frame=this.sample(this.time);

@@ -1,0 +1,626 @@
+{
+  "date_utc": "2026-11-17T07:45:31.171180+00:00",
+  "scope": "Real Playwright browser tests of the optional EML browser preview and packaged runtime; original media is a sibling test-fixture control, not a deployed OpenGym installation.",
+  "host": "macOS arm64; Node24.21.0; Playwright1.65.1; axe-core4.14.0",
+  "engines": {
+    "chromium": "159.0.8154.6 (revision1255)",
+    "webkit": "27.2 (revision2388)"
+  },
+  "stats": {
+    "startTime": "2026-11-17T07:43:43.002Z",
+    "duration": 45856.653,
+    "expected": 43,
+    "skipped": 1,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "counts": {
+    "passed": 43,
+    "failed": 0,
+    "skipped": 1
+  },
+  "scenario_count": 22,
+  "records": [
+    {
+      "browser": "chromium",
+      "name": "optional exact mapping does no asset work before opening; real model renders paused",
+      "status": "passed",
+      "duration_ms": 1246,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "optional exact mapping does no asset work before opening; real model renders paused",
+      "status": "passed",
+      "duration_ms": 1085,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "missing, duplicate, numeric IDs and absent text alternatives remain optional",
+      "status": "passed",
+      "duration_ms": 112,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "missing, duplicate, numeric IDs and absent text alternatives remain optional",
+      "status": "passed",
+      "duration_ms": 201,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "keyboard play, pause, scrub and camera controls require no dragging",
+      "status": "passed",
+      "duration_ms": 1489,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "keyboard play, pause, scrub and camera controls require no dragging",
+      "status": "passed",
+      "duration_ms": 468,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "one cycle ends paused and never starts another automatically",
+      "status": "passed",
+      "duration_ms": 1189,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "one cycle ends paused and never starts another automatically",
+      "status": "passed",
+      "duration_ms": 657,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "unmount, repeated reopen and independent instances release owned resources",
+      "status": "passed",
+      "duration_ms": 7711,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "unmount, repeated reopen and independent instances release owned resources",
+      "status": "passed",
+      "duration_ms": 1415,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "cancel pending fetch and replace exercise without late canvas or stale result",
+      "status": "passed",
+      "duration_ms": 692,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "cancel pending fetch and replace exercise without late canvas or stale result",
+      "status": "passed",
+      "duration_ms": 287,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "asset error retains original media and explicit reopen retries cleanly",
+      "status": "passed",
+      "duration_ms": 809,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "asset error retains original media and explicit reopen retries cleanly",
+      "status": "passed",
+      "duration_ms": 345,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "unsupported WebGL and lost context leave an accessible original-media fallback",
+      "status": "passed",
+      "duration_ms": 910,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "unsupported WebGL and lost context leave an accessible original-media fallback",
+      "status": "passed",
+      "duration_ms": 464,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "reduced motion starts paused and preference changes stop explicit playback",
+      "status": "passed",
+      "duration_ms": 1537,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "reduced motion starts paused and preference changes stop explicit playback",
+      "status": "passed",
+      "duration_ms": 3971,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "offscreen and visibility changes pause without auto-resume",
+      "status": "passed",
+      "duration_ms": 1301,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "offscreen and visibility changes pause without auto-resume",
+      "status": "passed",
+      "duration_ms": 618,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "accessible semantics and 320px enlarged text preserve controls and descriptions",
+      "status": "passed",
+      "duration_ms": 1005,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "accessible semantics and 320px enlarged text preserve controls and descriptions",
+      "status": "passed",
+      "duration_ms": 602,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "forced colors retain native control affordances",
+      "status": "passed",
+      "duration_ms": 764,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "forced colors retain native control affordances",
+      "status": "skipped",
+      "duration_ms": 127,
+      "annotations": [
+        {
+          "type": "skip",
+          "description": "Playwright WebKit does not emulate forced-colors. Chromium checks this preference.",
+          "location": {
+            "file": "/private/tmp/eml-opengym-browser-20261117/integrations/web/tests/preview.spec.mjs",
+            "line": 264,
+            "column": 8
+          }
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "name": "React StrictMode cleanup and prop changes preserve one optional instance",
+      "status": "passed",
+      "duration_ms": 1188,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "React StrictMode cleanup and prop changes preserve one optional instance",
+      "status": "passed",
+      "duration_ms": 400,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "legacy EML clip uses its matching equipment registry and renders without changing host identity",
+      "status": "passed",
+      "duration_ms": 789,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "legacy EML clip uses its matching equipment registry and renders without changing host identity",
+      "status": "passed",
+      "duration_ms": 371,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "asset integrity and bundle path rejection fail closed without external requests",
+      "status": "passed",
+      "duration_ms": 247,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "asset integrity and bundle path rejection fail closed without external requests",
+      "status": "passed",
+      "duration_ms": 442,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "host translations and plain text descriptions do not introduce markup",
+      "status": "passed",
+      "duration_ms": 674,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "host translations and plain text descriptions do not introduce markup",
+      "status": "passed",
+      "duration_ms": 374,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "React inline callback and equal translated labels do not close an open preview",
+      "status": "passed",
+      "duration_ms": 736,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "React inline callback and equal translated labels do not close an open preview",
+      "status": "passed",
+      "duration_ms": 354,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "long localized RTL controls reflow at narrow width",
+      "status": "passed",
+      "duration_ms": 848,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "long localized RTL controls reflow at narrow width",
+      "status": "passed",
+      "duration_ms": 393,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "dark appearance keeps the readable text alternative and native controls",
+      "status": "passed",
+      "duration_ms": 1982,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "dark appearance keeps the readable text alternative and native controls",
+      "status": "passed",
+      "duration_ms": 775,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "partial shader initialization failure releases GPU objects and preserves fallback",
+      "status": "passed",
+      "duration_ms": 211,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "partial shader initialization failure releases GPU objects and preserves fallback",
+      "status": "passed",
+      "duration_ms": 258,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "packaged contribution runs independently with relative renderer imports and cleanup",
+      "status": "passed",
+      "duration_ms": 1792,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "packaged contribution runs independently with relative renderer imports and cleanup",
+      "status": "passed",
+      "duration_ms": 545,
+      "annotations": []
+    },
+    {
+      "browser": "chromium",
+      "name": "long translated instructions keep mobile Play adjacent to the visible canvas",
+      "status": "passed",
+      "duration_ms": 2294,
+      "annotations": []
+    },
+    {
+      "browser": "webkit",
+      "name": "long translated instructions keep mobile Play adjacent to the visible canvas",
+      "status": "passed",
+      "duration_ms": 695,
+      "annotations": []
+    }
+  ],
+  "source_sha256": {
+    "integrations/web/preview.js": "04ea7c62783154e7015909892b827668d5b7e0acdabf7d45898555ea609467d9",
+    "integrations/web/preview.css": "5c0305b7f9add74fe69f7864a9d9d6d3fb9ce8d3c745d13a73d9eb5100933316",
+    "integrations/web/EMLPreview.jsx": "2b552ccba9125e1b5ac8e674317373601cb8bfd5a54a1180e2b65530286b455e",
+    "integrations/web/export_bundle.py": "63f64d01c4914f8060cea7f4b0f8c0fa51f05eb96926866663a301c702a57ccb",
+    "integrations/web/package_preview.py": "ee323e5137960cecf18853efb37af44bbbdd3bce80a010053c8d9d4245e5ed33",
+    "viewer/mesh.js": "17aaaeb51078f83760276a2d0ffd035e05454ae261fe9700ebd641754ac908d5",
+    "viewer/camera-controls.js": "d00e518ac97b3805f364930c372f4730f17deab04437b2bd99be29c119e13cf2",
+    "integrations/web/package-lock.json": "cd814870f8c4577b28310b4b9c6e85698b78eda71ecff7430fbb54389356b070",
+    "integrations/web/tests/preview.spec.mjs": "34d2acabf3741f28319408602a015476d81503864b45315429dd8d5f64eaeb38",
+    "integrations/web/tests/instrumentation.mjs": "eb81a139189b9c39fb1f2852e068e03b67749057aadf7b6094f3c4ae723421b8",
+    "integrations/web/tests/prepare.mjs": "24baeff945dc65b4be1310b092c7e7a0316c7d8d824c84fb303a1f886805890f",
+    "integrations/web/tests/server.mjs": "010f554131412ae42f12b718d22b33cbef4bf068fb03d24be74135d1fb5a1fe6",
+    "integrations/web/tests/fixtures/fixture.css": "d82238253311412dd2ce5082b8fb5dc0ec73c2e8e70d3d67f4969911d7f59650",
+    "integrations/web/tests/fixtures/fixture.js": "6e88737b7192947e16fba495f7fcc702d2527a22abe5bb18b1caa7af08e5381e",
+    "integrations/web/tests/fixtures/index.html": "9c5cb14e4a7974eb5aa3c58ec6a08abb9eaad12ad59f86334bfbc2c6c872b041",
+    "integrations/web/tests/fixtures/react.html": "422d6bae9898761c0b639b1104fea7b00f44843657c44e48fa7ec72bf07fd388",
+    "integrations/web/tests/fixtures/react.jsx": "f6082d326a4e2a07221498d7f6f3d4e207f2a9c590cb3dd8695543bfb090295a"
+  },
+  "captures": [
+    {
+      "file": "captures/chromium-paused-render.png",
+      "test": "optional exact mapping does no asset work before opening; real model renders paused",
+      "browser": "chromium",
+      "attachment": "paused-render",
+      "sha256": "52d8ebd6f6a3845b01ea7f9d4f9a5cc41b7bd72d3eab266bf1dfc11e4642743e",
+      "width": 1024,
+      "height": 900
+    },
+    {
+      "file": "captures/webkit-paused-render.png",
+      "test": "optional exact mapping does no asset work before opening; real model renders paused",
+      "browser": "webkit",
+      "attachment": "paused-render",
+      "sha256": "252200c3cee264f07e600a2ebaf27220ac90a7cae778977c48d94945c027160b",
+      "width": 1024,
+      "height": 900
+    },
+    {
+      "file": "captures/chromium-narrow-enlarged-controls.png",
+      "test": "accessible semantics and 320px enlarged text preserve controls and descriptions",
+      "browser": "chromium",
+      "attachment": "narrow-enlarged-controls",
+      "sha256": "29a52bd69ce04a7265c05095c281af6775e7b734fa9318df1b9ae412468d6a5d",
+      "width": 256,
+      "height": 2389
+    },
+    {
+      "file": "captures/webkit-narrow-enlarged-controls.png",
+      "test": "accessible semantics and 320px enlarged text preserve controls and descriptions",
+      "browser": "webkit",
+      "attachment": "narrow-enlarged-controls",
+      "sha256": "0c58c6f78949f65d81a85300d844c21ce0fc8744d08c265ebca28ab6852d1bd6",
+      "width": 256,
+      "height": 2389
+    },
+    {
+      "file": "captures/chromium-forced-colors.png",
+      "test": "forced colors retain native control affordances",
+      "browser": "chromium",
+      "attachment": "forced-colors",
+      "sha256": "0580a9bb31caeda50b3daa81ea0bad030dcdd54bf2738807a0b2516bdd410819",
+      "width": 672,
+      "height": 789
+    },
+    {
+      "file": "captures/chromium-legacy-render.png",
+      "test": "legacy EML clip uses its matching equipment registry and renders without changing host identity",
+      "browser": "chromium",
+      "attachment": "legacy-render",
+      "sha256": "f457c0dda97e652b331931e02ce466c8d74e569f388b920222c12535e344adc0",
+      "width": 672,
+      "height": 789
+    },
+    {
+      "file": "captures/webkit-legacy-render.png",
+      "test": "legacy EML clip uses its matching equipment registry and renders without changing host identity",
+      "browser": "webkit",
+      "attachment": "legacy-render",
+      "sha256": "d1f20b32441e46d31d03fe7d1aa9dac598091192fa6e59e8ada9df26b37ee932",
+      "width": 672,
+      "height": 789
+    },
+    {
+      "file": "captures/chromium-rtl-long-labels.png",
+      "test": "long localized RTL controls reflow at narrow width",
+      "browser": "chromium",
+      "attachment": "rtl-long-labels",
+      "sha256": "9b95c1bab938fd8d192d8e00183f07a1269be3d293786b17195402c98d951257",
+      "width": 288,
+      "height": 1121
+    },
+    {
+      "file": "captures/webkit-rtl-long-labels.png",
+      "test": "long localized RTL controls reflow at narrow width",
+      "browser": "webkit",
+      "attachment": "rtl-long-labels",
+      "sha256": "09eff4694e41505bd11097ca4078296d6fd07c9fb444ec792d661e1e68f48825",
+      "width": 288,
+      "height": 1121
+    },
+    {
+      "file": "captures/chromium-dark-paused.png",
+      "test": "dark appearance keeps the readable text alternative and native controls",
+      "browser": "chromium",
+      "attachment": "dark-paused",
+      "sha256": "60d20d1996f6a4d49f30f63172168f4f8d04e1a1d7832c8c2ba4685a1db9acf2",
+      "width": 672,
+      "height": 789
+    },
+    {
+      "file": "captures/webkit-dark-paused.png",
+      "test": "dark appearance keeps the readable text alternative and native controls",
+      "browser": "webkit",
+      "attachment": "dark-paused",
+      "sha256": "b39946462ca0186082f225593649f41a3c6579e678d4af8f1778fa17796e435c",
+      "width": 672,
+      "height": 789
+    },
+    {
+      "file": "captures/chromium-packaged-preview.png",
+      "test": "packaged contribution runs independently with relative renderer imports and cleanup",
+      "browser": "chromium",
+      "attachment": "packaged-preview",
+      "sha256": "972632f46b5285458cfa00ecd32ae4add778d3fa4da776dca7420c753e4fb912",
+      "width": 672,
+      "height": 789
+    },
+    {
+      "file": "captures/webkit-packaged-preview.png",
+      "test": "packaged contribution runs independently with relative renderer imports and cleanup",
+      "browser": "webkit",
+      "attachment": "packaged-preview",
+      "sha256": "392f811eb25e67e276b0f9bda8b250ba4e60f9a2ebd5050140ab5439e52628a1",
+      "width": 672,
+      "height": 789
+    },
+    {
+      "file": "captures/chromium-mobile-long-instructions.png",
+      "test": "long translated instructions keep mobile Play adjacent to the visible canvas",
+      "browser": "chromium",
+      "attachment": "mobile-long-instructions",
+      "sha256": "1dee7609634bf0d11fb04e86676f4ff71157f8e57336fc8c1a89a33daeb1aa52",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "captures/webkit-mobile-long-instructions.png",
+      "test": "long translated instructions keep mobile Play adjacent to the visible canvas",
+      "browser": "webkit",
+      "attachment": "mobile-long-instructions",
+      "sha256": "ec708c1979bf0cf0027ce6a83d331d223bb4248a611a527900db084372fb4528",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "limits": [
+    "The WebKit forced-colors slot is intentionally skipped because Playwright WebKit cannot emulate that preference; Chromium passes it.",
+    "Visibilitychange policy uses a synthetic document-hidden signal; offscreen pause uses actual browser intersection/scrolling.",
+    "Automated axe and keyboard checks do not establish screen-reader speech, physical mobile GPU performance, all browsers or production OpenGym adoption.",
+    "No Apple native UI, physical sensors, workout state, Health or paired transport changes are included in this browser scope."
+  ],
+  "resolved_findings": [
+    "Reader originally rejected a valid compiler duplicate endpoint timestamp; real squat rendering caught it and final tests pass.",
+    "RTL current/total visual clock now stays LTR instead of reversing duration order.",
+    "Dark-theme credits link originally failed contrast in both browsers; inherited host text color retains underline and passes final axe scans.",
+    "Forced-colors initial test used programmatic focus after mouse input; corrected to real Tab so focus-visible testing reflects keyboard behavior.",
+    "Unavailable copy no longer promises that the host original media is itself available: the final default reads Movement preview unavailable.",
+    "Long translated host instructions previously separated Play from the canvas, so reaching Play could immediately trigger offscreen pause. Playback controls now directly follow the canvas; both engines pass the 390x844 long-German-instructions regression."
+  ],
+  "visual_review": {
+    "status": "complete",
+    "date": "2026-11-17",
+    "capture_count": 15,
+    "method": "Each final PNG was opened and visually inspected after the passing 44-slot browser run.",
+    "observations": [
+      "Standard and packaged previews show rendered anatomy with native controls immediately below the canvas; text and credits remain visible.",
+      "At 320 CSS pixels and 200% text, labels and camera controls wrap without clipping or horizontal overflow.",
+      "Long Arabic labels reflow in RTL; the current/total numeric clock preserves left-to-right ordering.",
+      "Dark captures retain readable instructions, controls and underlined attribution; Chromium forced colors retains visible keyboard focus.",
+      "Both EML 1.0 legacy captures show rendered anatomy and matching descriptions.",
+      "At 390 by 844 CSS pixels, long German host instructions follow the controls; the canvas and Play/Pause remain visible while playback advances."
+    ],
+    "scope": "Selected standalone integration fixture states, not a full OpenGym product audit, physical device review or screen-reader speech validation."
+  },
+  "raw_evidence_root": "/tmp/eml-browser-validation-20261117",
+  "other_suites": {
+    "viewer_node": {
+      "executed": 43,
+      "passed": 43,
+      "failed": 0,
+      "skipped": 0,
+      "duration_ms": 137.935208,
+      "log_sha256": "4f97839446d43fd965c73bf2c11ac081adbd60875a58f14bae7b0c73bf0bda0c"
+    },
+    "exporter_and_packager": {
+      "executed": 19,
+      "passed": 19,
+      "failed": 0,
+      "skipped": 0,
+      "duration_seconds": 0.826,
+      "log_sha256": "11cb01c9c663e9100042fc4d7fd7f1649f4d7604b3c13c69d67f90601512d959"
+    },
+    "core_conformance": {
+      "executed": 84,
+      "passed": 83,
+      "failed": 0,
+      "skipped": 1,
+      "duration_seconds": 10.058,
+      "skip_test": "test_actual_torso_and_thigh_mesh_stays_out_of_support_pads_and_steel",
+      "skip_reason": "The skin-surface oracle uses the optional floor-audit dependencies",
+      "log_sha256": "533821b76d251d2fa533224146bdc43f4ff5e02054b5d599f14be93eaf918de7"
+    }
+  },
+  "simple_trainer_compatibility": {
+    "passed": true,
+    "vendor_revision": "4a0c47b9cc9a3fd42455bb03bd963c8cb9f3ba43",
+    "compiler_fingerprint": "1ca7713a0c23c65fd97f450993023a4094691bde859a4fb5cbb8c1a965adbfe1",
+    "independently_recomputed_from_vendor": true,
+    "old_bundle": "/tmp/simplifit-eml-web-demo-20261117",
+    "tested_bundle": "/tmp/eml-opengym-browser-20261117/integrations/web/tests/generated/bundle",
+    "fps": 12,
+    "shared_assets": [
+      {
+        "path": "LICENSE.eml",
+        "sha256": "bcfa2c727e988cef23228a35db605e9cc5a1e835604da4515cc9389a54e539ba",
+        "bytes_identical": true
+      },
+      {
+        "path": "anatomy/model.json",
+        "sha256": "f3d95b17d0733832e85f1d9fdeefab12fa5be4fef65ec68d37f0ae61872b4a2d",
+        "bytes_identical": true
+      },
+      {
+        "path": "anatomy/vertices.bin",
+        "sha256": "4d5dd443c21d9bec15bcaf2def3f1b853ddb2d60de7d9a89f0c7df974831b625",
+        "bytes_identical": true
+      },
+      {
+        "path": "anatomy/indices.bin",
+        "sha256": "4664b400e13d36c2a1899de7b6d00fd960f27b6a9caebcc520074be79cc4a363",
+        "bytes_identical": true
+      },
+      {
+        "path": "anatomy/ATTRIBUTION.md",
+        "sha256": "1f40d9fc1c3c2d4ae790456f678ff0dd03baffb0bfe628e73f571471719a624d",
+        "bytes_identical": true
+      },
+      {
+        "path": "equipment/1.1.json",
+        "sha256": "50bdeb8236d63283140850ec62a32ae2f6623ea42cc3168c493a64fce6e4c4f7",
+        "bytes_identical": true
+      }
+    ],
+    "entries": [
+      {
+        "exercise_id": "demo:squat",
+        "entry_identical": true,
+        "recipe": {
+          "sha256": "9c06f3eef2f8a5459119902e6e5781fa4c3e105c82449bfdbd94b17ccf95729a",
+          "bytes_identical": true
+        },
+        "clip": {
+          "sha256": "6deda979e933693a6139a547d1af0eed4c5021b9a50b972520940d5995c7a583",
+          "bytes_identical": true
+        }
+      },
+      {
+        "exercise_id": "demo:plank",
+        "entry_identical": true,
+        "recipe": {
+          "sha256": "592c091382325f4f81d7ec9afdb5b868d2d37878b65db89fbdd0a40b2579241b",
+          "bytes_identical": true
+        },
+        "clip": {
+          "sha256": "c8ca87d23b9126de72072bf6fd7cde81bc844e4f1a0c43b6ec75e9c3c5f247bd",
+          "bytes_identical": true
+        }
+      }
+    ],
+    "additional_test_entry": "legacy:reach exercises EML 1.0 with a separate equipment/1.0.json; it does not alter the two existing mappings.",
+    "rechecked_at_utc": "2026-11-17T07:45:31.184280+00:00"
+  }
+}

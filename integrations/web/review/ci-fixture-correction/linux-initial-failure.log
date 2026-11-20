@@ -1,0 +1,136 @@
+browser	Run npm run test:prepare && npm test	﻿2026-11-17T08:00:11.7044108Z ##[group]Run npm run test:prepare && npm test
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7044397Z ^[[36;1mnpm run test:prepare && npm test^[[0m
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7063643Z shell: /usr/bin/bash -e {0}
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7063850Z env:
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7064056Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7064370Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7064818Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7065100Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7065366Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7065658Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7065888Z ##[endgroup]
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7754711Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7755117Z > test:prepare
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7755470Z > node tests/prepare.mjs
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:11.7755648Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:13.2167217Z Exported 3 exercises to /home/runner/work/exercise-markup-language/exercise-markup-language/integrations/web/tests/generated/bundle/manifest.json
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:13.2735140Z Packaged optional EML preview to /home/runner/work/exercise-markup-language/exercise-markup-language/integrations/web/tests/generated/package
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:13.4307547Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:13.4308237Z > test
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:13.4308585Z > playwright test
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:13.4308815Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:14.1487877Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:14.1488759Z Running 44 tests using 1 worker
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:14.1489024Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:17.3713304Z   ✓   1 [chromium] › tests/preview.spec.mjs:43:1 › optional exact mapping does no asset work before opening; real model renders paused (1.6s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:17.5612363Z   ✓   2 [chromium] › tests/preview.spec.mjs:63:1 › missing, duplicate, numeric IDs and absent text alternatives remain optional (178ms)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:20.8473799Z   ✓   3 [chromium] › tests/preview.spec.mjs:77:1 › keyboard play, pause, scrub and camera controls require no dragging (3.3s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:23.5066560Z   ✓   4 [chromium] › tests/preview.spec.mjs:105:1 › one cycle ends paused and never starts another automatically (2.6s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:40.5267831Z   ✓   5 [chromium] › tests/preview.spec.mjs:119:1 › unmount, repeated reopen and independent instances release owned resources (17.0s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:41.7194082Z   ✓   6 [chromium] › tests/preview.spec.mjs:149:1 › cancel pending fetch and replace exercise without late canvas or stale result (1.2s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:42.9478003Z   ✓   7 [chromium] › tests/preview.spec.mjs:169:1 › asset error retains original media and explicit reopen retries cleanly (1.2s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:44.3631491Z   ✓   8 [chromium] › tests/preview.spec.mjs:181:1 › unsupported WebGL and lost context leave an accessible original-media fallback (1.4s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:47.2321980Z   ✓   9 [chromium] › tests/preview.spec.mjs:210:1 › reduced motion starts paused and preference changes stop explicit playback (2.9s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:49.6140243Z   ✓  10 [chromium] › tests/preview.spec.mjs:224:1 › offscreen and visibility changes pause without auto-resume (2.4s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:51.1271279Z   ✘  11 [chromium] › tests/preview.spec.mjs:249:1 › accessible semantics and 320px enlarged text preserve controls and descriptions (1.3s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:52.8552915Z   ✓  12 [chromium] › tests/preview.spec.mjs:263:1 › forced colors retain native control affordances (1.3s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:54.9816294Z   ✓  13 [chromium] › tests/preview.spec.mjs:274:1 › React StrictMode cleanup and prop changes preserve one optional instance (2.1s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:56.2122136Z   ✓  14 [chromium] › tests/preview.spec.mjs:299:1 › legacy EML clip uses its matching equipment registry and renders without changing host identity (1.2s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:56.5431725Z   ✓  15 [chromium] › tests/preview.spec.mjs:312:1 › asset integrity and bundle path rejection fail closed without external requests (323ms)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:57.6616465Z   ✓  16 [chromium] › tests/preview.spec.mjs:332:1 › host translations and plain text descriptions do not introduce markup (1.1s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:58.8302077Z   ✓  17 [chromium] › tests/preview.spec.mjs:346:1 › React inline callback and equal translated labels do not close an open preview (1.2s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:00:59.9957308Z   ✓  18 [chromium] › tests/preview.spec.mjs:359:1 › long localized RTL controls reflow at narrow width (1.2s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:04.0695651Z   ✓  19 [chromium] › tests/preview.spec.mjs:376:1 › dark appearance keeps the readable text alternative and native controls (4.1s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:04.3939505Z   ✓  20 [chromium] › tests/preview.spec.mjs:389:1 › partial shader initialization failure releases GPU objects and preserves fallback (315ms)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:08.1596836Z   ✓  21 [chromium] › tests/preview.spec.mjs:411:1 › packaged contribution runs independently with relative renderer imports and cleanup (3.8s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:15.7017594Z   ✓  22 [chromium] › tests/preview.spec.mjs:436:1 › long translated instructions keep mobile Play adjacent to the visible canvas (7.5s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:27.8135755Z   ✓  23 [webkit] › tests/preview.spec.mjs:43:1 › optional exact mapping does no asset work before opening; real model renders paused (11.0s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:28.1650295Z   ✓  24 [webkit] › tests/preview.spec.mjs:63:1 › missing, duplicate, numeric IDs and absent text alternatives remain optional (337ms)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:30.4795300Z   ✓  25 [webkit] › tests/preview.spec.mjs:77:1 › keyboard play, pause, scrub and camera controls require no dragging (2.3s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:32.4566813Z   ✓  26 [webkit] › tests/preview.spec.mjs:105:1 › one cycle ends paused and never starts another automatically (2.0s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:44.9280892Z   ✓  27 [webkit] › tests/preview.spec.mjs:119:1 › unmount, repeated reopen and independent instances release owned resources (12.5s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:46.1581744Z   ✓  28 [webkit] › tests/preview.spec.mjs:149:1 › cancel pending fetch and replace exercise without late canvas or stale result (1.2s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:47.4138901Z   ✓  29 [webkit] › tests/preview.spec.mjs:169:1 › asset error retains original media and explicit reopen retries cleanly (1.2s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:48.8503806Z   ✓  30 [webkit] › tests/preview.spec.mjs:181:1 › unsupported WebGL and lost context leave an accessible original-media fallback (1.4s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:51.1504198Z   ✓  31 [webkit] › tests/preview.spec.mjs:210:1 › reduced motion starts paused and preference changes stop explicit playback (2.3s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:53.4927096Z   ✓  32 [webkit] › tests/preview.spec.mjs:224:1 › offscreen and visibility changes pause without auto-resume (2.3s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:54.9825938Z   ✘  33 [webkit] › tests/preview.spec.mjs:249:1 › accessible semantics and 320px enlarged text preserve controls and descriptions (1.2s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:55.6491734Z   -  34 [webkit] › tests/preview.spec.mjs:263:1 › forced colors retain native control affordances
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:57.5305966Z   ✓  35 [webkit] › tests/preview.spec.mjs:274:1 › React StrictMode cleanup and prop changes preserve one optional instance (1.9s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:58.7682603Z   ✓  36 [webkit] › tests/preview.spec.mjs:299:1 › legacy EML clip uses its matching equipment registry and renders without changing host identity (1.2s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:01:59.3574743Z   ✓  37 [webkit] › tests/preview.spec.mjs:312:1 › asset integrity and bundle path rejection fail closed without external requests (580ms)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:00.4821556Z   ✓  38 [webkit] › tests/preview.spec.mjs:332:1 › host translations and plain text descriptions do not introduce markup (1.1s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:01.6552701Z   ✓  39 [webkit] › tests/preview.spec.mjs:346:1 › React inline callback and equal translated labels do not close an open preview (1.2s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:02.7374809Z   ✓  40 [webkit] › tests/preview.spec.mjs:359:1 › long localized RTL controls reflow at narrow width (1.1s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:06.0888058Z   ✓  41 [webkit] › tests/preview.spec.mjs:376:1 › dark appearance keeps the readable text alternative and native controls (3.3s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:06.5601121Z   ✓  42 [webkit] › tests/preview.spec.mjs:389:1 › partial shader initialization failure releases GPU objects and preserves fallback (462ms)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:09.5278707Z   ✓  43 [webkit] › tests/preview.spec.mjs:411:1 › packaged contribution runs independently with relative renderer imports and cleanup (3.0s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0042492Z   ✓  44 [webkit] › tests/preview.spec.mjs:436:1 › long translated instructions keep mobile Play adjacent to the visible canvas (3.5s)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0514141Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0517009Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0524473Z   1) [chromium] › tests/preview.spec.mjs:249:1 › accessible semantics and 320px enlarged text preserve controls and descriptions 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0525076Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0525308Z     Error: expect(received).toBe(expected) // Object.is equality
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0525552Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0525659Z     Expected: true
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0525891Z     Received: false
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0526029Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0526164Z       253 |   await open(page);
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0526608Z       254 |   await page.getByText('Camera', { exact: true }).click();
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0527289Z     > 255 |   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0527929Z           |                                                                                                ^
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0528646Z       256 |   const violations = (await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze()).violations;
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0529950Z       257 |   expect(violations).toEqual([]);
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0531294Z       258 |   const dimensions = await page.locator('#host button').evaluateAll(buttons => buttons.filter(button => button.getClientRects().length).map(button => ({ text: button.textContent, width: button.getBoundingClientRect().width, height: button.getBoundingClientRect().height })));
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0532785Z         at /home/runner/work/exercise-markup-language/exercise-markup-language/integrations/web/tests/preview.spec.mjs:255:96
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0533249Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0533742Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0534565Z     test-results/preview-accessible-semanti-8060b-e-controls-and-descriptions-chromium/test-failed-1.png
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0535349Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0535655Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0536148Z     Error Context: test-results/preview-accessible-semanti-8060b-e-controls-and-descriptions-chromium/error-context.md
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0536686Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0537112Z     attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0537839Z     test-results/preview-accessible-semanti-8060b-e-controls-and-descriptions-chromium/trace.zip
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0538355Z     Usage:
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0538483Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0538977Z         npx playwright show-trace test-results/preview-accessible-semanti-8060b-e-controls-and-descriptions-chromium/trace.zip
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0539834Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0540218Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0540501Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0541147Z   2) [webkit] › tests/preview.spec.mjs:249:1 › accessible semantics and 320px enlarged text preserve controls and descriptions 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0542938Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0543467Z     Error: expect(received).toBe(expected) // Object.is equality
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0543766Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0543863Z     Expected: true
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0544091Z     Received: false
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0544213Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0544336Z       253 |   await open(page);
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0544691Z       254 |   await page.getByText('Camera', { exact: true }).click();
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0545298Z     > 255 |   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0545990Z           |                                                                                                ^
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0546470Z       256 |   const violations = (await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze()).violations;
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0546892Z       257 |   expect(violations).toEqual([]);
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0547757Z       258 |   const dimensions = await page.locator('#host button').evaluateAll(buttons => buttons.filter(button => button.getClientRects().length).map(button => ({ text: button.textContent, width: button.getBoundingClientRect().width, height: button.getBoundingClientRect().height })));
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0548767Z         at /home/runner/work/exercise-markup-language/exercise-markup-language/integrations/web/tests/preview.spec.mjs:255:96
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0549266Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0549663Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0550201Z     test-results/preview-accessible-semanti-8060b-e-controls-and-descriptions-webkit/test-failed-1.png
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0550753Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0550952Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0551364Z     Error Context: test-results/preview-accessible-semanti-8060b-e-controls-and-descriptions-webkit/error-context.md
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0551721Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0552007Z     attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0552506Z     test-results/preview-accessible-semanti-8060b-e-controls-and-descriptions-webkit/trace.zip
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0552872Z     Usage:
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0552959Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0553297Z         npx playwright show-trace test-results/preview-accessible-semanti-8060b-e-controls-and-descriptions-webkit/trace.zip
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0553658Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0553900Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0554102Z 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0554162Z   2 failed
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0554608Z     [chromium] › tests/preview.spec.mjs:249:1 › accessible semantics and 320px enlarged text preserve controls and descriptions 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0555251Z     [webkit] › tests/preview.spec.mjs:249:1 › accessible semantics and 320px enlarged text preserve controls and descriptions 
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0555631Z   1 skipped
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0555821Z   41 passed (2.0m)
+browser	Run npm run test:prepare && npm test	2026-11-17T08:02:13.0772123Z ##[error]Process completed with exit code 1.

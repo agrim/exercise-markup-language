@@ -1,0 +1,245 @@
+
+> opengym-frontend@1.4.5 build
+> vite build --outDir /tmp/opengym-eml-build-disabled-final-all
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 671 modules transformed.
+
+(!) outDir /tmp/opengym-eml-build-disabled-final-all is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../../../tmp/opengym-eml-build-disabled-final-all/index.html                               12.32 kB │ gzip:   4.13 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Tour-C7PRBabu.css                  4.12 kB │ gzip:   1.39 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Wrapped-BkqupehM.css               6.84 kB │ gzip:   2.08 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/sheets-CWCHTjCW.css                7.38 kB │ gzip:   2.05 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/halloween-7CwKpUf5.css            11.04 kB │ gzip:   2.77 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/leaflet-vh-t_kPv.css              15.09 kB │ gzip:   6.36 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/christmas-BPSNQdp-.css            31.66 kB │ gzip:   7.49 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/index-ZRw35rlE.css               270.03 kB │ gzip:  50.96 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/platform-now-CIGTrnA-.js           0.13 kB │ gzip:   0.13 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/pending-CG0YB1pl.js                0.13 kB │ gzip:   0.12 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/build-caps-GAHJ7oCr.js             0.35 kB │ gzip:   0.27 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/web-BPXdT1AC.js                    0.36 kB │ gzip:   0.24 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/categories-BNTX23tR.js             0.40 kB │ gzip:   0.24 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/channel-D0vsYMK1.js                0.40 kB │ gzip:   0.24 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/user-sounds-files-CD00BFiI.js      0.41 kB │ gzip:   0.28 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/jsx-runtime-LKYXHABd.js            0.43 kB │ gzip:   0.30 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/rest-sounds-DpCh4DrF.js            0.63 kB │ gzip:   0.36 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/counted-log-DZPW20e7.js            0.64 kB │ gzip:   0.42 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/media-limits-BCBEGjOl.js           0.64 kB │ gzip:   0.42 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/rolldown-runtime-XKyaHtl9.js       0.72 kB │ gzip:   0.42 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/native-DWYCsO43.js                 0.77 kB │ gzip:   0.33 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/web-DNvVgWT5.js                    0.79 kB │ gzip:   0.38 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/web-Bk24CdI8.js                    0.84 kB │ gzip:   0.40 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/nudge-check-DYoqLPs8.js            0.93 kB │ gzip:   0.59 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/coach-device-DjLO-bKs.js           0.97 kB │ gzip:   0.58 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/local-discovery-jijp3X8o.js        0.99 kB │ gzip:   0.63 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/media-owed-BRb8Mn3D.js             1.18 kB │ gzip:   0.58 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/share-image-DCd78Vzo.js            1.37 kB │ gzip:   0.71 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/routine-library-CQyyGndr.js        1.48 kB │ gzip:   0.84 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/preload-helper-CRzLMJPS.js         1.53 kB │ gzip:   0.80 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/workout-date-Brlf_bzl.js           1.59 kB │ gzip:   0.85 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/api-tokens-Bby3b-Nu.js             1.61 kB │ gzip:   0.84 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/backfill-MZlqDNGP.js               1.67 kB │ gzip:   0.90 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/app-icon-CPCJtGuP.js               1.68 kB │ gzip:   0.73 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/recovery-view-Dr5gNYTc.js          1.69 kB │ gzip:   0.84 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/modules-copy-DoGAzL58.js           1.73 kB │ gzip:   0.89 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/de-CUISC6gj.js                     1.83 kB │ gzip:   0.76 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/coach-consent-xGp0sjKc.js          2.14 kB │ gzip:   1.14 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ReportSheet-CXTpk-Di.js            2.15 kB │ gzip:   1.09 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/remote-gy8E24Ub.js                 2.24 kB │ gzip:   1.02 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/esm-jIDPQL3o.js                    2.27 kB │ gzip:   1.30 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/esm-yXN0oCOy.js                    2.28 kB │ gzip:   1.30 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/compare-image-C6F_FJWt.js          2.37 kB │ gzip:   1.25 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/sound-ingest-u9NSGd5Q.js           2.39 kB │ gzip:   1.21 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/media-prefetch-DcY1dlI1.js         2.50 kB │ gzip:   1.28 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/esm-CjXIjvhs.js                    2.52 kB │ gzip:   1.42 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/CoachSees-UXYirLHS.js              2.61 kB │ gzip:   1.12 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/set-videos-Bli4tZD1.js             2.61 kB │ gzip:   1.23 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/onerm-CF4RUmej.js                  2.67 kB │ gzip:   1.30 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/user-sounds-DHLL8UMv.js            2.69 kB │ gzip:   1.11 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/vitals-ConF7u7S.js                 2.76 kB │ gzip:   1.34 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/starter-plans-BH2OJd49.js          2.81 kB │ gzip:   0.87 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/starter-CTAxxGfc.js                2.83 kB │ gzip:   1.49 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/base-DyknGYxA.js                   2.85 kB │ gzip:   1.01 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ScanCode-hs_zeYZb.js               2.90 kB │ gzip:   1.59 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/video-shrink-TebpkgWE.js           2.93 kB │ gzip:   1.44 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Heatmap-CQR076mo.js                2.96 kB │ gzip:   1.47 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/coach-secrets-Cp1GwFc0.js          2.96 kB │ gzip:   1.63 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ex-unit-Cp2xFvOc.js                2.98 kB │ gzip:   1.24 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/CheckinReminder-SqfAFWvC.js        3.00 kB │ gzip:   1.49 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/supersetFlow-Bgz9FZlQ.js           3.00 kB │ gzip:   1.21 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/History-DfdMUQZt.js                3.17 kB │ gzip:   1.40 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/esm-CNiLEeLy.js                    3.30 kB │ gzip:   1.78 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/demoSeed-CASdv0-R.js               3.31 kB │ gzip:   1.69 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Connect-CcC9L-0V.js                3.33 kB │ gzip:   1.55 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/web-BLteYSCK.js                    3.48 kB │ gzip:   1.14 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/CoachConsentSheet-DGHI4mBg.js      3.55 kB │ gzip:   1.68 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/accent-D25Xon14.js                 3.55 kB │ gzip:   1.71 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/esm-SO8o3VRS.js                    3.61 kB │ gzip:   1.62 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/finish-workout-CY4jgpEO.js         3.62 kB │ gzip:   1.67 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/esm-CxDVuyo-.js                    3.75 kB │ gzip:   1.97 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/StructuralBalance-Ee5rg4Kv.js      4.08 kB │ gzip:   1.73 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/forgotten-workout-C4NSQkco.js      4.15 kB │ gzip:   1.79 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/i18n-core-CyU7oZeP.js              4.28 kB │ gzip:   2.25 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/openrouter-signin-CBlka9i-.js      4.28 kB │ gzip:   1.99 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/avatar-B5URMLJ1.js                 4.41 kB │ gzip:   2.05 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/sound-DV2Z0mJ9.js                  4.41 kB │ gzip:   2.12 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/web-DiswQqMY.js                    4.43 kB │ gzip:   1.29 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/voice-clips-sKAP0ubd.js            4.54 kB │ gzip:   2.17 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/reminder-sounds-BU58u0uA.js        4.82 kB │ gzip:   2.32 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/format-Dfv36mEr.js                 4.87 kB │ gzip:   2.36 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/rest-alert-BuJzScNI.js             4.96 kB │ gzip:   2.52 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/providers-CMmhYZwd.js              4.98 kB │ gzip:   2.05 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/media-refs-DxhNxIu_.js             5.05 kB │ gzip:   1.89 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/sharing-api-AtZfldIP.js            5.09 kB │ gzip:   1.93 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/fr-tMASVCmM.js                     5.19 kB │ gzip:   1.92 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/gym-reminder-D2fG0czc.js           5.28 kB │ gzip:   2.35 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/capacitor-fetch-CFnFIFuz.js        5.40 kB │ gzip:   2.69 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/session-noprog-BRa4UJu7.js         5.42 kB │ gzip:   2.67 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ApiTokens-CsKH6KDr.js              6.38 kB │ gzip:   2.60 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/DurationWheel-CSXWXKli.js          6.40 kB │ gzip:   2.38 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/media-ingest-BvH4_Z4W.js           6.41 kB │ gzip:   2.54 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/media-store-CIMmmdEh.js            6.44 kB │ gzip:   2.54 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/qr-DLI9hK_A.js                     6.69 kB │ gzip:   3.06 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/lean-qr-DWZdVoNy.js                6.78 kB │ gzip:   3.55 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/oidc-app-D2t5F3R8.js               6.88 kB │ gzip:   3.19 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/CameraScan-Cni8f7XA.js             7.86 kB │ gzip:   3.58 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/backup-media-AC51RXzM.js           7.94 kB │ gzip:   3.34 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/equipment-NPvjvh85.js              8.15 kB │ gzip:   3.04 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/web-BKi_gUBa.js                    8.47 kB │ gzip:   2.84 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/coach-demo-B30Mv6mU.js             9.25 kB │ gzip:   4.10 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Wrapped-D_32iUbB.js                9.97 kB │ gzip:   4.08 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Muscles-jYsEopm-.js               10.13 kB │ gzip:   4.73 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/CheckIn-GTQwQ7_g.js               10.79 kB │ gzip:   4.06 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/halloween-BY6iBDuY.js             10.95 kB │ gzip:   3.83 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Assistants-C0F1oA0F.js            10.97 kB │ gzip:   4.42 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/media-sync-BxszYuTW.js            11.09 kB │ gzip:   4.73 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Journal-Ru9Fv61H.js               11.69 kB │ gzip:   4.21 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/api-sbWDdLec.js                   11.71 kB │ gzip:   4.69 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Programmes-o3wuktjR.js            12.03 kB │ gzip:   4.29 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/CoachIntake-DeNgKkSF.js           12.08 kB │ gzip:   4.20 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/circuit-dC9BskEP.js               12.27 kB │ gzip:   4.69 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/coach-api-B1ThWcNi.js             12.73 kB │ gzip:   4.91 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Library-CoUlXE2x.js               14.25 kB │ gzip:   4.76 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Tools-DDyhin__.js                 14.57 kB │ gzip:   5.35 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/health-sync-BhjZzkN3.js           15.06 kB │ gzip:   6.72 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/TrainerMember-C8K85Xvo.js         16.32 kB │ gzip:   5.00 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Measurements-BX2WpQs5.js          16.68 kB │ gzip:   5.50 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/CoachSetup-TuaEkRUo.js            18.46 kB │ gzip:   6.85 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/media-store-fs-csEDrM1f.js        18.88 kB │ gzip:   8.22 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/month-story-uVFWzy3D.js           19.83 kB │ gzip:   7.81 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/day-photos-D-xcHC4a.js            21.65 kB │ gzip:   8.26 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Community-Cz_4DFdt.js             21.79 kB │ gzip:   7.21 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/RoutineEdit-Bm6E6cz1.js           22.11 kB │ gzip:   7.94 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/mobile-D0aAs_EF.js                22.60 kB │ gzip:   7.06 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/session-start-DlMhFtqc.js         22.69 kB │ gzip:   9.03 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Tour-BNg3o_cK.js                  23.57 kB │ gzip:   8.81 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ProgressPhotos-C93PedZO.js        26.95 kB │ gzip:   9.90 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Trainer-BgdIyGME.js               28.85 kB │ gzip:   9.00 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/health-connect-Blbgm3Rz.js        29.19 kB │ gzip:  11.31 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/useUI-BvcUq5aj.js                 30.15 kB │ gzip:  11.02 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/validate-BvLQxbnz.js              31.75 kB │ gzip:  10.36 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/plan-share-DgMROXf8.js            35.80 kB │ gzip:  13.54 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/watch-sync-C81SYwS5.js            40.85 kB │ gzip:  15.32 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ui-Ddnzee-5.js                    42.58 kB │ gzip:  12.83 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/CoachChat-CH3-9EMK.js             44.95 kB │ gzip:  13.83 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/christmas-C4mM5rLJ.js             45.86 kB │ gzip:  14.98 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/rotation-Dykl4odd.js              46.78 kB │ gzip:  16.04 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/useStore-BcbE9Cfs.js              51.61 kB │ gzip:  18.49 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/sync-merge-k7kKGAqz.js            52.50 kB │ gzip:  18.18 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Stats-Cw6p553J.js                 59.96 kB │ gzip:  20.48 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/measurements-BRqlQgj_.js          74.33 kB │ gzip:  26.97 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Admin-DriGQ7H5.js                 76.91 kB │ gzip:  21.89 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/body-geometry-CcU74kXc.js         94.04 kB │ gzip:  41.42 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/coach-local-CgwDLNpV.js           97.28 kB │ gzip:  36.06 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/jsQR-DMfxOdIb.js                 129.98 kB │ gzip:  47.51 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/leaflet-src-Dcu4YAMi.js          148.61 kB │ gzip:  43.33 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/zh-TW-C9gXV6lG.js                184.15 kB │ gzip:  51.79 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/zh-DjRBPO2u.js                   185.33 kB │ gzip:  52.33 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/tr-sBccyaEk.js                   225.94 kB │ gzip:  54.79 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/sv-CiwNT847.js                   236.34 kB │ gzip:  56.23 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/da-DJSZim5Q.js                   238.55 kB │ gzip:  56.26 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/hu-_NLvWIXy.js                   248.11 kB │ gzip:  57.91 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ko-DXGCymFq.js                   251.58 kB │ gzip:  57.04 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/de-CKpzH790.js                   265.38 kB │ gzip:  59.77 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/fr-dBmS1b4A.js                   267.71 kB │ gzip:  56.48 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/it-X0w6XOGn.js                   269.11 kB │ gzip:  56.93 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/cs-GufFDAbs.js                   270.36 kB │ gzip:  60.44 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/pt-BR-Do3yZIoq.js                270.59 kB │ gzip:  56.98 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/pt-CnKzKdMZ.js                   272.46 kB │ gzip:  57.25 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/es-CFQh82Kg.js                   273.38 kB │ gzip:  56.32 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/Settings-BCyeCjZR.js             274.25 kB │ gzip:  83.27 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/pl-DmWp2PTk.js                   279.81 kB │ gzip:  60.80 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/fa-Cl8NomuW.js                   314.07 kB │ gzip:  65.88 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ar-n3dBOUwe.js                   354.62 kB │ gzip:  60.14 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/zh-TW-CLXZqTpE.js                380.38 kB │ gzip:  83.36 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/pt-BR-DdiWGp-_.js                383.59 kB │ gzip: 134.51 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ru-CXcRwy7n.js                   427.39 kB │ gzip:  69.24 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/zh-Bi_WstQM.js                   429.65 kB │ gzip: 166.99 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/uk-c1-draNn.js                   430.56 kB │ gzip:  68.61 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/zh-TW-DpBk42Qd.js                434.90 kB │ gzip: 170.60 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/da-BY9Qq8st.js                   439.79 kB │ gzip: 155.21 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/sv-vuSwZrop.js                   442.25 kB │ gzip: 156.31 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/tr-AojOzAp5.js                   451.19 kB │ gzip: 158.95 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/hi-6tJcsCRU.js                   453.54 kB │ gzip:  63.52 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/id--DW2Qpxa.js                   455.82 kB │ gzip: 154.96 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/es-ju91n8Kq.js                   456.33 kB │ gzip: 160.18 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/pt-Cl1PMelw.js                   457.23 kB │ gzip: 159.67 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/it-CAbpR6Gp.js                   458.21 kB │ gzip: 159.16 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/th-CSXVX7GD.js                   458.80 kB │ gzip:  66.02 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/de-Bp9AcFrj.js                   461.44 kB │ gzip: 163.34 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/hu-CZ8GyLSq.js                   465.07 kB │ gzip: 168.02 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/cs-BX6-zolL.js                   466.39 kB │ gzip: 169.58 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/pl-FBu3wcWN.js                   471.59 kB │ gzip: 168.02 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/fr-BGbYyzII.js                   471.97 kB │ gzip: 162.82 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ko-CCuSCAKU.js                   476.57 kB │ gzip: 166.82 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/lt-DkARfUYd.js                   492.89 kB │ gzip: 171.83 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/bn-D6CP0iEe.js                   494.05 kB │ gzip:  64.47 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/zh-CIopzams.js                   509.26 kB │ gzip: 149.59 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/vi-CCHp5sFp.js                   510.62 kB │ gzip: 164.58 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/routine-library-CTnQzjhZ.js      513.42 kB │ gzip:  75.03 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ar-BiA6I9Hk.js                   542.41 kB │ gzip: 172.30 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/sheets-DNP_ECJX.js               554.70 kB │ gzip: 179.92 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/fa-DGcGWAxU.js                   592.94 kB │ gzip: 176.01 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/de-DzS9vZ15.js                   608.09 kB │ gzip:  82.37 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/en-C5POCd8g.js                   616.53 kB │ gzip: 153.39 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/pl-JiADewfB.js                   617.01 kB │ gzip:  87.55 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/uk-BOrbU6nh.js                   618.04 kB │ gzip: 186.45 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ko-B8NPiJNf.js                   619.63 kB │ gzip:  94.53 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ru-CfN72zn7.js                   628.46 kB │ gzip: 187.20 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/hu-b4DKtwg9.js                   639.34 kB │ gzip:  93.17 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/index-O01IGtSl.js                665.81 kB │ gzip: 209.54 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/es-CWdiW2tI.js                   676.98 kB │ gzip:  82.85 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/pt-BR-Dlryx4ZS.js                684.83 kB │ gzip:  87.48 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/fr-CxN-I0H9.js                   685.25 kB │ gzip:  85.41 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/tr-CzbhSBvu.js                   689.62 kB │ gzip:  85.91 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/hi-yamQ0SUG.js                   725.47 kB │ gzip: 182.64 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/th-CsZcf6mf.js                   735.61 kB │ gzip: 178.77 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/bn-82fapOmG.js                   740.17 kB │ gzip: 179.91 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/it-DI0aIMGu.js                   757.43 kB │ gzip: 167.32 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ar-tevoNhQj.js                   779.03 kB │ gzip:  78.34 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/ru-Be4_OkJb.js                   994.51 kB │ gzip: 101.05 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/fa-CkmqnnY7.js                 1,013.11 kB │ gzip: 100.67 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/exercises-CPCeUjXk.js          1,241.01 kB │ gzip: 158.70 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/zh-DZBCIAYA.js                 1,413.98 kB │ gzip: 303.82 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/hi-CPD_aRiU.js                 1,493.23 kB │ gzip: 115.61 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/cs-I7IqGzYR.js                 1,691.10 kB │ gzip: 327.21 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/en-Dc6Zg87O.js                 1,782.49 kB │ gzip: 314.16 kB
+../../../../tmp/opengym-eml-build-disabled-final-all/assets/it-9gM2jNN7.js                 2,091.27 kB │ gzip: 352.40 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 1500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[INEFFECTIVE_DYNAMIC_IMPORT] node_modules/@capacitor/core/dist/index.js is dynamically imported by src/lib/anim-packs.js, src/lib/app-icon.js, src/lib/capacitor-fetch.js, src/lib/channel.js, src/lib/device-auth.js, ... but also statically imported by node_modules/@aparajita/capacitor-secure-storage/dist/esm/base.js, node_modules/@aparajita/capacitor-secure-storage/dist/esm/index.js, node_modules/@capacitor-mlkit/barcode-scanning/dist/esm/index.js, node_modules/@capacitor-mlkit/barcode-scanning/dist/esm/web.js, node_modules/@capacitor/app/dist/esm/index.js, ..., dynamic import will not move module into another chunk.
+
+[INEFFECTIVE_DYNAMIC_IMPORT] src/lib/scan.js is dynamically imported by src/components/CameraScan.jsx but also statically imported by src/components/ScanCode.jsx, src/views/CheckIn.jsx, dynamic import will not move module into another chunk.
+
+[INEFFECTIVE_DYNAMIC_IMPORT] src/lib/scan-web.js is dynamically imported by src/lib/scan.js but also statically imported by src/components/CameraScan.jsx, dynamic import will not move module into another chunk.
+
+✓ built in 980ms

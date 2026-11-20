@@ -1,0 +1,60 @@
+
+> test
+> playwright test
+
+[WebServer] (node:87133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 44 tests using 1 worker
+
+(node:87134) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/preview.spec.mjs:43:1 › optional exact mapping does no asset work before opening; real model renders paused (1.2s)
+  ✓   2 [chromium] › tests/preview.spec.mjs:63:1 › missing, duplicate, numeric IDs and absent text alternatives remain optional (112ms)
+  ✓   3 [chromium] › tests/preview.spec.mjs:77:1 › keyboard play, pause, scrub and camera controls require no dragging (1.5s)
+  ✓   4 [chromium] › tests/preview.spec.mjs:105:1 › one cycle ends paused and never starts another automatically (1.2s)
+  ✓   5 [chromium] › tests/preview.spec.mjs:119:1 › unmount, repeated reopen and independent instances release owned resources (7.7s)
+  ✓   6 [chromium] › tests/preview.spec.mjs:149:1 › cancel pending fetch and replace exercise without late canvas or stale result (692ms)
+  ✓   7 [chromium] › tests/preview.spec.mjs:169:1 › asset error retains original media and explicit reopen retries cleanly (809ms)
+  ✓   8 [chromium] › tests/preview.spec.mjs:181:1 › unsupported WebGL and lost context leave an accessible original-media fallback (910ms)
+  ✓   9 [chromium] › tests/preview.spec.mjs:210:1 › reduced motion starts paused and preference changes stop explicit playback (1.5s)
+  ✓  10 [chromium] › tests/preview.spec.mjs:224:1 › offscreen and visibility changes pause without auto-resume (1.3s)
+  ✓  11 [chromium] › tests/preview.spec.mjs:249:1 › accessible semantics and 320px enlarged text preserve controls and descriptions (1.0s)
+  ✓  12 [chromium] › tests/preview.spec.mjs:263:1 › forced colors retain native control affordances (764ms)
+  ✓  13 [chromium] › tests/preview.spec.mjs:274:1 › React StrictMode cleanup and prop changes preserve one optional instance (1.2s)
+  ✓  14 [chromium] › tests/preview.spec.mjs:299:1 › legacy EML clip uses its matching equipment registry and renders without changing host identity (789ms)
+  ✓  15 [chromium] › tests/preview.spec.mjs:312:1 › asset integrity and bundle path rejection fail closed without external requests (247ms)
+  ✓  16 [chromium] › tests/preview.spec.mjs:332:1 › host translations and plain text descriptions do not introduce markup (674ms)
+  ✓  17 [chromium] › tests/preview.spec.mjs:346:1 › React inline callback and equal translated labels do not close an open preview (736ms)
+  ✓  18 [chromium] › tests/preview.spec.mjs:359:1 › long localized RTL controls reflow at narrow width (848ms)
+  ✓  19 [chromium] › tests/preview.spec.mjs:376:1 › dark appearance keeps the readable text alternative and native controls (2.0s)
+  ✓  20 [chromium] › tests/preview.spec.mjs:389:1 › partial shader initialization failure releases GPU objects and preserves fallback (211ms)
+  ✓  21 [chromium] › tests/preview.spec.mjs:411:1 › packaged contribution runs independently with relative renderer imports and cleanup (1.8s)
+  ✓  22 [chromium] › tests/preview.spec.mjs:436:1 › long translated instructions keep mobile Play adjacent to the visible canvas (2.3s)
+(node:87224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  23 [webkit] › tests/preview.spec.mjs:43:1 › optional exact mapping does no asset work before opening; real model renders paused (1.1s)
+  ✓  24 [webkit] › tests/preview.spec.mjs:63:1 › missing, duplicate, numeric IDs and absent text alternatives remain optional (201ms)
+  ✓  25 [webkit] › tests/preview.spec.mjs:77:1 › keyboard play, pause, scrub and camera controls require no dragging (468ms)
+  ✓  26 [webkit] › tests/preview.spec.mjs:105:1 › one cycle ends paused and never starts another automatically (657ms)
+  ✓  27 [webkit] › tests/preview.spec.mjs:119:1 › unmount, repeated reopen and independent instances release owned resources (1.4s)
+  ✓  28 [webkit] › tests/preview.spec.mjs:149:1 › cancel pending fetch and replace exercise without late canvas or stale result (287ms)
+  ✓  29 [webkit] › tests/preview.spec.mjs:169:1 › asset error retains original media and explicit reopen retries cleanly (345ms)
+  ✓  30 [webkit] › tests/preview.spec.mjs:181:1 › unsupported WebGL and lost context leave an accessible original-media fallback (464ms)
+  ✓  31 [webkit] › tests/preview.spec.mjs:210:1 › reduced motion starts paused and preference changes stop explicit playback (4.0s)
+  ✓  32 [webkit] › tests/preview.spec.mjs:224:1 › offscreen and visibility changes pause without auto-resume (618ms)
+  ✓  33 [webkit] › tests/preview.spec.mjs:249:1 › accessible semantics and 320px enlarged text preserve controls and descriptions (602ms)
+  -  34 [webkit] › tests/preview.spec.mjs:263:1 › forced colors retain native control affordances
+  ✓  35 [webkit] › tests/preview.spec.mjs:274:1 › React StrictMode cleanup and prop changes preserve one optional instance (400ms)
+  ✓  36 [webkit] › tests/preview.spec.mjs:299:1 › legacy EML clip uses its matching equipment registry and renders without changing host identity (371ms)
+  ✓  37 [webkit] › tests/preview.spec.mjs:312:1 › asset integrity and bundle path rejection fail closed without external requests (442ms)
+  ✓  38 [webkit] › tests/preview.spec.mjs:332:1 › host translations and plain text descriptions do not introduce markup (374ms)
+  ✓  39 [webkit] › tests/preview.spec.mjs:346:1 › React inline callback and equal translated labels do not close an open preview (354ms)
+  ✓  40 [webkit] › tests/preview.spec.mjs:359:1 › long localized RTL controls reflow at narrow width (393ms)
+  ✓  41 [webkit] › tests/preview.spec.mjs:376:1 › dark appearance keeps the readable text alternative and native controls (775ms)
+  ✓  42 [webkit] › tests/preview.spec.mjs:389:1 › partial shader initialization failure releases GPU objects and preserves fallback (258ms)
+  ✓  43 [webkit] › tests/preview.spec.mjs:411:1 › packaged contribution runs independently with relative renderer imports and cleanup (545ms)
+  ✓  44 [webkit] › tests/preview.spec.mjs:436:1 › long translated instructions keep mobile Play adjacent to the visible canvas (695ms)
+
+  1 skipped
+  43 passed (45.9s)
